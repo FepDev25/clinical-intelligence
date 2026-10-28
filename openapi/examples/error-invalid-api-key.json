@@ -1,0 +1,13 @@
+{
+  "summary": "Autenticación requerida — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:invalid-api-key",
+    "title": "Autenticación requerida",
+    "status": 401,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000013",
+    "requestId": "00000000-0000-4000-8000-000000000013",
+    "code": "INVALID_API_KEY",
+    "errors": []
+  }
+}

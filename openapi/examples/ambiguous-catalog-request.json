@@ -1,0 +1,29 @@
+{
+  "summary": "Alias ambiguo sin selección de presentación — petición sintética",
+  "value": {
+    "clinicalNote": "Prescripción actual del paciente: Alfa.",
+    "catalogs": [
+      {
+        "catalogId": "demo",
+        "version": "1",
+        "kind": "medication",
+        "entries": [
+          {
+            "entryId": "a10",
+            "name": "Alfa 10 mg",
+            "aliases": [
+              "Alfa"
+            ]
+          },
+          {
+            "entryId": "a20",
+            "name": "Alfa 20 mg",
+            "aliases": [
+              "Alfa"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

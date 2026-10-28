@@ -1,0 +1,8 @@
+/target/
+__pycache__/
+*.pyc
+.env
+.env.*
+
+# Ephemeral evaluation process lock; immutable results remain versioned.
+/evaluation/runs/**/.run.lock

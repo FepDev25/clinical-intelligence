@@ -1,0 +1,133 @@
+{
+  "summary": "Contradicciones conservadas con evidencia propia — respuesta ilustrativa de fake",
+  "value": {
+    "requestId": "00000000-0000-4000-8000-000000000008",
+    "contractVersion": "0.1.0",
+    "locale": "es",
+    "processingStatus": "completed_with_warnings",
+    "reviewRequired": true,
+    "diagnoses": [
+      {
+        "id": "d1",
+        "name": {
+          "value": "asma",
+          "evidence": [
+            {
+              "start": 33,
+              "end": 37,
+              "quote": "asma"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 38,
+                "quote": "Diagnóstico actual del paciente: asma."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 38,
+                "quote": "Diagnóstico actual del paciente: asma."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 38,
+                "quote": "Diagnóstico actual del paciente: asma."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        }
+      },
+      {
+        "id": "d2",
+        "name": {
+          "value": "asma",
+          "evidence": [
+            {
+              "start": 57,
+              "end": 61,
+              "quote": "asma"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "negated",
+            "evidence": [
+              {
+                "start": 39,
+                "end": 74,
+                "quote": "El paciente niega asma actualmente."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 39,
+                "end": 74,
+                "quote": "El paciente niega asma actualmente."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 39,
+                "end": 74,
+                "quote": "El paciente niega asma actualmente."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        }
+      }
+    ],
+    "medications": [],
+    "procedures": [],
+    "warnings": [
+      {
+        "code": "CONTRADICTORY_MENTIONS",
+        "message": "La nota contiene afirmaciones incompatibles que requieren revisión.",
+        "targets": [
+          "/diagnoses/0",
+          "/diagnoses/1"
+        ],
+        "source": "/clinicalNote"
+      }
+    ],
+    "processing": {
+      "version": "extraction-0.1.0",
+      "promptVersion": "synthetic-fixture-1",
+      "validationVersion": "evidence-1",
+      "executionMode": "simulated",
+      "provider": "deterministic-fake",
+      "model": "contract-fixture-1"
+    }
+  }
+}

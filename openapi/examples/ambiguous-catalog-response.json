@@ -1,0 +1,98 @@
+{
+  "summary": "Alias ambiguo sin selección de presentación — respuesta ilustrativa de fake",
+  "value": {
+    "requestId": "00000000-0000-4000-8000-000000000004",
+    "contractVersion": "0.1.0",
+    "locale": "es",
+    "processingStatus": "completed",
+    "reviewRequired": true,
+    "diagnoses": [],
+    "medications": [
+      {
+        "id": "m1",
+        "name": {
+          "value": "Alfa",
+          "evidence": [
+            {
+              "start": 34,
+              "end": 38,
+              "quote": "Alfa"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 39,
+                "quote": "Prescripción actual del paciente: Alfa."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 39,
+                "quote": "Prescripción actual del paciente: Alfa."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 39,
+                "quote": "Prescripción actual del paciente: Alfa."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "ambiguous",
+          "candidates": [
+            {
+              "catalogId": "demo",
+              "version": "1",
+              "entryId": "a10"
+            },
+            {
+              "catalogId": "demo",
+              "version": "1",
+              "entryId": "a20"
+            }
+          ]
+        },
+        "prescriptionStatus": {
+          "value": "prescribed",
+          "evidence": [
+            {
+              "start": 0,
+              "end": 39,
+              "quote": "Prescripción actual del paciente: Alfa."
+            }
+          ]
+        },
+        "dosage": null,
+        "frequency": null,
+        "route": null,
+        "duration": null
+      }
+    ],
+    "procedures": [],
+    "warnings": [],
+    "processing": {
+      "version": "extraction-0.1.0",
+      "promptVersion": "synthetic-fixture-1",
+      "validationVersion": "evidence-1",
+      "executionMode": "simulated",
+      "provider": "deterministic-fake",
+      "model": "contract-fixture-1"
+    }
+  }
+}

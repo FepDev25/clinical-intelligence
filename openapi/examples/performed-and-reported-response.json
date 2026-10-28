@@ -1,0 +1,269 @@
+{
+  "summary": "Contextos diferenciados y estado desconocido explícito — respuesta de fake",
+  "value": {
+    "requestId": "00000000-0000-4000-8000-000000000100",
+    "contractVersion": "0.1.0",
+    "locale": "es",
+    "processingStatus": "completed_with_warnings",
+    "reviewRequired": true,
+    "diagnoses": [
+      {
+        "id": "d1",
+        "name": {
+          "value": "asma",
+          "evidence": [
+            {
+              "start": 39,
+              "end": 43,
+              "quote": "asma"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "suspected",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 44,
+                "quote": "En el paciente se sospecha actualmente asma."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 44,
+                "quote": "En el paciente se sospecha actualmente asma."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 44,
+                "quote": "En el paciente se sospecha actualmente asma."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        }
+      }
+    ],
+    "medications": [
+      {
+        "id": "m1",
+        "name": {
+          "value": "Alfa",
+          "evidence": [
+            {
+              "start": 121,
+              "end": 125,
+              "quote": "Alfa"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 87,
+                "end": 139,
+                "quote": "El paciente refiere uso actual de Alfa por vía oral."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 87,
+                "end": 139,
+                "quote": "El paciente refiere uso actual de Alfa por vía oral."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 87,
+                "end": 139,
+                "quote": "El paciente refiere uso actual de Alfa por vía oral."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        },
+        "prescriptionStatus": {
+          "value": "reported",
+          "evidence": [
+            {
+              "start": 87,
+              "end": 139,
+              "quote": "El paciente refiere uso actual de Alfa por vía oral."
+            }
+          ]
+        },
+        "dosage": null,
+        "frequency": null,
+        "route": {
+          "value": "oral",
+          "evidence": [
+            {
+              "start": 126,
+              "end": 138,
+              "quote": "por vía oral"
+            }
+          ]
+        },
+        "duration": null
+      },
+      {
+        "id": "m2",
+        "name": {
+          "value": "Beta",
+          "evidence": [
+            {
+              "start": 161,
+              "end": 165,
+              "quote": "Beta"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 140,
+                "end": 200,
+                "quote": "El paciente menciona Beta sin indicar tratamiento ni fechas."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 140,
+                "end": 200,
+                "quote": "El paciente menciona Beta sin indicar tratamiento ni fechas."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        },
+        "prescriptionStatus": {
+          "value": "unknown",
+          "evidence": []
+        },
+        "dosage": null,
+        "frequency": null,
+        "route": null,
+        "duration": null
+      }
+    ],
+    "procedures": [
+      {
+        "id": "p1",
+        "name": {
+          "value": "sutura",
+          "evidence": [
+            {
+              "start": 79,
+              "end": 85,
+              "quote": "sutura"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 45,
+                "end": 86,
+                "quote": "Al paciente se le realizó hoy una sutura."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 45,
+                "end": 86,
+                "quote": "Al paciente se le realizó hoy una sutura."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 45,
+                "end": 86,
+                "quote": "Al paciente se le realizó hoy una sutura."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        },
+        "performanceStatus": {
+          "value": "performed",
+          "evidence": [
+            {
+              "start": 45,
+              "end": 86,
+              "quote": "Al paciente se le realizó hoy una sutura."
+            }
+          ]
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "code": "AMBIGUOUS_CONTEXT",
+        "message": "Una mención de medicamento no establece una prescripción.",
+        "targets": [
+          "/medications/1/prescriptionStatus"
+        ],
+        "source": "/clinicalNote"
+      }
+    ],
+    "processing": {
+      "version": "extraction-0.1.0",
+      "promptVersion": "synthetic-fixture-1",
+      "validationVersion": "evidence-1",
+      "executionMode": "simulated",
+      "provider": "deterministic-fake",
+      "model": "contract-fixture-1"
+    }
+  }
+}

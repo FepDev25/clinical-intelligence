@@ -1,0 +1,13 @@
+{
+  "summary": "Tiempo de procesamiento agotado — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:provider-timeout",
+    "title": "Tiempo de procesamiento agotado",
+    "status": 504,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000027",
+    "requestId": "00000000-0000-4000-8000-000000000027",
+    "code": "PROVIDER_TIMEOUT",
+    "errors": []
+  }
+}

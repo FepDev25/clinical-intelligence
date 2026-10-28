@@ -1,0 +1,223 @@
+{
+  "summary": "Extracción con catálogo único y procedimiento solicitado — respuesta ilustrativa de fake",
+  "value": {
+    "requestId": "00000000-0000-4000-8000-000000000001",
+    "contractVersion": "0.1.0",
+    "locale": "es-EC",
+    "processingStatus": "completed",
+    "reviewRequired": true,
+    "diagnoses": [
+      {
+        "id": "d1",
+        "name": {
+          "value": "faringitis",
+          "evidence": [
+            {
+              "start": 33,
+              "end": 43,
+              "quote": "faringitis"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 44,
+                "quote": "Diagnóstico actual del paciente: faringitis."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 44,
+                "quote": "Diagnóstico actual del paciente: faringitis."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 44,
+                "quote": "Diagnóstico actual del paciente: faringitis."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        }
+      }
+    ],
+    "medications": [
+      {
+        "id": "m1",
+        "name": {
+          "value": "amoxicilina",
+          "evidence": [
+            {
+              "start": 79,
+              "end": 90,
+              "quote": "amoxicilina"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 45,
+                "end": 118,
+                "quote": "Prescripción actual del paciente: amoxicilina, dosis 500 mg cada 8 horas."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 45,
+                "end": 118,
+                "quote": "Prescripción actual del paciente: amoxicilina, dosis 500 mg cada 8 horas."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 45,
+                "end": 118,
+                "quote": "Prescripción actual del paciente: amoxicilina, dosis 500 mg cada 8 horas."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "matched",
+          "candidates": [
+            {
+              "catalogId": "medicamentos-demo",
+              "version": "2026-01",
+              "entryId": "med-001"
+            }
+          ]
+        },
+        "prescriptionStatus": {
+          "value": "prescribed",
+          "evidence": [
+            {
+              "start": 45,
+              "end": 118,
+              "quote": "Prescripción actual del paciente: amoxicilina, dosis 500 mg cada 8 horas."
+            }
+          ]
+        },
+        "dosage": {
+          "value": "500 mg",
+          "evidence": [
+            {
+              "start": 98,
+              "end": 104,
+              "quote": "500 mg"
+            }
+          ]
+        },
+        "frequency": {
+          "value": "cada 8 horas",
+          "evidence": [
+            {
+              "start": 105,
+              "end": 117,
+              "quote": "cada 8 horas"
+            }
+          ]
+        },
+        "route": null,
+        "duration": null
+      }
+    ],
+    "procedures": [
+      {
+        "id": "p1",
+        "name": {
+          "value": "radiografía de tórax",
+          "evidence": [
+            {
+              "start": 131,
+              "end": 151,
+              "quote": "radiografía de tórax"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 119,
+                "end": 176,
+                "quote": "Se solicita radiografía de tórax al paciente para mañana."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 119,
+                "end": 176,
+                "quote": "Se solicita radiografía de tórax al paciente para mañana."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 119,
+                "end": 176,
+                "quote": "Se solicita radiografía de tórax al paciente para mañana."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        },
+        "performanceStatus": {
+          "value": "ordered",
+          "evidence": [
+            {
+              "start": 119,
+              "end": 176,
+              "quote": "Se solicita radiografía de tórax al paciente para mañana."
+            }
+          ]
+        }
+      }
+    ],
+    "warnings": [],
+    "processing": {
+      "version": "extraction-0.1.0",
+      "promptVersion": "synthetic-fixture-1",
+      "validationVersion": "evidence-1",
+      "executionMode": "simulated",
+      "provider": "deterministic-fake",
+      "model": "contract-fixture-1"
+    }
+  }
+}

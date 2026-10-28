@@ -1,0 +1,105 @@
+{
+  "summary": "Duración descartada; los días de control no son duración del tratamiento — respuesta ilustrativa de fake",
+  "value": {
+    "requestId": "00000000-0000-4000-8000-000000000003",
+    "contractVersion": "0.1.0",
+    "locale": "es",
+    "processingStatus": "completed_with_warnings",
+    "reviewRequired": true,
+    "diagnoses": [],
+    "medications": [
+      {
+        "id": "m1",
+        "name": {
+          "value": "amoxicilina",
+          "evidence": [
+            {
+              "start": 34,
+              "end": 45,
+              "quote": "amoxicilina"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 60,
+                "quote": "Prescripción actual del paciente: amoxicilina, dosis 500 mg."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 60,
+                "quote": "Prescripción actual del paciente: amoxicilina, dosis 500 mg."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 60,
+                "quote": "Prescripción actual del paciente: amoxicilina, dosis 500 mg."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        },
+        "prescriptionStatus": {
+          "value": "prescribed",
+          "evidence": [
+            {
+              "start": 0,
+              "end": 60,
+              "quote": "Prescripción actual del paciente: amoxicilina, dosis 500 mg."
+            }
+          ]
+        },
+        "dosage": {
+          "value": "500 mg",
+          "evidence": [
+            {
+              "start": 53,
+              "end": 59,
+              "quote": "500 mg"
+            }
+          ]
+        },
+        "frequency": null,
+        "route": null,
+        "duration": null
+      }
+    ],
+    "procedures": [],
+    "warnings": [
+      {
+        "code": "ATTRIBUTE_DISCARDED",
+        "message": "Se descartó una duración propuesta sin respaldo de tratamiento.",
+        "targets": [
+          "/medications/0/duration"
+        ],
+        "source": "/clinicalNote"
+      }
+    ],
+    "processing": {
+      "version": "extraction-0.1.0",
+      "promptVersion": "synthetic-fixture-1",
+      "validationVersion": "evidence-1",
+      "executionMode": "simulated",
+      "provider": "deterministic-fake",
+      "model": "contract-fixture-1"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "Unicode, CRLF y menciones repetidas — petición sintética",
+  "value": {
+    "clinicalNote": "🩺\r\nDiagnóstico histórico del paciente: asma.\r\nDiagnóstico actual del paciente: asma. Observación: café / café.",
+    "locale": "ES-ec"
+  }
+}

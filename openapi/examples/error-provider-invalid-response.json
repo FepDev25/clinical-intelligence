@@ -1,0 +1,13 @@
+{
+  "summary": "Respuesta del proveedor no conforme — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:provider-invalid-response",
+    "title": "Respuesta del proveedor no conforme",
+    "status": 502,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000023",
+    "requestId": "00000000-0000-4000-8000-000000000023",
+    "code": "PROVIDER_INVALID_RESPONSE",
+    "errors": []
+  }
+}

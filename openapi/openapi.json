@@ -1,0 +1,2098 @@
+{
+  "openapi": "3.1.1",
+  "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "info": {
+    "title": "Clinical Intelligence — Clinical Extraction API",
+    "version": "0.1.0",
+    "description": "Contrato v0.1, aún sin backend implementado. Procesamiento stateless de una nota sintética por petición. Entidades propuestas para revisión humana, con contexto y evidencia. Sin diagnóstico autónomo ni persistencia clínica. Ver README y ADR 0002 para invariantes entre campos y límites configurables."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Dirección de desarrollo prevista; no implica servicio disponible. HTTP solo en loopback; acceso remoto requiere HTTPS."
+    }
+  ],
+  "tags": [
+    {
+      "name": "Extractions",
+      "description": "Extracción independiente de EHR y catálogos persistidos."
+    }
+  ],
+  "security": [
+    {
+      "ConsumerApiKey": []
+    }
+  ],
+  "paths": {
+    "/api/v1/extractions": {
+      "post": {
+        "tags": [
+          "Extractions"
+        ],
+        "operationId": "extractClinicalNote",
+        "summary": "Extraer menciones clínicas sustentadas en una nota",
+        "description": "Requiere scope extracciones: `extractions:write`, derivado de la clave por el servidor. Una nota completa, respuesta síncrona, sin almacenamiento. No se permiten campos desconocidos, claves JSON duplicadas, Unicode inválido ni recortes silenciosos. Autorización previa a llamada al modelo. Los errores de tamaño del transporte pueden preceder a autenticación.",
+        "x-required-scopes": [
+          "extractions:write"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractionRequest"
+              },
+              "examples": {
+                "success": {
+                  "$ref": "./examples/success-request.json"
+                },
+                "empty": {
+                  "$ref": "./examples/empty-request.json"
+                },
+                "warnings": {
+                  "$ref": "./examples/warnings-request.json"
+                },
+                "ambiguous-catalog": {
+                  "$ref": "./examples/ambiguous-catalog-request.json"
+                },
+                "context": {
+                  "$ref": "./examples/context-request.json"
+                },
+                "unicode": {
+                  "$ref": "./examples/unicode-request.json"
+                },
+                "all-discarded": {
+                  "$ref": "./examples/all-discarded-request.json"
+                },
+                "contradiction": {
+                  "$ref": "./examples/contradiction-request.json"
+                },
+                "unmatched": {
+                  "$ref": "./examples/unmatched-request.json"
+                },
+                "performed-and-reported": {
+                  "$ref": "./examples/performed-and-reported-request.json"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Procesamiento finalizado. Incluye revisión humana requerida; no certifica corrección clínica. Vacío legítimo y vacío con descartes son distinguibles.",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractionResponse"
+                },
+                "examples": {
+                  "success": {
+                    "$ref": "./examples/success-response.json"
+                  },
+                  "empty": {
+                    "$ref": "./examples/empty-response.json"
+                  },
+                  "warnings": {
+                    "$ref": "./examples/warnings-response.json"
+                  },
+                  "ambiguous-catalog": {
+                    "$ref": "./examples/ambiguous-catalog-response.json"
+                  },
+                  "context": {
+                    "$ref": "./examples/context-response.json"
+                  },
+                  "unicode": {
+                    "$ref": "./examples/unicode-response.json"
+                  },
+                  "all-discarded": {
+                    "$ref": "./examples/all-discarded-response.json"
+                  },
+                  "contradiction": {
+                    "$ref": "./examples/contradiction-response.json"
+                  },
+                  "unmatched": {
+                    "$ref": "./examples/unmatched-response.json"
+                  },
+                  "performed-and-reported": {
+                    "$ref": "./examples/performed-and-reported-response.json"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Entrada inválida",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 400
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "INVALID_REQUEST": {
+                    "$ref": "./examples/error-invalid-request.json"
+                  },
+                  "MALFORMED_JSON": {
+                    "$ref": "./examples/error-malformed-json.json"
+                  },
+                  "INVALID_LOCALE": {
+                    "$ref": "./examples/error-invalid-locale.json"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Autenticación requerida",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              },
+              "WWW-Authenticate": {
+                "required": true,
+                "schema": {
+                  "const": "ApiKey realm=\"clinical-intelligence\""
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 401
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "INVALID_API_KEY": {
+                    "$ref": "./examples/error-invalid-api-key.json"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permiso insuficiente",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 403
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "INSUFFICIENT_SCOPE": {
+                    "$ref": "./examples/error-insufficient-scope.json"
+                  }
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Formato de respuesta no admitido",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 406
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "NOT_ACCEPTABLE": {
+                    "$ref": "./examples/error-not-acceptable.json"
+                  }
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Límite de entrada excedido",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 413
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "INPUT_LIMIT_EXCEEDED": {
+                    "$ref": "./examples/error-input-limit-exceeded.json"
+                  }
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Tipo de contenido no admitido",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 415
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "UNSUPPORTED_MEDIA_TYPE": {
+                    "$ref": "./examples/error-unsupported-media-type.json"
+                  },
+                  "UNSUPPORTED_CONTENT_ENCODING": {
+                    "$ref": "./examples/error-unsupported-content-encoding.json"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Idioma no soportado",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 422
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "UNSUPPORTED_LOCALE": {
+                    "$ref": "./examples/error-unsupported-locale.json"
+                  },
+                  "PROVIDER_CAPACITY_EXCEEDED": {
+                    "$ref": "./examples/error-provider-capacity-exceeded.json"
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Límite de consumo excedido",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              },
+              "Retry-After": {
+                "description": "Segundos hasta próximo intento, solo si la espera es conocida. No implica reintento automático.",
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-9]+$"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 429
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "CONSUMER_RATE_LIMITED": {
+                    "$ref": "./examples/error-consumer-rate-limited.json"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error interno",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 500
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "INTERNAL_ERROR": {
+                    "$ref": "./examples/error-internal-error.json"
+                  }
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Respuesta del proveedor no conforme",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 502
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "PROVIDER_INVALID_RESPONSE": {
+                    "$ref": "./examples/error-provider-invalid-response.json"
+                  },
+                  "PROVIDER_TRUNCATED_RESPONSE": {
+                    "$ref": "./examples/error-provider-truncated-response.json"
+                  }
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Servicio temporalmente saturado",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              },
+              "Retry-After": {
+                "description": "Segundos hasta próximo intento, solo si la espera es conocida. No implica reintento automático.",
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-9]+$"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 503
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "SERVICE_OVERLOADED": {
+                    "$ref": "./examples/error-service-overloaded.json"
+                  },
+                  "PROVIDER_UNAVAILABLE": {
+                    "$ref": "./examples/error-provider-unavailable.json"
+                  }
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Tiempo de procesamiento agotado",
+            "headers": {
+              "X-Request-Id": {
+                "required": true,
+                "description": "Coincide con requestId del cuerpo.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "const": "no-store"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "const": 504
+                        }
+                      }
+                    }
+                  ]
+                },
+                "examples": {
+                  "PROVIDER_TIMEOUT": {
+                    "$ref": "./examples/error-provider-timeout.json"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ConsumerApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key",
+        "description": "Una credencial por consumidor, aprovisionada fuera de esta API. Identidad/scopes en backend. No enviar en URL ni exponer en navegador. API key ausente, inválida o revocada: 401."
+      }
+    },
+    "schemas": {
+      "Evidence": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "quote"
+        ],
+        "description": "Segmento literal de clinicalNote. Puntos de código Unicode, base 0, intervalo [start,end). end > start; quote debe ser exactamente el segmento original. No normalizar Unicode, CRLF ni espacios."
+      },
+      "GroundedText": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "value",
+          "evidence"
+        ],
+        "description": "Texto extraído literalmente. value debe aparecer en al menos una quote asociada; no respalda por sí mismo relaciones clínicas."
+      },
+      "Assertion": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "affirmed",
+                  "negated",
+                  "suspected",
+                  "conditional"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "const": "unknown"
+              },
+              "evidence": {
+                "type": "array",
+                "maxItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                }
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          }
+        ],
+        "description": "Valor conocido sustentado por evidencia o unknown explícito con evidence vacía. unknown no afirma ni niega."
+      },
+      "Temporality": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "current",
+                  "historical",
+                  "future"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "const": "unknown"
+              },
+              "evidence": {
+                "type": "array",
+                "maxItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                }
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          }
+        ],
+        "description": "Valor conocido sustentado por evidencia o unknown explícito con evidence vacía. unknown no afirma ni niega."
+      },
+      "Subject": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "patient",
+                  "family",
+                  "other"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "const": "unknown"
+              },
+              "evidence": {
+                "type": "array",
+                "maxItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                }
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          }
+        ],
+        "description": "Valor conocido sustentado por evidencia o unknown explícito con evidence vacía. unknown no afirma ni niega."
+      },
+      "PrescriptionStatus": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "prescribed",
+                  "reported",
+                  "suspended"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "const": "unknown"
+              },
+              "evidence": {
+                "type": "array",
+                "maxItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                }
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          }
+        ],
+        "description": "Valor conocido sustentado por evidencia o unknown explícito con evidence vacía. unknown no afirma ni niega."
+      },
+      "PerformanceStatus": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "performed",
+                  "ordered",
+                  "planned",
+                  "not_performed",
+                  "cancelled"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "const": "unknown"
+              },
+              "evidence": {
+                "type": "array",
+                "maxItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Evidence"
+                }
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ]
+          }
+        ],
+        "description": "Valor conocido sustentado por evidencia o unknown explícito con evidence vacía. unknown no afirma ni niega."
+      },
+      "Context": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "assertion": {
+            "$ref": "#/components/schemas/Assertion"
+          },
+          "temporality": {
+            "$ref": "#/components/schemas/Temporality"
+          },
+          "subject": {
+            "$ref": "#/components/schemas/Subject"
+          }
+        },
+        "required": [
+          "assertion",
+          "temporality",
+          "subject"
+        ]
+      },
+      "CatalogEntry": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "entryId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "default": []
+          }
+        },
+        "required": [
+          "entryId",
+          "name"
+        ]
+      },
+      "Catalog": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "catalogId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "diagnosis",
+              "medication",
+              "procedure"
+            ]
+          },
+          "entries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CatalogEntry"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "catalogId",
+          "version",
+          "kind",
+          "entries"
+        ]
+      },
+      "CatalogCandidate": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "catalogId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "entryId": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "catalogId",
+          "version",
+          "entryId"
+        ]
+      },
+      "CatalogMatch": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "enum": [
+                  "not_provided",
+                  "not_found"
+                ]
+              },
+              "candidates": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CatalogCandidate"
+                },
+                "minItems": 0,
+                "maxItems": 0
+              }
+            },
+            "required": [
+              "status",
+              "candidates"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "const": "matched"
+              },
+              "candidates": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CatalogCandidate"
+                },
+                "minItems": 1,
+                "maxItems": 1
+              }
+            },
+            "required": [
+              "status",
+              "candidates"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "const": "ambiguous"
+              },
+              "candidates": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CatalogCandidate"
+                },
+                "minItems": 2,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "status",
+              "candidates"
+            ]
+          }
+        ],
+        "description": "Coincidencias por nombre/alias del mismo kind, ordenadas por catalogId/version/entryId. Sin confianza ni selección arbitraria."
+      },
+      "Diagnosis": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Identificador único local a esta respuesta."
+          },
+          "name": {
+            "$ref": "#/components/schemas/GroundedText"
+          },
+          "mentionedCode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GroundedText"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "context": {
+            "$ref": "#/components/schemas/Context"
+          },
+          "catalogMatch": {
+            "$ref": "#/components/schemas/CatalogMatch"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "mentionedCode",
+          "context",
+          "catalogMatch"
+        ]
+      },
+      "Medication": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Identificador único local a esta respuesta."
+          },
+          "name": {
+            "$ref": "#/components/schemas/GroundedText"
+          },
+          "mentionedCode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GroundedText"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "context": {
+            "$ref": "#/components/schemas/Context"
+          },
+          "catalogMatch": {
+            "$ref": "#/components/schemas/CatalogMatch"
+          },
+          "prescriptionStatus": {
+            "$ref": "#/components/schemas/PrescriptionStatus"
+          },
+          "dosage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GroundedText"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "frequency": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GroundedText"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "route": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GroundedText"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "duration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GroundedText"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "mentionedCode",
+          "context",
+          "catalogMatch",
+          "prescriptionStatus",
+          "dosage",
+          "frequency",
+          "route",
+          "duration"
+        ],
+        "description": "Mención de medicamento; prescriptionStatus distingue prescripción, reporte e interrupción. No todas son prescripciones activas. Datos ausentes o descartados: null."
+      },
+      "Procedure": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Identificador único local a esta respuesta."
+          },
+          "name": {
+            "$ref": "#/components/schemas/GroundedText"
+          },
+          "mentionedCode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GroundedText"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "context": {
+            "$ref": "#/components/schemas/Context"
+          },
+          "catalogMatch": {
+            "$ref": "#/components/schemas/CatalogMatch"
+          },
+          "performanceStatus": {
+            "$ref": "#/components/schemas/PerformanceStatus"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "mentionedCode",
+          "context",
+          "catalogMatch",
+          "performanceStatus"
+        ]
+      },
+      "Warning": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "enum": [
+              "ENTITY_DISCARDED",
+              "ATTRIBUTE_DISCARDED",
+              "CONTRADICTORY_MENTIONS",
+              "AMBIGUOUS_CONTEXT"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "minItems": 0
+          },
+          "source": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^/clinicalNote$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "targets",
+          "source"
+        ],
+        "description": "targets son JSON Pointers a elementos devueltos. Descarte completo: targets=[] y source=/clinicalNote. Sin texto crudo descartado."
+      },
+      "Processing": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "promptVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "validationVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "executionMode": {
+            "enum": [
+              "simulated",
+              "provider"
+            ]
+          },
+          "provider": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "version",
+          "promptVersion",
+          "validationVersion",
+          "executionMode",
+          "provider",
+          "model"
+        ],
+        "description": "Identifica la configuración usada. simulated es explícito; no implica extracción real ni proveedor seleccionado para el MVP."
+      },
+      "ExtractionRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clinicalNote": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "description": "Texto original no vacío ni solo espacios Unicode. Sin trim ni normalización. Máximo configurable: 1.000.000 puntos de código por defecto, no calidad demostrada."
+          },
+          "locale": {
+            "type": "string",
+            "minLength": 2,
+            "pattern": "^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$",
+            "default": "es",
+            "description": "BCP 47 válido; solo idioma primario es admitido (sin distinguir mayúsculas). Preservar etiqueta explícita. Otros idiomas válidos: 422; tag inválido: 400. La regex es filtro, no validador BCP 47 completo."
+          },
+          "catalogs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Catalog"
+            },
+            "minItems": 0,
+            "default": [],
+            "description": "catalogId único por petición; entryId único dentro de cada catálogo. Ausente o [] significa sin catálogos. Un catálogo vacío de un kind cuenta como suministrado."
+          }
+        },
+        "required": [
+          "clinicalNote"
+        ]
+      },
+      "ExtractionResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "contractVersion": {
+            "const": "0.1.0"
+          },
+          "locale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "processingStatus": {
+            "enum": [
+              "completed",
+              "completed_with_warnings"
+            ]
+          },
+          "reviewRequired": {
+            "const": true
+          },
+          "diagnoses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Diagnosis"
+            },
+            "minItems": 0
+          },
+          "medications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Medication"
+            },
+            "minItems": 0
+          },
+          "procedures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Procedure"
+            },
+            "minItems": 0
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Warning"
+            },
+            "minItems": 0
+          },
+          "processing": {
+            "$ref": "#/components/schemas/Processing"
+          }
+        },
+        "required": [
+          "requestId",
+          "contractVersion",
+          "locale",
+          "processingStatus",
+          "reviewRequired",
+          "diagnoses",
+          "medications",
+          "procedures",
+          "warnings",
+          "processing"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "processingStatus": {
+                  "const": "completed"
+                }
+              },
+              "required": [
+                "processingStatus"
+              ]
+            },
+            "then": {
+              "properties": {
+                "warnings": {
+                  "maxItems": 0
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "warnings": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      },
+      "FieldError": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "pointer": {
+            "type": "string",
+            "pattern": "^(/.*)?$"
+          },
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "pointer",
+          "code",
+          "message"
+        ],
+        "description": "JSON Pointer a un campo del request, sin valor rechazado. Cadena vacía indica el documento completo."
+      },
+      "Problem": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "integer",
+            "minimum": 400,
+            "maximum": 599
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri"
+          },
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "enum": [
+              "INVALID_REQUEST",
+              "MALFORMED_JSON",
+              "INVALID_LOCALE",
+              "INVALID_API_KEY",
+              "INSUFFICIENT_SCOPE",
+              "NOT_ACCEPTABLE",
+              "INPUT_LIMIT_EXCEEDED",
+              "UNSUPPORTED_MEDIA_TYPE",
+              "UNSUPPORTED_CONTENT_ENCODING",
+              "UNSUPPORTED_LOCALE",
+              "PROVIDER_CAPACITY_EXCEEDED",
+              "CONSUMER_RATE_LIMITED",
+              "INTERNAL_ERROR",
+              "PROVIDER_INVALID_RESPONSE",
+              "PROVIDER_TRUNCATED_RESPONSE",
+              "SERVICE_OVERLOADED",
+              "PROVIDER_UNAVAILABLE",
+              "PROVIDER_TIMEOUT",
+              "METHOD_NOT_ALLOWED"
+            ]
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldError"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "type",
+          "title",
+          "status",
+          "detail",
+          "instance",
+          "requestId",
+          "code",
+          "errors"
+        ],
+        "description": "Problem Details RFC 9457. type=urn:clinical-intelligence:problem:<code en minúsculas con guiones>; instance=urn:uuid:<requestId>. status coincide con HTTP. Sin notas, prompts ni secretos.",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "INVALID_REQUEST"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 400
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:invalid-request"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "MALFORMED_JSON"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 400
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:malformed-json"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "INVALID_LOCALE"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 400
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:invalid-locale"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "INVALID_API_KEY"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 401
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:invalid-api-key"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "INSUFFICIENT_SCOPE"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 403
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:insufficient-scope"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "NOT_ACCEPTABLE"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 406
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:not-acceptable"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "INPUT_LIMIT_EXCEEDED"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 413
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:input-limit-exceeded"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "UNSUPPORTED_MEDIA_TYPE"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 415
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:unsupported-media-type"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "UNSUPPORTED_CONTENT_ENCODING"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 415
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:unsupported-content-encoding"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "UNSUPPORTED_LOCALE"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 422
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:unsupported-locale"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "PROVIDER_CAPACITY_EXCEEDED"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 422
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:provider-capacity-exceeded"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "CONSUMER_RATE_LIMITED"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 429
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:consumer-rate-limited"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "INTERNAL_ERROR"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 500
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:internal-error"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "PROVIDER_INVALID_RESPONSE"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 502
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:provider-invalid-response"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "PROVIDER_TRUNCATED_RESPONSE"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 502
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:provider-truncated-response"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "SERVICE_OVERLOADED"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 503
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:service-overloaded"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "PROVIDER_UNAVAILABLE"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 503
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:provider-unavailable"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "PROVIDER_TIMEOUT"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 504
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:provider-timeout"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "code": {
+                  "const": "METHOD_NOT_ALLOWED"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": 405
+                },
+                "type": {
+                  "const": "urn:clinical-intelligence:problem:method-not-allowed"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "x-runtime-limits": {
+    "description": "Defaults provisionales configurables. No son garantías de calidad ni maxLength/maxItems fijos del esquema. Sin truncamiento silencioso.",
+    "requestBodyBytes": 67108864,
+    "clinicalNoteCodePoints": 1000000,
+    "catalogCount": 1000,
+    "totalCatalogEntries": 100000,
+    "totalCatalogAliases": 1000000
+  },
+  "x-additional-http-behavior": {
+    "methodNotAllowed": {
+      "status": 405,
+      "allow": "POST",
+      "problemCode": "METHOD_NOT_ALLOWED"
+    },
+    "contentEncoding": "Solo identity o ausente. UTF-8.",
+    "requestId": "Generado por servidor en todos los resultados de API controlados. Cabecera X-Request-Id coincide con cuerpo.",
+    "notAcceptable": "Si Accept excluye application/json y no hay representación de éxito aceptable: 406. Los errores usan application/problem+json.",
+    "proxyBoundary": "Los errores emitidos por proxies ajenos a la aplicación pueden no cumplir este formato."
+  }
+}

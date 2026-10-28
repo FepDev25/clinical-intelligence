@@ -1,0 +1,13 @@
+{
+  "summary": "Codificación de contenido no admitida — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:unsupported-content-encoding",
+    "title": "Codificación de contenido no admitida",
+    "status": 415,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000018",
+    "requestId": "00000000-0000-4000-8000-000000000018",
+    "code": "UNSUPPORTED_CONTENT_ENCODING",
+    "errors": []
+  }
+}

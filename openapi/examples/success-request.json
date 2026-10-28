@@ -1,0 +1,21 @@
+{
+  "summary": "Extracción con catálogo único y procedimiento solicitado — petición sintética",
+  "value": {
+    "clinicalNote": "Diagnóstico actual del paciente: faringitis. Prescripción actual del paciente: amoxicilina, dosis 500 mg cada 8 horas. Se solicita radiografía de tórax al paciente para mañana.",
+    "locale": "es-EC",
+    "catalogs": [
+      {
+        "catalogId": "medicamentos-demo",
+        "version": "2026-01",
+        "kind": "medication",
+        "entries": [
+          {
+            "entryId": "med-001",
+            "name": "amoxicilina",
+            "aliases": []
+          }
+        ]
+      }
+    ]
+  }
+}

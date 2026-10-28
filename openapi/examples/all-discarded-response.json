@@ -1,0 +1,29 @@
+{
+  "summary": "Todos los hallazgos propuestos fueron descartados; no es vacío limpio — respuesta ilustrativa de fake",
+  "value": {
+    "requestId": "00000000-0000-4000-8000-000000000007",
+    "contractVersion": "0.1.0",
+    "locale": "es",
+    "processingStatus": "completed_with_warnings",
+    "reviewRequired": true,
+    "diagnoses": [],
+    "medications": [],
+    "procedures": [],
+    "warnings": [
+      {
+        "code": "ENTITY_DISCARDED",
+        "message": "Se descartaron propuestas sin evidencia válida.",
+        "targets": [],
+        "source": "/clinicalNote"
+      }
+    ],
+    "processing": {
+      "version": "extraction-0.1.0",
+      "promptVersion": "synthetic-fixture-1",
+      "validationVersion": "evidence-1",
+      "executionMode": "simulated",
+      "provider": "deterministic-fake",
+      "model": "contract-fixture-1"
+    }
+  }
+}

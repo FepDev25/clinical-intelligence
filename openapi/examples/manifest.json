@@ -1,0 +1,554 @@
+{
+  "description": "Ejemplos públicos de contrato, no evaluación reservada ni salidas de un LLM real. Los errores de transporte y proveedor son escenarios ilustrativos.",
+  "contractVersion": "0.1.0",
+  "cases": [
+    {
+      "id": "success",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/success-request.json",
+      "responseExample": "examples/success-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000001",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "empty",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/empty-request.json",
+      "responseExample": "examples/empty-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000002",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "warnings",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/warnings-request.json",
+      "responseExample": "examples/warnings-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000003",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "ambiguous-catalog",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/ambiguous-catalog-request.json",
+      "responseExample": "examples/ambiguous-catalog-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000004",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "context",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/context-request.json",
+      "responseExample": "examples/context-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000005",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "unicode",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/unicode-request.json",
+      "responseExample": "examples/unicode-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000006",
+        "Cache-Control": "no-store"
+      },
+      "evidenceChecks": [
+        {
+          "start": 79,
+          "end": 83,
+          "quote": "asma"
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "quote": "café"
+        },
+        {
+          "start": 105,
+          "end": 110,
+          "quote": "café"
+        }
+      ],
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "all-discarded",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/all-discarded-request.json",
+      "responseExample": "examples/all-discarded-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000007",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "contradiction",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/contradiction-request.json",
+      "responseExample": "examples/contradiction-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000008",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "unmatched",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/unmatched-request.json",
+      "responseExample": "examples/unmatched-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000009",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-invalid-request",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-invalid-request-request.json",
+      "responseExample": "examples/error-invalid-request.json",
+      "status": 400,
+      "requestOutcome": "invalid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000010",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-malformed-json",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-malformed-json-request.json",
+      "responseExample": "examples/error-malformed-json.json",
+      "status": 400,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000011",
+        "Cache-Control": "no-store"
+      },
+      "rawRequest": "{\"clinicalNote\":",
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-invalid-locale",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-invalid-locale-request.json",
+      "responseExample": "examples/error-invalid-locale.json",
+      "status": 400,
+      "requestOutcome": "invalid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000012",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-invalid-api-key",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-invalid-api-key-request.json",
+      "responseExample": "examples/error-invalid-api-key.json",
+      "status": 401,
+      "requestOutcome": "valid",
+      "authentication": "missing",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000013",
+        "Cache-Control": "no-store",
+        "WWW-Authenticate": "ApiKey realm=\"clinical-intelligence\""
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-insufficient-scope",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-insufficient-scope-request.json",
+      "responseExample": "examples/error-insufficient-scope.json",
+      "status": 403,
+      "requestOutcome": "valid",
+      "authentication": "insufficient_scope",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000014",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-not-acceptable",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-not-acceptable-request.json",
+      "responseExample": "examples/error-not-acceptable.json",
+      "status": 406,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000015",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "text/html",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-input-limit-exceeded",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-input-limit-exceeded-request.json",
+      "responseExample": "examples/error-input-limit-exceeded.json",
+      "status": 413,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000016",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      },
+      "configuredLimits": {
+        "clinicalNoteCodePoints": 1
+      }
+    },
+    {
+      "id": "error-unsupported-media-type",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-unsupported-media-type-request.json",
+      "responseExample": "examples/error-unsupported-media-type.json",
+      "status": 415,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000017",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/xml"
+      }
+    },
+    {
+      "id": "error-unsupported-content-encoding",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-unsupported-content-encoding-request.json",
+      "responseExample": "examples/error-unsupported-content-encoding.json",
+      "status": 415,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000018",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json",
+        "Content-Encoding": "gzip"
+      }
+    },
+    {
+      "id": "error-unsupported-locale",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-unsupported-locale-request.json",
+      "responseExample": "examples/error-unsupported-locale.json",
+      "status": 422,
+      "requestOutcome": "unsupported_locale",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000019",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-provider-capacity-exceeded",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-provider-capacity-exceeded-request.json",
+      "responseExample": "examples/error-provider-capacity-exceeded.json",
+      "status": 422,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000020",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-consumer-rate-limited",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-consumer-rate-limited-request.json",
+      "responseExample": "examples/error-consumer-rate-limited.json",
+      "status": 429,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000021",
+        "Cache-Control": "no-store",
+        "Retry-After": "5"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-internal-error",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-internal-error-request.json",
+      "responseExample": "examples/error-internal-error.json",
+      "status": 500,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000022",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-provider-invalid-response",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-provider-invalid-response-request.json",
+      "responseExample": "examples/error-provider-invalid-response.json",
+      "status": 502,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000023",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-provider-truncated-response",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-provider-truncated-response-request.json",
+      "responseExample": "examples/error-provider-truncated-response.json",
+      "status": 502,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000024",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-service-overloaded",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-service-overloaded-request.json",
+      "responseExample": "examples/error-service-overloaded.json",
+      "status": 503,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000025",
+        "Cache-Control": "no-store",
+        "Retry-After": "5"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-provider-unavailable",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-provider-unavailable-request.json",
+      "responseExample": "examples/error-provider-unavailable.json",
+      "status": 503,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000026",
+        "Cache-Control": "no-store",
+        "Retry-After": "5"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-provider-timeout",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-provider-timeout-request.json",
+      "responseExample": "examples/error-provider-timeout.json",
+      "status": 504,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000027",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "error-method-not-allowed",
+      "method": "GET",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/error-method-not-allowed-request.json",
+      "responseExample": "examples/error-method-not-allowed.json",
+      "status": 405,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000028",
+        "Cache-Control": "no-store",
+        "Allow": "POST"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json"
+      }
+    },
+    {
+      "id": "performed-and-reported",
+      "method": "POST",
+      "path": "/api/v1/extractions",
+      "requestExample": "examples/performed-and-reported-request.json",
+      "responseExample": "examples/performed-and-reported-response.json",
+      "status": 200,
+      "requestOutcome": "valid",
+      "authentication": "valid",
+      "responseHeaders": {
+        "X-Request-Id": "00000000-0000-4000-8000-000000000100",
+        "Cache-Control": "no-store"
+      },
+      "requestHeaders": {
+        "Accept": "application/json, application/problem+json",
+        "Content-Type": "application/json"
+      }
+    }
+  ]
+}

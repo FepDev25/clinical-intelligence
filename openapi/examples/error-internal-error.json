@@ -1,0 +1,13 @@
+{
+  "summary": "Error interno — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:internal-error",
+    "title": "Error interno",
+    "status": 500,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000022",
+    "requestId": "00000000-0000-4000-8000-000000000022",
+    "code": "INTERNAL_ERROR",
+    "errors": []
+  }
+}

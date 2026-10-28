@@ -1,0 +1,13 @@
+{
+  "summary": "Entrada fuera de la capacidad del proveedor — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:provider-capacity-exceeded",
+    "title": "Entrada fuera de la capacidad del proveedor",
+    "status": 422,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000020",
+    "requestId": "00000000-0000-4000-8000-000000000020",
+    "code": "PROVIDER_CAPACITY_EXCEEDED",
+    "errors": []
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "summary": "Servicio temporalmente saturado — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:service-overloaded",
+    "title": "Servicio temporalmente saturado",
+    "status": 503,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000025",
+    "requestId": "00000000-0000-4000-8000-000000000025",
+    "code": "SERVICE_OVERLOADED",
+    "errors": []
+  }
+}

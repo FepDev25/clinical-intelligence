@@ -1,0 +1,14 @@
+{
+  "summary": "Código textual sin validación implícita y catálogo explícito vacío — petición sintética",
+  "value": {
+    "clinicalNote": "Diagnóstico actual del paciente: asma (J45).",
+    "catalogs": [
+      {
+        "catalogId": "diagnosticos-demo",
+        "version": "1",
+        "kind": "diagnosis",
+        "entries": []
+      }
+    ]
+  }
+}

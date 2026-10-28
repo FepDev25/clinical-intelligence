@@ -1,0 +1,13 @@
+{
+  "summary": "Idioma no soportado — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:unsupported-locale",
+    "title": "Idioma no soportado",
+    "status": 422,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000019",
+    "requestId": "00000000-0000-4000-8000-000000000019",
+    "code": "UNSUPPORTED_LOCALE",
+    "errors": []
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:clinical-intelligence:evaluation-case:1",
+  "title": "Synthetic extraction evaluation case v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "originGroup": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "split": {
+      "enum": [
+        "development",
+        "reserved",
+        "stress"
+      ]
+    },
+    "family": {
+      "enum": [
+        "outpatient",
+        "progress",
+        "consultation",
+        "procedure",
+        "admission",
+        "emergency",
+        "discharge"
+      ]
+    },
+    "cohort": {
+      "enum": [
+        "core",
+        "exploratory",
+        "adversarial",
+        "stress"
+      ]
+    },
+    "format": {
+      "enum": [
+        "narrative",
+        "sections",
+        "soap",
+        "telegraphic"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    },
+    "annotationVersion": {
+      "const": "1.0.0"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "synthetic"
+        },
+        "author": {
+          "const": "codex"
+        },
+        "review": {
+          "const": "author_consistency_checked"
+        }
+      },
+      "required": [
+        "kind",
+        "author",
+        "review"
+      ]
+    },
+    "request": {
+      "$ref": "urn:clinical-intelligence:contract#/components/schemas/ExtractionRequest"
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "diagnoses": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:clinical-intelligence:contract#/components/schemas/Diagnosis"
+          }
+        },
+        "medications": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:clinical-intelligence:contract#/components/schemas/Medication"
+          }
+        },
+        "procedures": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:clinical-intelligence:contract#/components/schemas/Procedure"
+          }
+        },
+        "requiredWarnings": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:clinical-intelligence:contract#/components/schemas/Warning"
+          }
+        }
+      },
+      "required": [
+        "diagnoses",
+        "medications",
+        "procedures",
+        "requiredWarnings"
+      ]
+    },
+    "excludedMentions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "$ref": "urn:clinical-intelligence:contract#/components/schemas/Evidence"
+          },
+          "reason": {
+            "enum": [
+              "symptom_only",
+              "administrative",
+              "instruction_not_clinical",
+              "catalog_not_note",
+              "not_a_medication_order",
+              "followup_not_duration",
+              "rest_not_duration",
+              "presentation_not_dosage",
+              "unnamed_entity",
+              "not_explicit"
+            ]
+          }
+        },
+        "required": [
+          "evidence",
+          "reason"
+        ]
+      }
+    },
+    "annotationNotes": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "id",
+    "originGroup",
+    "split",
+    "family",
+    "cohort",
+    "format",
+    "tags",
+    "annotationVersion",
+    "provenance",
+    "request",
+    "expected",
+    "excludedMentions",
+    "annotationNotes"
+  ]
+}

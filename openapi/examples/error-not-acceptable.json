@@ -1,0 +1,13 @@
+{
+  "summary": "Formato de respuesta no admitido — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:not-acceptable",
+    "title": "Formato de respuesta no admitido",
+    "status": 406,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000015",
+    "requestId": "00000000-0000-4000-8000-000000000015",
+    "code": "NOT_ACCEPTABLE",
+    "errors": []
+  }
+}

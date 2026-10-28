@@ -1,0 +1,299 @@
+{
+  "summary": "Negación, antecedentes familiares y medicamento suspendido — respuesta ilustrativa de fake",
+  "value": {
+    "requestId": "00000000-0000-4000-8000-000000000005",
+    "contractVersion": "0.1.0",
+    "locale": "es-MX",
+    "processingStatus": "completed",
+    "reviewRequired": true,
+    "diagnoses": [
+      {
+        "id": "d1",
+        "name": {
+          "value": "diabetes",
+          "evidence": [
+            {
+              "start": 18,
+              "end": 26,
+              "quote": "diabetes"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "negated",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 39,
+                "quote": "El paciente niega diabetes actualmente."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 39,
+                "quote": "El paciente niega diabetes actualmente."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 39,
+                "quote": "El paciente niega diabetes actualmente."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        }
+      },
+      {
+        "id": "d2",
+        "name": {
+          "value": "asma",
+          "evidence": [
+            {
+              "start": 75,
+              "end": 79,
+              "quote": "asma"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 40,
+                "end": 80,
+                "quote": "Antecedente personal del paciente: asma."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "historical",
+            "evidence": [
+              {
+                "start": 40,
+                "end": 80,
+                "quote": "Antecedente personal del paciente: asma."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 40,
+                "end": 80,
+                "quote": "Antecedente personal del paciente: asma."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        }
+      },
+      {
+        "id": "d3",
+        "name": {
+          "value": "diabetes",
+          "evidence": [
+            {
+              "start": 103,
+              "end": 111,
+              "quote": "diabetes"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 81,
+                "end": 112,
+                "quote": "Antecedente familiar: diabetes."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "historical",
+            "evidence": [
+              {
+                "start": 81,
+                "end": 112,
+                "quote": "Antecedente familiar: diabetes."
+              }
+            ]
+          },
+          "subject": {
+            "value": "family",
+            "evidence": [
+              {
+                "start": 81,
+                "end": 112,
+                "quote": "Antecedente familiar: diabetes."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        }
+      }
+    ],
+    "medications": [
+      {
+        "id": "m1",
+        "name": {
+          "value": "Alfa",
+          "evidence": [
+            {
+              "start": 149,
+              "end": 153,
+              "quote": "Alfa"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 113,
+                "end": 154,
+                "quote": "Medicación suspendida del paciente: Alfa."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "historical",
+            "evidence": [
+              {
+                "start": 113,
+                "end": 154,
+                "quote": "Medicación suspendida del paciente: Alfa."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 113,
+                "end": 154,
+                "quote": "Medicación suspendida del paciente: Alfa."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        },
+        "prescriptionStatus": {
+          "value": "suspended",
+          "evidence": [
+            {
+              "start": 113,
+              "end": 154,
+              "quote": "Medicación suspendida del paciente: Alfa."
+            }
+          ]
+        },
+        "dosage": null,
+        "frequency": null,
+        "route": null,
+        "duration": null
+      }
+    ],
+    "procedures": [
+      {
+        "id": "p1",
+        "name": {
+          "value": "radiografía de tórax",
+          "evidence": [
+            {
+              "start": 168,
+              "end": 188,
+              "quote": "radiografía de tórax"
+            }
+          ]
+        },
+        "mentionedCode": null,
+        "context": {
+          "assertion": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 155,
+                "end": 213,
+                "quote": "Se planifica radiografía de tórax al paciente para mañana."
+              }
+            ]
+          },
+          "temporality": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 155,
+                "end": 213,
+                "quote": "Se planifica radiografía de tórax al paciente para mañana."
+              }
+            ]
+          },
+          "subject": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 155,
+                "end": 213,
+                "quote": "Se planifica radiografía de tórax al paciente para mañana."
+              }
+            ]
+          }
+        },
+        "catalogMatch": {
+          "status": "not_provided",
+          "candidates": []
+        },
+        "performanceStatus": {
+          "value": "planned",
+          "evidence": [
+            {
+              "start": 155,
+              "end": 213,
+              "quote": "Se planifica radiografía de tórax al paciente para mañana."
+            }
+          ]
+        }
+      }
+    ],
+    "warnings": [],
+    "processing": {
+      "version": "extraction-0.1.0",
+      "promptVersion": "synthetic-fixture-1",
+      "validationVersion": "evidence-1",
+      "executionMode": "simulated",
+      "provider": "deterministic-fake",
+      "model": "contract-fixture-1"
+    }
+  }
+}

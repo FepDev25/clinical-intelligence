@@ -1,0 +1,13 @@
+{
+  "summary": "JSON no válido — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:malformed-json",
+    "title": "JSON no válido",
+    "status": 400,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000011",
+    "requestId": "00000000-0000-4000-8000-000000000011",
+    "code": "MALFORMED_JSON",
+    "errors": []
+  }
+}

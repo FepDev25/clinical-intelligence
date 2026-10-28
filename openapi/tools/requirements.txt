@@ -1,0 +1,4 @@
+# Solo validación de artefactos de contrato; no son dependencias del producto.
+openapi-spec-validator==0.7.2
+jsonschema==4.23.0
+langcodes==3.5.0

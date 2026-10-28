@@ -1,0 +1,19 @@
+{
+  "summary": "Entrada inválida — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:invalid-request",
+    "title": "Entrada inválida",
+    "status": 400,
+    "detail": "La nota debe contener texto.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000010",
+    "requestId": "00000000-0000-4000-8000-000000000010",
+    "code": "INVALID_REQUEST",
+    "errors": [
+      {
+        "pointer": "/clinicalNote",
+        "code": "NOT_BLANK",
+        "message": "El campo debe contener texto."
+      }
+    ]
+  }
+}

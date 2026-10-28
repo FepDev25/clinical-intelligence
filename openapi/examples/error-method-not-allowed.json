@@ -1,0 +1,13 @@
+{
+  "summary": "Método no admitido — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:method-not-allowed",
+    "title": "Método no admitido",
+    "status": 405,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000028",
+    "requestId": "00000000-0000-4000-8000-000000000028",
+    "code": "METHOD_NOT_ALLOWED",
+    "errors": []
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "corpusVersion": "1.0.0",
+  "annotationVersion": "1.0.0",
+  "contractVersion": "0.1.0",
+  "status": "synthetic_reference_not_model_evaluated",
+  "provenance": "Authored synthetically in this repository; no patient records or external clinical corpus used. No independent clinical review claimed.",
+  "counts": {
+    "development": 39,
+    "reserved": 39,
+    "stress": 10
+  },
+  "compositionPerSplit": {
+    "core": {
+      "outpatient": 6,
+      "progress": 6,
+      "consultation": 6,
+      "procedure": 6
+    },
+    "exploratory": {
+      "admission": 3,
+      "emergency": 3,
+      "discharge": 3
+    },
+    "adversarial": 6
+  },
+  "releaseCriteria": {
+    "scope": "core per entity type; mandatory critical-error checks also include adversarial and exploratory fixed cases",
+    "minimumPrecision": 0.95,
+    "minimumRecall": 0.9,
+    "maximumInvalidEvidenceOrCatalogIds": 0,
+    "maximumCriticalContextErrors": 0,
+    "maximumUnbackedMedicationAttributes": 0,
+    "repetitions": 3,
+    "zeroDenominator": "not_applicable_never_assumed_one",
+    "stress": "exploratory_frontier_only_not_quality_demonstrated"
+  },
+  "sampleAdequacy": {
+    "minimumCoreGoldEntitiesPerType": 20,
+    "clinicalGeneralizationClaim": false
+  },
+  "assets": [
+    {
+      "path": "corpus/v1/development.json",
+      "split": "development",
+      "sha256": "31850872100bc483c7e1c00341e8f9d3b916e2d2c61e1af5fa7110bf646b62bc"
+    },
+    {
+      "path": "corpus/v1/reserved.json",
+      "split": "reserved",
+      "sha256": "b024ca5b36a56e1ef3da53770c96af0c60de5bf6b262b83be5bcad1f95e41d30"
+    },
+    {
+      "path": "corpus/v1/stress-recipes.json",
+      "split": "stress",
+      "sha256": "136783b975917e732768260331a2b59a342a9a45a7368f5ceb8759f74e8be980"
+    },
+    {
+      "path": "case.schema.json",
+      "split": "shared",
+      "sha256": "04034cdac80cfe90f1fe551e524a9522fac65c590427120bf25f7d87fa70e2b8"
+    },
+    {
+      "path": "tools/stress_cases.py",
+      "split": "stress",
+      "sha256": "17c329ff4d6590731f6bfbf3f34b863376e544dfb5fe493cc22ce10abe345d05"
+    }
+  ]
+}

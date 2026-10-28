@@ -1,0 +1,72 @@
+[
+  {
+    "id": "stress-length-1000",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 1000,
+    "catalogEntries": 0,
+    "procedureCount": 3
+  },
+  {
+    "id": "stress-length-10000",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 10000,
+    "catalogEntries": 0,
+    "procedureCount": 3
+  },
+  {
+    "id": "stress-length-50000",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 50000,
+    "catalogEntries": 0,
+    "procedureCount": 3
+  },
+  {
+    "id": "stress-length-200000",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 200000,
+    "catalogEntries": 0,
+    "procedureCount": 3
+  },
+  {
+    "id": "stress-length-500000",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 500000,
+    "catalogEntries": 0,
+    "procedureCount": 3
+  },
+  {
+    "id": "stress-length-1000000",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 1000000,
+    "catalogEntries": 0,
+    "procedureCount": 3
+  },
+  {
+    "id": "stress-catalog-10000",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 1000,
+    "catalogEntries": 10000,
+    "procedureCount": 3
+  },
+  {
+    "id": "stress-catalog-100000",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 1000,
+    "catalogEntries": 100000,
+    "procedureCount": 3
+  },
+  {
+    "id": "stress-density-10",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 2000,
+    "catalogEntries": 0,
+    "procedureCount": 10
+  },
+  {
+    "id": "stress-density-100",
+    "originGroup": "scale-position-administrative-v1",
+    "noteCodePoints": 20000,
+    "catalogEntries": 0,
+    "procedureCount": 100
+  }
+]

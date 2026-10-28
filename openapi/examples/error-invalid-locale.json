@@ -1,0 +1,13 @@
+{
+  "summary": "Localidad no válida — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:invalid-locale",
+    "title": "Localidad no válida",
+    "status": 400,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000012",
+    "requestId": "00000000-0000-4000-8000-000000000012",
+    "code": "INVALID_LOCALE",
+    "errors": []
+  }
+}

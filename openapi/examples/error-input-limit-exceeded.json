@@ -1,0 +1,13 @@
+{
+  "summary": "Límite de entrada excedido — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:input-limit-exceeded",
+    "title": "Límite de entrada excedido",
+    "status": 413,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000016",
+    "requestId": "00000000-0000-4000-8000-000000000016",
+    "code": "INPUT_LIMIT_EXCEEDED",
+    "errors": []
+  }
+}

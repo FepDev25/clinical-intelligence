@@ -1,0 +1,13 @@
+{
+  "summary": "Tipo de contenido no admitido — error sintético",
+  "value": {
+    "type": "urn:clinical-intelligence:problem:unsupported-media-type",
+    "title": "Tipo de contenido no admitido",
+    "status": 415,
+    "detail": "La solicitud no pudo completarse. Consulte el código del problema.",
+    "instance": "urn:uuid:00000000-0000-4000-8000-000000000017",
+    "requestId": "00000000-0000-4000-8000-000000000017",
+    "code": "UNSUPPORTED_MEDIA_TYPE",
+    "errors": []
+  }
+}
