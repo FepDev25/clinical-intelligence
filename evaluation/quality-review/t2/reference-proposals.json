@@ -1,0 +1,421 @@
+{
+  "version": "t2-proposal-1.0.0",
+  "status": "not_effective_not_a_campaign_corpus",
+  "requires": "annotation review; no historical scores or audits are rewritten",
+  "changes": [
+    {
+      "caseId": "dev-outpatient-02",
+      "split": "development",
+      "originGroup": "independent-dev-outpatient-02",
+      "sourceCorpus": "evaluation/next/development.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 124,
+            "end": 166,
+            "quote": "Para el paciente se solicita fondo de ojo."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "split": "development",
+      "originGroup": "independent-dev-outpatient-05",
+      "sourceCorpus": "evaluation/next/development.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 159,
+            "end": 199,
+            "quote": "Para el paciente se solicita rinoscopia."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "dev-progress-04",
+      "split": "development",
+      "originGroup": "independent-dev-progress-04",
+      "sourceCorpus": "evaluation/next/development.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 174,
+            "end": 216,
+            "quote": "Se solicita gastroscopia para el paciente."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "dev-progress-06",
+      "split": "development",
+      "originGroup": "independent-dev-progress-06",
+      "sourceCorpus": "evaluation/next/development.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 63,
+            "end": 122,
+            "quote": "Procedimiento solicitado para paciente: radiografía lumbar."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "split": "development",
+      "originGroup": "independent-dev-consultation-02",
+      "sourceCorpus": "evaluation/next/development.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 169,
+            "end": 207,
+            "quote": "Solicita audiometría para el paciente."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "split": "development",
+      "originGroup": "independent-dev-consultation-04",
+      "sourceCorpus": "evaluation/next/development.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 132,
+            "end": 174,
+            "quote": "Se solicita espirometría para el paciente."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "split": "development",
+      "originGroup": "independent-dev-consultation-06",
+      "sourceCorpus": "evaluation/next/development.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 165,
+            "end": 210,
+            "quote": "Se solicita ecografía renal para el paciente."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "split": "development",
+      "originGroup": "independent-dev-procedure-07",
+      "sourceCorpus": "evaluation/next/development.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 48,
+            "end": 87,
+            "quote": "Se solicita para el paciente ecografía;"
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-outpatient-02",
+      "split": "reserved",
+      "originGroup": "independent-res-outpatient-02",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 139,
+            "end": 244,
+            "quote": "Hoy se diagnostica bronquitis a la paciente, se le prescribe Sauce y se le solicita radiografía torácica."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-outpatient-05",
+      "split": "reserved",
+      "originGroup": "independent-res-outpatient-05",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 152,
+            "end": 192,
+            "quote": "Se ordena a la paciente limpieza dental."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-progress-02",
+      "split": "reserved",
+      "originGroup": "independent-res-progress-02",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 172,
+            "end": 211,
+            "quote": "Se ordena doppler venoso a la paciente."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-progress-04",
+      "split": "reserved",
+      "originGroup": "independent-res-progress-04",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 171,
+            "end": 221,
+            "quote": "Se ha pedido una biopsia de piel para la paciente."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-progress-06",
+      "split": "reserved",
+      "originGroup": "independent-res-progress-06",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 71,
+            "end": 111,
+            "quote": "Paciente, pedido: resonancia de rodilla."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-consultation-02",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-02",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 215,
+            "end": 258,
+            "quote": "Se solicita electromiografía a la paciente."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-consultation-03",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-03",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 102,
+            "end": 138,
+            "quote": "Se pide a la paciente laringoscopia."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-consultation-04",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-04",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 156,
+            "end": 195,
+            "quote": "Se solicita a la paciente retinografía."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-consultation-06",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-06",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 175,
+            "end": 220,
+            "quote": "Para la paciente se pide ecografía abdominal."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    },
+    {
+      "caseId": "res-procedure-07",
+      "split": "reserved",
+      "originGroup": "independent-res-procedure-07",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "path": "/expected/procedures/0/context/temporality",
+      "before": {
+        "value": "future",
+        "evidence": [
+          {
+            "start": 59,
+            "end": 104,
+            "quote": "Queda pedida una resonancia para la paciente."
+          }
+        ]
+      },
+      "after": {
+        "value": "unknown",
+        "evidence": []
+      },
+      "ruleId": "R1",
+      "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo."
+    }
+  ]
+}

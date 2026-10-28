@@ -1,0 +1,21 @@
+{
+  "scope": "T2 proposed references and review evidence; no clinical adjudication",
+  "sha256": {
+    "docs/adr/0007-annotation-scope-and-temporal-context.md": "2557dd2746ec8c9cd082c164a403bf548bfc49c0793467d951fdc5562bca8c6c",
+    "evaluation/quality-review/annotation-decisions.md": "90c6d69565a5d718d61b24c0fb48504731439f138f7d0f08d7a0fa165d25c4dd",
+    "evaluation/quality-review/disputes.json": "9b0494b3bf607a33bbdddb6765ec1087dc886b5a08c6175ec58022950f380968",
+    "evaluation/quality-review/t2/README.md": "cd70e07a875ad1942e26e29721ab97b1533512f684e9038933762f92838adfb8",
+    "evaluation/quality-review/t2/final-agent-review.md": "ec108b421cf3c8555aeeb8374ba5ee02284c98bff976a00c6824de4bcf8d239e",
+    "evaluation/quality-review/t2/independent-agent-review.md": "6af42be6445494e7c4805442d21afc7877dcab3737a468774dec7985fe527820",
+    "evaluation/quality-review/t2/reference-proposals.json": "914551462686143addd8d6a327160ddfa8dd3416d2b80faa6e323f81b4586758",
+    "evaluation/quality-review/t2/test_validate_t2.py": "4f4542702ac7cbc9ca6d0b985162adfcde715199e35676473505a94bc50b7c9b",
+    "evaluation/quality-review/t2/validate_t2.py": "80bca10b1f3a539dc5f6d42f330989df00a6cedb73a46c4da37784429c58cdc4",
+    "evaluation/quality-review/t2/verification/coverage.json": "b3a4672728b6e290ba6934400273105a2cb7dc107b0a666220ee03728bebfd69",
+    "evaluation/quality-review/t2/verification/green.log": "5e36adb5663e7dc5ce39a8f297d03ffb97a1065801c91259ffd351261669afbc",
+    "evaluation/quality-review/t2/verification/red-source.log": "fa8c28d2898eaaaf1cc35158876c0d6548785f33dc079fe91d3ea79e2d606f39",
+    "evaluation/quality-review/t2/verification/red.log": "2a3fe902a415eb743c18f141d1d2e4c728e0778e3871213395f01f7dd02ebc62",
+    "evaluation/quality-review/t2/verification/reports.log": "6273232de4d3ef7acd4ecafa5c86beeeb974f56586b21089a2990b3f72facbe6",
+    "evaluation/quality-review/t2/verification/t1.log": "a4dfc6ba8d8ee7f993f00a450146247a1360e5c1204cf97b042c9525cb23198e",
+    "evaluation/quality-review/t2/verification/tools.log": "20f90b971f9837d8f30e1f7f9fcc05e4438ff20c93ca88dd900198ad70ddb3dc"
+  }
+}

@@ -1,0 +1,2616 @@
+{
+  "schemaVersion": "t2-proposal-1.0.0",
+  "status": "proposals_prepared_adjudication_open",
+  "historicalAuditChanged": false,
+  "clinicalReview": false,
+  "sources": {
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/dispute-register.json": "f41eb4515f903d0a9f3d957ecc19bc1fe00d64bef2a2c3ee4823218c58788939",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/semantic-audit.json": "1f8f62cfb2622fb1daf74adaa8cdc1507bd12d6924e1d47372c1dae502a71380",
+    "evaluation/runs/2026-10-28-gemini38-v3/responses.jsonl": "4db5fd82306e161def0ab305138af85726fa627b0af0b9df76b3e1ee2b872c12",
+    "evaluation/next/development.json": "e7de689df1d38b1db741e5339e0274c3d2fb4ab62e229763d83cc6ed1b6840af",
+    "evaluation/corpus/v3/reserved.json": "eceec92c505768dfe1d7c18eb5b8e05c9a00db4f472c0f92202ddae482a37858",
+    "evaluation/ANNOTATION.md": "490c8c638f085c2edefc1e6bad3d23980f4f23cb6bdcd86f6a92f35f89f54e2a",
+    "evaluation/PROTOCOL.md": "2747037463d4fb519047b31e305c124ac90f1d672c67bd8e200f8f438a8920da",
+    "docs/adr/0002-extraction-wire-contract.md": "4106debc50c85767c23b1b5276221701f53701daf308200b9f95a07996c778a4",
+    "openapi/openapi.json": "506b15f0bafddfce44c12b7e57aa93caf4088075ce1268920506360074fdcc5b"
+  },
+  "groups": [
+    {
+      "caseId": "dev-admission-02",
+      "split": "development",
+      "originGroup": "independent-dev-admission-02",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "Anamnesis: el paciente niega antecedente personal de asma. Su acompañante, sin parentesco con el paciente, relata antecedente propio de diabetes. En el ingreso de hoy se diagnostica deshidratación al paciente. El paciente menciona el medicamento Eje y no recuerda para qué lo usa ni si sigue tomándolo. Se planifica para el paciente ecografía abdominal.",
+      "issues": [
+        {
+          "ruleId": "R6",
+          "target": "/medications/0/prescriptionStatus",
+          "originalReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "evidence": [
+            {
+              "start": 0,
+              "end": 353,
+              "quote": "Anamnesis: el paciente niega antecedente personal de asma. Su acompañante, sin parentesco con el paciente, relata antecedente propio de diabetes. En el ingreso de hoy se diagnostica deshidratación al paciente. El paciente menciona el medicamento Eje y no recuerda para qué lo usa ni si sigue tomándolo. Se planifica para el paciente ecografía abdominal."
+            }
+          ],
+          "reason": "Menciona Eje y para qué lo usa admite uso narrado; ni si sigue tomándolo deja incierta la continuidad, no necesariamente la existencia de uso. La revisión auxiliar prefiere reported; el gold unknown no se adjudica por preferencia.",
+          "admissibleReadings": [
+            "reported con temporality unknown si lo usa se interpreta como uso narrado",
+            "unknown si solo se establece mención sin estado fiable"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "revisor clínico/lingüístico independiente; desacuerdo de anotación abierto",
+          "action": "clarify_new_note_or_reference"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 2,
+          "caseId": "dev-admission-02",
+          "recordSha256": "ca78bdcd6e2b4939eee62b944290bb29d6f935c99414b4cbf012d91011925595",
+          "classification": "indeterminado_por_referencia",
+          "topic": "uso de Eje",
+          "reason": "Respuesta examinada: queda por adjudicar si la mención de Eje sustenta estado reported pese a no recordar para qué lo usa ni si sigue tomándolo.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar si la mención de Eje sustenta estado reported pese a no recordar para qué lo usa ni si sigue tomándolo.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-admission-02",
+          "recordSha256": "58d71dc74cca0fbf7cdea083945c7702edf136c593def1ed74889fa3690dec03",
+          "classification": "indeterminado_por_referencia",
+          "topic": "uso de Eje",
+          "reason": "Respuesta examinada: queda por adjudicar si la mención de Eje sustenta estado reported pese a no recordar para qué lo usa ni si sigue tomándolo.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar si la mención de Eje sustenta estado reported pese a no recordar para qué lo usa ni si sigue tomándolo.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-admission-02",
+          "recordSha256": "0a67448b805d31f276cf4104029d3d3f28c0fb30eb28b1b07f7829ece93ea256",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "El sujeto de ecografía cita paciente en la cláusula de Eje. Si la frase sobre Eje sustenta reported pese a su incertidumbre requiere adjudicación adicional; no se reescribe el gold.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "El sujeto de ecografía cita paciente en la cláusula de Eje. Si la frase sobre Eje sustenta reported pese a su incertidumbre requiere adjudicación adicional; no se reescribe el gold.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/procedures/0"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "split": "development",
+      "originGroup": "independent-dev-consultation-02",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "Motivo de derivación: estudiar mareo, sin diagnóstico de vértigo. La especialista sospecha hoy en el paciente laberintitis. Prescribe al paciente Aguamarina por 2 días. Solicita audiometría para el paciente.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 169,
+                "end": 207,
+                "quote": "Solicita audiometría para el paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 169,
+              "end": 207,
+              "quote": "Solicita audiometría para el paciente."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        },
+        {
+          "ruleId": "R7",
+          "target": "/diagnoses/0/context/subject",
+          "originalReference": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 38,
+                "end": 65,
+                "quote": "sin diagnóstico de vértigo."
+              },
+              {
+                "start": 66,
+                "end": 123,
+                "quote": "La especialista sospecha hoy en el paciente laberintitis."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 38,
+              "end": 65,
+              "quote": "sin diagnóstico de vértigo."
+            },
+            {
+              "start": 66,
+              "end": 123,
+              "quote": "La especialista sospecha hoy en el paciente laberintitis."
+            }
+          ],
+          "reason": "El propio gold usa la oración posterior sobre laberintitis para atribuir vértigo al paciente; no es el patrón de antecedente explícito seguido de cláusula elíptica documentado.",
+          "admissibleReadings": [
+            "unknown si se mantiene la nota sin regla de correferencia retrospectiva",
+            "patient solo tras aprobar marco documental suficiente o explicitar sujeto en nota nueva"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; posible ampliación de correferencia requiere revisión",
+          "action": "review_gold_evidence"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-consultation-02",
+          "recordSha256": "dc7adb77db4ddea959fd2d197a38d0ce9eb9f4ac9e709ac5b2e48fe95b3ad6d1",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0"
+          ],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 2,
+          "caseId": "dev-consultation-02",
+          "recordSha256": "26a304feb190e99f54aee0b2822fd5b76edd992ed694228ed364e3a37ea67ee9",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0",
+            "/medications/0"
+          ],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-consultation-02",
+          "recordSha256": "808ca33f013510e3725e39bffd76eba214b38414359fb2ca2cf18e1b280eb48e",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "split": "development",
+      "originGroup": "independent-dev-consultation-04",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "Paciente valorado hoy. Se documenta diagnóstico actual de asma con código textual J45. Se prescribe al paciente Boreal, dosis 3 ml. Se solicita espirometría para el paciente.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 132,
+                "end": 174,
+                "quote": "Se solicita espirometría para el paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 132,
+              "end": 174,
+              "quote": "Se solicita espirometría para el paciente."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-consultation-04",
+          "recordSha256": "5ae209cfec6dad280bb9712ef240526d08cdeb6951c19b8f2d9686011210d5e1",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "split": "development",
+      "originGroup": "independent-dev-consultation-06",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "El paciente tiene antecedente personal de cálculos renales. En la valoración actual del paciente se sospecha infección urinaria. Se prescribe al paciente Coral hoy. Se solicita ecografía renal para el paciente.\nEn un anexo clínico de diagnósticos figura «gota», sin poder establecer afirmación, negación, fecha o sujeto.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 165,
+                "end": 210,
+                "quote": "Se solicita ecografía renal para el paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 165,
+              "end": 210,
+              "quote": "Se solicita ecografía renal para el paciente."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-consultation-06",
+          "recordSha256": "ac7c490355ecc6001526be35110acfac8e745ea74db1099f6474ab053f2b9877",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 2,
+          "caseId": "dev-consultation-06",
+          "recordSha256": "9ce0735c387331f492a21a1cfb7192bb261333827f03fa2b73517be17d362353",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-consultation-06",
+          "recordSha256": "a73616a4af3d0de51fc78985d08add348a380385dff8de897e828309c6acf1ee",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "split": "development",
+      "originGroup": "independent-dev-emergency-01",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "Urgencias del paciente: inicialmente hoy se sospecha apendicitis en el paciente. Tras la valoración de hoy se descarta apendicitis en el paciente y se confirma gastroenteritis en el paciente. Se prescribe hoy al paciente Bisel. La ecografía del paciente fue solicitada y se realizó hoy. No se practicó cirugía al paciente.",
+      "issues": [
+        {
+          "ruleId": "R4",
+          "target": "/diagnoses/0/context/temporality",
+          "originalReference": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 24,
+                "end": 80,
+                "quote": "inicialmente hoy se sospecha apendicitis en el paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 24,
+              "end": 80,
+              "quote": "inicialmente hoy se sospecha apendicitis en el paciente."
+            }
+          ],
+          "reason": "La sospecha inicial de hoy y su descarte posterior son menciones distintas dentro del episodio explícito; no es contradicción simultánea.",
+          "admissibleReadings": [
+            "conservar current con cita de hoy; no convertir solo por descarte posterior en historical"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "retain_reference"
+        },
+        {
+          "ruleId": "R5",
+          "target": "/procedures/1/context/temporality",
+          "originalReference": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 287,
+                "end": 322,
+                "quote": "No se practicó cirugía al paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 287,
+              "end": 322,
+              "quote": "No se practicó cirugía al paciente."
+            }
+          ],
+          "reason": "La no realización al final puede continuar la atención actual o carecer de ancla temporal local. Su evidencia gold aislada no cita hoy.",
+          "admissibleReadings": [
+            "current con marco de atención y evidencia conjunta aprobada",
+            "unknown si no se permite herencia temporal entre cláusulas",
+            "nota nueva con hoy/durante esta atención para eliminar ambigüedad"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación y revisor clínico para alcance temporal",
+          "action": "clarify_new_note_or_reference"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-emergency-01",
+          "recordSha256": "2269f1def36240fa304dfc8c5d02d030ba5c5b76d640b7945f7840a550184f9d",
+          "classification": "indeterminado_por_referencia",
+          "topic": "secuencia temporal",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 2,
+          "caseId": "dev-emergency-01",
+          "recordSha256": "2143ec4423b4c4add246bda2aa95f85a5989239c3277a7dd044404db804c1bc7",
+          "classification": "indeterminado_por_referencia",
+          "topic": "secuencia temporal",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-emergency-01",
+          "recordSha256": "b09623a8442d4648b9edde3f51fcda21a14c1e3a6cb7df20270a3ed95e7b6d71",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "Las citas cortas de sujeto pertenecen a otras cláusulas, aunque sus valores sean plausibles; se conserva la incertidumbre sobre temporalidad de la cirugía no realizada.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "Las citas cortas de sujeto pertenecen a otras cláusulas, aunque sus valores sean plausibles; se conserva la incertidumbre sobre temporalidad de la cirugía no realizada.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0",
+            "/diagnoses/1",
+            "/diagnoses/2",
+            "/medications/0",
+            "/procedures/1"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "split": "development",
+      "originGroup": "independent-dev-outpatient-02",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "El paciente niega diabetes actualmente. Su madre tiene antecedente de hipertensión. En el paciente se confirma hoy migraña. Para el paciente se solicita fondo de ojo. El paciente refiere uso actual de Lumen.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 124,
+                "end": 166,
+                "quote": "Para el paciente se solicita fondo de ojo."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 124,
+              "end": 166,
+              "quote": "Para el paciente se solicita fondo de ojo."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-outpatient-02",
+          "recordSha256": "bc07272c875dfcd77b8971b56261e610dfb89ae68d6bbedd98b5e5b5922d02a6",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "split": "development",
+      "originGroup": "independent-dev-outpatient-05",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "Al paciente se le diagnostica actualmente rinitis. El envase del medicamento Brisa indica 10 mg; hoy se prescribe al paciente Brisa en dosis de media tableta. Para el paciente se solicita rinoscopia.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 159,
+                "end": 199,
+                "quote": "Para el paciente se solicita rinoscopia."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 159,
+              "end": 199,
+              "quote": "Para el paciente se solicita rinoscopia."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-outpatient-05",
+          "recordSha256": "bb40c2d27ab89bf0a655f4680dbe6f222799af2afe8e2eba2cf631ed87a983d6",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 2,
+          "caseId": "dev-outpatient-05",
+          "recordSha256": "f3c5f45078c8bd50331acf11ccbceccf20ab5446326ea8bbed290b7156cbd7b6",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-outpatient-05",
+          "recordSha256": "4df7ebbec5ef4e5e561387e892c30e5c904cec4c2729716352fbd3ae22aa8f13",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "split": "development",
+      "originGroup": "independent-dev-procedure-07",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "El paciente tiene diagnóstico actual de quiste. Se solicita para el paciente ecografía; no se realizó ecografía al paciente hoy.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 48,
+                "end": 87,
+                "quote": "Se solicita para el paciente ecografía;"
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 48,
+              "end": 87,
+              "quote": "Se solicita para el paciente ecografía;"
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-procedure-07",
+          "recordSha256": "b04314f5e521895417ddf39d6a4af5848177cd6847b4c66160b16c2dd70b9523",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 2,
+          "caseId": "dev-procedure-07",
+          "recordSha256": "1f9d6d1b7e4dfbaeece6bb54e9dbf0c911d1c6f70ff6f6d5d2405b3b1f5ec9a9",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-procedure-07",
+          "recordSha256": "5399e3d885da4eabbfb5ef031e667d90af091aa0a8da139d80203a2c478bc37e",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-progress-04",
+      "split": "development",
+      "originGroup": "independent-dev-progress-04",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "S: el paciente refiere malestar. A: en el paciente se sospecha hoy gastritis; consta además antecedente personal de úlcera. P: se prescribe hoy al paciente Delta por 5 días. Se solicita gastroscopia para el paciente.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 174,
+                "end": 216,
+                "quote": "Se solicita gastroscopia para el paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 174,
+              "end": 216,
+              "quote": "Se solicita gastroscopia para el paciente."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-progress-04",
+          "recordSha256": "72bbec39ddb50c1ba93ada90375e547e935448bddd1e504e738eb12b09e66268",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 2,
+          "caseId": "dev-progress-04",
+          "recordSha256": "471cf70909d62bb61da20c49eecf017c03fedb608d8c3997967ed2ddc42e7c7d",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-progress-04",
+          "recordSha256": "9f2875641c729ccabe84ba2be0c3413422df71096fdf58fbc8f2751d360fa068",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-progress-06",
+      "split": "development",
+      "originGroup": "independent-dev-progress-06",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "Dx actual paciente: lumbalgia. Receta actual paciente: Órbita. Procedimiento solicitado para paciente: radiografía lumbar. Reposo por 4 días.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 63,
+                "end": 122,
+                "quote": "Procedimiento solicitado para paciente: radiografía lumbar."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 63,
+              "end": 122,
+              "quote": "Procedimiento solicitado para paciente: radiografía lumbar."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-progress-06",
+          "recordSha256": "52441866eff9d7c6f7b16581cff8f8e5f71e388a762c754e512ca23b045953f6",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 2,
+          "caseId": "dev-progress-06",
+          "recordSha256": "6b4d3f7c81ed9ac71cfaccaba1536474eceeaf918e61891bd80b8babe0a4c2f1",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-progress-06",
+          "recordSha256": "78d29dc2aa8f9b9aa5ed80c31e677ea4b86162b79dcbf6eb543c519fb71eb6af",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "dev-progress-07",
+      "split": "development",
+      "originGroup": "independent-dev-progress-07",
+      "sourceCorpus": "evaluation/next/development.json",
+      "clinicalNote": "Paciente con diagnóstico actual de alergia. Se prescribe hoy al paciente Halo. El paciente hará reposo por 13 días y volverá a control en 21 días.",
+      "issues": [
+        {
+          "ruleId": "R8",
+          "target": "procedure_collection_scope",
+          "originalReference": null,
+          "evidence": [
+            {
+              "start": 0,
+              "end": 146,
+              "quote": "Paciente con diagnóstico actual de alergia. Se prescribe hoy al paciente Halo. El paciente hará reposo por 13 días y volverá a control en 21 días."
+            }
+          ],
+          "reason": "Control/revisión genéricos están excluidos como duración farmacológica; esa exclusión no decide si son prestaciones extraíbles.",
+          "admissibleReadings": [
+            "excluir seguimiento genérico y admitir prestaciones identificadas explícitamente",
+            "incluir consulta de seguimiento nombrada con estado apropiado bajo alcance ampliado"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de producto; ADR 0007 propuesto antes de adoptar",
+          "action": "scope_decision_required"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "development",
+          "round": 1,
+          "caseId": "dev-progress-07",
+          "recordSha256": "f63687be44c48c3797469cab57d97386da989b546fbf4486ff16ecf7e7afb369",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "El sujeto de Halo cita la cláusula de reposo. La clasificación de control como prestación sigue disputada y se conserva abierta por separado.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "El sujeto de Halo cita la cláusula de reposo. La clasificación de control como prestación sigue disputada y se conserva abierta por separado.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/medications/0"
+          ],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "development",
+          "round": 3,
+          "caseId": "dev-progress-07",
+          "recordSha256": "fb39f439cd82c4162cde9860315180b9fe98d86759cb56bb3ea160dfa918ba70",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "El sujeto de Halo cita la cláusula de reposo. La clasificación de control como prestación sigue disputada y se conserva abierta por separado.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "El sujeto de Halo cita la cláusula de reposo. La clasificación de control como prestación sigue disputada y se conserva abierta por separado.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/medications/0"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-consultation-02",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-02",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "La derivación pedía valorar hormigueo. En su respuesta de hoy el especialista sospecha neuropatía en la paciente y niega diagnóstico actual de esclerosis múltiple en la paciente. Se receta Azalea a la paciente hoy. Se solicita electromiografía a la paciente.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 215,
+                "end": 258,
+                "quote": "Se solicita electromiografía a la paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 215,
+              "end": 258,
+              "quote": "Se solicita electromiografía a la paciente."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-consultation-02",
+          "recordSha256": "63b32b15d0752a847931b44721042a0a415fc8cd7acd9833be9f035af7ede360",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-consultation-02",
+          "recordSha256": "3936c84c33b1246ebb58e8a68ed041082c1db50f01d43c350608647e04f9618f",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-consultation-02",
+          "recordSha256": "927e82a1262fc44fca729d29fcfbc7ad4a7e6ddbf34a3d59b7dbed2fc2b22ea5",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-consultation-03",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-03",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "A la paciente se le diagnostica hoy faringitis. El informe deja prescrita para la paciente Malva hoy. Se pide a la paciente laringoscopia.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 102,
+                "end": 138,
+                "quote": "Se pide a la paciente laringoscopia."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 102,
+              "end": 138,
+              "quote": "Se pide a la paciente laringoscopia."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-consultation-03",
+          "recordSha256": "53bc6fdd1a74ac647db01689eb339c0dd9ad3254210ba66c744416d7178b3967",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-consultation-03",
+          "recordSha256": "7f02f9cdf8c7e0cdc8a1c372d804be7befd5b0b2f28acb64bef5c35ad0a7668d",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-consultation-03",
+          "recordSha256": "99c34777408f4c22ac2a856e1939333b7aab084869b137736cf66cb3fb92170a",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-consultation-04",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-04",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "Informe actual de la paciente: diagnóstico de diabetes tipo 2; se transcribe E11.9 tal como llegó en la nota. La paciente refiere tomar Laurel actualmente. Se solicita a la paciente retinografía.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 156,
+                "end": 195,
+                "quote": "Se solicita a la paciente retinografía."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 156,
+              "end": 195,
+              "quote": "Se solicita a la paciente retinografía."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        },
+        {
+          "ruleId": "R10",
+          "target": "/medications/0/route",
+          "originalReference": null,
+          "evidence": [
+            {
+              "start": 0,
+              "end": 195,
+              "quote": "Informe actual de la paciente: diagnóstico de diabetes tipo 2; se transcribe E11.9 tal como llegó en la nota. La paciente refiere tomar Laurel actualmente. Se solicita a la paciente retinografía."
+            }
+          ],
+          "reason": "Tomar es literal en la nota pero no nombra una vía de administración bajo las reglas de no inferencia.",
+          "admissibleReadings": [
+            "conservar null; no inferir vía oral a partir del verbo tomar"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "retain_reference"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-consultation-04",
+          "recordSha256": "780f1c25dd9c0cd320e729c53a066226ebbd1e74f7e3d5957765856fde12e6a9",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-consultation-04",
+          "recordSha256": "42d723921ea02fac3aab0b54d0b5f20b1f736f54542b90eb41c7b1abf51eee7e",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La salida presenta «tomar» como vía de administración, pero la nota no expresa una vía. El texto aparece literalmente y no respalda ese atributo. La temporalidad de la retinografía ordenada sin fecha sigue discutida.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La salida presenta «tomar» como vía de administración, pero la nota no expresa una vía. El texto aparece literalmente y no respalda ese atributo. La temporalidad de la retinografía ordenada sin fecha sigue discutida.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": [
+            "/medications/0/route"
+          ]
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-consultation-04",
+          "recordSha256": "4a7895c63f717a5c2a9ea30776a872b934c20f833aea52ae4ede8d7c81ee5b2d",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La salida presenta «tomar» como vía de administración, pero la nota no expresa una vía. El texto aparece literalmente y no respalda ese atributo. La temporalidad de la retinografía ordenada sin fecha sigue discutida.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La salida presenta «tomar» como vía de administración, pero la nota no expresa una vía. El texto aparece literalmente y no respalda ese atributo. La temporalidad de la retinografía ordenada sin fecha sigue discutida.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": [
+            "/medications/0/route"
+          ]
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-consultation-05",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-05",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "La paciente mantiene hoy tratamiento referido con Dalia. La impresión actual para la paciente es tendinopatía. Solo si continúa la limitación de la paciente se solicitará artroscopia.",
+      "issues": [
+        {
+          "ruleId": "R9",
+          "target": "/diagnoses/0/context/assertion",
+          "originalReference": {
+            "value": "affirmed",
+            "evidence": [
+              {
+                "start": 57,
+                "end": 110,
+                "quote": "La impresión actual para la paciente es tendinopatía."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 57,
+              "end": 110,
+              "quote": "La impresión actual para la paciente es tendinopatía."
+            }
+          ],
+          "reason": "Impresión actual no tiene correspondencia normativa inequívoca entre affirmed y suspected.",
+          "admissibleReadings": [
+            "affirmed como diagnóstico expresado en forma declarativa",
+            "suspected como impresión provisional",
+            "nota nueva con se confirma o se sospecha"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "revisor clínico independiente",
+          "action": "clarify_new_note_or_reference"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-consultation-05",
+          "recordSha256": "9ab7d8800ab60a5a2aaf421410fb33d1dbada557f2c073f0b2aba63617237673",
+          "classification": "indeterminado_por_referencia",
+          "topic": "impresión diagnóstica",
+          "reason": "Respuesta examinada: la certeza asociada a impresión diagnóstica puede ser ambigua; no se acepta ni rechaza la referencia sin adjudicación.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: la certeza asociada a impresión diagnóstica puede ser ambigua; no se acepta ni rechaza la referencia sin adjudicación.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-consultation-05",
+          "recordSha256": "2ef3fa4152e02df674db33230b991c75049c54ad42d38f9d1fab99e9f75a5094",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La cita del sujeto de tendinopatía pertenece a la cláusula posterior de artroscopia. La certeza atribuible a «impresión» sigue discutida; no se cambia el gold ni se afirma error clínico.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La cita del sujeto de tendinopatía pertenece a la cláusula posterior de artroscopia. La certeza atribuible a «impresión» sigue discutida; no se cambia el gold ni se afirma error clínico.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0"
+          ],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-consultation-05",
+          "recordSha256": "838ae9d8b49b6a6c6c18f09efcb42a7c084f9a81e7237fb21b77fdc980fd8a61",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La cita del sujeto de tendinopatía pertenece a la cláusula posterior de artroscopia. La certeza atribuible a «impresión» sigue discutida; no se cambia el gold ni se afirma error clínico.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La cita del sujeto de tendinopatía pertenece a la cláusula posterior de artroscopia. La certeza atribuible a «impresión» sigue discutida; no se cambia el gold ni se afirma error clínico.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-consultation-06",
+      "split": "reserved",
+      "originGroup": "independent-res-consultation-06",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "Al revisar a la paciente se registra antecedente de hepatitis. La conclusión de hoy es sospecha de colecistitis en la paciente. Se prescribe a la paciente Girasol por 4 días. Para la paciente se pide ecografía abdominal.\nEn un anexo clínico de diagnósticos figura «hiperlipidemia», sin poder establecer afirmación, negación, fecha o sujeto.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 175,
+                "end": 220,
+                "quote": "Para la paciente se pide ecografía abdominal."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 175,
+              "end": 220,
+              "quote": "Para la paciente se pide ecografía abdominal."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-consultation-06",
+          "recordSha256": "3cc68428e52c3fe6c1359878526059859a633ae6bddc777dba1c6ab20d6c09e5",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-consultation-06",
+          "recordSha256": "701117279f2462e34f913aa199bf7ec8b851df4b5086afc86852d6807a3ce36c",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-consultation-06",
+          "recordSha256": "e576052e014a2415e02c970d22d393fac30e7f5b6ab326316f2ba4916c074677",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-emergency-01",
+      "split": "reserved",
+      "originGroup": "independent-res-emergency-01",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "A las primeras horas de hoy se consideró como sospecha embolia pulmonar en la paciente. Tras completar estudios hoy se descarta embolia pulmonar en la paciente. La conclusión actual es neumonía en la paciente. Se indica Cerezo a la paciente hoy. Se solicitó y luego se completó hoy angiotomografía en la paciente. No se efectuó toracotomía en la paciente.",
+      "issues": [
+        {
+          "ruleId": "R4",
+          "target": "/diagnoses/0/context/temporality",
+          "originalReference": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 87,
+                "quote": "A las primeras horas de hoy se consideró como sospecha embolia pulmonar en la paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 0,
+              "end": 87,
+              "quote": "A las primeras horas de hoy se consideró como sospecha embolia pulmonar en la paciente."
+            }
+          ],
+          "reason": "La sospecha inicial de hoy y su descarte posterior son menciones distintas dentro del episodio explícito; no es contradicción simultánea.",
+          "admissibleReadings": [
+            "conservar current con cita de hoy; no convertir solo por descarte posterior en historical"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "retain_reference"
+        },
+        {
+          "ruleId": "R5",
+          "target": "/procedures/1/context/temporality",
+          "originalReference": {
+            "value": "current",
+            "evidence": [
+              {
+                "start": 314,
+                "end": 355,
+                "quote": "No se efectuó toracotomía en la paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 314,
+              "end": 355,
+              "quote": "No se efectuó toracotomía en la paciente."
+            }
+          ],
+          "reason": "La no realización al final puede continuar la atención actual o carecer de ancla temporal local. Su evidencia gold aislada no cita hoy.",
+          "admissibleReadings": [
+            "current con marco de atención y evidencia conjunta aprobada",
+            "unknown si no se permite herencia temporal entre cláusulas",
+            "nota nueva con hoy/durante esta atención para eliminar ambigüedad"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación y revisor clínico para alcance temporal",
+          "action": "clarify_new_note_or_reference"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-emergency-01",
+          "recordSha256": "863bfe0e18782fbbb860b123f67d31133e36a07bdc084ddf30c85f0d0ced096c",
+          "classification": "indeterminado_por_referencia",
+          "topic": "secuencia temporal",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-emergency-01",
+          "recordSha256": "ad241f5f56365587cb04d556c1a9fb0d61c47713adce5f7302deee119b6db4ba",
+          "classification": "indeterminado_por_referencia",
+          "topic": "secuencia temporal",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-emergency-01",
+          "recordSha256": "feef4abffd8b3a886525934852ac366f66fd50047b169b717bbcb7754044c2f6",
+          "classification": "indeterminado_por_referencia",
+          "topic": "secuencia temporal",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-emergency-02",
+      "split": "reserved",
+      "originGroup": "independent-res-emergency-02",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "En emergencia la paciente recibe diagnóstico actual de luxación. Se le hizo hoy reducción a la paciente. Se prescribe a la paciente Almendro en dosis de 3 ml solo si presenta dolor, por 4 días. Se deja revisión en 18 días. Se pide tomografía a la paciente para otra fecha.",
+      "issues": [
+        {
+          "ruleId": "R8",
+          "target": "procedure_collection_scope",
+          "originalReference": null,
+          "evidence": [
+            {
+              "start": 0,
+              "end": 272,
+              "quote": "En emergencia la paciente recibe diagnóstico actual de luxación. Se le hizo hoy reducción a la paciente. Se prescribe a la paciente Almendro en dosis de 3 ml solo si presenta dolor, por 4 días. Se deja revisión en 18 días. Se pide tomografía a la paciente para otra fecha."
+            }
+          ],
+          "reason": "Control/revisión genéricos están excluidos como duración farmacológica; esa exclusión no decide si son prestaciones extraíbles.",
+          "admissibleReadings": [
+            "excluir seguimiento genérico y admitir prestaciones identificadas explícitamente",
+            "incluir consulta de seguimiento nombrada con estado apropiado bajo alcance ampliado"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de producto; ADR 0007 propuesto antes de adoptar",
+          "action": "scope_decision_required"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-emergency-02",
+          "recordSha256": "adf816058f15176f36ce320cd20a297fd0ca83d247af69d7b560e780ce06d7c0",
+          "classification": "indeterminado_por_referencia",
+          "topic": "alcance de control",
+          "reason": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-emergency-02",
+          "recordSha256": "307c70eb331239d4197e022f33350866cbb0f5dc7af8f013036ab195a58c8c5d",
+          "classification": "indeterminado_por_referencia",
+          "topic": "alcance de control",
+          "reason": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-emergency-02",
+          "recordSha256": "cad83e02126c08207f45df131cf6a87a29bf8fb69f09d69849bffda7369f951c",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La cita de sujeto de revisión pertenece a la prescripción. La clasificación de revisión como prestación sigue disputada y se conserva abierta por separado.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La cita de sujeto de revisión pertenece a la prescripción. La clasificación de revisión como prestación sigue disputada y se conserva abierta por separado.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/procedures/1"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-outpatient-02",
+      "split": "reserved",
+      "originGroup": "independent-res-outpatient-02",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "Consulta de la paciente por seguimiento. No hay diagnóstico actual de neumonía en la paciente. La abuela de la paciente tuvo osteoporosis. Hoy se diagnostica bronquitis a la paciente, se le prescribe Sauce y se le solicita radiografía torácica.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 139,
+                "end": 244,
+                "quote": "Hoy se diagnostica bronquitis a la paciente, se le prescribe Sauce y se le solicita radiografía torácica."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 139,
+              "end": 244,
+              "quote": "Hoy se diagnostica bronquitis a la paciente, se le prescribe Sauce y se le solicita radiografía torácica."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        },
+        {
+          "ruleId": "R7",
+          "target": "/medications/0/context/subject",
+          "originalReference": {
+            "value": "patient",
+            "evidence": [
+              {
+                "start": 139,
+                "end": 244,
+                "quote": "Hoy se diagnostica bronquitis a la paciente, se le prescribe Sauce y se le solicita radiografía torácica."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 139,
+              "end": 244,
+              "quote": "Hoy se diagnostica bronquitis a la paciente, se le prescribe Sauce y se le solicita radiografía torácica."
+            }
+          ],
+          "reason": "La oración completa enlaza a la paciente con se le prescribe y se le solicita; se le aislado no contiene antecedente.",
+          "admissibleReadings": [
+            "conservar patient con oración completa o evidencias enlazadas",
+            "no aceptar token paciente ajeno sin relación demostrada"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "retain_reference"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-outpatient-02",
+          "recordSha256": "0567fe0512a64455cba9bc44658bf5e971fbfef0ada6975da07d12d1f4c96c0c",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-outpatient-02",
+          "recordSha256": "645f0a84049fc4ae642a57a1fbc8e6c9e51fc223706581dd997796e99b569137",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-outpatient-02",
+          "recordSha256": "b9bbcb4cd1c2a9380ff8b10664b81b1723168ce3c4c8766a365cb7b6c2a99b22",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "Las citas «se le» carecen del antecedente explícito exigido para el sujeto elíptico. Sigue discutida la temporalidad del procedimiento ordenado sin fecha de realización; no se cambia la referencia.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "Las citas «se le» carecen del antecedente explícito exigido para el sujeto elíptico. Sigue discutida la temporalidad del procedimiento ordenado sin fecha de realización; no se cambia la referencia.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/medications/0",
+            "/procedures/0"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-outpatient-05",
+      "split": "reserved",
+      "originGroup": "independent-res-outpatient-05",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "La paciente presenta diagnóstico actual de gingivitis. Hoy se prescribe a la paciente Helecho en dosis de una cápsula; el envase de Helecho dice 30 mg. Se ordena a la paciente limpieza dental.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 152,
+                "end": 192,
+                "quote": "Se ordena a la paciente limpieza dental."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 152,
+              "end": 192,
+              "quote": "Se ordena a la paciente limpieza dental."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-outpatient-05",
+          "recordSha256": "bdcb358504b5c727cf27698f30913d42d7796f5777bdfc6e4d38cae4c6505cf9",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-outpatient-05",
+          "recordSha256": "949126d23ed4a39b8a2afaa9051ff2c339e087fa093a1ac2617fc11195dfd01e",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La cita del sujeto de Helecho está en la cláusula de limpieza dental. Se conserva la dosis una cápsula sin usar la concentración del envase; la temporalidad de la orden sin fecha sigue discutida.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La cita del sujeto de Helecho está en la cláusula de limpieza dental. Se conserva la dosis una cápsula sin usar la concentración del envase; la temporalidad de la orden sin fecha sigue discutida.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/medications/0"
+          ],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-outpatient-05",
+          "recordSha256": "e7b991bc0b2b7a74bba915d06088071451bd6302dabce75bcd247269474d6ab4",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La cita del sujeto de Helecho está en la cláusula de limpieza dental. Se conserva la dosis una cápsula sin usar la concentración del envase; la temporalidad de la orden sin fecha sigue discutida.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La cita del sujeto de Helecho está en la cláusula de limpieza dental. Se conserva la dosis una cápsula sin usar la concentración del envase; la temporalidad de la orden sin fecha sigue discutida.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/medications/0"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-procedure-07",
+      "split": "reserved",
+      "originGroup": "independent-res-procedure-07",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "El diagnóstico vigente de la paciente es lesión de hombro. Queda pedida una resonancia para la paciente. Se deja explícito que no se efectuó resonancia a la paciente en esta visita.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 59,
+                "end": 104,
+                "quote": "Queda pedida una resonancia para la paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 59,
+              "end": 104,
+              "quote": "Queda pedida una resonancia para la paciente."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-procedure-07",
+          "recordSha256": "7e55fd060acd9b10a1c95a5187fb3a5dc87c7aa99af75a1e0188903708af23d8",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-procedure-07",
+          "recordSha256": "ad5d02a90a999722bcc449cda6af43e4ff39c796c5d48c5a8cca4cf4b095e9db",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-procedure-07",
+          "recordSha256": "d4bd132dd223148089f964eeb8fd03e53e8cef9aea5e737c46a340dd2eed50a7",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-progress-02",
+      "split": "reserved",
+      "originGroup": "independent-res-progress-02",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "Registro de hoy: se confirma insuficiencia venosa en la paciente. En otro apartado se descarta insuficiencia venosa en la paciente hoy. La paciente usa actualmente Jazmín. Se ordena doppler venoso a la paciente.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 172,
+                "end": 211,
+                "quote": "Se ordena doppler venoso a la paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 172,
+              "end": 211,
+              "quote": "Se ordena doppler venoso a la paciente."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-progress-02",
+          "recordSha256": "b10175c85c280d6030bb323bfc2387a54c7c02329a17582ad1ae9aa6f91b7ca5",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-progress-02",
+          "recordSha256": "4a833ab527ef01192700478ed1f92dc3d6d47ec02eaeece809fa8e6f1b111755",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-progress-02",
+          "recordSha256": "81996cccd3c495fbb51f80b448f93d88b3dc75d80e79537a026767152c787825",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-progress-04",
+      "split": "reserved",
+      "originGroup": "independent-res-progress-04",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "La paciente tuvo varicela durante la infancia. Hoy se anota como posible diagnóstico de la paciente herpes zóster. A la paciente se le indica Pino en dosis de 2 tabletas. Se ha pedido una biopsia de piel para la paciente.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 171,
+                "end": 221,
+                "quote": "Se ha pedido una biopsia de piel para la paciente."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 171,
+              "end": 221,
+              "quote": "Se ha pedido una biopsia de piel para la paciente."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-progress-04",
+          "recordSha256": "cedbaab74a57a57542ef8a619f5c9ab7442763df6a47d51fa87011a9d29e7ca1",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-progress-04",
+          "recordSha256": "9c69bd74f9d590f7c87340855fea5cdf482feb1eeded468b83a5316c4b0b36cf",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-progress-04",
+          "recordSha256": "3d98b815e2bfbdc7498fa5b946ac45c5b997e375e4587b2e8c447474ccb9ccb7",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "La cita de sujeto del diagnóstico sospechado está en la cláusula de la prescripción. La temporalidad de la biopsia pedida sin fecha sigue discutida; no se modifica el gold.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "La cita de sujeto del diagnóstico sospechado está en la cláusula de la prescripción. La temporalidad de la biopsia pedida sin fecha sigue discutida; no se modifica el gold.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/1"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-progress-06",
+      "split": "reserved",
+      "originGroup": "independent-res-progress-06",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "Paciente: diagnóstico actual de bursitis.\nPaciente, receta hoy: Cedro.\nPaciente, pedido: resonancia de rodilla.\nReposo de 9 días; revisión posterior.",
+      "issues": [
+        {
+          "ruleId": "R1",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "future",
+            "evidence": [
+              {
+                "start": 71,
+                "end": 111,
+                "quote": "Paciente, pedido: resonancia de rodilla."
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 71,
+              "end": 111,
+              "quote": "Paciente, pedido: resonancia de rodilla."
+            }
+          ],
+          "reason": "La orden está expresada; la nota no fecha la prestación. El gold future exige una posterioridad que el estado ordered no demuestra por sí solo.",
+          "admissibleReadings": [
+            "unknown para fecha de prestación no establecida",
+            "future solo si una nota nueva expresa para mañana/otra fecha"
+          ],
+          "proposedReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "propose_reference_change"
+        },
+        {
+          "ruleId": "R8",
+          "target": "procedure_collection_scope",
+          "originalReference": null,
+          "evidence": [
+            {
+              "start": 0,
+              "end": 149,
+              "quote": "Paciente: diagnóstico actual de bursitis.\nPaciente, receta hoy: Cedro.\nPaciente, pedido: resonancia de rodilla.\nReposo de 9 días; revisión posterior."
+            }
+          ],
+          "reason": "Control/revisión genéricos están excluidos como duración farmacológica; esa exclusión no decide si son prestaciones extraíbles.",
+          "admissibleReadings": [
+            "excluir seguimiento genérico y admitir prestaciones identificadas explícitamente",
+            "incluir consulta de seguimiento nombrada con estado apropiado bajo alcance ampliado"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de producto; ADR 0007 propuesto antes de adoptar",
+          "action": "scope_decision_required"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-progress-06",
+          "recordSha256": "dd1f9295f7829faa4554da5f215dd1f39f023fb6927bc08daa8ca3227e997673",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-progress-06",
+          "recordSha256": "dc81b52d8ac18e7b9d19c155bb746034c107b53a02af87e396541a368c2d9b41",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-progress-06",
+          "recordSha256": "e245a51182c067e6cdaecef5459ccc81866753eb2e21aafb5235a0b6ff669bb0",
+          "classification": "indeterminado_por_referencia",
+          "topic": "fecha de prestación",
+          "reason": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-progress-07",
+      "split": "reserved",
+      "originGroup": "independent-res-progress-07",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "La paciente tiene diagnóstico actual de urticaria. La receta de hoy de la paciente solo nombra Cardo. Se indica control dentro de 16 días y reposo durante 7 días.",
+      "issues": [
+        {
+          "ruleId": "R8",
+          "target": "procedure_collection_scope",
+          "originalReference": null,
+          "evidence": [
+            {
+              "start": 0,
+              "end": 162,
+              "quote": "La paciente tiene diagnóstico actual de urticaria. La receta de hoy de la paciente solo nombra Cardo. Se indica control dentro de 16 días y reposo durante 7 días."
+            }
+          ],
+          "reason": "Control/revisión genéricos están excluidos como duración farmacológica; esa exclusión no decide si son prestaciones extraíbles.",
+          "admissibleReadings": [
+            "excluir seguimiento genérico y admitir prestaciones identificadas explícitamente",
+            "incluir consulta de seguimiento nombrada con estado apropiado bajo alcance ampliado"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de producto; ADR 0007 propuesto antes de adoptar",
+          "action": "scope_decision_required"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-progress-07",
+          "recordSha256": "0048558acc6b06503aed35c33f8442c6a422a1402067c5a780a4dfd8bf2f3177",
+          "classification": "indeterminado_por_referencia",
+          "topic": "alcance de control",
+          "reason": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-progress-07",
+          "recordSha256": "560a283cdb41e9f141308bb8371c5c1f841721b5bf80aed30880e14375b577d9",
+          "classification": "indeterminado_por_referencia",
+          "topic": "alcance de control",
+          "reason": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-progress-07",
+          "recordSha256": "c5666c46e542e7b158e11236c9ea9ba8e0800a26e976a5d4c9984fc6d3ee6f89",
+          "classification": "indeterminado_por_referencia",
+          "topic": "alcance de control",
+          "reason": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-v3-outpatient-01",
+      "split": "reserved",
+      "originGroup": "independent-v3-res-v3-outpatient-01",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "ANTECEDENTE: La paciente tuvo diagnóstico de dermatitis. MEDICACIÓN: La paciente suspendió Zéfiro. PLAN: Se solicitó dermatoscopia para la paciente.",
+      "issues": [
+        {
+          "ruleId": "R2",
+          "target": "/medications/0/context/temporality",
+          "originalReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "evidence": [
+            {
+              "start": 0,
+              "end": 148,
+              "quote": "ANTECEDENTE: La paciente tuvo diagnóstico de dermatitis. MEDICACIÓN: La paciente suspendió Zéfiro. PLAN: Se solicitó dermatoscopia para la paciente."
+            }
+          ],
+          "reason": "Suspendió expresa transición anterior al relato, sin fijar antecedente remoto frente a acción de la atención actual.",
+          "admissibleReadings": [
+            "unknown conservador en nota sin ancla",
+            "historical si se adopta una regla explícita de evento pasado",
+            "nota nueva con ayer u hoy"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación y revisor clínico",
+          "action": "clarify_new_note_or_reference"
+        },
+        {
+          "ruleId": "R3",
+          "target": "/procedures/0/performanceStatus",
+          "originalReference": {
+            "value": "ordered",
+            "evidence": [
+              {
+                "start": 105,
+                "end": 147,
+                "quote": "Se solicitó dermatoscopia para la paciente"
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "start": 105,
+              "end": 147,
+              "quote": "Se solicitó dermatoscopia para la paciente"
+            }
+          ],
+          "reason": "PLAN es un encabezado; se solicitó expresa orden emitida, sin fecha de realización.",
+          "admissibleReadings": [
+            "conservar ordered y temporality unknown",
+            "no convertir a planned o future solo por PLAN"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "retain_reference"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-v3-outpatient-01",
+          "recordSha256": "6fed2ce5ec8e4d3b0181b76f3ba54565b6f1a5e3ae58354c8e401066bb9c785e",
+          "classification": "indeterminado_por_referencia",
+          "topic": "dos referencias nuevas",
+          "reason": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-v3-outpatient-01",
+          "recordSha256": "1d8fe578635590df90c42fe1a65b72b18fefcbfc272e68eb6d741c7498b142cd",
+          "classification": "indeterminado_por_referencia",
+          "topic": "dos referencias nuevas",
+          "reason": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-v3-outpatient-01",
+          "recordSha256": "bb63f2ff1a12f91b89777f1d0e822127e6baf32a694bc4330c9dcc4d6a5396cf",
+          "classification": "indeterminado_por_referencia",
+          "topic": "dos referencias nuevas",
+          "reason": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+          "historicalAuditDecision": "pending",
+          "historicalAuditNotes": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    },
+    {
+      "caseId": "res-v3-procedure-05",
+      "split": "reserved",
+      "originGroup": "independent-v3-res-v3-procedure-05",
+      "sourceCorpus": "evaluation/corpus/v3/reserved.json",
+      "clinicalNote": "EXAMEN: No se realizó biopsia cutánea a la paciente. REGISTRO: La paciente presenta diagnóstico actual de queratosis. MEDICACIÓN: La paciente refiere usar Lucero actualmente.",
+      "issues": [
+        {
+          "ruleId": "R2",
+          "target": "/procedures/0/context/temporality",
+          "originalReference": {
+            "value": "unknown",
+            "evidence": []
+          },
+          "evidence": [
+            {
+              "start": 0,
+              "end": 174,
+              "quote": "EXAMEN: No se realizó biopsia cutánea a la paciente. REGISTRO: La paciente presenta diagnóstico actual de queratosis. MEDICACIÓN: La paciente refiere usar Lucero actualmente."
+            }
+          ],
+          "reason": "No se realizó no fija por sí solo antecedente remoto frente a no realización en la atención actual; EXAMEN no aporta fecha.",
+          "admissibleReadings": [
+            "conservar unknown sin ancla",
+            "nota nueva no se realizó hoy o ayer"
+          ],
+          "proposedReference": null,
+          "status": "proposed_not_adjudicated",
+          "requiredReviewer": "responsable de anotación; revisión textual auxiliar realizada",
+          "action": "retain_reference"
+        }
+      ],
+      "historicalAttempts": [
+        {
+          "split": "reserved",
+          "round": 1,
+          "caseId": "res-v3-procedure-05",
+          "recordSha256": "2661ebc3ce7df9d7c410f30a409e62c5f18c0af47d2893ef78470dd5260f2d3b",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0"
+          ],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 2,
+          "caseId": "res-v3-procedure-05",
+          "recordSha256": "ea437d63b82d63308360a60353f19fe74c14374fc3674e2bdf351eb43427d3af",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0"
+          ],
+          "historicalInvalidAttributes": []
+        },
+        {
+          "split": "reserved",
+          "round": 3,
+          "caseId": "res-v3-procedure-05",
+          "recordSha256": "2c71472617c1a5d9fb97990cf46f954dd04113034a236cb513454d710a0354e5",
+          "classification": "respaldo_rechazado_con_referencia_disputada",
+          "reason": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+          "historicalAuditDecision": "support_failed",
+          "historicalAuditNotes": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+          "historicalInvalidEntities": [],
+          "historicalInvalidContexts": [
+            "/diagnoses/0"
+          ],
+          "historicalInvalidAttributes": []
+        }
+      ],
+      "review": {
+        "primary": "Codex, agente principal",
+        "auxiliary": "t2_reference_review, otro agente del mismo modelo",
+        "clinicalHumanReview": false,
+        "blindedToGold": false
+      },
+      "evaluationUse": "exposed_development_only_not_new_reserved"
+    }
+  ]
+}

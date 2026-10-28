@@ -2,7 +2,7 @@
 
 > Para quien ejecute: utilizar `superpowers:executing-plans` y completar las tareas con sus verificaciones. Este documento es una propuesta para revisión del usuario; no autoriza todavía implementación ni inferencia remota. No delegar sin autorización aplicable.
 
-**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2–T10 pendientes. Creado el 28-10-2026.
+**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3–T10 pendientes. Creado el 28-10-2026.
 
 **Objetivo:** investigar y resolver de forma trazable todos los limitantes identificados en código, representación, proveedor y evaluación, y medir si las correcciones mejoran la calidad sin ocultar omisiones, descartes ni incertidumbre.
 
@@ -113,13 +113,15 @@ En tareas de código: primero prueba que falle por la causa investigada, despué
 
 **Depende de:** T1. **Archivos:** nuevas decisiones de anotación y registro de disputas; revisión de `ANNOTATION.md`, contrato y auditoría revisión 2 sin alterarlos.
 
-- [ ] Agrupar los 57 intentos pendientes por escenario y regla; incluir también disputas de referencia en intentos ya rechazados por otra causa.
-- [ ] Para cada grupo registrar nota, campo, lecturas admisibles, evidencia, regla vigente, decisión propuesta y quién la revisó. No resolver tres repeticiones del mismo caso como tres validaciones independientes.
-- [ ] Definir con ejemplos positivos y negativos: tiempo de orden frente a prestación, pasado verbal, encabezados, sujeto elíptico/familiar, impresión diagnóstica, estado de medicamento, control/revisión como procedimiento y secuencia frente a contradicción.
-- [ ] Diferenciar información realmente desconocida de una nota sintética mal especificada. Si hay varias lecturas válidas, aclarar una nueva nota o versionar explícitamente las alternativas de anotación; no escoger la lectura favorable después de medir.
-- [ ] Obtener revisión independiente y registrar desacuerdo antes y después de adjudicar. La revisión por otro modelo será auxiliar; no se etiquetará como revisión clínica humana.
+- [x] Agrupar los 57 intentos pendientes por escenario y regla; incluir también disputas de referencia en intentos ya rechazados por otra causa.
+- [x] Para cada grupo registrar nota, campo, lecturas admisibles, evidencia, regla vigente, decisión propuesta y quién la revisó. No resolver tres repeticiones del mismo caso como tres validaciones independientes.
+- [x] Definir con ejemplos positivos y negativos: tiempo de orden frente a prestación, pasado verbal, encabezados, sujeto elíptico/familiar, impresión diagnóstica, estado de medicamento, control/revisión como procedimiento y secuencia frente a contradicción.
+- [x] Diferenciar información realmente desconocida de una nota sintética mal especificada. Si hay varias lecturas válidas, aclarar una nueva nota o versionar explícitamente las alternativas de anotación; no escoger la lectura favorable después de medir.
+- [x] Obtener revisión independiente y registrar desacuerdo antes y después de adjudicar. La revisión por otro modelo será auxiliar; no se etiquetará como revisión clínica humana.
 - [ ] Versionar referencias corregidas y su justificación. Mantener una comparación descriptiva con el gold histórico, claramente separada de la decisión original.
-- [ ] Si se cambia el significado público de temporalidad u otro campo, proponer ADR antes de modificar implementación o contrato.
+- [x] Si se cambia el significado público de temporalidad u otro campo, proponer ADR antes de modificar implementación o contrato.
+
+**Seguimiento T2:** [expediente y verificaciones](../../../evaluation/quality-review/t2/README.md). Revisión independiente auxiliar por otro agente realizada; revisión clínica humana y decisiones de producto pendientes. Las referencias corregidas tienen un patchset propuesto versionado; no se materializa corpus definitivo hasta aprobar las reglas. Por eso el paso de versionar referencias definitivas permanece abierto.
 
 **Aceptación:** cada disputa tiene decisión razonada o bloqueo explícito con responsable requerido; ninguna se elimina del denominador para aprobar. Una tarea documental puede estar preparada sin que la auditoría esté cerrada.
 
@@ -262,4 +264,4 @@ Bloques sugeridos para revisión/commits locales: diagnóstico y referencias (T1
 
 La revisión clínica humana independiente, las condiciones de privacidad/contratación del proveedor y la autorización para datos reales siguen siendo requisitos externos; no se dan por satisfechos por terminar ingeniería. Si falta revisor o presupuesto, continuar tareas offline independientes y dejar el tramo dependiente identificado, sin simular su ejecución.
 
-**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. La ejecución de T2–T10 permanece pendiente; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.
+**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1 y después T2. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.

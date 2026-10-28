@@ -4,7 +4,7 @@ Estado al cierre del 28-10-2026 (America/Guayaquil): **prototipo de Clinical Ext
 
 Para retomar, leer primero el [resumen de la sesión del 28-10](sesion-28-10-2026/README.md), [AGENTS.md](../AGENTS.md) y el [análisis de la evaluación](sesion-28-10-2026-evaluacion.md). La [sesión del 27-10](sesion-27-10-2026/README.md) y el [informe H5](h5-validation.md) conservan la línea base. Para consumir la API, usar la [guía H5](h5-integration.md), considerando que describe la configuración histórica.
 
-El [plan integral de revisión, corrección y evaluación](superpowers/plans/2026-10-28-extraction-quality-review-and-remediation.md) reúne los hallazgos posteriores y propone diez tareas con trazabilidad, pruebas y criterios de aceptación. Fue aprobado por el usuario; [T1 está completada y verificada](../evaluation/quality-review/README.md). T2–T10 siguen pendientes y no se ha autorizado otra campaña remota.
+El [plan integral de revisión, corrección y evaluación](superpowers/plans/2026-10-28-extraction-quality-review-and-remediation.md) reúne los hallazgos posteriores y propone diez tareas con trazabilidad, pruebas y criterios de aceptación. Fue aprobado por el usuario; [T1 está completada y verificada](../evaluation/quality-review/README.md). [T2 tiene expediente de revisión preparado](../evaluation/quality-review/t2/README.md), con 18 cambios de referencia propuestos y adjudicación formal abierta. T3–T10 siguen pendientes y no se ha autorizado otra campaña remota.
 
 Actualización posterior: las correcciones de desarrollo del evaluador y la revisión de las seis decisiones H5 están en [evaluación 1.0.1](../evaluation/next/README.md). La evaluación histórica y su decisión negativa no cambian; la próxima campaña requiere integrar estos activos y sustituir los dos escenarios reservados examinados.
 
@@ -25,6 +25,7 @@ La [revisión de resultados del 28-10](sesion-28-10-2026-evaluacion.md) document
 | [ADR 0004](adr/0004-extraction-http-h3.md) | HTTP, API keys/scopes, configuración y validación de localidad. |
 | [ADR 0005](adr/0005-gemini-provider-h4.md) | Gemini por REST, presupuestos y condiciones externas documentadas en la sesión. |
 | [ADR 0006](adr/0006-frozen-evaluation-h5.md) | Evaluación congelada, consumo acotado y decisión agregada posterior. |
+| [ADR 0007 propuesto](adr/0007-annotation-scope-and-temporal-context.md) | Alcance de seguimiento y contexto temporal; no adoptado ni implementado. |
 
 Stack implementado: Java 21, Spring Boot 3.5.16 y cliente HTTP del JDK para Gemini. Spring AI fue considerado y no se incorporó. El dominio/caso de uso dependen de un puerto interno; la API no necesita base de datos ni SFM.
 
