@@ -1,0 +1,21 @@
+{
+  "scope": "T1 analysis, sources and verification; synthetic/offline only",
+  "sha256": {
+    "evaluation/quality-review/README.md": "a5017c421b2d0e5a30e567e4080dc96743c67c88641a48acbd30ffd2c03d435d",
+    "evaluation/quality-review/analyze_baseline.py": "96b4be5a8afd7de5c3719f1c8ad69ae4e4f6cfae2dc05dddda3b1bd430d271e0",
+    "evaluation/quality-review/baseline-analysis.json": "42d6ac10f98d8e96da66db3b7764ad614d6551a0ce1ffb7eea5874bc2e1b41cb",
+    "evaluation/quality-review/baseline-manifest.json": "a81b7f0ac13806ac77621eb574077f4721c6bbd0aebbf0c688dd3a30def07361",
+    "evaluation/quality-review/test_analyze_baseline.py": "810569b8d537be35aee7c43c96707559ae46c66f082285473ae52a14be32d1ec",
+    "evaluation/quality-review/verification/analyzer-green.log": "a8bd00c9cba87f09c3945cb02be0e8ca19feadde270e9fe9453a97e1c0a1c9e0",
+    "evaluation/quality-review/verification/contract.log": "b3c4260dfe0332bd7a9d6247eb797803be459f02c44afa0427685d7bf2e70219",
+    "evaluation/quality-review/verification/corpus.log": "82d814c3825ea762d6c308434e3cb124b702780dcd6de792d7a347609a087b9b",
+    "evaluation/quality-review/verification/dose.log": "c578496661a98b99561b50e31e414edbf9483da73407f8c87f1e5337b6e92b08",
+    "evaluation/quality-review/verification/environment.json": "8100fb2db384a2946e49d05722bd23482cb89b266759203d28a70a92c3578ae2",
+    "evaluation/quality-review/verification/java-baseline.log": "2da74105dcd80d255136dfcf378c42cfb5a03bf1954c95e4a11f950faf87e4e6",
+    "evaluation/quality-review/verification/negation.log": "feecdc4cd9f2460f9cc05d707f449709eaafc56229aae7340874605eca90a1bc",
+    "evaluation/quality-review/verification/python-baseline.log": "a32fcf09a554c31691b8e89f7dd07026e8b285fbd5db9e69315f4e9ea03142bf",
+    "evaluation/quality-review/verification/red-validation.log": "c18db777795467ab0f68312f67a8baca9d2fdb3e238f494d4f1e862a4e0d47b3",
+    "evaluation/quality-review/verification/red.log": "f03ed2cfc07678227e141aa62f7a977907fa772ab7d0251e99c9b4e859bb63e9",
+    "evaluation/quality-review/verification/reports.log": "6273232de4d3ef7acd4ecafa5c86beeeb974f56586b21089a2990b3f72facbe6"
+  }
+}

@@ -1,0 +1,1266 @@
+{
+  "schemaVersion": 1,
+  "scope": "frozen automatic scores; not clinical accuracy or release decision",
+  "groups": [
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 1,
+      "family": "diagnoses",
+      "cases": 6,
+      "entities": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 7,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {},
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 1,
+      "family": "medications",
+      "cases": 6,
+      "entities": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 3,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {},
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 1,
+      "family": "procedures",
+      "cases": 6,
+      "entities": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 2,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1,
+        "UNMATCHED_ENTITY": 2
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 2,
+      "family": "diagnoses",
+      "cases": 6,
+      "entities": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 7,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {},
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 2,
+      "family": "medications",
+      "cases": 6,
+      "entities": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 3,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {},
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 2,
+      "family": "procedures",
+      "cases": 6,
+      "entities": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 2
+      },
+      "alignedByAutomaticScorer": 2,
+      "contextMismatchEntities": 2,
+      "contextMismatchDimensions": {
+        "subject": 2
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 2,
+        "UNMATCHED_ENTITY": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 3,
+      "family": "diagnoses",
+      "cases": 6,
+      "entities": {
+        "tp": 6,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 7,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 3,
+      "family": "medications",
+      "cases": 6,
+      "entities": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 3,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {},
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "adversarial",
+      "round": 3,
+      "family": "procedures",
+      "cases": 6,
+      "entities": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 2
+      },
+      "alignedByAutomaticScorer": 2,
+      "contextMismatchEntities": 2,
+      "contextMismatchDimensions": {
+        "subject": 2
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 2,
+        "UNMATCHED_ENTITY": 2
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 1,
+      "family": "diagnoses",
+      "cases": 24,
+      "entities": {
+        "tp": 29,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 30,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 1,
+      "family": "medications",
+      "cases": 24,
+      "entities": {
+        "tp": 21,
+        "fp": 2,
+        "fn": 3
+      },
+      "alignedByAutomaticScorer": 23,
+      "contextMismatchEntities": 2,
+      "contextMismatchDimensions": {
+        "subject": 1,
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 2,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 1,
+      "family": "procedures",
+      "cases": 24,
+      "entities": {
+        "tp": 23,
+        "fp": 4,
+        "fn": 4
+      },
+      "alignedByAutomaticScorer": 27,
+      "contextMismatchEntities": 4,
+      "contextMismatchDimensions": {
+        "assertion": 1,
+        "subject": 2,
+        "temporality": 2
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 4,
+        "CRITICAL_CONTEXT": 3
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 2,
+      "family": "diagnoses",
+      "cases": 24,
+      "entities": {
+        "tp": 29,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 30,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 2,
+      "family": "medications",
+      "cases": 24,
+      "entities": {
+        "tp": 19,
+        "fp": 4,
+        "fn": 5
+      },
+      "alignedByAutomaticScorer": 23,
+      "contextMismatchEntities": 4,
+      "contextMismatchDimensions": {
+        "subject": 3,
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 4,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 2,
+      "family": "procedures",
+      "cases": 24,
+      "entities": {
+        "tp": 22,
+        "fp": 5,
+        "fn": 5
+      },
+      "alignedByAutomaticScorer": 27,
+      "contextMismatchEntities": 5,
+      "contextMismatchDimensions": {
+        "subject": 4,
+        "temporality": 2
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 5,
+        "CRITICAL_CONTEXT": 2
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 3,
+      "family": "diagnoses",
+      "cases": 24,
+      "entities": {
+        "tp": 29,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 30,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 3,
+      "family": "medications",
+      "cases": 24,
+      "entities": {
+        "tp": 22,
+        "fp": 1,
+        "fn": 2
+      },
+      "alignedByAutomaticScorer": 23,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "core",
+      "round": 3,
+      "family": "procedures",
+      "cases": 24,
+      "entities": {
+        "tp": 22,
+        "fp": 5,
+        "fn": 5
+      },
+      "alignedByAutomaticScorer": 27,
+      "contextMismatchEntities": 5,
+      "contextMismatchDimensions": {
+        "subject": 3,
+        "temporality": 2
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 5,
+        "CRITICAL_CONTEXT": 2
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 1,
+      "family": "diagnoses",
+      "cases": 9,
+      "entities": {
+        "tp": 18,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 19,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 1,
+      "family": "medications",
+      "cases": 9,
+      "entities": {
+        "tp": 6,
+        "fp": 5,
+        "fn": 6
+      },
+      "alignedByAutomaticScorer": 11,
+      "contextMismatchEntities": 5,
+      "contextMismatchDimensions": {
+        "prescriptionStatus": 1,
+        "subject": 4,
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 5,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 1,
+      "family": "procedures",
+      "cases": 9,
+      "entities": {
+        "tp": 13,
+        "fp": 2,
+        "fn": 2
+      },
+      "alignedByAutomaticScorer": 15,
+      "contextMismatchEntities": 2,
+      "contextMismatchDimensions": {
+        "subject": 1,
+        "temporality": 2
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 2
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 2,
+      "family": "diagnoses",
+      "cases": 9,
+      "entities": {
+        "tp": 17,
+        "fp": 2,
+        "fn": 2
+      },
+      "alignedByAutomaticScorer": 19,
+      "contextMismatchEntities": 2,
+      "contextMismatchDimensions": {
+        "subject": 1,
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 2
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 2,
+      "family": "medications",
+      "cases": 9,
+      "entities": {
+        "tp": 8,
+        "fp": 4,
+        "fn": 4
+      },
+      "alignedByAutomaticScorer": 12,
+      "contextMismatchEntities": 4,
+      "contextMismatchDimensions": {
+        "prescriptionStatus": 1,
+        "subject": 3,
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 4,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 2,
+      "family": "procedures",
+      "cases": 9,
+      "entities": {
+        "tp": 11,
+        "fp": 4,
+        "fn": 4
+      },
+      "alignedByAutomaticScorer": 15,
+      "contextMismatchEntities": 4,
+      "contextMismatchDimensions": {
+        "subject": 3,
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 4
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 3,
+      "family": "diagnoses",
+      "cases": 9,
+      "entities": {
+        "tp": 18,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 19,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 3,
+      "family": "medications",
+      "cases": 9,
+      "entities": {
+        "tp": 6,
+        "fp": 6,
+        "fn": 6
+      },
+      "alignedByAutomaticScorer": 12,
+      "contextMismatchEntities": 6,
+      "contextMismatchDimensions": {
+        "prescriptionStatus": 1,
+        "subject": 4,
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 6,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "development",
+      "cohort": "exploratory",
+      "round": 3,
+      "family": "procedures",
+      "cases": 9,
+      "entities": {
+        "tp": 8,
+        "fp": 7,
+        "fn": 7
+      },
+      "alignedByAutomaticScorer": 15,
+      "contextMismatchEntities": 7,
+      "contextMismatchDimensions": {
+        "subject": 5,
+        "temporality": 3
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 7
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 1,
+      "family": "diagnoses",
+      "cases": 6,
+      "entities": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 7,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {},
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 1,
+      "family": "medications",
+      "cases": 6,
+      "entities": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 3,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 1,
+      "family": "procedures",
+      "cases": 6,
+      "entities": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 2,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {
+        "UNMATCHED_ENTITY": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 2,
+      "family": "diagnoses",
+      "cases": 6,
+      "entities": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 7,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {},
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 2,
+      "family": "medications",
+      "cases": 6,
+      "entities": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 3,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 2,
+      "family": "procedures",
+      "cases": 6,
+      "entities": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 2,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {
+        "UNMATCHED_ENTITY": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 3,
+      "family": "diagnoses",
+      "cases": 6,
+      "entities": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 7,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {},
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 3,
+      "family": "medications",
+      "cases": 6,
+      "entities": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 3,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "adversarial",
+      "round": 3,
+      "family": "procedures",
+      "cases": 6,
+      "entities": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 0
+      },
+      "alignedByAutomaticScorer": 2,
+      "contextMismatchEntities": 0,
+      "contextMismatchDimensions": {},
+      "issues": {
+        "UNMATCHED_ENTITY": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 1,
+      "family": "diagnoses",
+      "cases": 24,
+      "entities": {
+        "tp": 29,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 30,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "assertion": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 1,
+      "family": "medications",
+      "cases": 24,
+      "entities": {
+        "tp": 18,
+        "fp": 4,
+        "fn": 6
+      },
+      "alignedByAutomaticScorer": 22,
+      "contextMismatchEntities": 4,
+      "contextMismatchDimensions": {
+        "subject": 1,
+        "temporality": 3
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 4,
+        "CRITICAL_CONTEXT": 1,
+        "UNBACKED_ATTRIBUTE": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 1,
+      "family": "procedures",
+      "cases": 24,
+      "entities": {
+        "tp": 15,
+        "fp": 11,
+        "fn": 11
+      },
+      "alignedByAutomaticScorer": 26,
+      "contextMismatchEntities": 11,
+      "contextMismatchDimensions": {
+        "subject": 3,
+        "temporality": 9
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 11,
+        "CRITICAL_CONTEXT": 7
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 2,
+      "family": "diagnoses",
+      "cases": 24,
+      "entities": {
+        "tp": 28,
+        "fp": 2,
+        "fn": 2
+      },
+      "alignedByAutomaticScorer": 30,
+      "contextMismatchEntities": 2,
+      "contextMismatchDimensions": {
+        "assertion": 1,
+        "subject": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 2
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 2,
+      "family": "medications",
+      "cases": 24,
+      "entities": {
+        "tp": 18,
+        "fp": 4,
+        "fn": 6
+      },
+      "alignedByAutomaticScorer": 22,
+      "contextMismatchEntities": 4,
+      "contextMismatchDimensions": {
+        "subject": 2,
+        "temporality": 2
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 4,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 2,
+      "family": "procedures",
+      "cases": 24,
+      "entities": {
+        "tp": 17,
+        "fp": 9,
+        "fn": 9
+      },
+      "alignedByAutomaticScorer": 26,
+      "contextMismatchEntities": 9,
+      "contextMismatchDimensions": {
+        "assertion": 1,
+        "subject": 4,
+        "temporality": 5
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 9,
+        "CRITICAL_CONTEXT": 6
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 3,
+      "family": "diagnoses",
+      "cases": 24,
+      "entities": {
+        "tp": 29,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 30,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "assertion": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 3,
+      "family": "medications",
+      "cases": 24,
+      "entities": {
+        "tp": 19,
+        "fp": 3,
+        "fn": 5
+      },
+      "alignedByAutomaticScorer": 22,
+      "contextMismatchEntities": 3,
+      "contextMismatchDimensions": {
+        "subject": 1,
+        "temporality": 2
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 3,
+        "CRITICAL_CONTEXT": 1,
+        "UNBACKED_ATTRIBUTE": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "core",
+      "round": 3,
+      "family": "procedures",
+      "cases": 24,
+      "entities": {
+        "tp": 17,
+        "fp": 9,
+        "fn": 9
+      },
+      "alignedByAutomaticScorer": 26,
+      "contextMismatchEntities": 9,
+      "contextMismatchDimensions": {
+        "subject": 5,
+        "temporality": 6
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 9,
+        "CRITICAL_CONTEXT": 5
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 1,
+      "family": "diagnoses",
+      "cases": 9,
+      "entities": {
+        "tp": 17,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 18,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 1,
+      "family": "medications",
+      "cases": 9,
+      "entities": {
+        "tp": 9,
+        "fp": 3,
+        "fn": 3
+      },
+      "alignedByAutomaticScorer": 12,
+      "contextMismatchEntities": 3,
+      "contextMismatchDimensions": {
+        "temporality": 3
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 3
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 1,
+      "family": "procedures",
+      "cases": 9,
+      "entities": {
+        "tp": 9,
+        "fp": 7,
+        "fn": 6
+      },
+      "alignedByAutomaticScorer": 15,
+      "contextMismatchEntities": 6,
+      "contextMismatchDimensions": {
+        "subject": 5,
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 6,
+        "UNMATCHED_ENTITY": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 2,
+      "family": "diagnoses",
+      "cases": 9,
+      "entities": {
+        "tp": 17,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 18,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 2,
+      "family": "medications",
+      "cases": 9,
+      "entities": {
+        "tp": 6,
+        "fp": 6,
+        "fn": 6
+      },
+      "alignedByAutomaticScorer": 12,
+      "contextMismatchEntities": 6,
+      "contextMismatchDimensions": {
+        "assertion": 2,
+        "subject": 2,
+        "temporality": 4
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 6
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 2,
+      "family": "procedures",
+      "cases": 9,
+      "entities": {
+        "tp": 9,
+        "fp": 7,
+        "fn": 6
+      },
+      "alignedByAutomaticScorer": 15,
+      "contextMismatchEntities": 6,
+      "contextMismatchDimensions": {
+        "subject": 6
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 6,
+        "UNMATCHED_ENTITY": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 3,
+      "family": "diagnoses",
+      "cases": 9,
+      "entities": {
+        "tp": 17,
+        "fp": 1,
+        "fn": 1
+      },
+      "alignedByAutomaticScorer": 18,
+      "contextMismatchEntities": 1,
+      "contextMismatchDimensions": {
+        "temporality": 1
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 3,
+      "family": "medications",
+      "cases": 9,
+      "entities": {
+        "tp": 6,
+        "fp": 6,
+        "fn": 6
+      },
+      "alignedByAutomaticScorer": 12,
+      "contextMismatchEntities": 6,
+      "contextMismatchDimensions": {
+        "assertion": 1,
+        "subject": 1,
+        "temporality": 4
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 6,
+        "CRITICAL_CONTEXT": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    },
+    {
+      "split": "reserved",
+      "cohort": "exploratory",
+      "round": 3,
+      "family": "procedures",
+      "cases": 9,
+      "entities": {
+        "tp": 10,
+        "fp": 6,
+        "fn": 5
+      },
+      "alignedByAutomaticScorer": 15,
+      "contextMismatchEntities": 5,
+      "contextMismatchDimensions": {
+        "subject": 5
+      },
+      "issues": {
+        "CONTEXT_MISMATCH": 5,
+        "UNMATCHED_ENTITY": 1
+      },
+      "operationalFailureCases": 0,
+      "invariantViolationCases": 0,
+      "semanticAttribution": "not_determined_by_scores"
+    }
+  ],
+  "baselineManifestSha256": "a81b7f0ac13806ac77621eb574077f4721c6bbd0aebbf0c688dd3a30def07361"
+}

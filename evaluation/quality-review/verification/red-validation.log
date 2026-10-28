@@ -1,0 +1,23 @@
+....F.F.......
+======================================================================
+FAIL: test_duplicate_round_configuration_rejected (test_analyze_baseline.BaselineTests.test_duplicate_round_configuration_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/test_analyze_baseline.py", line 84, in test_duplicate_round_configuration_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_case_set_rejected (test_analyze_baseline.BaselineTests.test_empty_case_set_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/test_analyze_baseline.py", line 79, in test_empty_case_set_rejected
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.017s
+
+FAILED (failures=2)

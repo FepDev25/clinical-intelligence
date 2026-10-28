@@ -1,0 +1,4 @@
+PASS: development: 39 cases; entities={'diagnoses': 56, 'medications': 39, 'procedures': 44}; cohorts={'core': 24, 'exploratory': 9, 'adversarial': 6}.
+PASS: schema, literal evidence, catalog membership, coverage and SHA-256 assets.
+Development only: reserved annotations NOT loaded; run --include-reserved for a full split audit.
+No LLM quality measurement, clinical validation or backend execution performed.

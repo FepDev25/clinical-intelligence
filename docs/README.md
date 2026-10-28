@@ -4,6 +4,8 @@ Estado al cierre del 28-10-2026 (America/Guayaquil): **prototipo de Clinical Ext
 
 Para retomar, leer primero el [resumen de la sesión del 28-10](sesion-28-10-2026/README.md), [AGENTS.md](../AGENTS.md) y el [análisis de la evaluación](sesion-28-10-2026-evaluacion.md). La [sesión del 27-10](sesion-27-10-2026/README.md) y el [informe H5](h5-validation.md) conservan la línea base. Para consumir la API, usar la [guía H5](h5-integration.md), considerando que describe la configuración histórica.
 
+El [plan integral de revisión, corrección y evaluación](superpowers/plans/2026-10-28-extraction-quality-review-and-remediation.md) reúne los hallazgos posteriores y propone diez tareas con trazabilidad, pruebas y criterios de aceptación. Fue aprobado por el usuario; [T1 está completada y verificada](../evaluation/quality-review/README.md). T2–T10 siguen pendientes y no se ha autorizado otra campaña remota.
+
 Actualización posterior: las correcciones de desarrollo del evaluador y la revisión de las seis decisiones H5 están en [evaluación 1.0.1](../evaluation/next/README.md). La evaluación histórica y su decisión negativa no cambian; la próxima campaña requiere integrar estos activos y sustituir los dos escenarios reservados examinados.
 
 La [nueva medición de extracción v2](evaluacion-28-10-2026-v2.md) completó 234 operaciones sintéticas y no aprueba automáticamente el MVP; la auditoría semántica y la revisión de dos nuevas referencias siguen pendientes.
