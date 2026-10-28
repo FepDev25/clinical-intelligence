@@ -31,6 +31,14 @@ class GeminiProtocolTest {
         assertEquals(injection,data.path("clinicalNote").asText()); assertEquals("es-EC",data.path("locale").asText());
         assertFalse(data.has("catalogs"));
     }
+    @Test void requestUsesVersionedInstructionsForObservedDevelopmentFailures() {
+        var request=protocol.request(new ProviderRequest("nota sintética", "es"), 65536);
+        String instruction=request.at("/systemInstruction/parts/0/text").asText();
+        assertEquals("extraction-gemini-v2", GeminiProtocol.PROMPT_VERSION);
+        assertTrue(instruction.contains("Un síntoma o motivo de consulta no es por sí solo un diagnóstico"));
+        assertTrue(instruction.contains("La concentración del envase no es una dosis"));
+        assertTrue(instruction.contains("Una fecha de la orden no demuestra la fecha de realización"));
+    }
     @Test void convertsExplicitRepeatedOccurrenceToOriginalCodePoints() throws Exception {
         String note="🩺 asma\r\nasma";
         var decoded=protocol.decode(note,envelope(proposal("asma",1),"STOP"));

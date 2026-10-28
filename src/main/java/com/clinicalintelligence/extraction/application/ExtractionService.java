@@ -55,7 +55,7 @@ public final class ExtractionService {
         }
         var metadata = response.metadata();
         return new Result(UUID.randomUUID(), locale, findings, warnings,
-                new Processing("extraction-core-0.1.0", metadata.promptVersion(), "evidence-1",
+                new Processing("extraction-core-0.1.0", metadata.promptVersion(), "evidence-2",
                         metadata.executionMode(), metadata.provider(), metadata.model()));
     }
 
@@ -116,11 +116,24 @@ public final class ExtractionService {
     private Text medicationText(String note, Text name, List<Evidence> scopes, Text proposed, String target, List<Warning> warnings) {
         if (proposed == null) return null;
         boolean associated = evidence.validText(note, proposed) && proposed.evidence().stream().allMatch(span ->
-                scopes.stream().anyMatch(scope -> scope.quote().contains(name.value())
+                scopes.stream().anyMatch(scope -> containsNameOccurrence(scope, name)
                         && scope.start() <= span.start() && span.end() <= scope.end()));
         if (associated) return proposed;
         discardedAttribute(target, warnings);
         return null;
+    }
+
+    private boolean containsNameOccurrence(Evidence scope, Text name) {
+        for (Evidence anchor : name.evidence()) {
+            int position = anchor.quote().indexOf(name.value());
+            while (position >= 0) {
+                int start = anchor.start() + anchor.quote().codePointCount(0, position);
+                int end = start + name.value().codePointCount(0, name.value().length());
+                if (scope.start() <= start && end <= scope.end()) return true;
+                position = anchor.quote().indexOf(name.value(), position + 1);
+            }
+        }
+        return false;
     }
 
     private Text text(String note, Text proposed, String target, List<Warning> warnings) {

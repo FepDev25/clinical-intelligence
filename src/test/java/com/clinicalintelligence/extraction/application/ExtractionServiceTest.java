@@ -98,6 +98,28 @@ class ExtractionServiceTest {
         assertEquals(List.of("/medications/0/dosage"), result.warnings().getFirst().targets());
     }
 
+    @Test void repeatedMedicationNameDoesNotAssociateDoseFromAnotherOccurrence() {
+        String note = "😀 Alfa: se prescriben 5 mg. Alfa: se reportan 9 mg.";
+        String second = "Alfa: se reportan 9 mg";
+        var context = context(note, second);
+        var proposed = new Medication(text(note, "Alfa"), null, context,
+                grounded(PrescriptionStatus.REPORTED, note, second), text(note, "9 mg"), null, null, null);
+        var result = service(new Proposal(List.of(proposed), List.of())).extract(Command.note(note));
+        assertEquals("evidence-2", result.processing().validationVersion());
+        assertNull(((Medication) result.medications().getFirst().mention()).dosage());
+        assertTrue(result.warnings().stream().anyMatch(w -> w.targets().contains("/medications/0/dosage")));
+    }
+
+    @Test void doseForSecondMedicationOccurrenceRemainsAvailable() {
+        String note = "😀 Alfa: se prescriben 5 mg. Alfa: se reportan 9 mg.";
+        String second = "Alfa: se reportan 9 mg";
+        var proposed = new Medication(new Text("Alfa", List.of(span(note, second))), null, context(note, second),
+                grounded(PrescriptionStatus.REPORTED, note, second), text(note, "9 mg"), null, null, null);
+        var result = service(new Proposal(List.of(proposed), List.of())).extract(Command.note(note));
+        assertEquals("9 mg", ((Medication) result.medications().getFirst().mention()).dosage().value());
+        assertTrue(result.warnings().isEmpty());
+    }
+
     @Test void missingContextProducesExplicitUnknownFieldsAndWarnings() {
         var d = diagnosis(NOTE);
         var result = service(new Proposal(List.of(new Diagnosis(d.name(), null, null)), List.of())).extract(Command.note(NOTE));

@@ -14,7 +14,7 @@ import java.util.*;
 
 public final class GeminiProtocol {
     public static final String MODEL="gemini-3.8-flash";
-    public static final String PROMPT_VERSION="extraction-gemini-v1";
+    public static final String PROMPT_VERSION="extraction-gemini-v2";
     private final ObjectMapper json;
     private final JsonNode schema;
     private final JsonSchema validator;
@@ -35,7 +35,7 @@ public final class GeminiProtocol {
                 .enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS).build();
         try {
             schema=json.readTree(resource("/gemini/proposal-v1.schema.json"));
-            system=new String(resource("/gemini/extraction-v1.txt"),StandardCharsets.UTF_8);
+            system=new String(resource("/gemini/extraction-v2.txt"),StandardCharsets.UTF_8);
             validator=JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012).getSchema(schema);
         } catch(Exception invalid) { throw new IllegalStateException("Gemini protocol resources unavailable"); }
     }
