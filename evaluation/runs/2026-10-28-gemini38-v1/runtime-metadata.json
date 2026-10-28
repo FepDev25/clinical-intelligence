@@ -1,0 +1,742 @@
+{
+  "method": "descriptive-only; p95 nearest rank; no clinical scoring or approval",
+  "responsesSha256": "40e7d53da3562c732e8ccea6288893619cd784bc29464595dc7ead84b9485b11",
+  "scriptSha256": "8b798c7df86bc70e204612272a1aede4997a4498860481408caa12241b0239c1",
+  "all": {
+    "operations": 234,
+    "httpStatuses": {
+      "200": 234
+    },
+    "errorCodes": {},
+    "elapsedMs": {
+      "n": 234,
+      "min": 2259,
+      "p50": 7824.0,
+      "p95": 12470,
+      "max": 18651
+    },
+    "requestBytes": {
+      "n": 234,
+      "min": 151,
+      "p50": 248.0,
+      "p95": 451,
+      "max": 493
+    },
+    "noteCodePoints": {
+      "n": 234,
+      "min": 92,
+      "p50": 201.5,
+      "p95": 407,
+      "max": 424
+    },
+    "catalogEntries": {
+      "n": 234,
+      "min": 0,
+      "p50": 0.0,
+      "p95": 2,
+      "max": 3
+    },
+    "effectiveModels": {
+      "gemini-3.8-flash": 234
+    },
+    "providerStatuses": {
+      "COMPLETE": 234
+    },
+    "operationsWithoutExactlyOneObservation": 0,
+    "spendUpperBoundUsd": "1.01496000",
+    "usage": {
+      "inputTokens": {
+        "knownObservations": 234,
+        "missingObservations": 0,
+        "knownSum": 133095,
+        "perObservation": {
+          "n": 234,
+          "min": 539,
+          "p50": 565.0,
+          "p95": 608,
+          "max": 617
+        }
+      },
+      "outputTokens": {
+        "knownObservations": 234,
+        "missingObservations": 0,
+        "knownSum": 244037,
+        "perObservation": {
+          "n": 234,
+          "min": 16,
+          "p50": 1101.5,
+          "p95": 1639,
+          "max": 2202
+        }
+      },
+      "thoughtTokens": {
+        "knownObservations": 0,
+        "missingObservations": 234,
+        "knownSum": 0,
+        "perObservation": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "max": null
+        }
+      },
+      "cachedTokens": {
+        "knownObservations": 115,
+        "missingObservations": 119,
+        "knownSum": 39731,
+        "perObservation": {
+          "n": 115,
+          "min": 325,
+          "p50": 344,
+          "p95": 367,
+          "max": 376
+        }
+      },
+      "totalTokens": {
+        "knownObservations": 234,
+        "missingObservations": 0,
+        "knownSum": 377132,
+        "perObservation": {
+          "n": 234,
+          "min": 560,
+          "p50": 1660.0,
+          "p95": 2225,
+          "max": 2813
+        }
+      }
+    }
+  },
+  "rounds": {
+    "development/1": {
+      "operations": 39,
+      "httpStatuses": {
+        "200": 39
+      },
+      "errorCodes": {},
+      "elapsedMs": {
+        "n": 39,
+        "min": 3506,
+        "p50": 7955,
+        "p95": 11066,
+        "max": 12465
+      },
+      "requestBytes": {
+        "n": 39,
+        "min": 151,
+        "p50": 231,
+        "p95": 451,
+        "max": 493
+      },
+      "noteCodePoints": {
+        "n": 39,
+        "min": 92,
+        "p50": 188,
+        "p95": 421,
+        "max": 424
+      },
+      "catalogEntries": {
+        "n": 39,
+        "min": 0,
+        "p50": 0,
+        "p95": 2,
+        "max": 3
+      },
+      "effectiveModels": {
+        "gemini-3.8-flash": 39
+      },
+      "providerStatuses": {
+        "COMPLETE": 39
+      },
+      "operationsWithoutExactlyOneObservation": 0,
+      "spendUpperBoundUsd": "0.17566500",
+      "usage": {
+        "inputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 22095,
+          "perObservation": {
+            "n": 39,
+            "min": 539,
+            "p50": 562,
+            "p95": 610,
+            "max": 611
+          }
+        },
+        "outputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 42425,
+          "perObservation": {
+            "n": 39,
+            "min": 254,
+            "p50": 1108,
+            "p95": 1993,
+            "max": 2186
+          }
+        },
+        "thoughtTokens": {
+          "knownObservations": 0,
+          "missingObservations": 39,
+          "knownSum": 0,
+          "perObservation": {
+            "n": 0,
+            "min": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "cachedTokens": {
+          "knownObservations": 1,
+          "missingObservations": 38,
+          "knownSum": 367,
+          "perObservation": {
+            "n": 1,
+            "min": 367,
+            "p50": 367,
+            "p95": 367,
+            "max": 367
+          }
+        },
+        "totalTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 64520,
+          "perObservation": {
+            "n": 39,
+            "min": 798,
+            "p50": 1671,
+            "p95": 2603,
+            "max": 2797
+          }
+        }
+      }
+    },
+    "development/2": {
+      "operations": 39,
+      "httpStatuses": {
+        "200": 39
+      },
+      "errorCodes": {},
+      "elapsedMs": {
+        "n": 39,
+        "min": 3271,
+        "p50": 8293,
+        "p95": 16167,
+        "max": 18651
+      },
+      "requestBytes": {
+        "n": 39,
+        "min": 151,
+        "p50": 231,
+        "p95": 451,
+        "max": 493
+      },
+      "noteCodePoints": {
+        "n": 39,
+        "min": 92,
+        "p50": 188,
+        "p95": 421,
+        "max": 424
+      },
+      "catalogEntries": {
+        "n": 39,
+        "min": 0,
+        "p50": 0,
+        "p95": 2,
+        "max": 3
+      },
+      "effectiveModels": {
+        "gemini-3.8-flash": 39
+      },
+      "providerStatuses": {
+        "COMPLETE": 39
+      },
+      "operationsWithoutExactlyOneObservation": 0,
+      "spendUpperBoundUsd": "0.16621125",
+      "usage": {
+        "inputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 22095,
+          "perObservation": {
+            "n": 39,
+            "min": 539,
+            "p50": 562,
+            "p95": 610,
+            "max": 611
+          }
+        },
+        "outputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 39904,
+          "perObservation": {
+            "n": 39,
+            "min": 255,
+            "p50": 1108,
+            "p95": 1570,
+            "max": 2202
+          }
+        },
+        "thoughtTokens": {
+          "knownObservations": 0,
+          "missingObservations": 39,
+          "knownSum": 0,
+          "perObservation": {
+            "n": 0,
+            "min": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "cachedTokens": {
+          "knownObservations": 17,
+          "missingObservations": 22,
+          "knownSum": 5848,
+          "perObservation": {
+            "n": 17,
+            "min": 331,
+            "p50": 340,
+            "p95": 367,
+            "max": 367
+          }
+        },
+        "totalTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 61999,
+          "perObservation": {
+            "n": 39,
+            "min": 801,
+            "p50": 1663,
+            "p95": 2159,
+            "max": 2813
+          }
+        }
+      }
+    },
+    "development/3": {
+      "operations": 39,
+      "httpStatuses": {
+        "200": 39
+      },
+      "errorCodes": {},
+      "elapsedMs": {
+        "n": 39,
+        "min": 3582,
+        "p50": 7796,
+        "p95": 13890,
+        "max": 15972
+      },
+      "requestBytes": {
+        "n": 39,
+        "min": 151,
+        "p50": 231,
+        "p95": 451,
+        "max": 493
+      },
+      "noteCodePoints": {
+        "n": 39,
+        "min": 92,
+        "p50": 188,
+        "p95": 421,
+        "max": 424
+      },
+      "catalogEntries": {
+        "n": 39,
+        "min": 0,
+        "p50": 0,
+        "p95": 2,
+        "max": 3
+      },
+      "effectiveModels": {
+        "gemini-3.8-flash": 39
+      },
+      "providerStatuses": {
+        "COMPLETE": 39
+      },
+      "operationsWithoutExactlyOneObservation": 0,
+      "spendUpperBoundUsd": "0.16562250",
+      "usage": {
+        "inputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 22095,
+          "perObservation": {
+            "n": 39,
+            "min": 539,
+            "p50": 562,
+            "p95": 610,
+            "max": 611
+          }
+        },
+        "outputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 39747,
+          "perObservation": {
+            "n": 39,
+            "min": 255,
+            "p50": 1111,
+            "p95": 1556,
+            "max": 2182
+          }
+        },
+        "thoughtTokens": {
+          "knownObservations": 0,
+          "missingObservations": 39,
+          "knownSum": 0,
+          "perObservation": {
+            "n": 0,
+            "min": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "cachedTokens": {
+          "knownObservations": 22,
+          "missingObservations": 17,
+          "knownSum": 7578,
+          "perObservation": {
+            "n": 22,
+            "min": 325,
+            "p50": 342.0,
+            "p95": 359,
+            "max": 367
+          }
+        },
+        "totalTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 61842,
+          "perObservation": {
+            "n": 39,
+            "min": 801,
+            "p50": 1667,
+            "p95": 2146,
+            "max": 2793
+          }
+        }
+      }
+    },
+    "reserved/1": {
+      "operations": 39,
+      "httpStatuses": {
+        "200": 39
+      },
+      "errorCodes": {},
+      "elapsedMs": {
+        "n": 39,
+        "min": 3015,
+        "p50": 7482,
+        "p95": 11022,
+        "max": 11160
+      },
+      "requestBytes": {
+        "n": 39,
+        "min": 168,
+        "p50": 257,
+        "p95": 455,
+        "max": 459
+      },
+      "noteCodePoints": {
+        "n": 39,
+        "min": 106,
+        "p50": 214,
+        "p95": 407,
+        "max": 413
+      },
+      "catalogEntries": {
+        "n": 39,
+        "min": 0,
+        "p50": 0,
+        "p95": 2,
+        "max": 3
+      },
+      "effectiveModels": {
+        "gemini-3.8-flash": 39
+      },
+      "providerStatuses": {
+        "COMPLETE": 39
+      },
+      "operationsWithoutExactlyOneObservation": 0,
+      "spendUpperBoundUsd": "0.16955625",
+      "usage": {
+        "inputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 22270,
+          "perObservation": {
+            "n": 39,
+            "min": 542,
+            "p50": 569,
+            "p95": 608,
+            "max": 617
+          }
+        },
+        "outputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 40761,
+          "perObservation": {
+            "n": 39,
+            "min": 16,
+            "p50": 1083,
+            "p95": 1948,
+            "max": 2003
+          }
+        },
+        "thoughtTokens": {
+          "knownObservations": 0,
+          "missingObservations": 39,
+          "knownSum": 0,
+          "perObservation": {
+            "n": 0,
+            "min": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "cachedTokens": {
+          "knownObservations": 0,
+          "missingObservations": 39,
+          "knownSum": 0,
+          "perObservation": {
+            "n": 0,
+            "min": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "totalTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 63031,
+          "perObservation": {
+            "n": 39,
+            "min": 560,
+            "p50": 1646,
+            "p95": 2556,
+            "max": 2620
+          }
+        }
+      }
+    },
+    "reserved/2": {
+      "operations": 39,
+      "httpStatuses": {
+        "200": 39
+      },
+      "errorCodes": {},
+      "elapsedMs": {
+        "n": 39,
+        "min": 2259,
+        "p50": 7980,
+        "p95": 14873,
+        "max": 17204
+      },
+      "requestBytes": {
+        "n": 39,
+        "min": 168,
+        "p50": 257,
+        "p95": 455,
+        "max": 459
+      },
+      "noteCodePoints": {
+        "n": 39,
+        "min": 106,
+        "p50": 214,
+        "p95": 407,
+        "max": 413
+      },
+      "catalogEntries": {
+        "n": 39,
+        "min": 0,
+        "p50": 0,
+        "p95": 2,
+        "max": 3
+      },
+      "effectiveModels": {
+        "gemini-3.8-flash": 39
+      },
+      "providerStatuses": {
+        "COMPLETE": 39
+      },
+      "operationsWithoutExactlyOneObservation": 0,
+      "spendUpperBoundUsd": "0.17064000",
+      "usage": {
+        "inputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 22270,
+          "perObservation": {
+            "n": 39,
+            "min": 542,
+            "p50": 569,
+            "p95": 608,
+            "max": 617
+          }
+        },
+        "outputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 41050,
+          "perObservation": {
+            "n": 39,
+            "min": 16,
+            "p50": 1080,
+            "p95": 1928,
+            "max": 2037
+          }
+        },
+        "thoughtTokens": {
+          "knownObservations": 0,
+          "missingObservations": 39,
+          "knownSum": 0,
+          "perObservation": {
+            "n": 0,
+            "min": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "cachedTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 13504,
+          "perObservation": {
+            "n": 39,
+            "min": 327,
+            "p50": 345,
+            "p95": 370,
+            "max": 376
+          }
+        },
+        "totalTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 63320,
+          "perObservation": {
+            "n": 39,
+            "min": 560,
+            "p50": 1652,
+            "p95": 2536,
+            "max": 2654
+          }
+        }
+      }
+    },
+    "reserved/3": {
+      "operations": 39,
+      "httpStatuses": {
+        "200": 39
+      },
+      "errorCodes": {},
+      "elapsedMs": {
+        "n": 39,
+        "min": 2271,
+        "p50": 7663,
+        "p95": 14234,
+        "max": 14443
+      },
+      "requestBytes": {
+        "n": 39,
+        "min": 168,
+        "p50": 257,
+        "p95": 455,
+        "max": 459
+      },
+      "noteCodePoints": {
+        "n": 39,
+        "min": 106,
+        "p50": 214,
+        "p95": 407,
+        "max": 413
+      },
+      "catalogEntries": {
+        "n": 39,
+        "min": 0,
+        "p50": 0,
+        "p95": 2,
+        "max": 3
+      },
+      "effectiveModels": {
+        "gemini-3.8-flash": 39
+      },
+      "providerStatuses": {
+        "COMPLETE": 39
+      },
+      "operationsWithoutExactlyOneObservation": 0,
+      "spendUpperBoundUsd": "0.16726500",
+      "usage": {
+        "inputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 22270,
+          "perObservation": {
+            "n": 39,
+            "min": 542,
+            "p50": 569,
+            "p95": 608,
+            "max": 617
+          }
+        },
+        "outputTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 40150,
+          "perObservation": {
+            "n": 39,
+            "min": 16,
+            "p50": 1092,
+            "p95": 1918,
+            "max": 1989
+          }
+        },
+        "thoughtTokens": {
+          "knownObservations": 0,
+          "missingObservations": 39,
+          "knownSum": 0,
+          "perObservation": {
+            "n": 0,
+            "min": null,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "cachedTokens": {
+          "knownObservations": 36,
+          "missingObservations": 3,
+          "knownSum": 12434,
+          "perObservation": {
+            "n": 36,
+            "min": 327,
+            "p50": 344.5,
+            "p95": 363,
+            "max": 376
+          }
+        },
+        "totalTokens": {
+          "knownObservations": 39,
+          "missingObservations": 0,
+          "knownSum": 62420,
+          "perObservation": {
+            "n": 39,
+            "min": 560,
+            "p50": 1664,
+            "p95": 2526,
+            "max": 2606
+          }
+        }
+      }
+    }
+  }
+}

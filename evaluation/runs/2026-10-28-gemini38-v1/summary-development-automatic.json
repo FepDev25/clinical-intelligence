@@ -1,0 +1,4316 @@
+{
+  "createdUtc": "2026-10-28T04:16:18.040335+00:00",
+  "protocol": "1.0.0",
+  "configuration": {
+    "model": "gemini-3.8-flash",
+    "provider": "google-gemini",
+    "promptVersion": "extraction-gemini-v1",
+    "validationVersion": "evidence-1",
+    "temperature": 1.0,
+    "thinkingLevel": "LOW",
+    "outputTokens": 65536,
+    "deadlineMs": 120000,
+    "connectTimeoutMs": 10000,
+    "providerConcurrency": 2,
+    "evaluationConcurrency": 1,
+    "responseBytes": 16777216,
+    "rounds": 3,
+    "maxProviderCallsPerOperation": 2,
+    "retries": 0,
+    "bodyBytes": 67108864,
+    "noteCodePoints": 1000000,
+    "catalogs": 1000,
+    "entries": 100000,
+    "aliases": 1000000,
+    "tariff": "gemini-3.8-flash-standard-2026-12-31"
+  },
+  "rounds": {
+    "development/1": {
+      "cases": 39,
+      "entities": {
+        "diagnoses": {
+          "tp": 52,
+          "fp": 10,
+          "fn": 4,
+          "precision": 0.8387096774193549,
+          "recall": 0.9285714285714286
+        },
+        "medications": {
+          "tp": 29,
+          "fp": 12,
+          "fn": 10,
+          "precision": 0.7073170731707317,
+          "recall": 0.7435897435897436
+        },
+        "procedures": {
+          "tp": 36,
+          "fp": 12,
+          "fn": 8,
+          "precision": 0.75,
+          "recall": 0.8181818181818182
+        }
+      },
+      "attributes": {
+        "mentionedCode": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "absent": 137,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "dosage": {
+          "tp": 9,
+          "fp": 2,
+          "fn": 1,
+          "absent": 29,
+          "precision": 0.8181818181818182,
+          "recall": 0.9
+        },
+        "frequency": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "absent": 34,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "route": {
+          "tp": 1,
+          "fp": 4,
+          "fn": 3,
+          "absent": 34,
+          "precision": 0.2,
+          "recall": 0.25
+        },
+        "duration": {
+          "tp": 4,
+          "fp": 3,
+          "fn": 3,
+          "absent": 32,
+          "precision": 0.5714285714285714,
+          "recall": 0.5714285714285714
+        }
+      },
+      "catalogs": {
+        "diagnoses": {
+          "correct": 1,
+          "evaluated": 1,
+          "notProvided": 55,
+          "accuracy": 1.0
+        },
+        "medications": {
+          "correct": 7,
+          "evaluated": 7,
+          "notProvided": 32,
+          "accuracy": 1.0
+        },
+        "procedures": {
+          "correct": 0,
+          "evaluated": 0,
+          "notProvided": 44,
+          "accuracy": null
+        }
+      },
+      "operationalFailures": 0,
+      "invariantViolations": 0,
+      "criticalContextErrors": 2,
+      "unbackedAttributes": 3,
+      "injectionViolations": 2,
+      "missingWarnings": 3,
+      "additionalWarnings": 27,
+      "discardedEntities": 0,
+      "discardedAttributes": 25,
+      "cleanEmpty": 0,
+      "emptyWithWarnings": 0,
+      "semanticSupportFailures": 0,
+      "adjudications": 23,
+      "cohorts": {
+        "adversarial": {
+          "cases": 6,
+          "entities": {
+            "diagnoses": {
+              "tp": 6,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.75,
+              "recall": 0.8571428571428571
+            },
+            "medications": {
+              "tp": 3,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.75,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 1,
+              "precision": 0.25,
+              "recall": 0.5
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 12,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 7,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 2,
+              "evaluated": 2,
+              "notProvided": 1,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 2,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 2,
+          "missingWarnings": 0,
+          "additionalWarnings": 4,
+          "discardedEntities": 0,
+          "discardedAttributes": 4,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 1
+        },
+        "core": {
+          "cases": 24,
+          "entities": {
+            "diagnoses": {
+              "tp": 29,
+              "fp": 5,
+              "fn": 1,
+              "precision": 0.8529411764705882,
+              "recall": 0.9666666666666667
+            },
+            "medications": {
+              "tp": 21,
+              "fp": 4,
+              "fn": 3,
+              "precision": 0.84,
+              "recall": 0.875
+            },
+            "procedures": {
+              "tp": 25,
+              "fp": 3,
+              "fn": 2,
+              "precision": 0.8928571428571429,
+              "recall": 0.9259259259259259
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 79,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 6,
+              "fp": 2,
+              "fn": 1,
+              "absent": 17,
+              "precision": 0.75,
+              "recall": 0.8571428571428571
+            },
+            "frequency": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "absent": 20,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 2,
+              "absent": 20,
+              "precision": 0.25,
+              "recall": 0.3333333333333333
+            },
+            "duration": {
+              "tp": 3,
+              "fp": 1,
+              "fn": 1,
+              "absent": 20,
+              "precision": 0.75,
+              "recall": 0.75
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 29,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 5,
+              "evaluated": 5,
+              "notProvided": 19,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 27,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 3,
+          "injectionViolations": 0,
+          "missingWarnings": 2,
+          "additionalWarnings": 7,
+          "discardedEntities": 0,
+          "discardedAttributes": 6,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 11
+        },
+        "exploratory": {
+          "cases": 9,
+          "entities": {
+            "diagnoses": {
+              "tp": 17,
+              "fp": 3,
+              "fn": 2,
+              "precision": 0.85,
+              "recall": 0.8947368421052632
+            },
+            "medications": {
+              "tp": 5,
+              "fp": 7,
+              "fn": 7,
+              "precision": 0.4166666666666667,
+              "recall": 0.4166666666666667
+            },
+            "procedures": {
+              "tp": 10,
+              "fp": 6,
+              "fn": 5,
+              "precision": 0.625,
+              "recall": 0.6666666666666666
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 46,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "absent": 9,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 11,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 11,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 2,
+              "absent": 9,
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 19,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 12,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 15,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 16,
+          "discardedEntities": 0,
+          "discardedAttributes": 15,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 11
+        }
+      },
+      "families": {
+        "admission": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 7,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.7777777777777778,
+              "recall": 0.875
+            },
+            "medications": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "precision": 0.25,
+              "recall": 0.25
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 17,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": null,
+              "recall": null
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 8,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 4,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 6,
+          "discardedEntities": 0,
+          "discardedAttributes": 5,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 3
+        },
+        "consultation": {
+          "cases": 8,
+          "entities": {
+            "diagnoses": {
+              "tp": 10,
+              "fp": 3,
+              "fn": 1,
+              "precision": 0.7692307692307693,
+              "recall": 0.9090909090909091
+            },
+            "medications": {
+              "tp": 7,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.875,
+              "recall": 0.875
+            },
+            "procedures": {
+              "tp": 5,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8333333333333334,
+              "recall": 0.8333333333333334
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 7,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 8,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "absent": 7,
+              "precision": 0.0,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 7,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 10,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 4,
+              "evaluated": 4,
+              "notProvided": 4,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 1,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 3,
+          "discardedEntities": 0,
+          "discardedAttributes": 2,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 3
+        },
+        "discharge": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 3,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.6,
+              "recall": 0.6
+            },
+            "procedures": {
+              "tp": 2,
+              "fp": 3,
+              "fn": 3,
+              "precision": 0.4,
+              "recall": 0.4
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 16,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 4,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 2,
+              "absent": 3,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 5,
+          "discardedEntities": 0,
+          "discardedAttributes": 5,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 8
+        },
+        "emergency": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            },
+            "medications": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.6666666666666666,
+              "recall": 0.8
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 13,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 2,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 2,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 2,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 3,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 5,
+          "discardedEntities": 0,
+          "discardedAttributes": 5,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 0
+        },
+        "outpatient": {
+          "cases": 8,
+          "entities": {
+            "diagnoses": {
+              "tp": 9,
+              "fp": 3,
+              "fn": 1,
+              "precision": 0.75,
+              "recall": 0.9
+            },
+            "medications": {
+              "tp": 3,
+              "fp": 4,
+              "fn": 2,
+              "precision": 0.42857142857142855,
+              "recall": 0.6
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 20,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 1,
+              "absent": 2,
+              "precision": 0.5,
+              "recall": 0.6666666666666666
+            },
+            "frequency": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 4,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 10,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 4,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 2,
+          "injectionViolations": 2,
+          "missingWarnings": 1,
+          "additionalWarnings": 4,
+          "discardedEntities": 0,
+          "discardedAttributes": 4,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 3
+        },
+        "procedure": {
+          "cases": 7,
+          "entities": {
+            "diagnoses": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 11,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.9166666666666666,
+              "recall": 0.9166666666666666
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 6,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 7,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 12,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 2,
+          "discardedEntities": 0,
+          "discardedAttributes": 2,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 1
+        },
+        "progress": {
+          "cases": 7,
+          "entities": {
+            "diagnoses": {
+              "tp": 9,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 6,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.6666666666666666,
+              "recall": 1.0
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 23,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 6,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 7,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 1,
+              "absent": 6,
+              "precision": 0.5,
+              "recall": 0.5
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 7,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 9,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 2,
+              "evaluated": 2,
+              "notProvided": 6,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 2,
+          "discardedEntities": 0,
+          "discardedAttributes": 2,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 5
+        }
+      },
+      "locales": {
+        "es": {
+          "cases": 38,
+          "entities": {
+            "diagnoses": {
+              "tp": 51,
+              "fp": 10,
+              "fn": 4,
+              "precision": 0.8360655737704918,
+              "recall": 0.9272727272727272
+            },
+            "medications": {
+              "tp": 28,
+              "fp": 12,
+              "fn": 10,
+              "precision": 0.7,
+              "recall": 0.7368421052631579
+            },
+            "procedures": {
+              "tp": 35,
+              "fp": 12,
+              "fn": 8,
+              "precision": 0.7446808510638298,
+              "recall": 0.813953488372093
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 134,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 8,
+              "fp": 2,
+              "fn": 1,
+              "absent": 29,
+              "precision": 0.8,
+              "recall": 0.8888888888888888
+            },
+            "frequency": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "absent": 34,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 2,
+              "absent": 34,
+              "precision": 0.25,
+              "recall": 0.3333333333333333
+            },
+            "duration": {
+              "tp": 3,
+              "fp": 3,
+              "fn": 3,
+              "absent": 32,
+              "precision": 0.5,
+              "recall": 0.5
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 54,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 7,
+              "evaluated": 7,
+              "notProvided": 31,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 43,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 2,
+          "unbackedAttributes": 3,
+          "injectionViolations": 2,
+          "missingWarnings": 3,
+          "additionalWarnings": 27,
+          "discardedEntities": 0,
+          "discardedAttributes": 25,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 22
+        },
+        "es-EC": {
+          "cases": 1,
+          "entities": {
+            "diagnoses": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 0,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 0,
+          "discardedEntities": 0,
+          "discardedAttributes": 0,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 1
+        }
+      },
+      "sizes": {
+        "<=1000": {
+          "cases": 39,
+          "entities": {
+            "diagnoses": {
+              "tp": 52,
+              "fp": 10,
+              "fn": 4,
+              "precision": 0.8387096774193549,
+              "recall": 0.9285714285714286
+            },
+            "medications": {
+              "tp": 29,
+              "fp": 12,
+              "fn": 10,
+              "precision": 0.7073170731707317,
+              "recall": 0.7435897435897436
+            },
+            "procedures": {
+              "tp": 36,
+              "fp": 12,
+              "fn": 8,
+              "precision": 0.75,
+              "recall": 0.8181818181818182
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 137,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 9,
+              "fp": 2,
+              "fn": 1,
+              "absent": 29,
+              "precision": 0.8181818181818182,
+              "recall": 0.9
+            },
+            "frequency": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "absent": 34,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 4,
+              "fn": 3,
+              "absent": 34,
+              "precision": 0.2,
+              "recall": 0.25
+            },
+            "duration": {
+              "tp": 4,
+              "fp": 3,
+              "fn": 3,
+              "absent": 32,
+              "precision": 0.5714285714285714,
+              "recall": 0.5714285714285714
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 55,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 7,
+              "evaluated": 7,
+              "notProvided": 32,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 44,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 2,
+          "unbackedAttributes": 3,
+          "injectionViolations": 2,
+          "missingWarnings": 3,
+          "additionalWarnings": 27,
+          "discardedEntities": 0,
+          "discardedAttributes": 25,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 23
+        }
+      },
+      "automaticCriteriaPass": false,
+      "semanticAuditComplete": false,
+      "pass": false,
+      "executedCases": 39,
+      "complete": true
+    },
+    "development/2": {
+      "cases": 39,
+      "entities": {
+        "diagnoses": {
+          "tp": 54,
+          "fp": 5,
+          "fn": 2,
+          "precision": 0.9152542372881356,
+          "recall": 0.9642857142857143
+        },
+        "medications": {
+          "tp": 28,
+          "fp": 12,
+          "fn": 11,
+          "precision": 0.7,
+          "recall": 0.717948717948718
+        },
+        "procedures": {
+          "tp": 32,
+          "fp": 16,
+          "fn": 12,
+          "precision": 0.6666666666666666,
+          "recall": 0.7272727272727273
+        }
+      },
+      "attributes": {
+        "mentionedCode": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "absent": 137,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "dosage": {
+          "tp": 9,
+          "fp": 2,
+          "fn": 1,
+          "absent": 29,
+          "precision": 0.8181818181818182,
+          "recall": 0.9
+        },
+        "frequency": {
+          "tp": 5,
+          "fp": 1,
+          "fn": 0,
+          "absent": 33,
+          "precision": 0.8333333333333334,
+          "recall": 1.0
+        },
+        "route": {
+          "tp": 1,
+          "fp": 3,
+          "fn": 3,
+          "absent": 35,
+          "precision": 0.25,
+          "recall": 0.25
+        },
+        "duration": {
+          "tp": 1,
+          "fp": 6,
+          "fn": 6,
+          "absent": 32,
+          "precision": 0.14285714285714285,
+          "recall": 0.14285714285714285
+        }
+      },
+      "catalogs": {
+        "diagnoses": {
+          "correct": 1,
+          "evaluated": 1,
+          "notProvided": 55,
+          "accuracy": 1.0
+        },
+        "medications": {
+          "correct": 7,
+          "evaluated": 7,
+          "notProvided": 32,
+          "accuracy": 1.0
+        },
+        "procedures": {
+          "correct": 0,
+          "evaluated": 0,
+          "notProvided": 44,
+          "accuracy": null
+        }
+      },
+      "operationalFailures": 0,
+      "invariantViolations": 0,
+      "criticalContextErrors": 7,
+      "unbackedAttributes": 3,
+      "injectionViolations": 0,
+      "missingWarnings": 3,
+      "additionalWarnings": 24,
+      "discardedEntities": 0,
+      "discardedAttributes": 23,
+      "cleanEmpty": 0,
+      "emptyWithWarnings": 0,
+      "semanticSupportFailures": 0,
+      "adjudications": 28,
+      "cohorts": {
+        "adversarial": {
+          "cases": 6,
+          "entities": {
+            "diagnoses": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 1,
+              "fp": 4,
+              "fn": 1,
+              "precision": 0.2,
+              "recall": 0.5
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 12,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 7,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 2,
+              "evaluated": 2,
+              "notProvided": 1,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 2,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 3,
+          "discardedEntities": 0,
+          "discardedAttributes": 3,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 1
+        },
+        "core": {
+          "cases": 24,
+          "entities": {
+            "diagnoses": {
+              "tp": 29,
+              "fp": 4,
+              "fn": 1,
+              "precision": 0.8787878787878788,
+              "recall": 0.9666666666666667
+            },
+            "medications": {
+              "tp": 20,
+              "fp": 5,
+              "fn": 4,
+              "precision": 0.8,
+              "recall": 0.8333333333333334
+            },
+            "procedures": {
+              "tp": 22,
+              "fp": 6,
+              "fn": 5,
+              "precision": 0.7857142857142857,
+              "recall": 0.8148148148148148
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 79,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 6,
+              "fp": 2,
+              "fn": 1,
+              "absent": 17,
+              "precision": 0.75,
+              "recall": 0.8571428571428571
+            },
+            "frequency": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "absent": 20,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 2,
+              "absent": 21,
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "absent": 20,
+              "precision": 0.25,
+              "recall": 0.25
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 29,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 5,
+              "evaluated": 5,
+              "notProvided": 19,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 27,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 5,
+          "unbackedAttributes": 2,
+          "injectionViolations": 0,
+          "missingWarnings": 2,
+          "additionalWarnings": 8,
+          "discardedEntities": 0,
+          "discardedAttributes": 7,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 14
+        },
+        "exploratory": {
+          "cases": 9,
+          "entities": {
+            "diagnoses": {
+              "tp": 18,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.9473684210526315,
+              "recall": 0.9473684210526315
+            },
+            "medications": {
+              "tp": 5,
+              "fp": 7,
+              "fn": 7,
+              "precision": 0.4166666666666667,
+              "recall": 0.4166666666666667
+            },
+            "procedures": {
+              "tp": 9,
+              "fp": 6,
+              "fn": 6,
+              "precision": 0.6,
+              "recall": 0.6
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 46,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "absent": 9,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "absent": 10,
+              "precision": 0.5,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 11,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 3,
+              "fn": 3,
+              "absent": 9,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 19,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 12,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 15,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 2,
+          "unbackedAttributes": 1,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 13,
+          "discardedEntities": 0,
+          "discardedAttributes": 13,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 13
+        }
+      },
+      "families": {
+        "admission": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.5,
+              "recall": 0.5
+            },
+            "procedures": {
+              "tp": 2,
+              "fp": 3,
+              "fn": 3,
+              "precision": 0.4,
+              "recall": 0.4
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 17,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "absent": 3,
+              "precision": 0.0,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": null,
+              "recall": null
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 8,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 4,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 1,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 4,
+          "discardedEntities": 0,
+          "discardedAttributes": 4,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 7
+        },
+        "consultation": {
+          "cases": 8,
+          "entities": {
+            "diagnoses": {
+              "tp": 10,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.8333333333333334,
+              "recall": 0.9090909090909091
+            },
+            "medications": {
+              "tp": 7,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.875,
+              "recall": 0.875
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 3,
+              "fn": 2,
+              "precision": 0.5714285714285714,
+              "recall": 0.6666666666666666
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 7,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 8,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 8,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 7,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 10,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 4,
+              "evaluated": 4,
+              "notProvided": 4,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 2,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 3,
+          "discardedEntities": 0,
+          "discardedAttributes": 2,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 4
+        },
+        "discharge": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 2,
+              "fp": 3,
+              "fn": 3,
+              "precision": 0.4,
+              "recall": 0.4
+            },
+            "procedures": {
+              "tp": 3,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.6,
+              "recall": 0.6
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 16,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 4,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 2,
+              "absent": 3,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 5,
+          "discardedEntities": 0,
+          "discardedAttributes": 5,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 4
+        },
+        "emergency": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            },
+            "medications": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 13,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 2,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 2,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 2,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 3,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 4,
+          "discardedEntities": 0,
+          "discardedAttributes": 4,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 2
+        },
+        "outpatient": {
+          "cases": 8,
+          "entities": {
+            "diagnoses": {
+              "tp": 10,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9090909090909091,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 3,
+              "fp": 3,
+              "fn": 2,
+              "precision": 0.5,
+              "recall": 0.6
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 20,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 1,
+              "absent": 2,
+              "precision": 0.5,
+              "recall": 0.6666666666666666
+            },
+            "frequency": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 4,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 4,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 10,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 4,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 2,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 2,
+          "discardedEntities": 0,
+          "discardedAttributes": 2,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 3
+        },
+        "procedure": {
+          "cases": 7,
+          "entities": {
+            "diagnoses": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 5,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8333333333333334,
+              "recall": 0.8333333333333334
+            },
+            "procedures": {
+              "tp": 10,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.8333333333333334,
+              "recall": 0.8333333333333334
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 6,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 7,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 12,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 3,
+          "discardedEntities": 0,
+          "discardedAttributes": 3,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 1
+        },
+        "progress": {
+          "cases": 7,
+          "entities": {
+            "diagnoses": {
+              "tp": 9,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 5,
+              "fp": 4,
+              "fn": 1,
+              "precision": 0.5555555555555556,
+              "recall": 0.8333333333333334
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 23,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 6,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 7,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 1,
+              "absent": 6,
+              "precision": 0.5,
+              "recall": 0.5
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 7,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 9,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 2,
+              "evaluated": 2,
+              "notProvided": 6,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 3,
+          "discardedEntities": 0,
+          "discardedAttributes": 3,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 7
+        }
+      },
+      "locales": {
+        "es": {
+          "cases": 38,
+          "entities": {
+            "diagnoses": {
+              "tp": 53,
+              "fp": 5,
+              "fn": 2,
+              "precision": 0.9137931034482759,
+              "recall": 0.9636363636363636
+            },
+            "medications": {
+              "tp": 27,
+              "fp": 12,
+              "fn": 11,
+              "precision": 0.6923076923076923,
+              "recall": 0.7105263157894737
+            },
+            "procedures": {
+              "tp": 31,
+              "fp": 16,
+              "fn": 12,
+              "precision": 0.6595744680851063,
+              "recall": 0.7209302325581395
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 134,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 8,
+              "fp": 2,
+              "fn": 1,
+              "absent": 29,
+              "precision": 0.8,
+              "recall": 0.8888888888888888
+            },
+            "frequency": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 0,
+              "absent": 33,
+              "precision": 0.8,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 2,
+              "absent": 35,
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 5,
+              "fn": 5,
+              "absent": 32,
+              "precision": 0.16666666666666666,
+              "recall": 0.16666666666666666
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 54,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 7,
+              "evaluated": 7,
+              "notProvided": 31,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 43,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 7,
+          "unbackedAttributes": 3,
+          "injectionViolations": 0,
+          "missingWarnings": 3,
+          "additionalWarnings": 24,
+          "discardedEntities": 0,
+          "discardedAttributes": 23,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 26
+        },
+        "es-EC": {
+          "cases": 1,
+          "entities": {
+            "diagnoses": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 0,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 0,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 0,
+          "discardedEntities": 0,
+          "discardedAttributes": 0,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 2
+        }
+      },
+      "sizes": {
+        "<=1000": {
+          "cases": 39,
+          "entities": {
+            "diagnoses": {
+              "tp": 54,
+              "fp": 5,
+              "fn": 2,
+              "precision": 0.9152542372881356,
+              "recall": 0.9642857142857143
+            },
+            "medications": {
+              "tp": 28,
+              "fp": 12,
+              "fn": 11,
+              "precision": 0.7,
+              "recall": 0.717948717948718
+            },
+            "procedures": {
+              "tp": 32,
+              "fp": 16,
+              "fn": 12,
+              "precision": 0.6666666666666666,
+              "recall": 0.7272727272727273
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 137,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 9,
+              "fp": 2,
+              "fn": 1,
+              "absent": 29,
+              "precision": 0.8181818181818182,
+              "recall": 0.9
+            },
+            "frequency": {
+              "tp": 5,
+              "fp": 1,
+              "fn": 0,
+              "absent": 33,
+              "precision": 0.8333333333333334,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "absent": 35,
+              "precision": 0.25,
+              "recall": 0.25
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 6,
+              "fn": 6,
+              "absent": 32,
+              "precision": 0.14285714285714285,
+              "recall": 0.14285714285714285
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 55,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 7,
+              "evaluated": 7,
+              "notProvided": 32,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 44,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 7,
+          "unbackedAttributes": 3,
+          "injectionViolations": 0,
+          "missingWarnings": 3,
+          "additionalWarnings": 24,
+          "discardedEntities": 0,
+          "discardedAttributes": 23,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 28
+        }
+      },
+      "automaticCriteriaPass": false,
+      "semanticAuditComplete": false,
+      "pass": false,
+      "executedCases": 39,
+      "complete": true
+    },
+    "development/3": {
+      "cases": 39,
+      "entities": {
+        "diagnoses": {
+          "tp": 54,
+          "fp": 5,
+          "fn": 2,
+          "precision": 0.9152542372881356,
+          "recall": 0.9642857142857143
+        },
+        "medications": {
+          "tp": 33,
+          "fp": 7,
+          "fn": 6,
+          "precision": 0.825,
+          "recall": 0.8461538461538461
+        },
+        "procedures": {
+          "tp": 35,
+          "fp": 14,
+          "fn": 9,
+          "precision": 0.7142857142857143,
+          "recall": 0.7954545454545454
+        }
+      },
+      "attributes": {
+        "mentionedCode": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "absent": 137,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "dosage": {
+          "tp": 9,
+          "fp": 2,
+          "fn": 1,
+          "absent": 29,
+          "precision": 0.8181818181818182,
+          "recall": 0.9
+        },
+        "frequency": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "absent": 34,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "route": {
+          "tp": 1,
+          "fp": 3,
+          "fn": 3,
+          "absent": 35,
+          "precision": 0.25,
+          "recall": 0.25
+        },
+        "duration": {
+          "tp": 1,
+          "fp": 6,
+          "fn": 6,
+          "absent": 32,
+          "precision": 0.14285714285714285,
+          "recall": 0.14285714285714285
+        }
+      },
+      "catalogs": {
+        "diagnoses": {
+          "correct": 1,
+          "evaluated": 1,
+          "notProvided": 55,
+          "accuracy": 1.0
+        },
+        "medications": {
+          "correct": 7,
+          "evaluated": 7,
+          "notProvided": 32,
+          "accuracy": 1.0
+        },
+        "procedures": {
+          "correct": 0,
+          "evaluated": 0,
+          "notProvided": 44,
+          "accuracy": null
+        }
+      },
+      "operationalFailures": 0,
+      "invariantViolations": 0,
+      "criticalContextErrors": 5,
+      "unbackedAttributes": 2,
+      "injectionViolations": 0,
+      "missingWarnings": 3,
+      "additionalWarnings": 17,
+      "discardedEntities": 0,
+      "discardedAttributes": 16,
+      "cleanEmpty": 0,
+      "emptyWithWarnings": 0,
+      "semanticSupportFailures": 0,
+      "adjudications": 23,
+      "cohorts": {
+        "adversarial": {
+          "cases": 6,
+          "entities": {
+            "diagnoses": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 1,
+              "fp": 4,
+              "fn": 1,
+              "precision": 0.2,
+              "recall": 0.5
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 12,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 7,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 2,
+              "evaluated": 2,
+              "notProvided": 1,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 2,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 2,
+          "discardedEntities": 0,
+          "discardedAttributes": 2,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 1
+        },
+        "core": {
+          "cases": 24,
+          "entities": {
+            "diagnoses": {
+              "tp": 29,
+              "fp": 4,
+              "fn": 1,
+              "precision": 0.8787878787878788,
+              "recall": 0.9666666666666667
+            },
+            "medications": {
+              "tp": 23,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.92,
+              "recall": 0.9583333333333334
+            },
+            "procedures": {
+              "tp": 23,
+              "fp": 5,
+              "fn": 4,
+              "precision": 0.8214285714285714,
+              "recall": 0.8518518518518519
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 79,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 6,
+              "fp": 2,
+              "fn": 1,
+              "absent": 17,
+              "precision": 0.75,
+              "recall": 0.8571428571428571
+            },
+            "frequency": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "absent": 20,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 2,
+              "absent": 21,
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "absent": 20,
+              "precision": 0.25,
+              "recall": 0.25
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 29,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 5,
+              "evaluated": 5,
+              "notProvided": 19,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 27,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 3,
+          "unbackedAttributes": 2,
+          "injectionViolations": 0,
+          "missingWarnings": 2,
+          "additionalWarnings": 5,
+          "discardedEntities": 0,
+          "discardedAttributes": 4,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 13
+        },
+        "exploratory": {
+          "cases": 9,
+          "entities": {
+            "diagnoses": {
+              "tp": 18,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.9473684210526315,
+              "recall": 0.9473684210526315
+            },
+            "medications": {
+              "tp": 7,
+              "fp": 5,
+              "fn": 5,
+              "precision": 0.5833333333333334,
+              "recall": 0.5833333333333334
+            },
+            "procedures": {
+              "tp": 11,
+              "fp": 5,
+              "fn": 4,
+              "precision": 0.6875,
+              "recall": 0.7333333333333333
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 46,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "absent": 9,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 11,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 11,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 3,
+              "fn": 3,
+              "absent": 9,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 19,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 12,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 15,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 2,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 10,
+          "discardedEntities": 0,
+          "discardedAttributes": 10,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 9
+        }
+      },
+      "families": {
+        "admission": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.5,
+              "recall": 0.5
+            },
+            "procedures": {
+              "tp": 3,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.6,
+              "recall": 0.6
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 17,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": null,
+              "recall": null
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 8,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 4,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 4,
+          "discardedEntities": 0,
+          "discardedAttributes": 4,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 4
+        },
+        "consultation": {
+          "cases": 8,
+          "entities": {
+            "diagnoses": {
+              "tp": 10,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.8333333333333334,
+              "recall": 0.9090909090909091
+            },
+            "medications": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 3,
+              "fn": 2,
+              "precision": 0.5714285714285714,
+              "recall": 0.6666666666666666
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 7,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 8,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 8,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 7,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 10,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 4,
+              "evaluated": 4,
+              "notProvided": 4,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 2,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 2,
+          "discardedEntities": 0,
+          "discardedAttributes": 1,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 3
+        },
+        "discharge": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 3,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.6,
+              "recall": 0.6
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 16,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": null,
+              "recall": null
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 4,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 2,
+              "absent": 3,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 3,
+          "discardedEntities": 0,
+          "discardedAttributes": 3,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 4
+        },
+        "emergency": {
+          "cases": 3,
+          "entities": {
+            "diagnoses": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            },
+            "medications": {
+              "tp": 2,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.6666666666666666,
+              "recall": 0.6666666666666666
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.6666666666666666,
+              "recall": 0.8
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 13,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 2,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 2,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 2,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 3,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 3,
+          "discardedEntities": 0,
+          "discardedAttributes": 3,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 1
+        },
+        "outpatient": {
+          "cases": 8,
+          "entities": {
+            "diagnoses": {
+              "tp": 10,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9090909090909091,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 4,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.6666666666666666,
+              "recall": 0.8
+            },
+            "procedures": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.8,
+              "recall": 0.8
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 20,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 1,
+              "absent": 2,
+              "precision": 0.5,
+              "recall": 0.6666666666666666
+            },
+            "frequency": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 4,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 4,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 10,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 4,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 5,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 2,
+          "injectionViolations": 0,
+          "missingWarnings": 1,
+          "additionalWarnings": 2,
+          "discardedEntities": 0,
+          "discardedAttributes": 2,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 3
+        },
+        "procedure": {
+          "cases": 7,
+          "entities": {
+            "diagnoses": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 10,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.8333333333333334,
+              "recall": 0.8333333333333334
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 5,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 6,
+              "precision": null,
+              "recall": null
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 5,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 7,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 12,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 1,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 1,
+          "discardedEntities": 0,
+          "discardedAttributes": 1,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 2
+        },
+        "progress": {
+          "cases": 7,
+          "entities": {
+            "diagnoses": {
+              "tp": 9,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 6,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.6666666666666666,
+              "recall": 1.0
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 23,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 6,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 7,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 1,
+              "absent": 6,
+              "precision": 0.5,
+              "recall": 0.5
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 7,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 9,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 2,
+              "evaluated": 2,
+              "notProvided": 6,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 6,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 2,
+          "discardedEntities": 0,
+          "discardedAttributes": 2,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 6
+        }
+      },
+      "locales": {
+        "es": {
+          "cases": 38,
+          "entities": {
+            "diagnoses": {
+              "tp": 53,
+              "fp": 5,
+              "fn": 2,
+              "precision": 0.9137931034482759,
+              "recall": 0.9636363636363636
+            },
+            "medications": {
+              "tp": 32,
+              "fp": 7,
+              "fn": 6,
+              "precision": 0.8205128205128205,
+              "recall": 0.8421052631578947
+            },
+            "procedures": {
+              "tp": 34,
+              "fp": 14,
+              "fn": 9,
+              "precision": 0.7083333333333334,
+              "recall": 0.7906976744186046
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 134,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 8,
+              "fp": 2,
+              "fn": 1,
+              "absent": 29,
+              "precision": 0.8,
+              "recall": 0.8888888888888888
+            },
+            "frequency": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "absent": 34,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 2,
+              "absent": 35,
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333
+            },
+            "duration": {
+              "tp": 0,
+              "fp": 6,
+              "fn": 6,
+              "absent": 32,
+              "precision": 0.0,
+              "recall": 0.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 54,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 7,
+              "evaluated": 7,
+              "notProvided": 31,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 43,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 5,
+          "unbackedAttributes": 2,
+          "injectionViolations": 0,
+          "missingWarnings": 3,
+          "additionalWarnings": 17,
+          "discardedEntities": 0,
+          "discardedAttributes": 16,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 22
+        },
+        "es-EC": {
+          "cases": 1,
+          "entities": {
+            "diagnoses": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "medications": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "procedures": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "absent": 3,
+              "precision": null,
+              "recall": null
+            },
+            "dosage": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "frequency": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "absent": 0,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "absent": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            },
+            "medications": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 1,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 0,
+          "unbackedAttributes": 0,
+          "injectionViolations": 0,
+          "missingWarnings": 0,
+          "additionalWarnings": 0,
+          "discardedEntities": 0,
+          "discardedAttributes": 0,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 1
+        }
+      },
+      "sizes": {
+        "<=1000": {
+          "cases": 39,
+          "entities": {
+            "diagnoses": {
+              "tp": 54,
+              "fp": 5,
+              "fn": 2,
+              "precision": 0.9152542372881356,
+              "recall": 0.9642857142857143
+            },
+            "medications": {
+              "tp": 33,
+              "fp": 7,
+              "fn": 6,
+              "precision": 0.825,
+              "recall": 0.8461538461538461
+            },
+            "procedures": {
+              "tp": 35,
+              "fp": 14,
+              "fn": 9,
+              "precision": 0.7142857142857143,
+              "recall": 0.7954545454545454
+            }
+          },
+          "attributes": {
+            "mentionedCode": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "absent": 137,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "dosage": {
+              "tp": 9,
+              "fp": 2,
+              "fn": 1,
+              "absent": 29,
+              "precision": 0.8181818181818182,
+              "recall": 0.9
+            },
+            "frequency": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "absent": 34,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "route": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "absent": 35,
+              "precision": 0.25,
+              "recall": 0.25
+            },
+            "duration": {
+              "tp": 1,
+              "fp": 6,
+              "fn": 6,
+              "absent": 32,
+              "precision": 0.14285714285714285,
+              "recall": 0.14285714285714285
+            }
+          },
+          "catalogs": {
+            "diagnoses": {
+              "correct": 1,
+              "evaluated": 1,
+              "notProvided": 55,
+              "accuracy": 1.0
+            },
+            "medications": {
+              "correct": 7,
+              "evaluated": 7,
+              "notProvided": 32,
+              "accuracy": 1.0
+            },
+            "procedures": {
+              "correct": 0,
+              "evaluated": 0,
+              "notProvided": 44,
+              "accuracy": null
+            }
+          },
+          "operationalFailures": 0,
+          "invariantViolations": 0,
+          "criticalContextErrors": 5,
+          "unbackedAttributes": 2,
+          "injectionViolations": 0,
+          "missingWarnings": 3,
+          "additionalWarnings": 17,
+          "discardedEntities": 0,
+          "discardedAttributes": 16,
+          "cleanEmpty": 0,
+          "emptyWithWarnings": 0,
+          "semanticSupportFailures": 0,
+          "adjudications": 23
+        }
+      },
+      "automaticCriteriaPass": false,
+      "semanticAuditComplete": false,
+      "pass": false,
+      "executedCases": 39,
+      "complete": true
+    }
+  },
+  "totalRecordedOperations": 117,
+  "allRequiredRoundsComplete": false,
+  "spendUpperBoundUsd": "0.50749875",
+  "responsesSha256": "e434cd973bab18c191d3d6b1eb2bd0fb8b7779d2bd883111eb762d1d1da66afe",
+  "semanticAuditComplete": false,
+  "pass": false
+}

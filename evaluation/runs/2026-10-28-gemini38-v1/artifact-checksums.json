@@ -1,0 +1,27 @@
+{
+  "scope": "synthetic evaluation and decision/report assets; no credentials or dotenv",
+  "sha256": {
+    "docs/h5-integration.md": "825591923c02bb4a9d8c6a650bccee54c9a7c88f050c7aba4658addde8295b5b",
+    "docs/h5-validation.md": "2bf1bd860641c25eab08aa6a687a5d6802421b7c37f0a0bc91e0b499fee77057",
+    "evaluation/RUNNING.md": "a407828350bc7fae60aaf5c9aa980810c93eb911ad3e40c17436bd49aa464334",
+    "evaluation/regressions/h5-development-v1.json": "34b92dd6f7740161d7041ed3bc75b40c5f77f575cd1b8dd0342f29c142f2ac7a",
+    "evaluation/reports/2026-10-28-gemini38-v1-errata.md": "f2f653d8cc9d6d96444a7b438e3447101d34950e53892e24fe51d163fb1e4504",
+    "evaluation/reports/release.py": "0c5f29f516affa9cbc76a32e892c2c26d56ae93af226d1044fb0ab6d0f2dbc6e",
+    "evaluation/reports/summarize.py": "8b798c7df86bc70e204612272a1aede4997a4498860481408caa12241b0239c1",
+    "evaluation/reports/test_release.py": "050dfc4585ec42dab367b4071c5afb13eca2b03146d53c902a8c169199c3593b",
+    "evaluation/runs/2026-10-28-gemini38-v1/decision-sources-v1.0.1.zip": "38936d3e432933d52736bff89f0ccd627d48be94efb8b8b967faff744f938bb6",
+    "evaluation/runs/2026-10-28-gemini38-v1/freeze.json": "bb10ebbe90f4f99f672b469855e6c900ad9cf229dd66e69799c0573b52c0ac8b",
+    "evaluation/runs/2026-10-28-gemini38-v1/local-corpus-audit.json": "7e2aeaf9276ab9a7b8f216db27fa97e3293ff803ed23254bf1bb9b544f247b61",
+    "evaluation/runs/2026-10-28-gemini38-v1/release-decision.json": "d2b32b250d3d824e40d43890862dee261723922efe769c742b21aaccd784ebe1",
+    "evaluation/runs/2026-10-28-gemini38-v1/responses.jsonl": "40e7d53da3562c732e8ccea6288893619cd784bc29464595dc7ead84b9485b11",
+    "evaluation/runs/2026-10-28-gemini38-v1/runtime-metadata.json": "b86f026bdd4b4e8c7202f9ca105d4d3e11bf39e8a53b279feea676b09f38179d",
+    "evaluation/runs/2026-10-28-gemini38-v1/scores-automatic.json": "419503eefd7be1479314309d3ed03fe2e9296481f38bc33f3bfc34ff87861c21",
+    "evaluation/runs/2026-10-28-gemini38-v1/scores-development-automatic.json": "69000e1cc0200483f19f77217a6444d1061e8e3f956b2d32c57fa25f68dde82f",
+    "evaluation/runs/2026-10-28-gemini38-v1/scores.json": "a2cb46b04de3b8137216c85852de548d80382c7345348e4181002ce7cdc000c8",
+    "evaluation/runs/2026-10-28-gemini38-v1/semantic-audit.json": "2966e6e55023c28f8c76a697c0bd8e4038f1718dd4686cde873e6bce53e2e78f",
+    "evaluation/runs/2026-10-28-gemini38-v1/source-snapshot.zip": "0fab646dda560dd04e033c7e890ecd48dbb1ba22f2e68adc1ed4516d228dc749",
+    "evaluation/runs/2026-10-28-gemini38-v1/summary-automatic.json": "b2b24ce0c0c632d962d22b1077491fffa9b3c5b0f4b8d82735644aeced2df406",
+    "evaluation/runs/2026-10-28-gemini38-v1/summary-development-automatic.json": "d6440707666d4166004b31a7b4445d359a4339fdc4f7639357ada3793eb82830",
+    "evaluation/runs/2026-10-28-gemini38-v1/summary.json": "8da22bf9c45a32c2bbe02cb87921382ba2bed5a428b449ee08af6cdc22f8d929"
+  }
+}

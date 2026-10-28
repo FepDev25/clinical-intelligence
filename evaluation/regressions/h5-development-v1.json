@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "status": "observed_failures_not_fixed",
+  "run": "../runs/2026-10-28-gemini38-v1",
+  "scope": "development-only; existing synthetic cases, no reserved examples introduced into builder tests",
+  "cases": [
+    {"caseId": "dev-outpatient-06", "rounds": [1, 2, 3], "behavior": "Do not convert a symptom explicitly without diagnostic formulation into a diagnosis."},
+    {"caseId": "dev-outpatient-05", "rounds": [1, 2, 3], "behavior": "Package concentration is not administered/prescribed dosage; preserve half-tablet prescription.", "referenceIssue": "Review permitted name anchors before the next corpus version; preserve original scores."},
+    {"caseId": "dev-progress-03", "rounds": [1, 2, 3], "behavior": "Equivalent repeated mentions count once; retain original occurrence anchors without creating duplicates."},
+    {"caseId": "dev-consultation-02", "rounds": [1, 2, 3], "behavior": "A reason for consultation is not a diagnosis; do not promote unknown temporality to current."},
+    {"caseId": "dev-procedure-03", "rounds": [2, 3], "behavior": "Preserve explicit negation as well as not_performed status; neither field compensates for the other."},
+    {"caseId": "dev-outpatient-07", "rounds": [1, 2, 3], "behavior": "Do not extract diagnoses or medications from an explicitly external instruction block; failure in round 1 must not be hidden by later successes."},
+    {"caseId": "dev-consultation-04", "rounds": [1, 2, 3], "behavior": "Each context citation must identify the correct mention, including repeated patient/today strings."},
+    {"caseId": "dev-outpatient-04", "rounds": [1, 2, 3], "behavior": "Unknown prescription status due to explicit ambiguity requires its semantic warning; a discard warning is not a substitute."}
+  ]
+}

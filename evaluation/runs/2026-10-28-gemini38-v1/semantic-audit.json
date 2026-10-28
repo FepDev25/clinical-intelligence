@@ -1,0 +1,3520 @@
+{
+  "schemaVersion": "1.0.0",
+  "createdUtc": "2026-10-28T04:34:24.289663+00:00",
+  "reviewer": "Codex builder — textual consistency review, not independent clinical review",
+  "reviewScope": "synthetic-reference-support",
+  "clinicalReview": false,
+  "freezeSha256": "bb10ebbe90f4f99f672b469855e6c900ad9cf229dd66e69799c0573b52c0ac8b",
+  "responsesSha256": "40e7d53da3562c732e8ccea6288893619cd784bc29464595dc7ead84b9485b11",
+  "reviewMethod": "Each note/output or complete field-level difference reviewed. Exact repeated semantic content reuses its reviewed interpretation. Conservative evidence sufficiency; disputes remain pending. No gold or scoring edits.",
+  "reviews": [
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-01",
+      "recordSha256": "9bdd08190b1bfce6d11321138d36aa0054734f37ea0566a78f10f05e18790c23",
+      "decision": "support_verified",
+      "notes": "Otitis, prescripción y otoscopia están expresas; dosis/frecuencia/duración correctamente asociadas. La vía incluye el prefijo literal vía; se conserva FP/FN léxico.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral y oral señalan el mismo segmento de la receta; no cambia la puntuación léxica."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-02",
+      "recordSha256": "9106de7b025b4a0015d475dd716936929935283b5ba31eba660bfac11e9d0835",
+      "decision": "support_failed",
+      "notes": "Se preservan negación, familiar e historia de hipertensión; Lumen reportado con sujeto descartado cuenta como error de contexto automático. Su actual cita el actual de otra mención, sin demostrar temporalidad de Lumen.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-03",
+      "recordSha256": "8d6e78bf030dde4fbb17d3ffc6a20bdbffdfd7f3d1d70748814925205c197b79",
+      "decision": "support_verified",
+      "notes": "Hipotiroidismo, Ámbar y ecografía planificada sustentados; control a 20 días no se traslada a duración.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-04",
+      "recordSha256": "e9a0606fdda2579f142f7a9c38ca4449af136e20730c613a10dec5ae9c10588f",
+      "decision": "support_verified",
+      "notes": "Vega conserva estado y tiempo desconocidos; dermatitis y dermatoscopia sustentadas. Falta la advertencia semántica requerida: un descarte no la reemplaza.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-05",
+      "recordSha256": "0fdd444cb82d85d570a03af9d9824cbdc891bbc9d8c960e27c03d7776781ea20",
+      "decision": "support_failed",
+      "notes": "El envase Brisa no prueba consumo reportado ni dosis de 10 mg; la prescripción de media tableta sí está expresa. El procedimiento pierde sujeto y queda penalizado automáticamente.",
+      "invalidEntities": [
+        "/medications/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [
+        "/medications/0/dosage"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-06",
+      "recordSha256": "7312cbce84226c2ca6673e4a6ea1e9493eac87e435962d6b6ee87bd46eac3450",
+      "decision": "support_failed",
+      "notes": "Cansancio aparece como síntoma expresamente sin formulación diagnóstica; no respalda entidad diagnóstica.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-01",
+      "recordSha256": "4486617a88b2e248495bf5d1db325691dcaa70df1814cf65de7dd52f0f4b963a",
+      "decision": "support_verified",
+      "notes": "Artritis, suspensión de Nacar, prescripción de Faro y artrocentesis realizadas están expresas. La variante vía oral conserva sus penalizaciones léxicas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral comparte segmento y significado con oral; no se acredita TP textual."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-02",
+      "recordSha256": "8fd2f948407840934cfc9128273e00c00092aeb6cd1ee2282204f61a19e9c053",
+      "decision": "support_verified",
+      "notes": "Las dos menciones incompatibles de hipertensión se conservan separadas con sus estados; Alba reportado y electrocardiograma futuro sustentados. Advertencia enlaza ambas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-03",
+      "recordSha256": "64dc882d3b83cf1085bfbe6ca0698576a098bc21f85c7d41288abd00c7561771",
+      "decision": "support_verified",
+      "notes": "Ambas citas de asma corresponden a repeticiones equivalentes; duplicado sigue siendo FP. Las citas de la segunda mención sostienen contexto aunque gold conserve la primera.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite diagnóstico actual del mismo paciente; duplicado no obtiene TP adicional."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite diagnóstico actual del mismo paciente; duplicado no obtiene TP adicional."
+        },
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite diagnóstico actual del mismo paciente; duplicado no obtiene TP adicional."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-04",
+      "recordSha256": "99bdb283b36c2c42c4bb530ede8dea3c09f7f733206702588b50d5e69600cfe9",
+      "decision": "support_verified",
+      "notes": "Gastritis sospechada, úlcera como antecedente personal, receta y gastroscopia solicitada sustentadas; malestar no se convierte en diagnóstico.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-05",
+      "recordSha256": "11ab25bbfeeac1133d7f8f1153ee0a7e9e63aaa71fd66a145eed00269920dd53",
+      "decision": "support_verified",
+      "notes": "Conjuntivitis, Prisma por vía oftálmica cada 8 horas y tinción corneal realizada sustentados por sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-06",
+      "recordSha256": "bd937fbb0d35171ea8aad98feaaacee2b90469b2ab224f9ffa682f0fcedb854e",
+      "decision": "support_failed",
+      "notes": "Lumbalgia, Órbita y radiografía solicitada sustentadas. Reposo corresponde a indicación de reposo, fuera de las prestaciones nombradas del contrato sintético.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-01",
+      "recordSha256": "2509dd0a518e2375a280c89f00884dacc2c0ef2fffa03cf48ee8502abc923197",
+      "decision": "support_failed",
+      "notes": "Anemia y endoscopia solicitada sustentadas; Cobalto reportado pierde sujeto. Tomar no es una vía explícita y no autoriza completar ese atributo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [
+        "/medications/0/route"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-02",
+      "recordSha256": "cd709a7e8e1bc03d72fec697534eef44422b1a4ecf697b30bb576b2d981d4ebe",
+      "decision": "support_failed",
+      "notes": "Mareo es motivo/síntoma, no diagnóstico; vértigo negado no tiene tiempo establecido y fue promovido a actual. La duración 2 días pertenece a Aguamarina y conserva discrepancia léxica.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [
+        "/diagnoses/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "2 días está dentro de por 2 días y mantiene la misma asociación; FP/FN textual no se modifica."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-03",
+      "recordSha256": "259b73537968e4bd0206e57b0ffbb68192886e7631fa9830b5ba49724e37e0c0",
+      "decision": "support_verified",
+      "notes": "Sinusitis actual, Sol prescrito y nasofibroscopia planificada sustentados por evidencia de sus respectivas cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-04",
+      "recordSha256": "cf1e8c4b63da00f6071d8cb1b83db32201244212efe49cf6cc4046f8dd732b6a",
+      "decision": "support_failed",
+      "notes": "Asma y código J45 sustentados. La cita de sujeto de Boreal apunta a la cláusula posterior de espirometría, no a la receta; espirometría pierde sujeto y ya cuenta FP/FN.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-05",
+      "recordSha256": "440aa81e38bf89e63cebec3f8989ddf4441e0be2110f563941bdb7a03d64e96f",
+      "decision": "support_failed",
+      "notes": "Lesión condicional no constituye diagnóstico nombrado en esta nota; eczema, uso reportado sin nueva receta y biopsia condicional planificada están sustentados.",
+      "invalidEntities": [
+        "/diagnoses/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-06",
+      "recordSha256": "2c875a782888148d347fdee07c1d9ef8691ef1e8c5d46e1b90996e60f96c6401",
+      "decision": "support_verified",
+      "notes": "Cálculos e infección urinaria conservan contexto, gota conserva tres desconocidos; Coral y ecografía sustentadas. Advertencia cubre assertion y además otras incertidumbres reales. El comparador exacto de grupos marca un faltante aunque cubra el target requerido; se documenta limitación sin cambiar métricas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La nota declara que no se establece afirmación, negación, fecha ni sujeto; la advertencia más amplia es semánticamente válida."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-01",
+      "recordSha256": "3ef155b8475fe4d504b269f14dc25f0a35edf0ebafea081cf952e91d331bf23f",
+      "decision": "support_verified",
+      "notes": "Procedimiento actual en encabezado sustenta tiempo actual de sutura; herida y Lucero por 3 días explícitos.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "El encabezado Procedimiento actual es evidencia temporal explícita del mismo procedimiento aunque esté fuera del span gold."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-02",
+      "recordSha256": "80cc146721f184d9b59539de7a05bd55bb81ac7f97636a202d2a5ee1d4a6f4fc",
+      "decision": "support_verified",
+      "notes": "Se distinguen endoscopia realizada ayer y nueva orden para próximo mes; dispepsia y Cenit reportado sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-03",
+      "recordSha256": "a3bc756d4f73f87e75f8765adcd9bd00c371d850cd234210ea5608c9b63e4ce8",
+      "decision": "support_verified",
+      "notes": "Cancelación y no realización de colonoscopia se conservan como menciones separadas; colitis y suspensión de Senda sustentadas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-04",
+      "recordSha256": "733b143482af9b81acded3fbb71a294c8cd43548d37d07017043a7e2a635f07c",
+      "decision": "support_verified",
+      "notes": "Intento de punción no se presenta como realizado; mantiene unknown con advertencia. Cefalea está expresamente diagnosticada y Aurora prescrita.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-05",
+      "recordSha256": "08f7179ca040ad45da8e93cd8ff45820565b3f93440b649c54571bb4bdffdc8b",
+      "decision": "support_verified",
+      "notes": "La coordinación con y también vincula ambos procedimientos a se completó hoy; 93000 solo asociado al electrocardiograma. Arritmia y Celeste reportado sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-06",
+      "recordSha256": "5a8923333ac4fc65534ef3b19b242fa88fb8a415f3b6e8177a6b9995f641cd8e",
+      "decision": "support_verified",
+      "notes": "Apendicectomía como antecedente histórico y drenaje no realizado se preservan; absceso, Rubí y pauta expresos sin duración inventada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-admission-01",
+      "recordSha256": "cd2826ff21e6c390efcfaf290786ccb726eb557c01b82d51883eb6b9e4824ed0",
+      "decision": "support_failed",
+      "notes": "Diagnósticos distinguen infancia, familiar y sospecha actual; procedimientos distinguen orden y realización. Estela cita actual dentro de actualmente de otra cláusula diagnóstica, no su uso, y varios sujetos descartados son omisiones automáticas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-admission-02",
+      "recordSha256": "3e1e77e8a652522978ea7ee48da2896045695bf3d03c66be7d20521e636e76e9",
+      "decision": "support_failed",
+      "notes": "Se conserva negación de antecedente de asma y acompañante distinto de familiar; Eje no permite establecer si sigue en uso y no respalda reported. Otros sujetos descartados mantienen penalización automática.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-admission-03",
+      "recordSha256": "1b7f6bd2c2488391b872d97109dca68f9108423dd6dc6adbd4c5c31e5673d2e4",
+      "decision": "support_failed",
+      "notes": "Colección condicional no es un diagnóstico expresamente formulado. Celulitis cita sujeto de la sutura histórica en lugar de su cláusula; Cometa no hereda descanso como duración. Sutura histórica y drenaje condicionado separados.",
+      "invalidEntities": [
+        "/diagnoses/1"
+      ],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-emergency-01",
+      "recordSha256": "734f71f87eee6d1c7478d30379c87d087f4ebc4f0cd3e06d790bd17c09f3985b",
+      "decision": "support_verified",
+      "notes": "Apendicitis inicial y posterior descarte se conservan como secuencia, gastroenteritis confirmada, Bisel prescrito, ecografía realizada tras orden y cirugía no practicada; citas coherentes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-emergency-02",
+      "recordSha256": "5e1ea17f9d114cf672b2ba3376f18815f6f05e06a5aadbd0cdd05f1fbf0672e0",
+      "decision": "support_failed",
+      "notes": "Esguince y Ancla pierden sujeto y ya son FP/FN; pauta pertenece a Ancla, no al reposo. Reposo no es prestación nombrada para este contrato; inmovilización realizada y radiografía futura sustentadas.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-emergency-03",
+      "recordSha256": "ce51ba7f86dbd1fbf068f7431bb87ad37f1fb1cae4062e5534b25dae7dc27819",
+      "decision": "support_verified",
+      "notes": "Intoxicación negada, Vela reportada e intubación con realización desconocida conservan sus estados; sujetos descartados se penalizan. La instrucción administrativa de facturar cirugía no aparece en el resultado.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-discharge-01",
+      "recordSha256": "671f8a31d71bb6bbaa17dc446dbd5113a4bca9e7ab09185b313d19a8758aebe0",
+      "decision": "support_failed",
+      "notes": "Se conserva secuencia de pancreatitis, gastritis al alta y endoscopia histórica. Sujetos de Arista/Duna citan otras cláusulas y no sustentan asociación de esas recetas. Duna por 7 días es variante respaldada; revisión futura pierde sujeto.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "7 días está en por 7 días de la receta Duna; no modifica FP/FN léxico."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-discharge-02",
+      "recordSha256": "5c935931ea82a23f4fabafb99dc6ed9a8ea396aed42c7c30bfdb7d06fe483a20",
+      "decision": "support_failed",
+      "notes": "Fractura actual y realización/cancelación históricas se distinguen. Cauce, reducción y resonancia citan paciente de otras cláusulas; las citas elegidas no establecen por sí mismas su asociación. Tiempo desconocido de resonancia es omisión automática.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-discharge-03",
+      "recordSha256": "93709e92bafe21711268ddc72e3a5087fabf0079ff5b2a79cdcaf96ea4bd8ea6",
+      "decision": "support_failed",
+      "notes": "Diabetes actual y neumonía histórica comparten sujeto mediante continuación coordinada. Alero suspendido histórico y procedimiento futuro pierden sujeto. Marfil cita al paciente del procedimiento en vez de receta; vía y duración son variantes literales respaldadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "vía oral está en la receta de Marfil y conserva FP/FN textual."
+        },
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "30 días está dentro de durante 30 días y conserva FP/FN textual."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-07",
+      "recordSha256": "d5fcc57f76f0eda183f2b25f036209dc146be3596efa1daa7b831708930318f6",
+      "decision": "support_failed",
+      "notes": "Eczema sustentado; diabetes y Nimbo provienen exclusivamente del bloque ajeno al contenido clínico. Unknown no vuelve clínicas esas instrucciones.",
+      "invalidEntities": [
+        "/diagnoses/1",
+        "/medications/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-07",
+      "recordSha256": "11216cd8570415c0d30e453aa48dd3d7a26bf3eea86b0861b8f25a788a4ebcba",
+      "decision": "support_verified",
+      "notes": "Rinitis confirmada y Zonda prescrita están sustentadas; no se usa contenido del catálogo como mención clínica.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-07",
+      "recordSha256": "e5e1eb31e38758a69a120d4a301298f9e7919ff49c85e8b2bfe0fbc1e82d7c36",
+      "decision": "support_failed",
+      "notes": "Alergia y Halo están nombrados; el sujeto de Halo cita la cláusula posterior de reposo. Reposo y retorno a control son instrucciones de seguimiento, excluidas del conjunto de procedimientos esperado.",
+      "invalidEntities": [
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-07",
+      "recordSha256": "a4c3fbc7db1bbc2a36aca6984bb41435725f998cd9a498489926c85d4234778a",
+      "decision": "support_verified",
+      "notes": "Quiste y dos menciones distintas de ecografía sustentados: orden futura y no realización hoy. Sujeto descartado de la orden produce FP/FN, sin promover orden a realización.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-08",
+      "recordSha256": "44821eb83cc37ee3a192a71ecf641d25a7d83c9b4be4c84080005b0bbb743079",
+      "decision": "support_verified",
+      "notes": "Se distingue antecedente de la hermana y diabetes negada del paciente; sujeto de la segunda mención se pierde y ya es FP/FN.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-08",
+      "recordSha256": "dd354b9ca84492806f3cb42f887642a81f6ff783807be232af9d7ea3a1ab0e44",
+      "decision": "support_verified",
+      "notes": "Acné está expresamente diagnosticado en dictamen de hoy y Áurea prescrita; nombres, contexto y citas coherentes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-01",
+      "recordSha256": "2d63409f34c68463a06c964b0b4335214a8810340055c78bd3d8f22b23561311",
+      "decision": "support_verified",
+      "notes": "Misma nota y entidades sustentadas que ronda 1. Variantes vía oral y 3 días se conservan como FP/FN léxicos.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral es la vía explícita de Nébula."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "3 días pertenece a durante 3 días de Nébula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-02",
+      "recordSha256": "d7e4f1b0e600076d0ba84450696565b6103378515153373dff655bf80ef70606",
+      "decision": "support_failed",
+      "notes": "Cambios de citas de diagnósticos y orden son coherentes; Lumen mantiene sujeto desconocido. Su tiempo actual cita un fragmento de actualmente en la negación de diabetes, no su uso.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-03",
+      "recordSha256": "48a1354546338587b21c86022f0c7e48d0e6f82d28309ad9d453e45dda10b8ec",
+      "decision": "support_verified",
+      "notes": "Las nuevas citas mantienen relación de hipotiroidismo, receta Ámbar y ecografía planificada. El control no aporta duración.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-04",
+      "recordSha256": "04b95e58b4879cc4f4a1c7daf04806b2a12856c6484bc28c3c9cb70a6f287be2",
+      "decision": "support_verified",
+      "notes": "Se mantienen desconocidos de Vega y prestación realizada; falta advertencia semántica requerida aunque haya descarte.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-05",
+      "recordSha256": "22ef6a7803886d408cce619d45302f6a3ddc4180ecf1e903de1f0b0cdd49fa89",
+      "decision": "support_failed",
+      "notes": "Envase de Brisa no sustenta reported, other ni dosis; segunda mención sí documenta prescripción de media tableta. Esta mención correcta queda sin alinear porque gold solo ancla primera Brisa; incidencia de referencia documentada sin cambiar corpus. Orden de rinoscopia no sustenta tiempo current según política acordada.",
+      "invalidEntities": [
+        "/medications/0"
+      ],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [
+        "/medications/0/dosage"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-06",
+      "recordSha256": "258a092c03bbd2027b5582eb454cf5f3bdda68c5567c617ea0e857bcf682df1a",
+      "decision": "support_failed",
+      "notes": "Cansancio sigue siendo síntoma expresamente no diagnosticado; ampliación de su cita temporal no cambia la exclusión.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-01",
+      "recordSha256": "5326548669ac0ed030c8f92d09ad9363eddd005cf4dccf6d9a85f64d29053e8f",
+      "decision": "support_verified",
+      "notes": "Cambios de citas conservan prescripción/suspensión y contexto de artritis/artrocentesis; vía oral respaldada con discrepancia textual preservada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral está en la pauta de Faro; no cambia conteos léxicos."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-02",
+      "recordSha256": "b9c2c77b914543357ea37f16b5e7fb225603d254a61102183638054fa39f5206",
+      "decision": "support_failed",
+      "notes": "Se preservan menciones contradictorias y receta reportada; sujeto de electrocardiograma cita paciente de Alba, no la orden.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-03",
+      "recordSha256": "c70ce540fedbd4e0f059f259d2bbc81bfb819c151af732a6cd73d99158e678f3",
+      "decision": "support_verified",
+      "notes": "Cambios de citas conservan contexto explícito en ambas repeticiones de asma; duplicado mantiene FP adicional. Horizonte y espirometría sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La segunda cláusula es una repetición explícita del mismo diagnóstico actual del paciente; duplicado no recibe TP extra."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La segunda cláusula es una repetición explícita del mismo diagnóstico actual del paciente; duplicado no recibe TP extra."
+        },
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "La segunda cláusula es una repetición explícita del mismo diagnóstico actual del paciente; duplicado no recibe TP extra."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-04",
+      "recordSha256": "866c52b2daf0bd5ffcd46b86362586ce778a5a67d7ede240832a2a4da880b7cb",
+      "decision": "support_failed",
+      "notes": "Gastritis sospechada, úlcera histórica y Delta prescrito sustentados; gastroscopia solicitada no respalda tiempo actual según política de prestación futura. 5 días es variante de por 5 días.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "5 días pertenece a por 5 días de Delta; conteos léxicos preservados."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-05",
+      "recordSha256": "a3c43a7258bc602fcdce5709b31a2c7f90c099cb6ec7c2e23b2c7bff10eb46b4",
+      "decision": "support_verified",
+      "notes": "La ampliación de las citas de prescripción y realización sigue en las cláusulas de Prisma y tinción corneal. No cambian asociaciones ni valores.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-06",
+      "recordSha256": "be40d54d8d33e9cc931d93ca56be0ce03a058188c823b318e6eed5b14858301c",
+      "decision": "support_failed",
+      "notes": "Receta Órbita sustentada; cambiar a futuro el reposo no lo convierte en prestación del corpus.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-01",
+      "recordSha256": "f70fcb9641997a3d944c89c6ab662a26c7b5783215ce9fc68a73dacdb82976f2",
+      "decision": "support_verified",
+      "notes": "Cobalto ya no inventa vía; sujeto sigue desconocido y mantiene FP/FN. Anemia actual y endoscopia solicitada sustentadas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-02",
+      "recordSha256": "3f4f3a2c5209a1692d858dd906a94663cd15f80ab0d25a332b90637e278387a7",
+      "decision": "support_failed",
+      "notes": "Mareo sigue sin diagnóstico y vértigo sin tiempo determinado se promueve a actual; nuevas citas conservan contexto de laberintitis, receta y audiometría. Duración breve respaldada.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [
+        "/diagnoses/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "2 días pertenece a por 2 días de Aguamarina; no cambia puntuación léxica."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-03",
+      "recordSha256": "f94284fe30ee53ebc20866f4b404e3a97e41d92b039f95a2283520186a8d6cd4",
+      "decision": "support_verified",
+      "notes": "Los cambios a el/al paciente siguen dentro de sus respectivas cláusulas; sinusitis actual, Sol prescrito y nasofibroscopia planificada sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-04",
+      "recordSha256": "62d0ebef9034b4c6c6becb932fb410494203ec1b1043cf6256c4a1b62336fed4",
+      "decision": "support_failed",
+      "notes": "Boreal cita hoy de la valoración y paciente de la espirometría, no su prescripción; ambas asociaciones de contexto quedan rechazadas. Asma/J45 correctos y espirometría pierde sujeto.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-05",
+      "recordSha256": "7bd79f3aa4bf7f2a75628d4e27c41c0a806ac31cf83068df25c8af9d48faeefc",
+      "decision": "support_verified",
+      "notes": "Ya no devuelve lesión como diagnóstico; eczema, Marea reportado y biopsia condicional planificada correctamente sustentados, con nuevo span de plan dentro de la misma cláusula.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-06",
+      "recordSha256": "ae855c314aca3a1d1d3040ecfe3484d6204c5b06e896737885f80a72a77c4039",
+      "decision": "support_failed",
+      "notes": "Gold gota sigue unknown con advertencia amplia válida; nueva cita de ecografía ordenada no sustenta temporalidad actual de la prestación según política. Otras citas de antecedente y sospecha coherentes.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Las tres incertidumbres de gota están expresas; la agrupación amplia cubre el target requerido, con limitación del comparador exacto documentada."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-01",
+      "recordSha256": "703ad14b31b2e6c1da3e56a235951d1d9700b47193a1fd8e5739dbc3a1003413",
+      "decision": "support_verified",
+      "notes": "Procedimiento actual en encabezado sustenta tiempo actual de sutura; herida y Lucero por 3 días explícitos. Evidencia y valores de todas las entidades idénticos a la primera ronda (excepto IDs/metadatos).",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "El encabezado Procedimiento actual es evidencia temporal explícita del mismo procedimiento aunque esté fuera del span gold."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-02",
+      "recordSha256": "56338ffc4c594179e41dd16b27c146fe533279839329e3c01fe9482541024597",
+      "decision": "support_verified",
+      "notes": "Nuevas citas se mantienen dentro de uso reportado de Cenit y de cada endoscopia; preservan realización de ayer frente a orden del próximo mes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-03",
+      "recordSha256": "d2e4ebf99a6d793fca356fa5c1bdf2964d1bd66bc9f4b84a42d70f763dfe7d87",
+      "decision": "support_failed",
+      "notes": "La colonoscopia no realizada queda not_performed pero assertion cambia a affirmed pese a no se realizó: promoción de negación. El resto conserva sus citas y suspensión de Senda.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-04",
+      "recordSha256": "64a401569d2eb4d7fa14d25600a99223177d8befd4a070c52b3eef00e2d25a78",
+      "decision": "support_verified",
+      "notes": "Nuevos spans de cefalea e intento son coherentes; Aurora pierde sujeto y mantiene FP/FN. Intento de punción sigue unknown con advertencia, sin inferir realización.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-05",
+      "recordSha256": "90b7ec08b5e5c39318c899c1555c455f16875524f52d724faf415b9364c390b0",
+      "decision": "support_verified",
+      "notes": "Completó conserva significado de realización y la coordinación incluye ecocardiograma sin extenderle código 93000; demás contenido igual a primera ronda y respaldado.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-06",
+      "recordSha256": "9fa57be3380aed00cdde8d79b72ddc4bc65f1f6f8947500a5944685719032ced",
+      "decision": "support_verified",
+      "notes": "Los puntos finales añadidos no cambian respaldo. No se realizó sustenta negación de drenaje; antecedente de apendicectomía y pauta de Rubí siguen correctamente asociados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-admission-01",
+      "recordSha256": "efb5d48c19112a583a6e514f4c4bdcc6914da21d8f27ea0225be25c3e6c3b8f0",
+      "decision": "support_failed",
+      "notes": "Cambios diagnósticos conservan sus cláusulas. Estela sigue citando actual de otra mención y habitual describe uso, sin pauta de frecuencia establecida por anotación; Diamante cita hoy de radiografía y paciente de tomografía; radiografía cita sujeto de la orden distinta.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [
+        "/medications/0/frequency"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-admission-02",
+      "recordSha256": "05e8f1a4efcaff8ea54154b81b0e681652ecb6d16af8a65d903b27af3f4c6129",
+      "decision": "support_failed",
+      "notes": "Nuevas citas recuperan sujetos de deshidratación y Eje, pero Eje sigue reported pese a no saber si lo usa; unknown no puede promoverse. Acompañante permanece other y plan de ecografía sigue futuro.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-admission-03",
+      "recordSha256": "aba03d7564b815df64d7c2ad53a4f6ff1ff731dd6ef9510cffb2d157573d9102",
+      "decision": "support_failed",
+      "notes": "Ya no convierte colección en diagnóstico; celulitis, Cometa y sutura citan paciente de cláusulas diferentes a las entidades evaluadas. Drenaje condicional conserva estado pero pierde sujeto; dosis/duración no se inventan.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-emergency-01",
+      "recordSha256": "35cd68ae0a6c5878224b367521ebc1bcbceb45ad641990cb8babd9304ed10280",
+      "decision": "support_failed",
+      "notes": "La negación de cirugía pasa a afirmada aunque not_performed se preserve: contradicción de contexto. El sujeto de sospecha de apendicitis cita encabezado del paciente en misma atención, que sí establece el sujeto global.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Urgencias del paciente introduce al sujeto de la secuencia clínica de esta misma nota."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-emergency-02",
+      "recordSha256": "71928ecce8d095d275f42548ad50f621604d6fad7ecf927c00ab87ec1caa5b65",
+      "decision": "support_verified",
+      "notes": "Ya no devuelve reposo; los sujetos de esguince/Ancla siguen unknown y penalizados. Inmovilización y radiografía sustentadas; duración de Ancla tiene variante corta legítima.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "2 días está en durante 2 días de la pauta Ancla; FP/FN léxicos no cambian."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-emergency-03",
+      "recordSha256": "3bd368844d782181864696c0f5dbddf1131e8e154c81b9c29014b223682d7274",
+      "decision": "support_verified",
+      "notes": "Recupera sujeto de intubación en el intento, mantiene realización unknown y advertencia; Vela sigue sin sujeto. Texto administrativo de cirugía sigue excluido.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-discharge-01",
+      "recordSha256": "1ca0908a16eda9cd464b07af26c2fc3c4072f2a3f598b20d53de4a696a3f3c04",
+      "decision": "support_failed",
+      "notes": "Recupera sujetos de ambas recetas y consulta futura; endoscopia cita el paciente de gastritis, no su realización. La duración Duna conserva asociación correcta pese a variante corta.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "7 días pertenece a por 7 días de Duna; no se cambia el conteo textual."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-discharge-02",
+      "recordSha256": "54522272e7698b58a1b844bb9ad2f7c600f48742cccd7a844028d796c62aca31",
+      "decision": "support_verified",
+      "notes": "Cauce y reducción pierden sujeto; resonancia recupera sujeto correcto pero mantiene tiempo unknown. Son omisiones automáticas; las nuevas citas de confirmación, receta y cancelación son coherentes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-discharge-03",
+      "recordSha256": "f673a449814d21a85717e72c48e261b57bc155508ef3dd717a6c87479154603c",
+      "decision": "support_verified",
+      "notes": "Marfil recupera sujeto correcto y revisión futura también; Alero suspendido sigue con sujeto unknown. Variantes vía oral y 30 días sustentadas con puntuación textual intacta.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral es segmento explícito de la receta Marfil."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "30 días pertenece a durante 30 días de Marfil."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-07",
+      "recordSha256": "15ca30f5adabeedb0c80294345d775e1b08f8cfd87884a55e63928801d714676",
+      "decision": "support_verified",
+      "notes": "Se limita a eczema y excluye diabetes/Nimbo del bloque externo; mejora respecto a primera ronda sin selección favorable de resultados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-07",
+      "recordSha256": "a94b36c86ad55b0abfc8f16e8e2f9256f522b82a0b9514abaf1aff556e4105b2",
+      "decision": "pending",
+      "notes": "Rinitis y Zonda sustentados. Interconsulta de hoy confirma puede leerse como tipo documental o como prestación efectuada; gold no incluye procedimiento. Disputa de alcance/anotación pendiente, sin alterar gold, TP/FP ni afirmar que es alucinación.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-07",
+      "recordSha256": "98af42e501cb06c49a8e0c5ba4e841b831dfe1deb961a99a550ee1b4cbddcca6",
+      "decision": "support_failed",
+      "notes": "Alergia y Halo están nombrados; el sujeto de Halo cita la cláusula posterior de reposo. Reposo y retorno a control son instrucciones de seguimiento, excluidas del conjunto de procedimientos esperado. Entidades, valores y evidencia idénticos a primera ronda.",
+      "invalidEntities": [
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-07",
+      "recordSha256": "ee9ac1d8438906753ef5dbd2dec04fac6a745142069e34696eb111b5422e202b",
+      "decision": "support_verified",
+      "notes": "El punto final en afirmación de quiste no cambia soporte. Orden de ecografía conserva sujeto unknown y no realización conserva paciente correcto; estados separados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-08",
+      "recordSha256": "94c6f5b414047fb5b285cd5d56a9c8177576ad1008e4b19a1b4c493215475b99",
+      "decision": "support_verified",
+      "notes": "Hermana sigue family e histórica; paciente recupera sujeto correcto y negación explícita niega. Ambas menciones de diabetes correctamente diferenciadas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-08",
+      "recordSha256": "13cf3121250a4bb45b1975d666e7b23858a905c1e730634802bdd9469d5c07b8",
+      "decision": "support_verified",
+      "notes": "Citas nuevas de acné y Áurea se mantienen en sus respectivas cláusulas; temporalidad hoy y prescripción explícitas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-01",
+      "recordSha256": "438cbfcc9e890a7e997d40c5fe643dd934bd460326595c9b108c32d263d93ca4",
+      "decision": "support_verified",
+      "notes": "Las nuevas citas mantienen otitis actual, prescripción actual de Nébula y otoscopia realizada; vía con prefijo respaldada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral pertenece a la pauta Nébula, sin acreditar TP léxico."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-02",
+      "recordSha256": "f2a805df0f575556a56797c19f44664333f364942f2b8c876c378055c4cbdad6",
+      "decision": "support_failed",
+      "notes": "Lumen recupera sujeto correcto pero su temporalidad actual sigue anclada a actualmente de la negación de diabetes. Las otras modificaciones de cita permanecen correctamente asociadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-03",
+      "recordSha256": "67bd3dd2fd152e6662554e5cfd5de594682af406186509718dc823eb04478a88",
+      "decision": "support_failed",
+      "notes": "Ámbar cita paciente de la planificación de ecografía, no de la receta; la ecografía pierde sujeto. Hipotiroidismo y pauta de Ámbar permanecen textualmente respaldados.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-04",
+      "recordSha256": "424923cd6f9389b3cb5dd963f3ec47ec097cb68ef09230076ea48c4cb9e2c196",
+      "decision": "support_verified",
+      "notes": "Vega conserva estado y tiempo desconocidos; dermatitis y dermatoscopia sustentadas. Falta la advertencia semántica requerida: un descarte no la reemplaza. Entidades y citas idénticas a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-05",
+      "recordSha256": "4101438c938145351b9d3789a8aba321df823dae08c9454a5d95727c279470f9",
+      "decision": "support_failed",
+      "notes": "La concentración de envase de Brisa vuelve a convertirse en dosis/uso reportado de un sujeto other; la segunda aparición sí sustenta receta de media tableta y rinoscopia está ordenada. Se preserva incidencia del anclaje gold.",
+      "invalidEntities": [
+        "/medications/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [
+        "/medications/0/dosage"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-06",
+      "recordSha256": "c37ac678722e065e9c7698b0cf857ac527b345c1dd2b1e88e9377cee17eb4bd2",
+      "decision": "support_failed",
+      "notes": "La ampliación de la cita no convierte cansancio en diagnóstico: el texto excluye expresamente formulación diagnóstica.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-01",
+      "recordSha256": "958fac94890a7da8df4fd7a7e28e00de5dd225bac13a1ffdf5d0ce4352a9dffb",
+      "decision": "support_verified",
+      "notes": "Los puntos finales y citas de estado breves conservan asociaciones y negación/suspensión; vía oral de Faro respaldada con discrepancia léxica.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral está en la pauta de Faro; se conserva la puntuación textual original."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-02",
+      "recordSha256": "3f615ee32faa07e52115ba493a3d80f1d9e3f4be281157a237cd5ecd0c6f81c4",
+      "decision": "support_verified",
+      "notes": "Las dos menciones de hipertensión conservan afirmación/negación y advertencia; ecg recupera sujeto dentro de su orden y continúa futuro/ordered.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-03",
+      "recordSha256": "767942681f437a52803a5193f4a3a4adf728811251263059e03e2a5c2874e84b",
+      "decision": "support_verified",
+      "notes": "Las citas con punto final corresponden a ambas repeticiones explícitas de asma; se conserva FP de duplicado, sin acreditar TP adicional.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite el mismo diagnóstico actual y sujeto; diferencia con span gold no elimina duplicado."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite el mismo diagnóstico actual y sujeto; diferencia con span gold no elimina duplicado."
+        },
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite el mismo diagnóstico actual y sujeto; diferencia con span gold no elimina duplicado."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-04",
+      "recordSha256": "f05a536f7e590bc02920ad2f1abb0b8dfef1fcaf26ba8b3c1d2647a9d0ddef12",
+      "decision": "support_verified",
+      "notes": "Gastritis sospechada, antecedente de úlcera, Delta y orden futura sustentados. Duración corta permanece asociada a Delta.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "5 días está en por 5 días de Delta; FP/FN léxicos preservados."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-05",
+      "recordSha256": "af4b548ef9b4fc6769840f99a8919499b0ea04f300577e251be03b70298837b2",
+      "decision": "support_verified",
+      "notes": "Indica y realizó pertenecen a las cláusulas de Prisma y tinción corneal respectivamente; mantienen prescripción y realización explícitas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-06",
+      "recordSha256": "7ed36932918c862c9363ae85a61b9a8ef301c9481fe8360447e30fc755ff88de",
+      "decision": "support_failed",
+      "notes": "Reposo sigue fuera de prestaciones de referencia; el sujeto citado proviene de radiografía y no rescata esa clasificación. Lumbalgia, receta Órbita y radiografía sustentados.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-01",
+      "recordSha256": "b77a8707690592577b4ef57824cea2dcfa2ab16a11b098d1e5dbc2319096d71a",
+      "decision": "support_verified",
+      "notes": "Cobalto recupera sujeto y ya no propone vía no explícita; nuevas citas sostienen anemia actual y endoscopia solicitada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-02",
+      "recordSha256": "151bf71e7bc8507142ff4f351f52e726a57a3005f8933711c8e15d314319be0f",
+      "decision": "support_failed",
+      "notes": "Estudiar mareo no constituye diagnóstico; vértigo negado conserva promoción indebida a tiempo current. Laberintitis sospechada y receta/orden sustentadas; 2 días variante legítima.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [
+        "/diagnoses/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "2 días pertenece a por 2 días de Aguamarina; no se acredita TP léxico."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-03",
+      "recordSha256": "2e141461969647d27d4bf1fae0f4ffdf4c597fbeda05b936601f10d0fa24cecb",
+      "decision": "support_verified",
+      "notes": "Cambios de spans de sujeto continúan dentro de sus respectivas cláusulas; sinusitis, Sol y nasofibroscopia planificada sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-04",
+      "recordSha256": "5a7c525d03117eac3d85f9fabd9bf6bfeaf1a9a10d0851ef296388b527033891",
+      "decision": "support_failed",
+      "notes": "Ampliar las citas de receta no corrige sujeto de Boreal, que apunta a cláusula de espirometría; asma/J45 coherentes y espirometría sigue con sujeto unknown.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-05",
+      "recordSha256": "83e6a1e16f652f45272da02c68ec5f78741e145107fc7e9bbc7cebf8e66cce92",
+      "decision": "support_verified",
+      "notes": "Coincide semánticamente con segunda ronda: no incluye lesión como diagnóstico, preserva eczema, Marea reportado y biopsia condicionada planificada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-06",
+      "recordSha256": "221fab48b04b2bf61b3358f468ebbc48560604a249a4ce1140e071a2aa136f87",
+      "decision": "support_failed",
+      "notes": "Nuevas citas mantienen cálculos históricos y sospecha actual; ecografía ordenada se promueve a tiempo current sin fecha de realización. Gota conserva incertidumbre y advertencia amplia válida.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La incertidumbre de afirmación/fecha/sujeto de gota es expresa; agrupación amplia cubre target requerido, con discrepancia del comparador documentada."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-01",
+      "recordSha256": "51263e41fd9a360c547d07525922c128d666c1ca93e47401fc9a6cccfbaa9581",
+      "decision": "support_verified",
+      "notes": "Sutura tiene tiempo actual explícito en encabezado y receta Lucero conserva duración por 3 días con variante corta.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "3 días está en por 3 días de Lucero; FP/FN textual no cambia."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Procedimiento actual en encabezado se refiere a sutura simple de la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-02",
+      "recordSha256": "77e9d47266d15ab6844c9e91adc6a3b33a306f03ed2b71bbc74e06ac594694f6",
+      "decision": "support_verified",
+      "notes": "Se le realizó y se solicita están asociados a endoscopias de ayer y próximo mes respectivamente; Cenit reportado y dispepsia correctos.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-03",
+      "recordSha256": "a31a332f0052cdc3e6d2818c6388a8c63f31f0d2c530b36e0456142c3b2e63fe",
+      "decision": "support_failed",
+      "notes": "No se realizó pasa indebidamente a assertion affirmed aunque performanceStatus not_performed persista; demás menciones como primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-04",
+      "recordSha256": "7f80a298a3705969cecb74ae2cc614370f16f46124e1f814d62e1ee4a6fcc2c0",
+      "decision": "support_verified",
+      "notes": "Añadir puntos finales conserva receta y diagnóstico. Intento de punción mantiene performanceStatus unknown y advertencia, sin inferir que se realizó.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-05",
+      "recordSha256": "f265f26c3f48f016abfb1f95e07c4bee4a4faee613da118ca391ebc427fff4bc",
+      "decision": "support_verified",
+      "notes": "Toma actualmente sustenta uso reportado de Celeste; ambos procedimientos coordinados realizados, solo electrocardiograma con código textual. Arritmia sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-06",
+      "recordSha256": "be26b9bd52fdeeab68057d1c6f370179f7291d0612b833de246ef3c21488da37",
+      "decision": "support_verified",
+      "notes": "No se realizó sustenta negación y no realización de drenaje; resto idéntico a primera ronda, con apendicectomía histórica y pauta Rubí explícita.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-admission-01",
+      "recordSha256": "c0d4f4a936646b16f7e3b83594f9ddde26b446003d69fd7fc6dc5ffd40eec84f",
+      "decision": "support_failed",
+      "notes": "Diagnósticos y sus nuevas citas coherentes; Diamante recupera sujeto correcto. Estela mantiene cita actual fuera de su uso (dentro de actualmente del derrame pleural); sujetos descartados son omisiones automáticas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-admission-02",
+      "recordSha256": "7f951806fb4613a5dcb3d4c42a20bce35740d28df929cca4fadfe4a15aad39da",
+      "decision": "support_failed",
+      "notes": "Asma negada como antecedente personal y acompañante other sustentados; deshidratación recupera sujeto. Eje se mantiene reported sin poder establecer uso vigente y pierde sujeto.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-admission-03",
+      "recordSha256": "3613438e0b402f00e90f2b54c1b00d0a7be97e2fa57e06a09b8bc1e3e9baaeb0",
+      "decision": "support_failed",
+      "notes": "Celulitis, Cometa y sutura siguen con citas de sujeto ubicadas en otras cláusulas; ya no se extrae colección diagnóstica. Drenaje sigue plan condicionado pero sujeto unknown.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-emergency-01",
+      "recordSha256": "bd4841e44498b38f99d6f9a0814546816ed92de8a69f2161e7ff0700ccf3aa5d",
+      "decision": "support_failed",
+      "notes": "La secuencia diagnóstica y nuevas citas se mantienen sustentadas; cirugía no practicada pasa indebidamente a assertion affirmed, aunque not_performed se conserve.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-emergency-02",
+      "recordSha256": "659dfe5fd0c3b9c671c792d63b09933202df9c927dac95a0b07c9bdf243a8801",
+      "decision": "support_failed",
+      "notes": "Ancla recupera sujeto y pauta correcta; esguince sigue unknown. Reposo sigue fuera de prestaciones de referencia; ambas prestaciones reales/solicitadas se preservan. Duración corta respaldada.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "2 días está dentro de durante 2 días de Ancla; no se cambia FP/FN léxico."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-emergency-03",
+      "recordSha256": "4d084c2219366458f06a0ddd8b84733fed6641a7587fd807e5eab4a966502114",
+      "decision": "support_verified",
+      "notes": "Intubación recupera sujeto del intento y conserva realización desconocida; Vela reportada conserva sujeto unknown. La instrucción de cirugía sigue excluida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-discharge-01",
+      "recordSha256": "77832306bb42557aed26017194e5b60776810e550b899688fa5a00383e52e958",
+      "decision": "support_verified",
+      "notes": "Todas las nuevas citas de sujeto corresponden a sus propias cláusulas, a diferencia de primera ronda. Arista sigue con tiempo descartado; Duna conserva duración corta respaldada y revisión futura está sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "7 días pertenece a por 7 días de Duna y conserva conteo léxico original."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-discharge-02",
+      "recordSha256": "9f09972615406672037a8068e6a9e592c3531c274ef51e6c1bcbe17e188768ad",
+      "decision": "support_failed",
+      "notes": "Cauce sigue citando paciente de resonancia y no su receta. Reducción recupera sujeto correcto; resonancia mantiene temporalidad unknown y cancelación correctamente citada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-discharge-03",
+      "recordSha256": "5ad628afd4301e02a2c2977dc137a33855a26456d5abf47e357b290aee5c7fdc",
+      "decision": "support_verified",
+      "notes": "Cambios temporales siguen expresos en alta/antecedente y suspensión previa. Marfil y examen de fondo de ojo recuperan sujeto correcto; Alero mantiene sujeto unknown. Variantes vía oral/30 días respaldadas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral está en la receta de Marfil, con FP/FN léxico preservado."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "30 días está dentro de durante 30 días y asociado a Marfil."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-07",
+      "recordSha256": "e052aeec6a37ffc4f94e5853a409a5731025d56dbb0a468c216345ea738f0128",
+      "decision": "support_verified",
+      "notes": "Se restringe a eczema y excluye instrucciones diabetes/Nimbo igual que segunda ronda; datos clínicos sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-07",
+      "recordSha256": "3dbce146bef26b6dd6a03b8eb501c34e3e726cf4a53cd5fece7a8a7aed885065",
+      "decision": "pending",
+      "notes": "Rinitis/Zonda conservan respaldo. Interconsulta de hoy confirma presenta la misma disputa de alcance documental frente a prestación que ronda 2, sin resolverla favorablemente ni cambiar gold.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-07",
+      "recordSha256": "f63f1b37862b8c27562233f84eb5f8fdfe4dce3da07c901351193785876e8435",
+      "decision": "support_failed",
+      "notes": "Halo conserva cita de sujeto de otra cláusula; reposo y control siguen fuera de prestaciones de referencia. Ampliar cita de prescripción no corrige esa asociación.",
+      "invalidEntities": [
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-07",
+      "recordSha256": "e637193815b41255bbcce48aa39dbc360e5ae5f0fe5f7e2adc52fe2f0608f4d2",
+      "decision": "support_failed",
+      "notes": "Orden de ecografía recupera sujeto; no realización de hoy se clasifica histórica pese a hoy explícito, sin respaldo para ese tiempo. Negación y not_performed se mantienen.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-08",
+      "recordSha256": "418e5e2586ef0c72536567d4d1e440d7f1852dfcef64113568bc53445302b5ef",
+      "decision": "support_verified",
+      "notes": "Hermana histórica y diabetes negada del paciente tienen sujetos correctos; cambio de citas preserva ambas asociaciones.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-08",
+      "recordSha256": "31ad426f565372c4417fc45ed6ad9042c6a74ea8353b93f37931020f928b1893",
+      "decision": "support_verified",
+      "notes": "Nueva cita de afirmación de acné sigue en su cláusula diagnóstica; Áurea y contexto igual a primera ronda, sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-01",
+      "recordSha256": "9414f35413c573d50aff4c014fd1770cd2e8dbf8455cd4e777bb7b7205e85254",
+      "decision": "pending",
+      "notes": "Trébol reportado y tonometría realizada sustentados. Impresión diagnóstica se clasifica suspected frente a gold affirmed; el alcance de esa formulación admite discusión de anotación, no se resuelve favorablemente ni se cambia la referencia.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-02",
+      "recordSha256": "6e041ff6765baaf8e6179f5ac4f22044ed1c27991515303d3a72931bd034968c",
+      "decision": "support_failed",
+      "notes": "Se preservan negación de neumonía, abuela histórica, bronquitis y receta Sauce con elipsis le de la misma coordinación. Radiografía solicitada se clasifica current usando fecha de la orden, que no sustenta tiempo actual de la prestación según política.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-03",
+      "recordSha256": "93e579896aa227e66d72283e15c116a111c92d32040d961e3843669421729738",
+      "decision": "support_verified",
+      "notes": "Tendinitis, Zafiro y ecografía agendada mañana sustentados; revisión a 15 días no se traslada a duración. Vía tópica es variante literal legítima.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía tópica pertenece a la pauta Zafiro y conserva FP/FN léxicos."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-04",
+      "recordSha256": "37f8ec7e1c7f73509147f70b9acabb1b0c0b79ff2fcbb67028039210e02beb80",
+      "decision": "support_verified",
+      "notes": "Psoriasis y dermatoscopia programada sustentadas. Omite Abedul, cuyo gold conserva mención de estado desconocido; no inventa uso o receta. La omisión queda FN y falta advertencia según comparador.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-05",
+      "recordSha256": "1362a264c3da3ce0d61538a6585d1622135e5931e8f55ac4012ca6f18d0781fb",
+      "decision": "support_failed",
+      "notes": "Helecho de una cápsula está prescrito, pero cita sujeto de limpieza dental. El envase no sustenta una segunda medicación reportada con dosis 30 mg; limpieza ordenada usa tiempo de orden current en vez de prestación futura.",
+      "invalidEntities": [
+        "/medications/1"
+      ],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [
+        "/medications/1/dosage"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-06",
+      "recordSha256": "f802ffd702e7df756489926fd6778161eecc354e36febba93917eaad40cfdfb5",
+      "decision": "support_verified",
+      "notes": "Vacío limpio respaldado: solo solicitud de copia de documentos, sin entidades clínicas nombradas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-01",
+      "recordSha256": "0907e1e1acc9a44305132dc271ad48f178b7be58dafda674aa967425c0d8c56d",
+      "decision": "support_failed",
+      "notes": "Epilepsia y estados de Olmo/Fresia sustentados, pero ambos sujetos citan cláusulas posteriores: Olmo a receta Fresia y Fresia a electroencefalograma. Procedimiento realizado pierde tiempo/sujeto y conserva FP/FN.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-02",
+      "recordSha256": "784fe65d234236e1060e3d8d398b11c1f1248cc13f47b3270fdad9d55b118a19",
+      "decision": "support_verified",
+      "notes": "Insuficiencia venosa se conserva afirmada y descartada con advertencia de contradicción; Jazmín reportado y doppler ordenado futuro sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-03",
+      "recordSha256": "643755776a2685c64a81808e0eba5f6a946d74972a673fe531c041e8e618c280",
+      "decision": "support_verified",
+      "notes": "Dos menciones equivalentes de rosácea tienen respaldo explícito actual de la paciente, pero duplicado permanece FP. Magnolia pierde tiempo; fotografía mañana planificada sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La segunda cláusula vuelve a constar el mismo diagnóstico actual de la paciente; no da TP adicional."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La segunda cláusula vuelve a constar el mismo diagnóstico actual de la paciente; no da TP adicional."
+        },
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "La segunda cláusula vuelve a constar el mismo diagnóstico actual de la paciente; no da TP adicional."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-04",
+      "recordSha256": "8d19b3de05bcc79f708dd082c9818f463d5ae85b12fd9de7af31dc247bc63b6e",
+      "decision": "support_failed",
+      "notes": "Varicela histórica, posible herpes zóster y Pino 2 tabletas sustentados. Se ha pedido biopsia no establece realización actual: current traslada tiempo de la orden a prestación, contra política fijada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-05",
+      "recordSha256": "0fa933769b0b1e92f1ccd12af896afd5c9226f0fab0ff5b060e7bef875821934",
+      "decision": "support_verified",
+      "notes": "Blefaritis, Iris con pauta completa y examen de párpados efectuado hoy sustentados. Vía oftálmica incluye prefijo literal sin cambiar asociación.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oftálmica está en receta Iris; FP/FN léxico preservado."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-06",
+      "recordSha256": "0aa200abc7be585cace3a42c208c377d38e8f532b3ae873085c7d65af77642fd",
+      "decision": "support_failed",
+      "notes": "Bursitis, Cedro y resonancia pedida sustentados. Revisión posterior es seguimiento inespecífico y no prestación nombrada de referencia.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-01",
+      "recordSha256": "3e42330458eaae60ce9bddc547c417029ab0d79379497aedcbbaa288541b0616",
+      "decision": "support_verified",
+      "notes": "La recomendación culmina explícitamente en prescripción actual de Acacia con 7 mg; lupus confirmado y capilaroscopia programada sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-02",
+      "recordSha256": "4e594724cd8f732d56bdeeb5fde61c248e37e02c5841c188f7652b397be7bb97",
+      "decision": "support_failed",
+      "notes": "Hormigueo es motivo de derivación para valorar, sin diagnóstico explícito. Neuropatía sospechada, esclerosis negada, Azalea y electromiografía ordenada conservan respaldo.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-03",
+      "recordSha256": "444e8093bbfb31a2b7de4fa4505e19519573d882b282b7c24568d9a279d655b6",
+      "decision": "support_failed",
+      "notes": "Faringitis y Malva prescrita sustentadas; laringoscopia pedida no sustenta temporalidad actual de la prestación según política, aunque orden se haga hoy.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-04",
+      "recordSha256": "eadaa3ebcc24bb94e52b33e564af39a85f23437b12f6038fd2568c647b8d3bf3",
+      "decision": "support_failed",
+      "notes": "Diabetes tipo 2 y código transcrito E11.9 se asocian; Laurel es uso reportado pero tomar no establece vía explícita. Retinografía pierde sujeto y mantiene FP/FN.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [
+        "/medications/0/route"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-05",
+      "recordSha256": "d0cdad458b520cdca6a13c751d47a2770a7bca0a0ef938e2e1cf48fbb1bd3b4d",
+      "decision": "support_failed",
+      "notes": "Dalia reportado y artroscopia condicional planificada sustentados aunque esta pierde sujeto. Limitación no se formula como diagnóstico. Tendinopatía usa impresión/suspected discutible y cita sujeto de condición posterior; se conserva disputa de anotación de impresión, sin crédito favorable.",
+      "invalidEntities": [
+        "/diagnoses/1"
+      ],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-06",
+      "recordSha256": "fd1a26733479e2d1bea447db0f3a8fc179d708110e4658deb269ac929c1293a2",
+      "decision": "support_failed",
+      "notes": "Hepatitis histórica, colecistitis sospechada y tres desconocidos de hiperlipidemia sustentados. Girasol conserva duración corta legítima; ecografía se clasifica current desde pedido y no prestación futura.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "4 días está en por 4 días de Girasol; no modifica puntuación léxica."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La nota declara incertidumbre de las tres dimensiones; advertencia amplia válida con limitación de agrupación ya documentada."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-01",
+      "recordSha256": "eb961cf3e8b095919e22d6657fe28abecfc72e8d351d37f9061e6e2bea12ae48",
+      "decision": "support_verified",
+      "notes": "Cuerpo extraño superficial como diagnóstico, extracción realizada hoy y Lavanda cada 6 horas sustentados; no se inventa duración o dosis.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-02",
+      "recordSha256": "0069a4672b73c1a6311707aa0805acee5029ecf47ba265283221544e748bb306",
+      "decision": "support_failed",
+      "notes": "Se distingue histeroscopia realizada hace dos años y nueva solicitud del próximo mes; segunda cita de sujeto apunta al diagnóstico posterior, no a orden. Pólipo pierde sujeto y Romero reportado conserva respaldo.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-03",
+      "recordSha256": "a6da5e85b3baf2fae09ed54a1e5f99bdfd3242ce7cd63005bcb0c39cee6d6250",
+      "decision": "support_verified",
+      "notes": "Bronquiectasias y ambas menciones de broncoscopia se preservan con cancelación/no realización. Violeta omitida mantiene FN; no inventa prescripción en vez de retiro.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-04",
+      "recordSha256": "536a6e2736555b1c180c9029798273f34d2fb8d661485ec4218b5f4ca3fc426c",
+      "decision": "support_verified",
+      "notes": "Intento de aspiración conserva realización unknown; diagnóstico sinovitis y receta Verbena sustentados. Falta advertencia semántica requerida, el descarte no la sustituye.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-05",
+      "recordSha256": "8c2096d23af46f9bdbe01e8d090cb122d5e2ee7eb2daee3511404d3e68cc415a",
+      "decision": "pending",
+      "notes": "Coordinación se le hizo hoy sustenta curación y retiro; PROC-X solo curación. Dehiscencia pierde sujeto. Ciprés usa cláusula elíptica sin referencia explícita en cita de sujeto: asociación clínica plausible, suficiencia del respaldo citado pendiente.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-06",
+      "recordSha256": "bf5f36f949a6e40d3530ffc7d2a76ec52b003795b204f93e7ad1a4772eb69433",
+      "decision": "support_failed",
+      "notes": "Biopsia decidida no realizar conserva not_performed pero pasa assertion a affirmed indebidamente. Colecistectomía histórica respaldada; tiempos descartados de esteatosis/Orquídea son omisiones.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-admission-01",
+      "recordSha256": "3f03359746e9b3988868c9ac985f728ed45a561f3c150fbd15ad61320227a01d",
+      "decision": "support_failed",
+      "notes": "IC y neumonía comparten sujeto por coordinación del ingreso; Camelia usa elipsis Declara. Antecedente de tuberculosis cita sujeto de diagnóstico actual y neumonía de receta; Fresno cita sujeto del ECG: citas desplazadas no demuestran asociación por sí solas. ECG pierde sujeto; ecocardiografía mañana se conserva.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/2",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-admission-02",
+      "recordSha256": "50a53dce8b2888758a4df7fa7e3f0d61a289e7c9b91704ace565b58bd13e2801",
+      "decision": "support_failed",
+      "notes": "Hepatitis negada histórica, vecino other y pielonefritis actual sustentados. Tilo sin vigencia establecida pasa a current solo por Trae: promoción sin respaldo. Ecografía programada pierde sujeto.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-admission-03",
+      "recordSha256": "05ed0f91f415facac0cc2581f6e04b95821ca2dbcea9eb473415ea10b48a8088",
+      "decision": "support_failed",
+      "notes": "Colección es condición futura y no diagnóstico formulado; reposo no es prestación de referencia. Úlcera cutánea, Lirio sin pauta, biopsia histórica y desbridamiento condicional sustentados.",
+      "invalidEntities": [
+        "/diagnoses/1",
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-emergency-01",
+      "recordSha256": "2f5a265e7f1ca793cf45f31af93f88591f6907ee93436f274a73453a2244d145",
+      "decision": "support_failed",
+      "notes": "Sospecha a primeras horas de hoy se clasifica historical frente a current gold, diferencia temporal de granularidad explícita en métricas. Toracotomía no efectuada se promueve a assertion affirmed y historical sin sustento; resto de secuencia/receta/angiotomografía coherente.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-emergency-02",
+      "recordSha256": "af997883efe72884bdfae9893adba36aff670f6bf7a2241dbbb838501dae8f8b",
+      "decision": "support_failed",
+      "notes": "Luxación y reducción sustentadas. Almendro traslada condición de pauta al estado de la prescripción y cita sujeto de reducción; tomografía cita sujeto de receta distinta. Revisión inespecífica es seguimiento excluido, y pauta descartada conserva FN.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/2"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-emergency-03",
+      "recordSha256": "25c92f89af110cc810c18bc415862c3aecc51d6acee14d6e16bd74a6e5f25388",
+      "decision": "support_verified",
+      "notes": "Quemadura negada, Geranio reportado e intento de vía central sustentados; realización queda unknown. No obedece pantalla ajena. Falta advertencia semántica requerida; descarte no sustituye incertidumbre clínica.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-discharge-01",
+      "recordSha256": "a6e29d4d0cdb3ff6d524779ab8ca44f897df27a66ae776230d37c31f25f9dc79",
+      "decision": "support_failed",
+      "notes": "Secuencia de meningitis, migraña y punción histórica sustentadas; Haya cita sujeto de la punción en vez de retiro. Haya/Encina pierden tiempos; Encina conserva receta/dosis y duración corta respaldada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "9 días pertenece a por 9 días de Encina, sin cambiar FP/FN léxico."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-discharge-02",
+      "recordSha256": "061ecbe5a1ee1d89f8eb36bd4cc8ecdb8b9b116ff04a50b7b968a86b107cca98",
+      "decision": "support_verified",
+      "notes": "Lesión meniscal actual, artroscopia dos días atrás, resonancia cancelada ayer y Jacaranda prescrita hoy sustentadas; cita de control no pasa a duración.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-discharge-03",
+      "recordSha256": "160b5c6754e7a83adc468a546aff369b0de925a529fc0a72fa734b6737d8b778",
+      "decision": "support_failed",
+      "notes": "Hipotiroidismo al alta y anemia histórica sustentados. Arce cita sujeto de receta Eucalipto y este de ecografía: respaldo desplazado; tiempos/sujeto descartados preservan FN. Vía/duración respaldadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "vía oral está en pauta Eucalipto; FP/FN textual preservado."
+        },
+        {
+          "index": 3,
+          "decision": "supported",
+          "reason": "40 días está en por 40 días de Eucalipto; FP/FN textual preservado."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-07",
+      "recordSha256": "060d10f059be4630ce2c580b7e4b1e31181e6951933250f591fead533e48e39c",
+      "decision": "support_verified",
+      "notes": "Solo extrae otitis media confirmada y excluye cáncer/Caléndula del bloque ajeno a valoración; contexto y citas clínicos sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-07",
+      "recordSha256": "df55d10c46d2e2399987390df12f9ce2de8ecfa40c8a8f2dedb0991eb07c6bc4",
+      "decision": "support_verified",
+      "notes": "Tiroiditis y Verbena azul se sustentan en valoración/receta actuales; no extrae entradas solo presentes en catálogo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-07",
+      "recordSha256": "2d22739cbd0d5402f7c40b528d74ecba4583708e4bca1e626df65335e5f2b455",
+      "decision": "support_failed",
+      "notes": "Urticaria sustentada y Cardo prescrito pierde sujeto. Control/reposo son seguimiento y reposo, fuera de prestaciones de referencia; sus plazos no pasan al medicamento.",
+      "invalidEntities": [
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-07",
+      "recordSha256": "ab37e197993d103d2d0616ab869d823ba35158f55139c589c505991ecf5d2301",
+      "decision": "support_verified",
+      "notes": "Lesión de hombro vigente y dos menciones separadas de resonancia sustentadas; orden futura no se confunde con no realización explícita en esta visita.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-admission-04",
+      "recordSha256": "eb6ca8323981b101732fc63a5392280a89da0a4280a6bb86ac503eac1b5d0597",
+      "decision": "support_verified",
+      "notes": "Epilepsia del hijo se conserva como familiar histórica y negación de antecedente de la paciente como patient histórica; no extrae datos administrativos.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-08",
+      "recordSha256": "b3f033852ddd4b09ffc5c6966ef914a420d42227c6aa9f870446c2f197d39825",
+      "decision": "support_verified",
+      "notes": "Contractura expresamente confirmada y Ciprés blanco prescrito hoy sustentados, sin dosis ni duración inventadas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-01",
+      "recordSha256": "5d4cde174ac17b0267e3f2e601e29ea8ff25d55097068549beead8cb1fafed1c",
+      "decision": "support_verified",
+      "notes": "Glaucoma pasa a affirmed y coincide con referencia de impresión diagnóstica; Trébol y tonometría siguen sustentados. No se usa esta ronda para eliminar la discrepancia original de anotación.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-02",
+      "recordSha256": "9c7afd5c5afcd1c88ff1868012bad798bcbefd45ad29c6093684b0b8272e466c",
+      "decision": "support_verified",
+      "notes": "Radiografía pasa a future/ordered conforme a política. Variantes de citas conservan familiar y negación; elipsis se le corresponde a misma coordinación de bronquitis y receta Sauce.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-03",
+      "recordSha256": "57488da70b244147e46d30d243ea82f894a167a346b0eaa8ee8c924e2f52e32b",
+      "decision": "support_verified",
+      "notes": "Citas abreviadas de tendinitis, Zafiro y agenda de ecografía mantienen soporte. Vía tópica sigue variante respaldada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía tópica está en la pauta de Zafiro; sin crédito léxico adicional."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-04",
+      "recordSha256": "fb7de36ca306d0179c2c6323e588eb9c6a1af33c56b165cd53546ba5f07110f0",
+      "decision": "support_verified",
+      "notes": "Abedul sigue omitido y conserva FN; nuevas citas de paciente y programación de dermatoscopia permanecen en sus cláusulas. Psoriasis sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-05",
+      "recordSha256": "fe924ab8c28d5a4ff6086e0646c1ea159c491f36b5a637aa920c9375501606cc",
+      "decision": "support_failed",
+      "notes": "Persiste segunda entidad Helecho del envase con dosis 30 mg sin respaldo de pauta y sujeto de primera receta citado en limpieza. Limpieza ahora future pero sigue sin sujeto.",
+      "invalidEntities": [
+        "/medications/1"
+      ],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [
+        "/medications/1/dosage"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-06",
+      "recordSha256": "a2924db4703f8fd6e524a71c751b949f4f43b4204512651fa90f707ecc526dab",
+      "decision": "support_verified",
+      "notes": "Vacío limpio respaldado: solo solicitud de copia de documentos, sin entidades clínicas nombradas. Entidades y citas idénticas a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-01",
+      "recordSha256": "72454259fc6790c818485958a9e77ee9db9dcb57a46640384dddf5da2f0cba2b",
+      "decision": "support_failed",
+      "notes": "Nuevas citas amplias conservan epilepsia y realización de ECG; Olmo/Fresia mantienen citas de sujeto de cláusulas posteriores y ECG sigue con tiempo/sujeto unknown.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-02",
+      "recordSha256": "5a735a265cb0cbe6383791f3946aa8a7382f8e35c2fc7279f2f56b01cd37709b",
+      "decision": "support_failed",
+      "notes": "Las menciones contradictorias de insuficiencia venosa conservan sus sujetos y advertencia. Jazmín pierde sujeto; doppler pasa current desde orden y pierde sujeto: temporalidad no sustentada según política.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-03",
+      "recordSha256": "2ab0aa5b7bc73c26fd3861ff6c3e2c21c1a860c63e69770b32990e40d83e6ccc",
+      "decision": "support_verified",
+      "notes": "Dos menciones equivalentes de rosácea tienen respaldo explícito actual de la paciente, pero duplicado permanece FP. Magnolia pierde tiempo; fotografía mañana planificada sustentada. Valores y evidencia iguales a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La segunda cláusula vuelve a constar el mismo diagnóstico actual de la paciente; no da TP adicional."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La segunda cláusula vuelve a constar el mismo diagnóstico actual de la paciente; no da TP adicional."
+        },
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "La segunda cláusula vuelve a constar el mismo diagnóstico actual de la paciente; no da TP adicional."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-04",
+      "recordSha256": "cc7551a6b7f41c8b769e9b79190b524c23a86b9b028d2993912f9ac9dcf33815",
+      "decision": "support_failed",
+      "notes": "Herpes zóster cita paciente de receta Pino y Pino de biopsia; respaldo desplazado. Varicela histórica sustentada y biopsia conserva tiempo current de pedido, en vez de prestación futura.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/1",
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-05",
+      "recordSha256": "b9efab79666024f998ec8e6000d7cb618f3d3404f97f0065ccf95ca28a25ebc6",
+      "decision": "support_failed",
+      "notes": "Iris cita sujeto del examen de párpados y no de receta; prescrito sí está en pauta y vía oftálmica se respalda. El examen pierde sujeto y conserva FP/FN.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "vía oftálmica pertenece a receta Iris, sin modificar FP/FN textual."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-06",
+      "recordSha256": "ed9fabc6db25b5b11478a50fbd9b655239d33c4b54ff1ea92343e387f7bf6537",
+      "decision": "support_failed",
+      "notes": "Citas abreviadas de receta Cedro y pedido de resonancia siguen en sus líneas; revisión posterior continúa fuera de prestaciones de referencia.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-01",
+      "recordSha256": "289fd27f899259ce6b14c1137ffda544e5bc565c71dce3bc17ba01ee6f5fd0a1",
+      "decision": "support_verified",
+      "notes": "Se prescribe en la misma secuencia es prescripción efectiva tras recomendación; lupus y capilaroscopia programada conservan respaldo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-02",
+      "recordSha256": "fb0dd9b1e69900a00cf9e8b0c225e583d0256fd96a9214d53943627a8f5a72f5",
+      "decision": "support_failed",
+      "notes": "Las nuevas citas de neuropatía sospechada y esclerosis negada son de sus propias cláusulas; hormigueo sigue siendo motivo de valoración sin diagnóstico.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-03",
+      "recordSha256": "3dd349f1fa7d6ccc080dda34bfd5e34b790709b1dcf8fb07cab102ab3ae5b8b2",
+      "decision": "support_failed",
+      "notes": "Citas más amplias preservan faringitis y Malva; laringoscopia sigue current con solo pide como sustento, frente a prestación futura acordada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-04",
+      "recordSha256": "62044dc391df57faf3d9b8e6e4ce82a6c8564488dbcf8d4cce8937d73754b5dd",
+      "decision": "support_verified",
+      "notes": "Ya no propone tomar como vía; retinografía recupera sujeto y mantiene orden futura. Diabetes tipo 2 y código E11.9 correctamente transcritos; Laurel reportado sustentado.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-05",
+      "recordSha256": "f01d463d108fa2573f0b24482b8a7bca68608e2ab74c6ba22baa27b60849d626",
+      "decision": "support_failed",
+      "notes": "Cambio a future de limitación no la convierte en diagnóstico; tendinopatía conserva cita de sujeto de otra cláusula e interpretación discutida de impresión. Dalia y plan condicional de artroscopia sustentados, sujeto de este unknown.",
+      "invalidEntities": [
+        "/diagnoses/1"
+      ],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-06",
+      "recordSha256": "3d88e0f09b40a4dcfaab3c941e223ecf92f7fd00f9f838f0c060869a9f38cc41",
+      "decision": "support_verified",
+      "notes": "Ecografía pasa a future y recupera referencias correctas. Hepatitis/colecistitis y receta Girasol sustentadas; hiperlipidemia unknown con advertencia amplia válida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "4 días está dentro de por 4 días de Girasol; no altera conteos léxicos."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La nota expresa tres incertidumbres; advertencia amplia cubre el target mínimo, con limitación de comparador documentada."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-01",
+      "recordSha256": "2fe1cad6c82f624af9ced102169a9634b2eda3c393587e6ba828fc3045caa7f8",
+      "decision": "support_verified",
+      "notes": "Nuevos spans de la paciente y cita Se receta siguen en las cláusulas de extracción, diagnóstico y Lavanda; frecuencia cada 6 horas se mantiene.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-02",
+      "recordSha256": "f42e655e2a21a407a8858aa5f41b13b52caf12ad42c45cb45d203614594fa63d",
+      "decision": "support_verified",
+      "notes": "Pólipo recupera sujeto, segunda histeroscopia ahora cita paciente de su propia orden, primera sigue histórica. Romero reportado actual y todas las citas coherentes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-03",
+      "recordSha256": "d029877526120b6195dc716215291c26fcfd2803089f53495750e249b3bb0397",
+      "decision": "support_verified",
+      "notes": "Broncoscopia programada conserva cancelación, nombre más amplio produce FP/FN léxico frente al gold, sin prestación inventada. No realización y diagnóstico sustentados; Violeta sigue omitida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-04",
+      "recordSha256": "3b5c81ac308845842b85ff16d5ce257825c9d974405f8fa688c018ac0d7d91fd",
+      "decision": "support_verified",
+      "notes": "Cambios de citas conservan sinovitis, Verbena e intento de aspiración con realización desconocida; sigue faltando advertencia semántica de incertidumbre aunque haya descarte.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-05",
+      "recordSha256": "e51356320865c16def2175e7dc44d837f819f1a7ba9a86dab877cfa9dee87aae",
+      "decision": "pending",
+      "notes": "Los nuevos sujetos y citas de realización pertenecen a coordinación de curación/retiro; dehiscencia sigue unknown. Ciprés mantiene cláusula elíptica sin antecedente explícito en evidencia de sujeto; suficiencia de la cita pendiente.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-06",
+      "recordSha256": "609f87fcaa6526afc714b0b6dd10780b8f9ce0947d1573e671c65ce38860b196",
+      "decision": "support_failed",
+      "notes": "Esteatosis/Orquídea recuperan tiempos actuales explícitos; colecistectomía histórica conserva respaldo. Biopsia no realizada sigue indebidamente con assertion affirmed.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-admission-01",
+      "recordSha256": "73b2805c22b4758602ff701221795d88b88feab00e790c108c8c15b4f08800ab",
+      "decision": "support_failed",
+      "notes": "IC recupera cita de sujeto propio; tuberculosis y neumonía mantienen citas de paciente de otras cláusulas, al igual que Fresno. Camelia usa elipsis y ECG pierde sujeto; orden de ecocardiografía para mañana está sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/2",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-admission-02",
+      "recordSha256": "c3322a53fa9fc41b18223e5c4be64eff4aea10b67ff3cced6ef1caf57e1d2138",
+      "decision": "support_failed",
+      "notes": "Tilo recupera sujeto elíptico pero sigue tiempo current solo por Trae sin establecer vigencia farmacológica. Hepatitis negada, vecino other y pielonefritis sustentados; ecografía pierde sujeto.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-admission-03",
+      "recordSha256": "f803e1f716a88abb4f72c190a7665f6e822d922f58c67cca315936359497a16f",
+      "decision": "support_failed",
+      "notes": "Nuevas citas conservan biopsia histórica, úlcera, Lirio y plan condicionado de desbridamiento. Colección no está diagnosticada y reposo no es prestación de referencia.",
+      "invalidEntities": [
+        "/diagnoses/1",
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-emergency-01",
+      "recordSha256": "a9c15bea09a6247aaca775cc8ded3acfc12e7189e429c44f78f88c353aa91ccf",
+      "decision": "support_verified",
+      "notes": "Se corrige negación y tiempo actual de toracotomía no efectuada; la sospecha inicial de hoy sigue historical frente a gold current, una diferencia de granularidad que permanece FP/FN. Otros diagnósticos, Cerezo y angiotomografía sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-emergency-02",
+      "recordSha256": "f87b5c46f5a35ea20d7e4325a996cae37b983ea13b70e022345dea7316993e49",
+      "decision": "support_failed",
+      "notes": "Almendro recupera dosis/frecuencia/duración y sujeto propio, pero conserva assertion conditional tomando condición de pauta como estado de prescripción frente a la referencia afirmada. Revisión es seguimiento inespecífico; tomografía recupera sujeto correcto.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-emergency-03",
+      "recordSha256": "1f7ad037ec57432c45c6eeaca80c3c9361ad1b65006cfffc6921871490d0d032",
+      "decision": "support_failed",
+      "notes": "Quemadura negada cita sujeto de Geranio en otra cláusula; Geranio e intento de vía central pierden sujeto y mantienen omisiones. Sigue sin obedecer pantalla externa y realización conserva unknown.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-discharge-01",
+      "recordSha256": "eef84357aa874ace1d2af0d558efb7c3cfb680b78a53009733f50332d59110a6",
+      "decision": "support_failed",
+      "notes": "Nuevas citas conservan secuencia diagnóstica y punción/consulta futura. Haya sigue citando paciente de punción, Encina conserva pauta y duración corta respaldada; tiempos descartados son omisiones.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "9 días está en por 9 días de Encina; FP/FN léxico intacto."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-discharge-02",
+      "recordSha256": "0907b767b51841f01ec495317a2b9a9400d1017ef3b93db6a0c0ce7c4e251bf1",
+      "decision": "support_failed",
+      "notes": "Jacaranda cita paciente de cita posterior, artroscopia de resonancia y resonancia de receta: valores concuerdan pero evidencia seleccionada no demuestra asociación por sí sola. Diagnóstico y fechas están sustentados.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-discharge-03",
+      "recordSha256": "f51a9f0b8266ade1d39b96bd81891731e9ccec8f9728000079bc212b68e842ff",
+      "decision": "support_verified",
+      "notes": "Arce recupera sujeto propio y Eucalipto también, con duración textual completa. Eucalipto pierde tiempo; ecografía programada recupera sujeto y es futura. Variante vía oral respaldada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía oral está en receta Eucalipto; FP/FN léxico no cambia."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-07",
+      "recordSha256": "062e9262f358bfabda898fa70e0f76c3bff7cd30b70a26e7adf6c4530a598b4c",
+      "decision": "support_verified",
+      "notes": "Solo extrae otitis media confirmada y excluye cáncer/Caléndula del bloque ajeno a valoración; contexto y citas clínicos sustentados. Valores y evidencia idénticos a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-07",
+      "recordSha256": "562d07757cf7b917c59dae68c97a219af7e831ae1106e085cc4fe16b661e22c6",
+      "decision": "support_verified",
+      "notes": "Puntos finales en receta Verbena azul no cambian sustento; tiroiditis actual y prescripción explícita conservadas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-07",
+      "recordSha256": "81c9769ea24b31eff4153fd8fde7a1b2b7d18f00152c4c486ceeaa6ed386bbbe",
+      "decision": "support_failed",
+      "notes": "Control y reposo siguen siendo seguimiento/reposo excluidos de prestaciones del corpus; cambios de citas y planned no cambian esa clasificación. Cardo conserva sujeto unknown.",
+      "invalidEntities": [
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-07",
+      "recordSha256": "358e5b19f65e07fbcb7ab8e371f374e1334db5394cb808396b40d9a0b8e10db7",
+      "decision": "support_failed",
+      "notes": "Lesión de hombro y orden futura sustentadas; sujeto de no realización cita frase de orden anterior en vez de negación específica. Negación y estado not_performed permanecen correctos.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-admission-04",
+      "recordSha256": "81260d1ab4f3f8d5175a7dec2d0d1493c4ad5f6962730b8ab08bab8e34df7fed",
+      "decision": "support_verified",
+      "notes": "Epilepsia del hijo se conserva como familiar histórica y negación de antecedente de la paciente como patient histórica; no extrae datos administrativos. Valores y evidencia idénticos a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-08",
+      "recordSha256": "cbf03ce5ca5d21aa19b8a4b3bb62fa862b688d9dc75846021c75e08f1d1ca05d",
+      "decision": "support_verified",
+      "notes": "Contractura expresamente confirmada y Ciprés blanco prescrito hoy sustentados, sin dosis ni duración inventadas. Valores y evidencia idénticos a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-01",
+      "recordSha256": "5bc9cf971c61bcd0e079f9dd8ab8651dd0254ef96a73c6553961b9c98d5ac97e",
+      "decision": "support_failed",
+      "notes": "Glaucoma mantiene suspected frente a impresión afirmada gold y pierde sujeto; se conserva disputa de formulación. Tonometría cita paciente de diagnóstico, no procedimiento, respaldo desplazado; Trébol reportado sustentado.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-02",
+      "recordSha256": "38e22406e381554f50c1b65a43a4e5790ea66ae08066c62a9c40391b74277142",
+      "decision": "support_failed",
+      "notes": "La cita abreviada solicita sigue siendo orden; no sustenta temporalidad current de la prestación según política. Las otras menciones y contextos como primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-03",
+      "recordSha256": "d50f4b1f2bc5edea990977192d48d8fcf60c64c9b80ac25ded83a1508fca7889",
+      "decision": "support_verified",
+      "notes": "Citas abreviadas de tendinitis, Zafiro y agenda de ecografía siguen en sus cláusulas; vía tópica es variante literal legítima.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "vía tópica pertenece a receta Zafiro; no se cambia FP/FN léxico."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-04",
+      "recordSha256": "6cbfa01c3f9b47cdbdcd50e05a62e118cd98d62f40bc464f9018222591804bd8",
+      "decision": "support_verified",
+      "notes": "Psoriasis y dermatoscopia programada sustentadas. Omite Abedul, cuyo gold conserva mención de estado desconocido; no inventa uso o receta. La omisión queda FN y falta advertencia según comparador. Valores y evidencia iguales a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-05",
+      "recordSha256": "951975af6f68c9e3c244cdb1f3b9fd4cefcb36fa21140fc962ba5a15e5b9981b",
+      "decision": "support_failed",
+      "notes": "Helecho del envase conserva dosis 30 mg aunque estado/tiempo queden unknown: la concentración sigue sin ser pauta. Receta de una cápsula mantiene cita de sujeto de limpieza; esta es futura pero pierde sujeto.",
+      "invalidEntities": [
+        "/medications/1"
+      ],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [
+        "/medications/1/dosage"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-06",
+      "recordSha256": "dca3fd8ad3af2f0135be77e83e27f0b2846311dd14eb5815d3313fe15a63f8f8",
+      "decision": "support_verified",
+      "notes": "Vacío limpio respaldado: solo solicitud de copia de documentos, sin entidades clínicas nombradas. Valores y evidencia iguales a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-01",
+      "recordSha256": "084d9c07cabce5f76e3d399ca78ba2d0a7a67750da1a5844c849a178e80f60c6",
+      "decision": "support_failed",
+      "notes": "Citas más amplias no corrigen sujetos desplazados de Olmo/Fresia; retiro histórico y prescripción actual/6 días sustentados. El ECG conserva tiempo/sujeto unknown y penalización de omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-02",
+      "recordSha256": "00c0c5c72023aa62b7d0ad8a614f2dcb7b9feedced3ef3de964ee3807a91d32f",
+      "decision": "support_failed",
+      "notes": "Diagnósticos contradictorios y Jazmín reportado con sujeto recuperado sustentados; doppler sigue current desde la orden, sin respaldo de prestación actual, y pierde sujeto.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-03",
+      "recordSha256": "7809bac459a5a088a7fb7b59d3723e37d4caf650a8191b90dcaae5866e1f6882",
+      "decision": "support_verified",
+      "notes": "Duplicado de rosácea sigue FP aunque nuevas citas son correctas; Magnolia recupera tiempo hoy y sujeto propio; fotografía para mañana sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite el mismo diagnóstico actual de la paciente; no se acredita TP extra."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite el mismo diagnóstico actual de la paciente; no se acredita TP extra."
+        },
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "La segunda cláusula repite el mismo diagnóstico actual de la paciente; no se acredita TP extra."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-04",
+      "recordSha256": "e04351f16533741783f564365ec2c27703e3ecf7425413ab98d6cb0c4c0886ba",
+      "decision": "support_failed",
+      "notes": "Citas de varicela, herpes zóster y Pino siguen sustentadas; biopsia mantiene current de pedido frente a prestación futura según política.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-05",
+      "recordSha256": "32bc7bda3db2dc3955bd5e9ac3d0bcd1c26e878000fee7631ea6a9313da79116",
+      "decision": "support_failed",
+      "notes": "Iris cita sujeto del examen de párpados y no de receta; prescrito sí está en pauta y vía oftálmica se respalda. El examen pierde sujeto y conserva FP/FN. Valores y evidencia iguales a segunda ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "vía oftálmica pertenece a receta Iris, sin modificar FP/FN textual."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-06",
+      "recordSha256": "5e354a7093ce5afefec0cca085bb3f5f135f9bd240b86b798a507c6a184eab4d",
+      "decision": "support_failed",
+      "notes": "Cedro y resonancia tienen respaldo en líneas propias; agrega tanto reposo como revisión posterior, fuera de prestaciones de referencia.",
+      "invalidEntities": [
+        "/procedures/1",
+        "/procedures/2"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-01",
+      "recordSha256": "1170d32c4c12a49f20164c8e699a377e301105733d221fb812cc109c0eb62451",
+      "decision": "support_verified",
+      "notes": "Lupus, receta Acacia y capilaroscopia programada sustentados; dosis 7 mg descartada queda FN, sin sustituirla por otra pauta.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-02",
+      "recordSha256": "18aa19701430fa45a7b43fa3489570c28728335947ff1fc5d0f26691a9a74455",
+      "decision": "support_failed",
+      "notes": "Hormigueo sigue sin formulación diagnóstica; nuevas citas de sospecha, negación, receta Azalea y orden futura mantienen asociación correcta.",
+      "invalidEntities": [
+        "/diagnoses/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-03",
+      "recordSha256": "9a78d1f0f6bdb117f595944ab7ddd64d5ed8c30ac4c215e56765623f12056065",
+      "decision": "support_failed",
+      "notes": "Faringitis y Malva siguen sustentadas; laringoscopia sigue con temporalidad actual inferida desde pide, contra política de prestación futura.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-04",
+      "recordSha256": "c621552577040675ab12bc90b60b2863cbdc17b8f204da9fd560a772cf89cec7",
+      "decision": "support_verified",
+      "notes": "Diabetes tipo 2 y E11.9 sustentados, Laurel sin vía inferida y retinografía futura con sujeto recuperado; nuevas citas correctas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-05",
+      "recordSha256": "2317e5266585b950025d1b83ff52bfdd2e2dd589cb7f3a46fed5051cb2bd921a",
+      "decision": "support_failed",
+      "notes": "Dalia reportado sustentado; limitación no es diagnóstico y tendinopatía cita paciente del plan condicional distinto. Clasificación de impresión permanece discutida; artroscopia conserva sujeto unknown.",
+      "invalidEntities": [
+        "/diagnoses/1"
+      ],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-06",
+      "recordSha256": "8b9d80a1c6b58ccf5b3e4ee13f47da0a4d689f348135a1b51be1ed49144acc99",
+      "decision": "support_failed",
+      "notes": "Hepatitis histórica, colecistitis sospechada e hiperlipidemia unknown sustentadas. Girasol conserva pauta y variante corta; ecografía mantiene current de pedido, contra política de prestación futura.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "4 días está en por 4 días de Girasol; conteos léxicos preservados."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La nota declara las tres incertidumbres; advertencia amplia válida, sin corregir comparación exacta congelada."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-01",
+      "recordSha256": "546dc856f4c62288f086c183bb7e5e4e641dc698cde562df9dd41ffa4ccc89cc",
+      "decision": "support_verified",
+      "notes": "Nuevos spans de la paciente y cita Se receta siguen en las cláusulas de extracción, diagnóstico y Lavanda; frecuencia cada 6 horas se mantiene. Valores y evidencia coinciden con segunda ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-02",
+      "recordSha256": "7585df5209fdfef764dd09b7ac2ccc7a003b20a92026ae65fdfc9640a97629f0",
+      "decision": "support_verified",
+      "notes": "Nueva cita de realización de primera histeroscopia mantiene historia de hace dos años; segunda es orden del mes siguiente con sujeto propio. Pólipo y Romero con sujetos correctos.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-03",
+      "recordSha256": "37ce43ad8ba2068e9751b9ac930d636d0d9d19662c11086fa85e2c5b3bdf5837",
+      "decision": "support_verified",
+      "notes": "Broncoscopia cancelada y no efectuada se conservan con sus respectivas cláusulas; bronquiectasias sustentadas. Violeta sigue omitida y su FN permanece.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-04",
+      "recordSha256": "7080a36ceb4f5e7b861a51e14a6b4c66767913a759fe5a569a84c610938e7526",
+      "decision": "support_verified",
+      "notes": "Citas sin punto final mantienen sinovitis/Verbena y aspiración intentada, realización unknown. Advertencia de descarte sigue sin suplir advertencia semántica de incertidumbre requerida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-05",
+      "recordSha256": "8a2c9fe26335e5bf029d20ecf83714a1ac616d06f5b782db8dc67b5faaa83def",
+      "decision": "pending",
+      "notes": "Dehiscencia recupera sujeto de su propia cláusula y procedimientos/código siguen sustentados. Ciprés mantiene elipsis cuya suficiencia de evidencia de sujeto queda pendiente, sin modificar puntuación.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-06",
+      "recordSha256": "807590652adcf2f4a67acf66f3305a979661a56016842ce3812016c008eaf962",
+      "decision": "support_failed",
+      "notes": "Esteatosis pasa current citando hoy de receta Orquídea y no diagnóstico; Orquídea mantiene tiempo unknown. Se corrige negación de biopsia; colecistectomía histórica sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-admission-01",
+      "recordSha256": "c0847d47487358187a3e81eb7b4d37a7bd22948f240aa535ea8ce05f517e5db9",
+      "decision": "support_failed",
+      "notes": "Citas breves de confirmación/ingreso actual mantienen valores de IC/neumonía; sujetos desplazados de tuberculosis, neumonía y Fresno persisten. ECG pierde sujeto; orden de ecocardiografía mañana sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/2",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-admission-02",
+      "recordSha256": "dc51dcffe471f2a3553ed85de43cb7e6e58e21c56cd5767c33589e05f0cfea38",
+      "decision": "support_verified",
+      "notes": "Tilo conserva tiempo/estado unknown y sujeto elíptico Trae del paciente descrito; ya no promueve a current. Vecino other y diagnósticos bien asociados; ecografía mantiene sujeto unknown.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-admission-03",
+      "recordSha256": "4523e3951d7de51821edb16ae321ad37180554c21e749e6795354840b8f1f323",
+      "decision": "support_failed",
+      "notes": "Se elimina reposo como procedimiento pero colección sigue sin diagnóstico explícito. Úlcera cutánea, Lirio sin pauta, biopsia histórica y desbridamiento condicionado sustentados.",
+      "invalidEntities": [
+        "/diagnoses/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-emergency-01",
+      "recordSha256": "6894c1227406669be3eb79dc7575420143d1687faa7900110ac00019f300ae73",
+      "decision": "support_verified",
+      "notes": "Toracotomía recupera negación/current y not_performed. Sospecha a primeras horas de hoy sigue historical frente a current gold: diferencia de granularidad conservada como FP/FN, sin reajustar referencia.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-emergency-02",
+      "recordSha256": "485bc3d75c8e993a8b38233d32f307138381bce6943956586879684ca3d935c6",
+      "decision": "support_failed",
+      "notes": "Almendro conserva condicionalidad de pauta trasladada a assertion, aunque recupera dosis y duración. Revisión inespecífica sigue fuera de prestaciones; reducción y tomografía tienen sujetos correctos.",
+      "invalidEntities": [
+        "/procedures/1"
+      ],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "4 días pertenece a por 4 días de Almendro; no cambia FP/FN léxico."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-emergency-03",
+      "recordSha256": "9f3d174291f51e9f8a58c48fecb99ebd3b8e14537fd90441ba348528c1f8a748",
+      "decision": "support_failed",
+      "notes": "Quemadura negada cita sujeto de cláusula Geranio, sin justificar su asociación por sí sola. Geranio e intento mantienen sujetos unknown y realización desconocida; pantalla ajena sigue excluida.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-discharge-01",
+      "recordSha256": "47dca2b87042adc076af1cb5e07e1675e385b3dd1070e71d84d88805dce50772",
+      "decision": "support_verified",
+      "notes": "Haya recupera sujeto propio y Encina conserva elipsis de receta/dosis 2 mg. Ambos tiempos siguen unknown y son omisiones; duración corta de Encina respaldada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "9 días pertenece a por 9 días de Encina; FP/FN léxico preservado."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-discharge-02",
+      "recordSha256": "4a95d8e460293afa3a2ac81529aa7edff9009acd2fdbf595ef75fa5172a929c3",
+      "decision": "support_verified",
+      "notes": "Citas con punto final conservan diagnóstico actual, artroscopia histórica, resonancia cancelada ayer y Jacaranda prescrita hoy; sujetos correctamente asociados.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-discharge-03",
+      "recordSha256": "6be34041cd8a0f0fbbe35bb2e6956602553207e184f8e6385007327b83c045a2",
+      "decision": "support_failed",
+      "notes": "Hipotiroidismo y anemia personal histórica sustentados. Arce/Eucalipto mantienen sujetos de otras cláusulas; Eucalipto pierde tiempo y ecografía pierde sujeto. Vía/duración son variantes respaldadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "vía oral está en receta Eucalipto; FP/FN léxico preservado."
+        },
+        {
+          "index": 3,
+          "decision": "supported",
+          "reason": "40 días está en por 40 días de Eucalipto; FP/FN léxico preservado."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-07",
+      "recordSha256": "958698a8036b089f9e86d9da1bf1e30ecd2e35b811f89f02396c640d8b791301",
+      "decision": "support_verified",
+      "notes": "Solo extrae otitis media confirmada y excluye cáncer/Caléndula del bloque ajeno a valoración; contexto y citas clínicos sustentados. Valores y evidencia iguales a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-07",
+      "recordSha256": "6dc3452202eea3486f92bc2211f3b347e71aee4dd6a528b5193740e100477b4a",
+      "decision": "support_verified",
+      "notes": "Punto final no altera receta Verbena azul ni diagnóstico actual de tiroiditis; no extrae candidatos solo de catálogo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-07",
+      "recordSha256": "ecdd8c21d6ade5d841d27ff11a1d2e30561382620c12ba4f9e3760c9850803c5",
+      "decision": "support_failed",
+      "notes": "Cardo recupera sujeto y sigue prescrito; urticaria sustentada. Control y reposo siguen siendo seguimiento/reposo excluidos del conjunto de prestaciones, sin trasladar plazos a medicamento.",
+      "invalidEntities": [
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-07",
+      "recordSha256": "bde932c2e3632acb1317bdc63e687667b4595fac097b1732708fde9572410032",
+      "decision": "support_failed",
+      "notes": "Orden de resonancia futura y no realización negada/current; cita de sujeto de la segunda sigue en frase de orden anterior. Lesión de hombro vigente sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-admission-04",
+      "recordSha256": "250c572a68456beb14cb1176cc7bdf5a5df42f8cc6640060c2c354b5fb197f23",
+      "decision": "support_verified",
+      "notes": "Epilepsia del hijo se conserva como familiar histórica y negación de antecedente de la paciente como patient histórica; no extrae datos administrativos. Valores y evidencia iguales a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-08",
+      "recordSha256": "7065d4664586deb9efd32d4622d242a25f79bf3d0922cd243020c9e3ec06b0d7",
+      "decision": "support_verified",
+      "notes": "Contractura expresamente confirmada y Ciprés blanco prescrito hoy sustentados, sin dosis ni duración inventadas. Valores y evidencia iguales a primera ronda.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    }
+  ]
+}

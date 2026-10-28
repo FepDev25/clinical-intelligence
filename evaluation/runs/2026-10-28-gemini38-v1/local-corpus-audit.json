@@ -1,0 +1,142 @@
+{
+  "corpusVersion": "1.0.0",
+  "qualityEvaluationExecuted": false,
+  "splits": {
+    "development": {
+      "cases": 39,
+      "families": {
+        "admission": 3,
+        "consultation": 8,
+        "discharge": 3,
+        "emergency": 3,
+        "outpatient": 8,
+        "procedure": 7,
+        "progress": 7
+      },
+      "entities": {
+        "diagnoses": 56,
+        "medications": 39,
+        "procedures": 44
+      },
+      "coreEntities": {
+        "diagnoses": 30,
+        "medications": 24,
+        "procedures": 27
+      },
+      "cohorts": {
+        "core": 24,
+        "exploratory": 9,
+        "adversarial": 6
+      }
+    },
+    "reserved": {
+      "cases": 39,
+      "families": {
+        "admission": 4,
+        "consultation": 7,
+        "discharge": 3,
+        "emergency": 3,
+        "outpatient": 8,
+        "procedure": 7,
+        "progress": 7
+      },
+      "entities": {
+        "diagnoses": 55,
+        "medications": 39,
+        "procedures": 44
+      },
+      "coreEntities": {
+        "diagnoses": 30,
+        "medications": 24,
+        "procedures": 27
+      },
+      "cohorts": {
+        "core": 24,
+        "exploratory": 9,
+        "adversarial": 6
+      }
+    }
+  },
+  "stress": [
+    {
+      "id": "stress-length-1000",
+      "noteCodePoints": 1000,
+      "catalogEntries": 0,
+      "procedures": 3,
+      "canonicalBodyBytes": 1053,
+      "noteSha256": "614ee949f51320c72a57712d001359979f72fc6f12d8350b527e15984fad8fc1"
+    },
+    {
+      "id": "stress-length-10000",
+      "noteCodePoints": 10000,
+      "catalogEntries": 0,
+      "procedures": 3,
+      "canonicalBodyBytes": 10289,
+      "noteSha256": "ce100484b969360a8a6cb08922e83b12d07ff17490c89ed38c32164e4dd731be"
+    },
+    {
+      "id": "stress-length-50000",
+      "noteCodePoints": 50000,
+      "catalogEntries": 0,
+      "procedures": 3,
+      "canonicalBodyBytes": 51343,
+      "noteSha256": "6fd8571cc965e36d3ed2c26370cbdf506955ce042018d7be7264d7c510116b15"
+    },
+    {
+      "id": "stress-length-200000",
+      "noteCodePoints": 200000,
+      "catalogEntries": 0,
+      "procedures": 3,
+      "canonicalBodyBytes": 205289,
+      "noteSha256": "3ebc1d3980e69bcb052e3e01d3c0e8b7feec690baf32c00a90765399cb9aefa0"
+    },
+    {
+      "id": "stress-length-500000",
+      "noteCodePoints": 500000,
+      "catalogEntries": 0,
+      "procedures": 3,
+      "canonicalBodyBytes": 513185,
+      "noteSha256": "51ee399457932b36d11cfe487563ed6d588cb104762a7843c98bc1d766af16a4"
+    },
+    {
+      "id": "stress-length-1000000",
+      "noteCodePoints": 1000000,
+      "catalogEntries": 0,
+      "procedures": 3,
+      "canonicalBodyBytes": 1026343,
+      "noteSha256": "874ef3301db31056cedc26d63b7a5b9220f41c9a2f1727e0019f6b1ec33a9fef"
+    },
+    {
+      "id": "stress-catalog-10000",
+      "noteCodePoints": 1000,
+      "catalogEntries": 10000,
+      "procedures": 3,
+      "canonicalBodyBytes": 771133,
+      "noteSha256": "c0ca1a4a549cf769aabbbcbd8e997f2e3d3526c9715d7be6e8513a2bed8719d4"
+    },
+    {
+      "id": "stress-catalog-100000",
+      "noteCodePoints": 1000,
+      "catalogEntries": 100000,
+      "procedures": 3,
+      "canonicalBodyBytes": 7701133,
+      "noteSha256": "1a1ebb828082911d96cfb7a451a01723a1abc6c9da50f80ab9432d54b5e9d522"
+    },
+    {
+      "id": "stress-density-10",
+      "noteCodePoints": 2000,
+      "catalogEntries": 0,
+      "procedures": 10,
+      "canonicalBodyBytes": 2092,
+      "noteSha256": "34e2c44b9969cb560e4d812d017c10938d64a8d297097d597662463100df071e"
+    },
+    {
+      "id": "stress-density-100",
+      "noteCodePoints": 20000,
+      "catalogEntries": 0,
+      "procedures": 100,
+      "canonicalBodyBytes": 20722,
+      "noteSha256": "9e32d925198ab72adf231061d76836abac2d7c737b6e96abad0b8ff63822d96f"
+    }
+  ]
+}
