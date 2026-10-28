@@ -1,0 +1,23 @@
+.......................E..E....
+======================================================================
+ERROR: test_support_diagnostics_count_unique_rejections_and_pending_cases (test_score_extractions_v3.ScorerV3Tests.test_support_diagnostics_count_unique_rejections_and_pending_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/test_score_extractions_v3.py", line 238, in test_support_diagnostics_count_unique_rejections_and_pending_cases
+    self.assertEqual(r['semanticSupport']['rejectedEntities'],1)
+                     ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'semanticSupport'
+
+======================================================================
+ERROR: test_value_agreement_does_not_hide_audited_entity_rejection (test_score_extractions_v3.ScorerV3Tests.test_value_agreement_does_not_hide_audited_entity_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/test_score_extractions_v3.py", line 247, in test_value_agreement_does_not_hide_audited_entity_rejection
+    self.assertEqual(r['semanticSupport']['rejectedEntities'],1)
+                     ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'semanticSupport'
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.225s
+
+FAILED (errors=2)

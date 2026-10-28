@@ -1,0 +1,9 @@
+{
+  "scope": "Frozen old evaluator and validation dependencies; cases/responses/audits bound by T1 manifest",
+  "sha256": {
+    "evaluation/next/score_extractions_v2.py": "8cae7445caa2a00251a1fde736bb057cd9e20b0bf223705206b2ad67b9151509",
+    "evaluation/tools/validate_corpus.py": "1d23efea941c713770186dd614957b30543d65f2f73361af482b7fdeef35abbd",
+    "openapi/tools/validate_contract.py": "bada327122c678940444975eea9332ba1519bcf71d15f29c92c7136f7ae07840",
+    "evaluation/quality-review/baseline-manifest.json": "a81b7f0ac13806ac77621eb574077f4721c6bbd0aebbf0c688dd3a30def07361"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "baseCommit": "acf98a0",
+  "python": "3.14.8",
+  "scorer": "1.1.0-candidate",
+  "inferenceCalls": 0,
+  "comparisonDraws": 1000,
+  "comparisonSeed": 1729,
+  "verificationScope": "Python and frozen offline responses only; Java not rerun"
+}

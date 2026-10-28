@@ -1,0 +1,14 @@
+..................F.....
+======================================================================
+FAIL: test_resolutions_bound_to_current_adjudication_list (test_score_extractions_v3.ScorerV3Tests.test_resolutions_bound_to_current_adjudication_list)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/test_score_extractions_v3.py", line 136, in test_resolutions_bound_to_current_adjudication_list
+    with self.assertRaises(ValueError):score_case(case,200,body,semantic_review=audit)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.243s
+
+FAILED (failures=1)

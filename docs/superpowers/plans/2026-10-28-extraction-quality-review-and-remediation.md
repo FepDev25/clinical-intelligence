@@ -1,8 +1,8 @@
 # Plan integral de revisión, corrección y evaluación de Clinical Extraction
 
-> Para quien ejecute: utilizar `superpowers:executing-plans` y completar las tareas con sus verificaciones. Este documento es una propuesta para revisión del usuario; no autoriza todavía implementación ni inferencia remota. No delegar sin autorización aplicable.
+> Para quien ejecute: utilizar `superpowers:executing-plans` y completar las tareas con sus verificaciones. Plan aprobado por el usuario; ejecutar las tareas que autorice y registrar su cierre. No autoriza por sí solo inferencia remota. No delegar sin autorización aplicable.
 
-**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3–T10 pendientes. Creado el 28-10-2026.
+**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4–T10 pendientes. Creado el 28-10-2026.
 
 **Objetivo:** investigar y resolver de forma trazable todos los limitantes identificados en código, representación, proveedor y evaluación, y medir si las correcciones mejoran la calidad sin ocultar omisiones, descartes ni incertidumbre.
 
@@ -129,14 +129,16 @@ En tareas de código: primero prueba que falle por la causa investigada, despué
 
 **Depende de:** T1; las reglas semánticas finales dependen de T2. **Archivos:** nuevo comparador y pruebas; nueva especificación de métricas.
 
-- [ ] Conservar métricas estrictas e incorporar diagnóstico de detección, cada dimensión contextual, entidad completa, atributos, catálogos, descartes y respaldo auditado.
-- [ ] Crear contraejemplo donde un atributo literal respaldado pertenezca a una predicción no alineada. Separar discrepancia de referencia, sospecha de falta de respaldo y rechazo semántico confirmado; las dudas continúan bloqueando, no se convierten en aprobaciones.
-- [ ] Verificar que cambios de ID y orden no alteren puntuación; duplicados penalicen; contexto incorrecto produzca FP y FN; fallos HTTP mantengan omisiones; `null/null` no infle atributos.
-- [ ] Probar citas alternativas válidas, normalización NFC/case/espacios, tildes preservadas, valores repetidos en distintas entidades, anclajes ambiguos y variantes textuales que requieren adjudicación.
-- [ ] Probar advertencias divididas/agrupadas y relaciones de contradicción; los destinos deben seguir la alineación correcta.
-- [ ] Probar auditorías incompletas, resoluciones sin justificación, índices inválidos y cambios de hashes; el control debe fallar de forma conservadora.
-- [ ] Añadir incertidumbre descriptiva agrupando por nota/origen, sin tratar rondas como muestras independientes. Si se usa remuestreo, fijar semilla, unidad y método; no inventar suficiencia estadística.
-- [ ] Comparar evaluador viejo/nuevo offline y explicar cada cambio de conteo antes de usar el nuevo para elegir variantes.
+- [x] Conservar métricas estrictas e incorporar diagnóstico de detección, cada dimensión contextual, entidad completa, atributos, catálogos, descartes y respaldo auditado.
+- [x] Crear contraejemplo donde un atributo literal respaldado pertenezca a una predicción no alineada. Separar discrepancia de referencia, sospecha de falta de respaldo y rechazo semántico confirmado; las dudas continúan bloqueando, no se convierten en aprobaciones.
+- [x] Verificar que cambios de ID y orden no alteren puntuación; duplicados penalicen; contexto incorrecto produzca FP y FN; fallos HTTP mantengan omisiones; `null/null` no infle atributos.
+- [x] Probar citas alternativas válidas, normalización NFC/case/espacios, tildes preservadas, valores repetidos en distintas entidades, anclajes ambiguos y variantes textuales que requieren adjudicación.
+- [x] Probar advertencias divididas/agrupadas y relaciones de contradicción; los destinos deben seguir la alineación correcta.
+- [x] Probar auditorías incompletas, resoluciones sin justificación, índices inválidos y cambios de hashes; el control debe fallar de forma conservadora.
+- [x] Añadir incertidumbre descriptiva agrupando por nota/origen, sin tratar rondas como muestras independientes. Si se usa remuestreo, fijar semilla, unidad y método; no inventar suficiencia estadística.
+- [x] Comparar evaluador viejo/nuevo offline y explicar cada cambio de conteo antes de usar el nuevo para elegir variantes.
+
+**Seguimiento T3:** [implementación, métricas y comparación reproducible](../../../evaluation/quality-review/t3/README.md). Se conservan gold y umbrales; las resoluciones se vinculan a la versión/lista exacta, las discrepancias siguen bloqueando y T2 permanece abierta. No se integró aún el candidato al runner de una nueva campaña.
 
 **Aceptación:** las propiedades tienen pruebas deterministas; ninguna métrica auxiliar sustituye el criterio de entrega ni presenta desalineación como alucinación confirmada.
 
@@ -264,4 +266,4 @@ Bloques sugeridos para revisión/commits locales: diagnóstico y referencias (T1
 
 La revisión clínica humana independiente, las condiciones de privacidad/contratación del proveedor y la autorización para datos reales siguen siendo requisitos externos; no se dan por satisfechos por terminar ingeniería. Si falta revisor o presupuesto, continuar tareas offline independientes y dejar el tramo dependiente identificado, sin simular su ejecución.
 
-**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1 y después T2. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.
+**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2 y después T3. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.

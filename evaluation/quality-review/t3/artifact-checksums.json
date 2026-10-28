@@ -1,0 +1,24 @@
+{
+  "scope": "T3 candidate evaluator, offline comparison and verification; no historical release rewritten",
+  "sha256": {
+    "evaluation/quality-review/compare_evaluators.py": "07ffeb20e898a4199b4661ae6f13d58b868df66afd71188330e43100d27bcfe3",
+    "evaluation/quality-review/score_extractions_v3.py": "e74822f381a06e832955094b80bc3d32b5274e5828d69e89a1e65faf42d357dd",
+    "evaluation/quality-review/t3/README.md": "b6618d58ae4e51743b75712befe6b86e81b10435931cdc600cbb0ba400de1595",
+    "evaluation/quality-review/t3/comparison.json": "8a1cfc78dee6174f28f00878eebf6585c6e3994e28116aba4139fb636b4a4262",
+    "evaluation/quality-review/t3/input-manifest.json": "3f6dbf7e2c067b7494f39637343e9c16f509fc54d40d05592baa553afd30afb0",
+    "evaluation/quality-review/t3/review.md": "827fa09eb1ff3654dbf6dc1c405ddbe3e997c722ff8fe2da53e2625548185709",
+    "evaluation/quality-review/t3/verification/environment.json": "bd014beebbc3af1e3d0850566b4a74c60cb60e8666ee2ddac5e42c76d835b916",
+    "evaluation/quality-review/t3/verification/final-quality.log": "8b2b2e00962aea577df5d114e764c328c5ef22b9e6c5fc10283d77c4ec410f8c",
+    "evaluation/quality-review/t3/verification/final-reports.log": "6273232de4d3ef7acd4ecafa5c86beeeb974f56586b21089a2990b3f72facbe6",
+    "evaluation/quality-review/t3/verification/final-t2.log": "264bc68e6a5d1ca97caa75410c62ab0d5508299674d149808853da4737612fa9",
+    "evaluation/quality-review/t3/verification/final-tools.log": "2937358f21242ab2509ebf4854f0e8c3435d8189e4eb4f2b414172b2b319b05e",
+    "evaluation/quality-review/t3/verification/red-audit.log": "5e4cf6d95382ed894169ca17a3330208ec2f13b988cbff49af56012007ba3637",
+    "evaluation/quality-review/t3/verification/red-binding.log": "49ad535c18aa13dadc001efc2d32860b72c7b01b48082ca734003a78ba534e20",
+    "evaluation/quality-review/t3/verification/red-duplicate-audit.log": "f53c2d983148bb8a0631602361c0e0e0cd22bdc853be29c896691a843ae46cc2",
+    "evaluation/quality-review/t3/verification/red-review.log": "c80438a49daeff9aeed4c26d520b9005d7ae839d299a7e049c7dc21663161a20",
+    "evaluation/quality-review/t3/verification/red-support.log": "8755216ce5646a27ccbc68078e641cdf2b8aae418f3ed0cbf68db98b58e17f5e",
+    "evaluation/quality-review/t3/verification/red.log": "2f4ff2ae78df505343e2672c0b62b9f01029c6d68484a804fc90f6da55e69044",
+    "evaluation/quality-review/test_compare_evaluators.py": "8776e0f481440a379de4f7ebc1e625a79863ecbec47207dccd554bca06883b64",
+    "evaluation/quality-review/test_score_extractions_v3.py": "bcd794e1ead7433d7e13b3e00561c2e0ee7d0c9c4da86772fb33c2f7425622e6"
+  }
+}

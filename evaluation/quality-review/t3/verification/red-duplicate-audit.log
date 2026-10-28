@@ -1,0 +1,24 @@
+..F.............................
+======================================================================
+FAIL: test_audited_identical_duplicates_remain_order_invariant (test_score_extractions_v3.ScorerV3Tests.test_audited_identical_duplicates_remain_order_invariant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/test_score_extractions_v3.py", line 258, in test_audited_identical_duplicates_remain_order_invariant
+    self.assertEqual(a['attributes'],b['attributes'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'men[67 chars]tp': 1, 'fp': 1, 'fn': 0, 'absent': 0}, 'frequ[148 chars]: 0}} != {'men[67 chars]tp': 0, 'fp': 2, 'fn': 1, 'absent': 0}, 'frequ[148 chars]: 0}}
+- {'dosage': {'absent': 0, 'fn': 0, 'fp': 1, 'tp': 1},
+?                                ^        ^        ^
+
++ {'dosage': {'absent': 0, 'fn': 1, 'fp': 2, 'tp': 0},
+?                                ^        ^        ^
+
+   'duration': {'absent': 0, 'fn': 0, 'fp': 1, 'tp': 1},
+   'frequency': {'absent': 0, 'fn': 0, 'fp': 1, 'tp': 1},
+   'mentionedCode': {'absent': 3, 'fn': 0, 'fp': 0, 'tp': 0},
+   'route': {'absent': 0, 'fn': 0, 'fp': 1, 'tp': 1}}
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.262s
+
+FAILED (failures=1)
