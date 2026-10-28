@@ -1,0 +1,8 @@
+{
+  "version": "1.0.2",
+  "status": "candidate_not_yet_evaluated",
+  "sha256": {
+    "development": "e7de689df1d38b1db741e5339e0274c3d2fb4ab62e229763d83cc6ed1b6840af",
+    "reserved": "eceec92c505768dfe1d7c18eb5b8e05c9a00db4f472c0f92202ddae482a37858"
+  }
+}

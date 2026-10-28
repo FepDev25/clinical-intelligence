@@ -1,0 +1,16 @@
+{
+  "version": "1.0.1-development",
+  "status": "development_only_not_frozen_for_evaluation",
+  "sha256": {
+    "evaluation/corpus/v1/development.json": "31850872100bc483c7e1c00341e8f9d3b916e2d2c61e1af5fa7110bf646b62bc",
+    "evaluation/next/development.json": "e7de689df1d38b1db741e5339e0274c3d2fb4ab62e229763d83cc6ed1b6840af",
+    "evaluation/tools/score_extractions.py": "254fb3909d1b0a8a117d2267cea31c86efa93956c307ad4972fd9e2e566fa88f",
+    "evaluation/next/score_extractions_v2.py": "8cae7445caa2a00251a1fde736bb057cd9e20b0bf223705206b2ad67b9151509",
+    "evaluation/next/analyze_development.py": "964d59c4be719744dbc980bea6fffa4f2cb1450a60f98e932d1b2d2aa489dd3f",
+    "evaluation/tools/validate_corpus.py": "1d23efea941c713770186dd614957b30543d65f2f73361af482b7fdeef35abbd",
+    "evaluation/tools/run_evaluation.py": "9798cdef9817405f60395828ad2c91c48811bddef564e7d016bca7b12fe13584",
+    "evaluation/case.schema.json": "04034cdac80cfe90f1fe551e524a9522fac65c590427120bf25f7d87fa70e2b8",
+    "openapi/openapi.json": "506b15f0bafddfce44c12b7e57aa93caf4088075ce1268920506360074fdcc5b",
+    "openapi/tools/validate_contract.py": "bada327122c678940444975eea9332ba1519bcf71d15f29c92c7136f7ae07840"
+  }
+}

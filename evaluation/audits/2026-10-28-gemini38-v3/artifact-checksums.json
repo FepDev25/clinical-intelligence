@@ -1,0 +1,14 @@
+{
+  "scope": "partial synthetic audit; historical run unchanged",
+  "sha256": {
+    "evaluation/audits/2026-10-28-gemini38-v3/README.md": "c3babb40662d831f6f1ecc86e8a9042bf44872e4ca02ff353087e741d67e059c",
+    "evaluation/audits/2026-10-28-gemini38-v3/freeze.json": "812f713d61c0debe70c76d354d279921244b8d57ccab136954122a3c129a6676",
+    "evaluation/audits/2026-10-28-gemini38-v3/release-decision.json": "b3fad31d7b46e165477154406aca0c3da20bff3ad5f25a7c83d6977574faadcd",
+    "evaluation/audits/2026-10-28-gemini38-v3/responses.jsonl": "4db5fd82306e161def0ab305138af85726fa627b0af0b9df76b3e1ee2b872c12",
+    "evaluation/audits/2026-10-28-gemini38-v3/scores.json": "102f08d67f88db884e5e45d05d334978be53fb56f4e0fd9375e11d30cffffcf8",
+    "evaluation/audits/2026-10-28-gemini38-v3/semantic-audit-partial.json": "6b60afa069876668b6842228971f974666ff72e1072949d55b50382345ee0692",
+    "evaluation/audits/2026-10-28-gemini38-v3/semantic-audit.json": "6b60afa069876668b6842228971f974666ff72e1072949d55b50382345ee0692",
+    "evaluation/audits/2026-10-28-gemini38-v3/source-snapshot.zip": "82e7aedb460bca3e2776b66f80d28acd528d9da932c82ea7bd7b03b3d8b34f94",
+    "evaluation/audits/2026-10-28-gemini38-v3/summary.json": "10551354cbec3a60802ead0c03fd70ba93ae7c2ff7c7e0807a4a2e2c9e4734b4"
+  }
+}

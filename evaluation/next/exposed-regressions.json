@@ -1,0 +1,504 @@
+[
+  {
+    "id": "res-outpatient-01",
+    "originGroup": "independent-res-outpatient-01",
+    "split": "reserved",
+    "family": "outpatient",
+    "cohort": "core",
+    "format": "narrative",
+    "tags": [
+      "reported_medication",
+      "performed"
+    ],
+    "annotationVersion": "1.0.0",
+    "provenance": {
+      "kind": "synthetic",
+      "author": "codex",
+      "review": "author_consistency_checked"
+    },
+    "request": {
+      "clinicalNote": "Visita inicial. La paciente relata que usa actualmente Trébol. En la exploración de hoy se le practicó tonometría a la paciente. Impresión diagnóstica actual de la paciente: glaucoma.",
+      "locale": "es-CO"
+    },
+    "expected": {
+      "diagnoses": [
+        {
+          "id": "d1",
+          "name": {
+            "value": "glaucoma",
+            "evidence": [
+              {
+                "start": 174,
+                "end": 182,
+                "quote": "glaucoma"
+              }
+            ]
+          },
+          "mentionedCode": null,
+          "context": {
+            "assertion": {
+              "value": "affirmed",
+              "evidence": [
+                {
+                  "start": 129,
+                  "end": 183,
+                  "quote": "Impresión diagnóstica actual de la paciente: glaucoma."
+                }
+              ]
+            },
+            "temporality": {
+              "value": "current",
+              "evidence": [
+                {
+                  "start": 129,
+                  "end": 183,
+                  "quote": "Impresión diagnóstica actual de la paciente: glaucoma."
+                }
+              ]
+            },
+            "subject": {
+              "value": "patient",
+              "evidence": [
+                {
+                  "start": 129,
+                  "end": 183,
+                  "quote": "Impresión diagnóstica actual de la paciente: glaucoma."
+                }
+              ]
+            }
+          },
+          "catalogMatch": {
+            "status": "not_provided",
+            "candidates": []
+          }
+        }
+      ],
+      "medications": [
+        {
+          "id": "m1",
+          "name": {
+            "value": "Trébol",
+            "evidence": [
+              {
+                "start": 55,
+                "end": 61,
+                "quote": "Trébol"
+              }
+            ]
+          },
+          "mentionedCode": null,
+          "context": {
+            "assertion": {
+              "value": "affirmed",
+              "evidence": [
+                {
+                  "start": 16,
+                  "end": 62,
+                  "quote": "La paciente relata que usa actualmente Trébol."
+                }
+              ]
+            },
+            "temporality": {
+              "value": "current",
+              "evidence": [
+                {
+                  "start": 16,
+                  "end": 62,
+                  "quote": "La paciente relata que usa actualmente Trébol."
+                }
+              ]
+            },
+            "subject": {
+              "value": "patient",
+              "evidence": [
+                {
+                  "start": 16,
+                  "end": 62,
+                  "quote": "La paciente relata que usa actualmente Trébol."
+                }
+              ]
+            }
+          },
+          "catalogMatch": {
+            "status": "not_provided",
+            "candidates": []
+          },
+          "prescriptionStatus": {
+            "value": "reported",
+            "evidence": [
+              {
+                "start": 16,
+                "end": 62,
+                "quote": "La paciente relata que usa actualmente Trébol."
+              }
+            ]
+          },
+          "dosage": null,
+          "frequency": null,
+          "route": null,
+          "duration": null
+        }
+      ],
+      "procedures": [
+        {
+          "id": "p1",
+          "name": {
+            "value": "tonometría",
+            "evidence": [
+              {
+                "start": 103,
+                "end": 113,
+                "quote": "tonometría"
+              }
+            ]
+          },
+          "mentionedCode": null,
+          "context": {
+            "assertion": {
+              "value": "affirmed",
+              "evidence": [
+                {
+                  "start": 63,
+                  "end": 128,
+                  "quote": "En la exploración de hoy se le practicó tonometría a la paciente."
+                }
+              ]
+            },
+            "temporality": {
+              "value": "current",
+              "evidence": [
+                {
+                  "start": 63,
+                  "end": 128,
+                  "quote": "En la exploración de hoy se le practicó tonometría a la paciente."
+                }
+              ]
+            },
+            "subject": {
+              "value": "patient",
+              "evidence": [
+                {
+                  "start": 63,
+                  "end": 128,
+                  "quote": "En la exploración de hoy se le practicó tonometría a la paciente."
+                }
+              ]
+            }
+          },
+          "catalogMatch": {
+            "status": "not_provided",
+            "candidates": []
+          },
+          "performanceStatus": {
+            "value": "performed",
+            "evidence": [
+              {
+                "start": 63,
+                "end": 128,
+                "quote": "En la exploración de hoy se le practicó tonometría a la paciente."
+              }
+            ]
+          }
+        }
+      ],
+      "requiredWarnings": []
+    },
+    "excludedMentions": [],
+    "annotationNotes": "Menciones explícitas y contexto de sus cláusulas; no inferir diagnósticos, pautas ni realización de procedimientos."
+  },
+  {
+    "id": "res-procedure-05",
+    "originGroup": "independent-res-procedure-05",
+    "split": "reserved",
+    "family": "procedure",
+    "cohort": "core",
+    "format": "narrative",
+    "tags": [
+      "multiple_procedures",
+      "literal_code",
+      "accent_preserved"
+    ],
+    "annotationVersion": "1.0.0",
+    "provenance": {
+      "kind": "synthetic",
+      "author": "codex",
+      "review": "author_consistency_checked"
+    },
+    "request": {
+      "clinicalNote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos. La nota copia el código textual PROC-X junto a curación de herida. La paciente tiene actualmente diagnóstico de dehiscencia. Usa actualmente Ciprés.",
+      "catalogs": [
+        {
+          "catalogId": "reserved-accent-boundary",
+          "version": "1",
+          "kind": "medication",
+          "entries": [
+            {
+              "entryId": "c",
+              "name": "Cipres",
+              "aliases": []
+            }
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "diagnoses": [
+        {
+          "id": "d1",
+          "name": {
+            "value": "dehiscencia",
+            "evidence": [
+              {
+                "start": 188,
+                "end": 199,
+                "quote": "dehiscencia"
+              }
+            ]
+          },
+          "mentionedCode": null,
+          "context": {
+            "assertion": {
+              "value": "affirmed",
+              "evidence": [
+                {
+                  "start": 143,
+                  "end": 200,
+                  "quote": "La paciente tiene actualmente diagnóstico de dehiscencia."
+                }
+              ]
+            },
+            "temporality": {
+              "value": "current",
+              "evidence": [
+                {
+                  "start": 143,
+                  "end": 200,
+                  "quote": "La paciente tiene actualmente diagnóstico de dehiscencia."
+                }
+              ]
+            },
+            "subject": {
+              "value": "patient",
+              "evidence": [
+                {
+                  "start": 143,
+                  "end": 200,
+                  "quote": "La paciente tiene actualmente diagnóstico de dehiscencia."
+                }
+              ]
+            }
+          },
+          "catalogMatch": {
+            "status": "not_provided",
+            "candidates": []
+          }
+        }
+      ],
+      "medications": [
+        {
+          "id": "m1",
+          "name": {
+            "value": "Ciprés",
+            "evidence": [
+              {
+                "start": 217,
+                "end": 223,
+                "quote": "Ciprés"
+              }
+            ]
+          },
+          "mentionedCode": null,
+          "context": {
+            "assertion": {
+              "value": "affirmed",
+              "evidence": [
+                {
+                  "start": 201,
+                  "end": 224,
+                  "quote": "Usa actualmente Ciprés."
+                }
+              ]
+            },
+            "temporality": {
+              "value": "current",
+              "evidence": [
+                {
+                  "start": 201,
+                  "end": 224,
+                  "quote": "Usa actualmente Ciprés."
+                }
+              ]
+            },
+            "subject": {
+              "value": "patient",
+              "evidence": [
+                {
+                  "start": 201,
+                  "end": 224,
+                  "quote": "Usa actualmente Ciprés."
+                },
+                {
+                  "start": 143,
+                  "end": 200,
+                  "quote": "La paciente tiene actualmente diagnóstico de dehiscencia."
+                }
+              ]
+            }
+          },
+          "catalogMatch": {
+            "status": "not_found",
+            "candidates": []
+          },
+          "prescriptionStatus": {
+            "value": "reported",
+            "evidence": [
+              {
+                "start": 201,
+                "end": 224,
+                "quote": "Usa actualmente Ciprés."
+              }
+            ]
+          },
+          "dosage": null,
+          "frequency": null,
+          "route": null,
+          "duration": null
+        }
+      ],
+      "procedures": [
+        {
+          "id": "p1",
+          "name": {
+            "value": "curación de herida",
+            "evidence": [
+              {
+                "start": 29,
+                "end": 47,
+                "quote": "curación de herida"
+              }
+            ]
+          },
+          "mentionedCode": {
+            "value": "PROC-X",
+            "evidence": [
+              {
+                "start": 108,
+                "end": 114,
+                "quote": "PROC-X"
+              }
+            ]
+          },
+          "context": {
+            "assertion": {
+              "value": "affirmed",
+              "evidence": [
+                {
+                  "start": 0,
+                  "end": 75,
+                  "quote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos."
+                }
+              ]
+            },
+            "temporality": {
+              "value": "current",
+              "evidence": [
+                {
+                  "start": 0,
+                  "end": 75,
+                  "quote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos."
+                }
+              ]
+            },
+            "subject": {
+              "value": "patient",
+              "evidence": [
+                {
+                  "start": 0,
+                  "end": 75,
+                  "quote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos."
+                }
+              ]
+            }
+          },
+          "catalogMatch": {
+            "status": "not_provided",
+            "candidates": []
+          },
+          "performanceStatus": {
+            "value": "performed",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 75,
+                "quote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos."
+              }
+            ]
+          }
+        },
+        {
+          "id": "p2",
+          "name": {
+            "value": "retiro de puntos",
+            "evidence": [
+              {
+                "start": 58,
+                "end": 74,
+                "quote": "retiro de puntos"
+              }
+            ]
+          },
+          "mentionedCode": null,
+          "context": {
+            "assertion": {
+              "value": "affirmed",
+              "evidence": [
+                {
+                  "start": 0,
+                  "end": 75,
+                  "quote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos."
+                }
+              ]
+            },
+            "temporality": {
+              "value": "current",
+              "evidence": [
+                {
+                  "start": 0,
+                  "end": 75,
+                  "quote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos."
+                }
+              ]
+            },
+            "subject": {
+              "value": "patient",
+              "evidence": [
+                {
+                  "start": 0,
+                  "end": 75,
+                  "quote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos."
+                }
+              ]
+            }
+          },
+          "catalogMatch": {
+            "status": "not_provided",
+            "candidates": []
+          },
+          "performanceStatus": {
+            "value": "performed",
+            "evidence": [
+              {
+                "start": 0,
+                "end": 75,
+                "quote": "A la paciente se le hizo hoy curación de herida y también retiro de puntos."
+              }
+            ]
+          }
+        }
+      ],
+      "requiredWarnings": []
+    },
+    "excludedMentions": [],
+    "annotationNotes": "Solo se conserva el código literalmente escrito; no se valida por generación. El sujeto elíptico se respalda también con su referencia explícita en la nota."
+  }
+]

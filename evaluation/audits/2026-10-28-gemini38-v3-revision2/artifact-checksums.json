@@ -1,0 +1,14 @@
+{
+  "scope": "synthetic review revision 2; disputed references remain open",
+  "sha256": {
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/README.md": "c2ac2e9634341e88d261945353129bc6b8ae7d346aeb17e29acb3a8813babdad",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/dispute-register.json": "f41eb4515f903d0a9f3d957ecc19bc1fe00d64bef2a2c3ee4823218c58788939",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/freeze.json": "812f713d61c0debe70c76d354d279921244b8d57ccab136954122a3c129a6676",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/release-decision.json": "bb34eb604a6e9b0eda547f065bfee168b361dddc7e2625392adbbc772e2b580a",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/responses.jsonl": "4db5fd82306e161def0ab305138af85726fa627b0af0b9df76b3e1ee2b872c12",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/scores.json": "a5f2a17ee3ace88be338c1407e7dce03452a4b8638520bcd59a18c1fd60559ed",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/semantic-audit.json": "1f8f62cfb2622fb1daf74adaa8cdc1507bd12d6924e1d47372c1dae502a71380",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/source-snapshot.zip": "82e7aedb460bca3e2776b66f80d28acd528d9da932c82ea7bd7b03b3d8b34f94",
+    "evaluation/audits/2026-10-28-gemini38-v3-revision2/summary.json": "25b3ce193ea79c920522233131cb9cf98676c31f4ef7db5f0dfc3293c587d4c5"
+  }
+}

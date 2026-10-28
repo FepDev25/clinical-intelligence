@@ -1,0 +1,6 @@
+{
+  "reason": "Revisión textual de adjudicaciones históricas; no usar estos escenarios como evaluación independiente posterior",
+  "sourceRun": "2026-10-28-gemini38-v1",
+  "affectedCaseIds": ["res-outpatient-01", "res-procedure-05"],
+  "requiredBeforeNextIndependentEvaluation": "Mover escenarios a desarrollo/regresión, sustituirlos por casos independientes y validar la separación y el nuevo corpus antes de congelar."
+}

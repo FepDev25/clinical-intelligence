@@ -6,3 +6,4 @@ __pycache__/
 
 # Ephemeral evaluation process lock; immutable results remain versioned.
 /evaluation/runs/**/.run.lock
+/evaluation/audits/**/.run.lock

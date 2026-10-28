@@ -1,10 +1,10 @@
 # Clinical Intelligence
 
-API-first para inteligencia clínica asistida. H1 define contrato/corpus, H2 aporta el núcleo Java 21 y H3 incorpora HTTP con autenticación por consumidor. H4 integra Gemini 3.8 Flash, con transporte controlado y una extracción sintética autenticada verificados. H5 completó 234 operaciones sintéticas reales: el MVP **no aprueba** los criterios de calidad; se entrega como prototipo evaluado. Ver [informe y próximos pasos](docs/h5-validation.md).
+API-first para inteligencia clínica asistida. El prototipo de Clinical Extraction está implementado y evaluado, pero el **MVP no está aprobado por calidad**. H5 y la iteración posterior midieron cada una 234 operaciones sintéticas; la auditoría de la última conserva 57 intentos pendientes. Ver [resumen de la sesión más reciente](docs/sesion-28-10-2026/README.md) y [análisis de resultados](docs/sesion-28-10-2026-evaluacion.md).
 
 La [guía de integración H5](docs/h5-integration.md) reúne configuración, cURL, errores y revisión del resultado. El [arnés de evaluación](evaluation/RUNNING.md) conserva rondas, costes estimados, auditoría y decisión final.
 
-El [índice documental](docs/README.md) organiza decisiones, guías e informes. Para retomar el proyecto, empezar por el [cierre de sesión del 27-10-2026](docs/sesion-27-10-2026/README.md).
+El [índice documental](docs/README.md) organiza decisiones, guías e informes. El [cierre del 27-10-2026](docs/sesion-27-10-2026/README.md) conserva la historia de H1–H5.
 
 ## Usar la API local
 

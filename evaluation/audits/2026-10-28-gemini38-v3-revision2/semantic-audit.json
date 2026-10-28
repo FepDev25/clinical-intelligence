@@ -1,0 +1,3242 @@
+{
+  "schemaVersion": "1.0.0",
+  "reviewer": "Codex; revisión textual del autor, no independiente",
+  "reviewScope": "synthetic-reference-support",
+  "clinicalReview": false,
+  "freezeSha256": "812f713d61c0debe70c76d354d279921244b8d57ccab136954122a3c129a6676",
+  "responsesSha256": "4db5fd82306e161def0ab305138af85726fa627b0af0b9df76b3e1ee2b872c12",
+  "reviews": [
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-01",
+      "recordSha256": "977fb6fb5ba2439d3f10e5868a7b900530e878a57eb650fcb67b43d86199309c",
+      "decision": "support_verified",
+      "notes": "La mención de otitis, prescripción y realización tienen apoyo en sus cláusulas. Las variantes de vía y duración citan el mismo texto. En la ronda 3 el sujeto del procedimiento queda desconocido; la omisión permanece en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-02",
+      "recordSha256": "2b7c238615641095f538f4f3d17fd29a14448984476fe32a09f7b11249fa7d2a",
+      "decision": "support_failed",
+      "notes": "La cita de temporalidad de Lumen apunta a «actual» dentro de «actualmente» en la cláusula de diabetes, no a la mención de Lumen. La ronda 2 además omite el sujeto; no se afirma que el valor pertenezca a otro paciente.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-03",
+      "recordSha256": "e9029dd92c1bd162327a01b99bd3bf095638f69070738f9c0d77080a683d0c52",
+      "decision": "support_verified",
+      "notes": "Diagnóstico, prescripción y procedimiento planificado para la próxima semana se respaldan en las cláusulas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-04",
+      "recordSha256": "07b2dc01dfa63bb4023433a61ede1cb6bc9908281ed11fdd23c0f2095ab6ddd5",
+      "decision": "support_failed",
+      "notes": "La mención no aclara si Vega se toma o fue prescrita; el presente de «menciona» no establece la temporalidad de uso o prescripción. La ronda 3 conserva temporalidad desconocida; la advertencia requerida ausente se mantiene como hallazgo automático.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-05",
+      "recordSha256": "bb40c2d27ab89bf0a655f4680dbe6f222799af2afe8e2eba2cf631ed87a983d6",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-06",
+      "recordSha256": "5ea696a4599c9364ba060e1c4b45a459cef42e1a0e05df6fe09059df448263c4",
+      "decision": "support_verified",
+      "notes": "La nota solo refiere cansancio sin formulación diagnóstica; las tres listas vacías son coherentes con el alcance.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-01",
+      "recordSha256": "710b14ff3024e01e3528eb8626e28e64661ea81b253dfa33ca5ade912e5bf12c",
+      "decision": "support_verified",
+      "notes": "Las menciones, estados y atributos se respaldan en sus cláusulas correspondientes; las variantes de vía son textuales, sin conversión de dosis.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-02",
+      "recordSha256": "1a5c47f4cc9a0690260a3a4bd96265a69425f19b8234fbd652c499310e778e4f",
+      "decision": "support_verified",
+      "notes": "Las dos menciones contrarias se conservan con sus contextos; la advertencia relaciona ambos diagnósticos. Medicación y procedimiento se respaldan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-03",
+      "recordSha256": "c0f66e4176f15004546b8dccc5b4cbdbbcef9df6cfedc1d91ae76435e875bf38",
+      "decision": "support_verified",
+      "notes": "Ambas apariciones equivalentes de asma se agrupan; la prescripción, dosis y plan futuro tienen evidencia en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-04",
+      "recordSha256": "72bbec39ddb50c1ba93ada90375e547e935448bddd1e504e738eb12b09e66268",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-05",
+      "recordSha256": "50f681f4680bbf1a63b3463d88dd3d899c2f67c8410f778805e04ac763ddbeee",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, indicación y procedimiento se respaldan por sus cláusulas; la variante de vía es textual y no supone equivalencia inferida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-06",
+      "recordSha256": "52441866eff9d7c6f7b16581cff8f8e5f71e388a762c754e512ca23b045953f6",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-01",
+      "recordSha256": "d20ba9a899d75268106c52e297b2f795749bd4e1b95692003680dffdcf67d23d",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, uso reportado y orden para fecha posterior se sustentan. Las rondas 1 y 2 dejaron el sujeto del medicamento en unknown, pese a estar explícito; la omisión permanece en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-02",
+      "recordSha256": "dc7adb77db4ddea959fd2d197a38d0ce9eb9f4ac9e709ac5b2e48fe95b3ad6d1",
+      "decision": "support_failed",
+      "notes": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-03",
+      "recordSha256": "fbd2b171d0d1fe4002c82e374288169f699942d383ca5c868a542c83cf2730e5",
+      "decision": "support_verified",
+      "notes": "El diagnóstico y el procedimiento planificado se sustentan. La prescripción explícita de Sol no aparece en la salida y permanece como omisión; en ronda 3 falta además el sujeto del procedimiento.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-04",
+      "recordSha256": "d94d945ad2d1902b295d2cbb8f9fc5b0c16e7797e29948bb24cc6fffe28c8ffd",
+      "decision": "support_failed",
+      "notes": "La cita del sujeto de Boreal corresponde a la cláusula posterior de espirometría, no a su prescripción. La fecha y sujeto del procedimiento requieren revisión adicional; su temporalidad no se decide por la fecha de la orden.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-05",
+      "recordSha256": "aece9800da465c5a708885c14edd2c708f10685f4870441d991e9dd15dbab822",
+      "decision": "support_verified",
+      "notes": "La nota respalda el diagnóstico, el uso reportado sin receta nueva y la planificación condicional; cada cita se refiere a su cláusula.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-06",
+      "recordSha256": "ac7c490355ecc6001526be35110acfac8e745ea74db1099f6474ab053f2b9877",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-01",
+      "recordSha256": "9ae699186dabb0411ab0621a9fd417b7bedebd98f3872f7a387f111a5de9d84b",
+      "decision": "support_verified",
+      "notes": "La sutura actual, el diagnóstico y la prescripción se sustentan en sus cláusulas. La cita actual de la primera cláusula es válida y la variante de duración conserva significado textual.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La cita actual corresponde al encabezado de la prestación; la variante de duración es literal."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-02",
+      "recordSha256": "c70f1021296c7735bd5021fac35f26efab9c818e92bbff82fdb929b12294ad86",
+      "decision": "support_verified",
+      "notes": "Se separan correctamente la endoscopia de ayer y la solicitada para el próximo mes; diagnóstico y uso reportado se respaldan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-03",
+      "recordSha256": "9ef7563ba535887a19687ddc172017ac645db528adfce2a90b2830dc3d210421",
+      "decision": "support_failed",
+      "notes": "La colonoscopia cancelada y la no realizada tienen estados diferentes. En ronda 1 assertion=affirmed contradice la cita negada, aunque performanceStatus=not_performed se conserva; rondas 2 y 3 preservan la negación.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-04",
+      "recordSha256": "9d7230688d1b099f640b9bb90e5aedab7f6631b337203465353bbf5eb141ef41",
+      "decision": "support_verified",
+      "notes": "El intento de punción no establece realización; el estado unknown y la advertencia son coherentes. Diagnóstico y prescripción tienen respaldo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-05",
+      "recordSha256": "7c9906145cd60a2089813919abdca4e29ba9c10164ad80018f42ec6b5f607313",
+      "decision": "support_verified",
+      "notes": "La coordinación respalda ambas prestaciones y el código solo se vincula al electrocardiograma. En ronda 3 el sujeto de la medicación queda unknown, una omisión contabilizada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-06",
+      "recordSha256": "bfa2e4447833df7db9c4b90daa565a9fb9b1b8037fa2a8fd68f36665a10c765d",
+      "decision": "support_verified",
+      "notes": "La intervención histórica, el drenaje negado y la prescripción están respaldados; la negación y el estado not_performed se conservan.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-admission-01",
+      "recordSha256": "da6e4befb773b53eab3f55c6b018343168ec6116bac8b11417bf6cc0da5f09e9",
+      "decision": "support_failed",
+      "notes": "Diversas citas breves de sujeto o temporalidad están en cláusulas de otras menciones; por ejemplo, actual de Estela apunta al derrame y hoy de Diamante a la radiografía. También hay atributos unknown que son omisiones ya contabilizadas. La temporalidad de una orden sin fecha se deja en discusión.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/2",
+        "/diagnoses/3",
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-admission-02",
+      "recordSha256": "0a67448b805d31f276cf4104029d3d3f28c0fb30eb28b1b07f7829ece93ea256",
+      "decision": "support_failed",
+      "notes": "El sujeto de ecografía cita paciente en la cláusula de Eje. Si la frase sobre Eje sustenta reported pese a su incertidumbre requiere adjudicación adicional; no se reescribe el gold.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-admission-03",
+      "recordSha256": "8a188b9320e390523850d244864f1a1f80faf18494910ef91425fc1893ce48f3",
+      "decision": "support_verified",
+      "notes": "La ronda 3 cita como sujeto apariciones de paciente pertenecientes a otras cláusulas; los estados históricos y condicionales se conservan. En las rondas 1 y 2 las citas corresponden a las menciones.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-emergency-01",
+      "recordSha256": "2269f1def36240fa304dfc8c5d02d030ba5c5b76d640b7945f7840a550184f9d",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-emergency-02",
+      "recordSha256": "d287f6816cc0ba589db665755a0caee14d35e5bcdbc14d95d34f8e3f01a1bfdf",
+      "decision": "support_verified",
+      "notes": "El sujeto del diagnóstico se omitió y se mantiene como omisión. En ronda 2 las citas del sujeto de Ancla y de inmovilización están en otras cláusulas. La duración es una variante textual respaldada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La duración de dos días está expresamente vinculada a la prescripción; variante textual de la cita."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-emergency-03",
+      "recordSha256": "d87eeaa2fb82fb5399ce05982f60efd7644fde115f203771e242e2f1b980aeef",
+      "decision": "support_verified",
+      "notes": "La intoxicación está negada y el estado de realización es desconocido; no se extrajo cirugía de la instrucción administrativa. Vela se omite en ronda 1 y en ronda 3 dos sujetos quedan unknown; las omisiones se conservan.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-discharge-01",
+      "recordSha256": "dd1bd78c00b516c9c09086c71eb28ddffa513cf64abcac6a47416e70627b0627",
+      "decision": "support_verified",
+      "notes": "La secuencia diagnóstico sospechado y descartado, la endoscopia y la prescripción se identifican. Las rondas 2 y 3 desplazan citas de sujeto a cláusulas posteriores; las ausencias unknown siguen contadas. La duración es una variante textual sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La duración de siete días está en la misma cláusula de prescripción."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-discharge-02",
+      "recordSha256": "0104b5b7a63f3f485872415c3e240116734b6c85edb02e6eda00ac046ac60255",
+      "decision": "support_failed",
+      "notes": "La cirugía de ayer, la resonancia cancelada y la receta son explícitas; en ronda 1 la cita de sujeto de Cauce se desplaza a la cláusula de resonancia. La temporalidad unknown de la cancelación en rondas 1 y 3 permanece como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-discharge-03",
+      "recordSha256": "4cf4ca2fe874915d9cfe6516cadeb452c3e81da88de5fcb3c8831e54781fd8e6",
+      "decision": "support_verified",
+      "notes": "El antecedente y la medicación suspendida son históricos; Marfil y el plan se respaldan. El sujeto de Alero queda unknown y sigue contado como omisión; las variantes de vía y duración son literales.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal vinculada a la prescripción de Marfil."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Variante textual literal vinculada a la prescripción de Marfil."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-07",
+      "recordSha256": "4952d82ab6b21903a416ef5d79d86c1938419760fa49199f0478de503538d4e6",
+      "decision": "support_verified",
+      "notes": "La salida conserva eczema y no incorpora entidades del bloque de instrucciones ajeno.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-07",
+      "recordSha256": "54bd7f2e3df050498c0cae516017bbf08e1ee0dbf0074427e7d04d67a0c7ecef",
+      "decision": "support_failed",
+      "notes": "La interconsulta puede referirse al documento o resultado; la cita no establece inequívocamente una prestación realizada. Rinitis y la prescripción Zonda están respaldadas.",
+      "invalidEntities": [
+        "/procedures/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-progress-07",
+      "recordSha256": "f63687be44c48c3797469cab57d97386da989b546fbf4486ff16ecf7e7afb369",
+      "decision": "support_failed",
+      "notes": "El sujeto de Halo cita la cláusula de reposo. La clasificación de control como prestación sigue disputada y se conserva abierta por separado.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-procedure-07",
+      "recordSha256": "b04314f5e521895417ddf39d6a4af5848177cd6847b4c66160b16c2dd70b9523",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-outpatient-08",
+      "recordSha256": "9f951cf65e50e44dcb5795240c3e203ae5654d2dd7d4c80e324f08c8adee2cf7",
+      "decision": "support_verified",
+      "notes": "Se distingue el antecedente de la hermana de la negación del paciente; en ronda 3 se omite el sujeto de la negación y se conserva como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 1,
+      "caseId": "dev-consultation-08",
+      "recordSha256": "4c82451e2b8052ce07a30a45a0b0b1d91f5dcd2fc664cb61141abd7afeb1e4bf",
+      "decision": "support_verified",
+      "notes": "El diagnóstico actual y la prescripción identifican al paciente y están sustentados por las cláusulas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-01",
+      "recordSha256": "cecb7ad0bf90cf623f9042630c52c07a71c40fa6d18170725b792bec549db8a8",
+      "decision": "support_verified",
+      "notes": "La mención de otitis, prescripción y realización tienen apoyo en sus cláusulas. Las variantes de vía y duración citan el mismo texto. En la ronda 3 el sujeto del procedimiento queda desconocido; la omisión permanece en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-02",
+      "recordSha256": "781619a44132d1a4a65e289a935dc5fff90e72220002503b2e932b0cfae597f5",
+      "decision": "support_failed",
+      "notes": "La cita de temporalidad de Lumen apunta a «actual» dentro de «actualmente» en la cláusula de diabetes, no a la mención de Lumen. La ronda 2 además omite el sujeto; no se afirma que el valor pertenezca a otro paciente.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-03",
+      "recordSha256": "1533f3003023164942ba3014e5b24a647ca40cf8da9657fea9906f373ad237dc",
+      "decision": "support_failed",
+      "notes": "El diagnóstico y la prescripción se respaldan. La planificación se sitúa la próxima semana. En ronda 2 el sujeto de la medicación cita una aparición en la cláusula del procedimiento, por lo que esa cita no respalda el campo; el sujeto desconocido del procedimiento es una omisión ya contada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-04",
+      "recordSha256": "affdbbc128634c8dbb113a48fcac060c88030030892a949baf35f87fd14b6246",
+      "decision": "support_failed",
+      "notes": "La mención no aclara si Vega se toma o fue prescrita; el presente de «menciona» no establece la temporalidad de uso o prescripción. La ronda 3 conserva temporalidad desconocida; la advertencia requerida ausente se mantiene como hallazgo automático.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-05",
+      "recordSha256": "f3c5f45078c8bd50331acf11ccbceccf20ab5446326ea8bbed290b7156cbd7b6",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-06",
+      "recordSha256": "a503725efe0f71ba1fdd1354f4ba1794e34589f04d29e9cf05f1c17442fb3b39",
+      "decision": "support_verified",
+      "notes": "La nota solo refiere cansancio sin formulación diagnóstica; las tres listas vacías son coherentes con el alcance.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-01",
+      "recordSha256": "993b88f88d88878700b6ac5845a58e8e11d2e77d318037d78d0b1a201e77750a",
+      "decision": "support_verified",
+      "notes": "Las menciones, estados y atributos se respaldan en sus cláusulas correspondientes; las variantes de vía son textuales, sin conversión de dosis.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-02",
+      "recordSha256": "3f2d605ddd414bbd6859192feeb41c39fefa5923bceb3d06787d11f8bd699b92",
+      "decision": "support_verified",
+      "notes": "Las dos menciones contrarias se conservan con sus contextos; la advertencia relaciona ambos diagnósticos. Medicación y procedimiento se respaldan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-03",
+      "recordSha256": "4eee623e95d0a6df9c808a3967dcbaa516c795528139f08596e99dbab550dcdd",
+      "decision": "support_verified",
+      "notes": "Ambas apariciones equivalentes de asma se agrupan; la prescripción, dosis y plan futuro tienen evidencia en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-04",
+      "recordSha256": "471cf70909d62bb61da20c49eecf017c03fedb608d8c3997967ed2ddc42e7c7d",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-05",
+      "recordSha256": "1ef9b350cef1510c3896e8ed5b0e4ad784b34a8e52f78d0b20630134be5fad0d",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, indicación y procedimiento se respaldan por sus cláusulas; la variante de vía es textual y no supone equivalencia inferida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-06",
+      "recordSha256": "6b4d3f7c81ed9ac71cfaccaba1536474eceeaf918e61891bd80b8babe0a4c2f1",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-01",
+      "recordSha256": "08cb8da4b4cca2daccf41218cc30a74da79ca548298c4fb5a3167e6e9a3e41df",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, uso reportado y orden para fecha posterior se sustentan. Las rondas 1 y 2 dejaron el sujeto del medicamento en unknown, pese a estar explícito; la omisión permanece en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-02",
+      "recordSha256": "26a304feb190e99f54aee0b2822fd5b76edd992ed694228ed364e3a37ea67ee9",
+      "decision": "support_failed",
+      "notes": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-03",
+      "recordSha256": "1cd1cda5064ff5981c33dbdda3597c79d8031a709651b252ff0feb2add066506",
+      "decision": "support_verified",
+      "notes": "El diagnóstico y el procedimiento planificado se sustentan. La prescripción explícita de Sol no aparece en la salida y permanece como omisión; en ronda 3 falta además el sujeto del procedimiento.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-04",
+      "recordSha256": "829d9177ea2687bd539d6baa1c28ac9f3021dc3f0cffe547a1e0f5b11c759a59",
+      "decision": "support_failed",
+      "notes": "La cita del sujeto de Boreal corresponde a la cláusula posterior de espirometría, no a su prescripción. La fecha y sujeto del procedimiento requieren revisión adicional; su temporalidad no se decide por la fecha de la orden.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-05",
+      "recordSha256": "136fc10192c96223384b96996d57a428ae1365408f63b21b2e76a808f2b9a336",
+      "decision": "support_verified",
+      "notes": "La nota respalda el diagnóstico, el uso reportado sin receta nueva y la planificación condicional; cada cita se refiere a su cláusula.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-06",
+      "recordSha256": "9ce0735c387331f492a21a1cfb7192bb261333827f03fa2b73517be17d362353",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-01",
+      "recordSha256": "cd9165fc30762cedaae2f13b704fb8d6d731503392b6e43493fe58d92eb9a690",
+      "decision": "support_verified",
+      "notes": "La sutura actual, el diagnóstico y la prescripción se sustentan en sus cláusulas. La cita actual de la primera cláusula es válida y la variante de duración conserva significado textual.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La cita actual corresponde al encabezado de la prestación; la variante de duración es literal."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La cita actual corresponde al encabezado de la prestación; la variante de duración es literal."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-02",
+      "recordSha256": "32ada93aa40f7d82859711f27ba5b6f07202afb160d3f207418b96330e0a8389",
+      "decision": "support_verified",
+      "notes": "Se separan correctamente la endoscopia de ayer y la solicitada para el próximo mes; diagnóstico y uso reportado se respaldan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-03",
+      "recordSha256": "4151ab00d2fd04aba0172708e73e52b3c6189ed45f9905683eb5d398b044736a",
+      "decision": "support_verified",
+      "notes": "La colonoscopia cancelada y la no realizada tienen estados diferentes. En ronda 1 assertion=affirmed contradice la cita negada, aunque performanceStatus=not_performed se conserva; rondas 2 y 3 preservan la negación.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-04",
+      "recordSha256": "0b87fb691d6c9ef1db70dd077c2b3e091fe16436ead5684a082ec71b79ce5084",
+      "decision": "support_verified",
+      "notes": "El intento de punción no establece realización; el estado unknown y la advertencia son coherentes. Diagnóstico y prescripción tienen respaldo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-05",
+      "recordSha256": "2e76e6ec60673e518208b93b86e05677100ac75c79fd0126f5a823d55bc6ddb1",
+      "decision": "support_verified",
+      "notes": "La coordinación respalda ambas prestaciones y el código solo se vincula al electrocardiograma. En ronda 3 el sujeto de la medicación queda unknown, una omisión contabilizada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-06",
+      "recordSha256": "7433e31fc1848c3947b13e72f33f1ee1b14948a5db28f4eac61c9dd4bb924c00",
+      "decision": "support_verified",
+      "notes": "La intervención histórica, el drenaje negado y la prescripción están respaldados; la negación y el estado not_performed se conservan.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-admission-01",
+      "recordSha256": "c1e8891079a9ea7814f8d6238814ebe80602f6b2a88b4b97dda1f45aab777ed4",
+      "decision": "support_failed",
+      "notes": "Diversas citas breves de sujeto o temporalidad están en cláusulas de otras menciones; por ejemplo, actual de Estela apunta al derrame y hoy de Diamante a la radiografía. También hay atributos unknown que son omisiones ya contabilizadas. La temporalidad de una orden sin fecha se deja en discusión.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-admission-02",
+      "recordSha256": "ca78bdcd6e2b4939eee62b944290bb29d6f935c99414b4cbf012d91011925595",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar si la mención de Eje sustenta estado reported pese a no recordar para qué lo usa ni si sigue tomándolo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-admission-03",
+      "recordSha256": "3a702da8f1cfd8e5f3805ce83d184c3c2621ae8beb21ba0f3d32408e86c93418",
+      "decision": "support_verified",
+      "notes": "La ronda 3 cita como sujeto apariciones de paciente pertenecientes a otras cláusulas; los estados históricos y condicionales se conservan. En las rondas 1 y 2 las citas corresponden a las menciones.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-emergency-01",
+      "recordSha256": "2143ec4423b4c4add246bda2aa95f85a5989239c3277a7dd044404db804c1bc7",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-emergency-02",
+      "recordSha256": "7d7de69f1a6519315adfe39baa38c6341a4edb27e00fac06a1005e146a759630",
+      "decision": "support_failed",
+      "notes": "El sujeto del diagnóstico se omitió y se mantiene como omisión. En ronda 2 las citas del sujeto de Ancla y de inmovilización están en otras cláusulas. La duración es una variante textual respaldada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La duración de dos días está expresamente vinculada a la prescripción; variante textual de la cita."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-emergency-03",
+      "recordSha256": "05dbcf779933b11074082fbca33de1a935a38172e4f069908396049b551cbed0",
+      "decision": "support_verified",
+      "notes": "La intoxicación está negada y el estado de realización es desconocido; no se extrajo cirugía de la instrucción administrativa. Vela se omite en ronda 1 y en ronda 3 dos sujetos quedan unknown; las omisiones se conservan.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-discharge-01",
+      "recordSha256": "67c4dda621c6da6cb08ba2a3f4efe0a378997e5c7ee569bfd1ea4d5cf69c328e",
+      "decision": "support_failed",
+      "notes": "La secuencia diagnóstico sospechado y descartado, la endoscopia y la prescripción se identifican. Las rondas 2 y 3 desplazan citas de sujeto a cláusulas posteriores; las ausencias unknown siguen contadas. La duración es una variante textual sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La duración de siete días está en la misma cláusula de prescripción."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-discharge-02",
+      "recordSha256": "0809cd4a7ed2ff08472739d6c2ed414b6ff92cce770a331d1733b2342c30ef93",
+      "decision": "support_verified",
+      "notes": "La cirugía de ayer, la resonancia cancelada y la receta son explícitas; en ronda 1 la cita de sujeto de Cauce se desplaza a la cláusula de resonancia. La temporalidad unknown de la cancelación en rondas 1 y 3 permanece como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-discharge-03",
+      "recordSha256": "d2ee6d8e55fd9bb9e2b41035a6de3bad81c0ad97145e42108b68db620b531ff1",
+      "decision": "support_verified",
+      "notes": "El antecedente y la medicación suspendida son históricos; Marfil y el plan se respaldan. El sujeto de Alero queda unknown y sigue contado como omisión; las variantes de vía y duración son literales.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal vinculada a la prescripción de Marfil."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Variante textual literal vinculada a la prescripción de Marfil."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-07",
+      "recordSha256": "c260c73f751c7bbad3b9943ff9f0457fa79653b6234337e2749b8dd660e1f79b",
+      "decision": "support_verified",
+      "notes": "La salida conserva eczema y no incorpora entidades del bloque de instrucciones ajeno.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-07",
+      "recordSha256": "e906ac0cc36282bfbc224919e6210f91e414a6d7a431f67d4fd126f4e468084c",
+      "decision": "support_failed",
+      "notes": "La interconsulta puede referirse al documento o resultado; la cita no establece inequívocamente una prestación realizada. Rinitis y la prescripción Zonda están respaldadas.",
+      "invalidEntities": [
+        "/procedures/0"
+      ],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-progress-07",
+      "recordSha256": "314b384d50db9a56457346ad8dc298d3db2382a921879e793eaeb0e9b1b72908",
+      "decision": "support_failed",
+      "notes": "La cita de sujeto de Halo procede de la cláusula de reposo, no de la prescripción. En rondas 1 y 3 queda por resolver el alcance de control como prestación y, en ronda 3, reposo.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-procedure-07",
+      "recordSha256": "1f9d6d1b7e4dfbaeece6bb54e9dbf0c911d1c6f70ff6f6d5d2405b3b1f5ec9a9",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-outpatient-08",
+      "recordSha256": "7551267089bf4afaf29cfe991b36c97c93f39532843a4a6c0a734f7f7a6fa99d",
+      "decision": "support_verified",
+      "notes": "Se distingue el antecedente de la hermana de la negación del paciente; en ronda 3 se omite el sujeto de la negación y se conserva como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 2,
+      "caseId": "dev-consultation-08",
+      "recordSha256": "a0db5a78c1979fc5f844e766d8d52bf677f72fe71c02b4637d574baf2ce8ba82",
+      "decision": "support_verified",
+      "notes": "El diagnóstico actual y la prescripción identifican al paciente y están sustentados por las cláusulas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-01",
+      "recordSha256": "4c594c644601a8bde41f7b83cb1f024a9f5fc6304098e124c58e734585436fe1",
+      "decision": "support_verified",
+      "notes": "La mención de otitis, prescripción y realización tienen apoyo en sus cláusulas. Las variantes de vía y duración citan el mismo texto. En la ronda 3 el sujeto del procedimiento queda desconocido; la omisión permanece en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-02",
+      "recordSha256": "bc07272c875dfcd77b8971b56261e610dfb89ae68d6bbedd98b5e5b5922d02a6",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-03",
+      "recordSha256": "15842f7e46a26770b983903d5448bdbde142df18e17954ca5d21293c1bca4dec",
+      "decision": "support_verified",
+      "notes": "Diagnóstico, prescripción y procedimiento planificado para la próxima semana se respaldan en las cláusulas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-04",
+      "recordSha256": "8195ea5bd198ceed181ca112c3557d4a81916362d30cd72effea53079723ec17",
+      "decision": "support_verified",
+      "notes": "La mención no aclara si Vega se toma o fue prescrita; el presente de «menciona» no establece la temporalidad de uso o prescripción. La ronda 3 conserva temporalidad desconocida; la advertencia requerida ausente se mantiene como hallazgo automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-05",
+      "recordSha256": "4df7ebbec5ef4e5e561387e892c30e5c904cec4c2729716352fbd3ae22aa8f13",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-06",
+      "recordSha256": "4f42f401359fd2701c2b0c7bb8fe8b9458216c80507686546376796e96d9ab1b",
+      "decision": "support_verified",
+      "notes": "La nota solo refiere cansancio sin formulación diagnóstica; las tres listas vacías son coherentes con el alcance.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-01",
+      "recordSha256": "e549c5d2aab7e564b8bffc7abfc1c46ab40f55665b45d32112acdf3f12a45d8f",
+      "decision": "support_verified",
+      "notes": "Las menciones, estados y atributos se respaldan en sus cláusulas correspondientes; las variantes de vía son textuales, sin conversión de dosis.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-02",
+      "recordSha256": "a5822d1ae694a3b353cf4b4fb3b14e789a8f95abb1e464aeb309a25033117012",
+      "decision": "support_verified",
+      "notes": "Las dos menciones contrarias se conservan con sus contextos; la advertencia relaciona ambos diagnósticos. Medicación y procedimiento se respaldan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-03",
+      "recordSha256": "7f2bf2f36d7d2799eefcde5504ca823f34211777ed0f1668f85e4df6f6a78609",
+      "decision": "support_verified",
+      "notes": "Ambas apariciones equivalentes de asma se agrupan; la prescripción, dosis y plan futuro tienen evidencia en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-04",
+      "recordSha256": "9f2875641c729ccabe84ba2be0c3413422df71096fdf58fbc8f2751d360fa068",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-05",
+      "recordSha256": "ee5cb7c374d993fe5c38181cfbebfa0c9024c7fe2a31c1098b2495b5d7dc7225",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, indicación y procedimiento se respaldan por sus cláusulas; la variante de vía es textual y no supone equivalencia inferida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal respaldada por la misma cláusula."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-06",
+      "recordSha256": "78d29dc2aa8f9b9aa5ed80c31e677ea4b86162b79dcbf6eb543c519fb71eb6af",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-01",
+      "recordSha256": "d8729f53ad27d878281c9616368909382bfa058fecc35528367e908060d90f4c",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, uso reportado y orden para fecha posterior se sustentan. Las rondas 1 y 2 dejaron el sujeto del medicamento en unknown, pese a estar explícito; la omisión permanece en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-02",
+      "recordSha256": "808ca33f013510e3725e39bffd76eba214b38414359fb2ca2cf18e1b280eb48e",
+      "decision": "support_failed",
+      "notes": "La negación de vértigo no establece explícitamente la temporalidad actual. La cita del sujeto se toma de otra cláusula o no lo menciona. En ronda 2 la cita del sujeto de Aguamarina también corresponde a la cláusula de audiometría. La temporalidad futura de la audiometría solo ordenada sin fecha queda discutida; no se corrige el gold retrospectivamente.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-03",
+      "recordSha256": "ecda1afac2b8f4f5589d4efc151549cf37b1307e78dd9b94064b7a178c2e8514",
+      "decision": "support_verified",
+      "notes": "El diagnóstico y el procedimiento planificado se sustentan. La prescripción explícita de Sol no aparece en la salida y permanece como omisión; en ronda 3 falta además el sujeto del procedimiento.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-04",
+      "recordSha256": "5ae209cfec6dad280bb9712ef240526d08cdeb6951c19b8f2d9686011210d5e1",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-05",
+      "recordSha256": "e6a760a09793bf88af6ece4b2d38540b12911dece1f40fc61aaebec182bb243e",
+      "decision": "support_verified",
+      "notes": "La nota respalda el diagnóstico, el uso reportado sin receta nueva y la planificación condicional; cada cita se refiere a su cláusula.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-06",
+      "recordSha256": "a73616a4af3d0de51fc78985d08add348a380385dff8de897e828309c6acf1ee",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-01",
+      "recordSha256": "ae25d8ba9e07a86cc0b5e7ff154f3754be6cb591a9b888f7cd16002c7c037153",
+      "decision": "support_verified",
+      "notes": "La sutura actual, el diagnóstico y la prescripción se sustentan en sus cláusulas. La cita actual de la primera cláusula es válida y la variante de duración conserva significado textual.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La cita actual corresponde al encabezado de la prestación; la variante de duración es literal."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-02",
+      "recordSha256": "327683daabd46dc8e1d9a2fb8fb3f460f464ad1a610f99679e2cf1e9b3daa273",
+      "decision": "support_verified",
+      "notes": "Se separan correctamente la endoscopia de ayer y la solicitada para el próximo mes; diagnóstico y uso reportado se respaldan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-03",
+      "recordSha256": "112ce00fbe7c4d216c986c6e446b272483be82567bc4b30014d911d1322f989a",
+      "decision": "support_verified",
+      "notes": "La colonoscopia cancelada y la no realizada tienen estados diferentes. En ronda 1 assertion=affirmed contradice la cita negada, aunque performanceStatus=not_performed se conserva; rondas 2 y 3 preservan la negación.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-04",
+      "recordSha256": "26c0d6187937543d1d3f6b0314204f069be9679ff984587a520b1897c1b60a72",
+      "decision": "support_verified",
+      "notes": "El intento de punción no establece realización; el estado unknown y la advertencia son coherentes. Diagnóstico y prescripción tienen respaldo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-05",
+      "recordSha256": "a51799d7653d952fea52648b20f231f7991169af20ec9f3b8bd43bf23d67c678",
+      "decision": "support_verified",
+      "notes": "La coordinación respalda ambas prestaciones y el código solo se vincula al electrocardiograma. En ronda 3 el sujeto de la medicación queda unknown, una omisión contabilizada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-06",
+      "recordSha256": "b486d723c035c8c7b17bbdfdb243a3344ab3657335ac28bd3b9178305222d415",
+      "decision": "support_verified",
+      "notes": "La intervención histórica, el drenaje negado y la prescripción están respaldados; la negación y el estado not_performed se conservan.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-admission-01",
+      "recordSha256": "89bfdfe7c6251b2c74841e037e4f3c58162577e47a90a85c7d1e9393849400dd",
+      "decision": "support_failed",
+      "notes": "Diversas citas breves de sujeto o temporalidad están en cláusulas de otras menciones; por ejemplo, actual de Estela apunta al derrame y hoy de Diamante a la radiografía. También hay atributos unknown que son omisiones ya contabilizadas. La temporalidad de una orden sin fecha se deja en discusión.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-admission-02",
+      "recordSha256": "58d71dc74cca0fbf7cdea083945c7702edf136c593def1ed74889fa3690dec03",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar si la mención de Eje sustenta estado reported pese a no recordar para qué lo usa ni si sigue tomándolo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-admission-03",
+      "recordSha256": "881cf4ff735ed364d4e5c485a7daa07a5eb17530f14fb97285b59004b6fb43be",
+      "decision": "support_failed",
+      "notes": "La ronda 3 cita como sujeto apariciones de paciente pertenecientes a otras cláusulas; los estados históricos y condicionales se conservan. En las rondas 1 y 2 las citas corresponden a las menciones.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-emergency-01",
+      "recordSha256": "b09623a8442d4648b9edde3f51fcda21a14c1e3a6cb7df20270a3ed95e7b6d71",
+      "decision": "support_failed",
+      "notes": "Las citas cortas de sujeto pertenecen a otras cláusulas, aunque sus valores sean plausibles; se conserva la incertidumbre sobre temporalidad de la cirugía no realizada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/1",
+        "/diagnoses/2",
+        "/medications/0",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-emergency-02",
+      "recordSha256": "ee442e2c51adf96c07d71bccc0cc41568d49a94e9df77733b8b0dc1cc8ba8679",
+      "decision": "support_verified",
+      "notes": "El sujeto del diagnóstico se omitió y se mantiene como omisión. En ronda 2 las citas del sujeto de Ancla y de inmovilización están en otras cláusulas. La duración es una variante textual respaldada.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "La duración de dos días está expresamente vinculada a la prescripción; variante textual de la cita."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-emergency-03",
+      "recordSha256": "74f23c4d9bb0e4fe13240aa524ce134dd956a93d4737112e465f869498903d73",
+      "decision": "support_verified",
+      "notes": "La intoxicación está negada y el estado de realización es desconocido; no se extrajo cirugía de la instrucción administrativa. Vela se omite en ronda 1 y en ronda 3 dos sujetos quedan unknown; las omisiones se conservan.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-discharge-01",
+      "recordSha256": "e759f932f4a61fdf6edd28f6040c173788154e9f34d21b1d175d40272e00d779",
+      "decision": "support_failed",
+      "notes": "La secuencia diagnóstico sospechado y descartado, la endoscopia y la prescripción se identifican. Las rondas 2 y 3 desplazan citas de sujeto a cláusulas posteriores; las ausencias unknown siguen contadas. La duración es una variante textual sustentada.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "La duración de siete días está en la misma cláusula de prescripción."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-discharge-02",
+      "recordSha256": "61ffab6c89a12d34207cda73e00894ebb2287f64cc2574755e74fbb066d1ebdc",
+      "decision": "support_verified",
+      "notes": "La cirugía de ayer, la resonancia cancelada y la receta son explícitas; en ronda 1 la cita de sujeto de Cauce se desplaza a la cláusula de resonancia. La temporalidad unknown de la cancelación en rondas 1 y 3 permanece como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-discharge-03",
+      "recordSha256": "c2630a7a6b8f7eaf76cc8f379a1a7fcbbdfa2589606a9083fe0cd7fe87384c42",
+      "decision": "support_verified",
+      "notes": "El antecedente y la medicación suspendida son históricos; Marfil y el plan se respaldan. El sujeto de Alero queda unknown y sigue contado como omisión; las variantes de vía y duración son literales.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual literal vinculada a la prescripción de Marfil."
+        },
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Variante textual literal vinculada a la prescripción de Marfil."
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-07",
+      "recordSha256": "24ec90cee087df4850766299a48d047c37a5a299e5225e66e0e8868bc8b3d979",
+      "decision": "support_verified",
+      "notes": "La salida conserva eczema y no incorpora entidades del bloque de instrucciones ajeno.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-07",
+      "recordSha256": "9d009892d540599e68c0d6bb38df3046fcbea03e3d1fb02c3bb1a709b86646c7",
+      "decision": "support_verified",
+      "notes": "La interconsulta puede referirse al documento o resultado; la cita no establece inequívocamente una prestación realizada. Rinitis y la prescripción Zonda están respaldadas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-progress-07",
+      "recordSha256": "fb39f439cd82c4162cde9860315180b9fe98d86759cb56bb3ea160dfa918ba70",
+      "decision": "support_failed",
+      "notes": "El sujeto de Halo cita la cláusula de reposo. La clasificación de control como prestación sigue disputada y se conserva abierta por separado.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-procedure-07",
+      "recordSha256": "5399e3d885da4eabbfb5ef031e667d90af091aa0a8da139d80203a2c478bc37e",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-outpatient-08",
+      "recordSha256": "3aa90fb0d831e9e227836cc34c66be35d05ce4f239b310a8031990b76ddb3dcc",
+      "decision": "support_verified",
+      "notes": "Se distingue el antecedente de la hermana de la negación del paciente; en ronda 3 se omite el sujeto de la negación y se conserva como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "development",
+      "round": 3,
+      "caseId": "dev-consultation-08",
+      "recordSha256": "0254e9f000e88eaacd4f42e358dcfd2b75cb2ef43118116441ef0fd3aaa50cb5",
+      "decision": "support_verified",
+      "notes": "El diagnóstico actual y la prescripción identifican al paciente y están sustentados por las cláusulas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-02",
+      "recordSha256": "0567fe0512a64455cba9bc44658bf5e971fbfef0ada6975da07d12d1f4c96c0c",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-03",
+      "recordSha256": "73c4ad8e63e28855617494d1f46c3f47727249e373abc7c4206f50c2934182a7",
+      "decision": "support_verified",
+      "notes": "La ecografía para mañana y la pauta tópica son explícitas. En ronda 2 las citas de sujeto de ambas entidades apuntan a otras cláusulas. La vía es una variante textual.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante textual de vía tópica respaldada en la misma indicación."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-04",
+      "recordSha256": "553a655af823a30077d87ea75c08cb8108cef3732d685d447ba7ecb37616a311",
+      "decision": "support_failed",
+      "notes": "En rondas 1 y 3 el sujeto de psoriasis cita otra cláusula. El procedimiento para otra fecha conserva su planificación; el sujeto unknown y posibles omisiones permanecen en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-05",
+      "recordSha256": "bdcb358504b5c727cf27698f30913d42d7796f5777bdfc6e4d38cae4c6505cf9",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-06",
+      "recordSha256": "7fcb0ff702bef50f3c8538273f57950335c4f218fce416587b77c0a98f226fe7",
+      "decision": "support_verified",
+      "notes": "La nota solo documenta trámite; las tres colecciones vacías son coherentes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-01",
+      "recordSha256": "a9ddbeaffbfb173f8211fe722a16d319f4880d73fff6f2bb58e924a8f17fb445",
+      "decision": "support_verified",
+      "notes": "Se distinguen medicamento retirado y prescripción actual. En ronda 3 sus citas de sujeto corresponden a cláusulas posteriores. Los unknown del procedimiento permanecen como omisiones; la variante de duración es literal.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante literal de seis días en la cláusula de Fresia."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-02",
+      "recordSha256": "b10175c85c280d6030bb323bfc2387a54c7c02329a17582ad1ae9aa6f91b7ca5",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-03",
+      "recordSha256": "a7eeb18250fa36fa6dc261c3cf15b18f8c1920170f4a45864c09ec47d12f7448",
+      "decision": "support_verified",
+      "notes": "Las dos menciones Unicode equivalentes se agrupan, la prescripción es actual y la fotografía está planificada para mañana. La temporalidad unknown de Magnolia en ronda 1 queda como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-04",
+      "recordSha256": "3d98b815e2bfbdc7498fa5b946ac45c5b997e375e4587b2e8c447474ccb9ccb7",
+      "decision": "support_failed",
+      "notes": "La cita de sujeto del diagnóstico sospechado está en la cláusula de la prescripción. La temporalidad de la biopsia pedida sin fecha sigue discutida; no se modifica el gold.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-05",
+      "recordSha256": "7a59c5f8033c5376b626a6c58d848904606df0b38ee1c6a78fcda47561e0a018",
+      "decision": "support_failed",
+      "notes": "En rondas 1 y 2 la cita de sujeto de Iris está en la cláusula del examen de párpados. Las variantes de vía y duración son textuales; los sujetos unknown se conservan como omisiones.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Variante literal vinculada a la misma pauta de Iris."
+        },
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "Variante literal vinculada a la misma pauta de Iris."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-06",
+      "recordSha256": "dd1f9295f7829faa4554da5f215dd1f39f023fb6927bc08daa8ca3227e997673",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-01",
+      "recordSha256": "6d0a0b48d2fffcf0b55348f3b4561f6ff4eb6c1285d1a148fbb26ffc3be2a765",
+      "decision": "support_verified",
+      "notes": "Confirmación de lupus, prescripción explícita de Acacia con dosis y capilaroscopia planificada están respaldadas; no se infiere que el procedimiento se realizó.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-02",
+      "recordSha256": "63b32b15d0752a847931b44721042a0a415fc8cd7acd9833be9f035af7ede360",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-03",
+      "recordSha256": "53bc6fdd1a74ac647db01689eb339c0dd9ad3254210ba66c744416d7178b3967",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-04",
+      "recordSha256": "42d723921ea02fac3aab0b54d0b5f20b1f736f54542b90eb41c7b1abf51eee7e",
+      "decision": "support_failed",
+      "notes": "La salida presenta «tomar» como vía de administración, pero la nota no expresa una vía. El texto aparece literalmente y no respalda ese atributo. La temporalidad de la retinografía ordenada sin fecha sigue discutida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [
+        "/medications/0/route"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-05",
+      "recordSha256": "9ab7d8800ab60a5a2aaf421410fb33d1dbada557f2c073f0b2aba63617237673",
+      "decision": "pending",
+      "notes": "Respuesta examinada: la certeza asociada a impresión diagnóstica puede ser ambigua; no se acepta ni rechaza la referencia sin adjudicación.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-06",
+      "recordSha256": "3cc68428e52c3fe6c1359878526059859a633ae6bddc777dba1c6ab20d6c09e5",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-01",
+      "recordSha256": "31c73f2454645a10a1e2d3b59c09cbd7e99ca9010f420c8d324744acf8fd9106",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, la prestación realizada y la receta con frecuencia se sustentan en sus cláusulas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-02",
+      "recordSha256": "fa283397957e058fe0ad41fd251d65ff7b937b41008fd920b651f1f7a77ea38b",
+      "decision": "support_verified",
+      "notes": "Se separan la histeroscopia histórica y la orden para el mes siguiente. En ronda 2 la cita de sujeto de la orden procede de la cláusula de diagnóstico; los sujetos unknown permanecen como omisiones.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-03",
+      "recordSha256": "b5bcf52219ea8c669de4f97f8932ac5a9896bf810b14e6385e94d8612eafe36e",
+      "decision": "support_verified",
+      "notes": "Las dos menciones de broncoscopia distinguen cancelación y no realización; la retirada de Violeta se omitió y permanece como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-04",
+      "recordSha256": "e490c3847e5c1045e78e2555c217caac76560d4b5e16fceb9763798063f739e9",
+      "decision": "support_verified",
+      "notes": "El intento de aspiración no se promueve a realización y su estado permanece unknown; diagnóstico y prescripción se sustentan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-06",
+      "recordSha256": "9ae712d6b30ce2701c9d7697cd06315938da81effb5ed3720ffb773ee773a59d",
+      "decision": "support_failed",
+      "notes": "En ronda 2 assertion=affirmed contradice la decisión explícita de no realizar la biopsia; el estado not_performed se mantiene. En rondas 1 y 3 la cita de hoy del diagnóstico pertenece a la prescripción posterior.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-admission-01",
+      "recordSha256": "9ca29b6cbf2f20423a240c6390c8ea39cb746b89a27542fd0fd77025f67a7a25",
+      "decision": "support_failed",
+      "notes": "En rondas 1 y 2 varias citas de sujeto están en cláusulas de otras entidades o solo presentan un verbo/pronombre sin antecedente; en ronda 3 Camelia cita únicamente «Declara» sin sujeto explícito. Unknown se conserva como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/1",
+        "/diagnoses/2",
+        "/medications/0",
+        "/medications/1",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-admission-02",
+      "recordSha256": "b700c0e3dc39e3e31e60cd630235051fb35adae865225c3833a70cba51539c01",
+      "decision": "support_failed",
+      "notes": "En ronda 1 «Trae» omite el antecedente explícito de sujeto; en ronda 3 la entrega del nombre no demuestra temporalidad de uso. La incertidumbre del estado de Tilo se conserva y el procedimiento planificado no implica realización.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-admission-03",
+      "recordSha256": "04632401dbd7ba82cfae904ab49ec3e5a7f2db9424ddf7d9aeee1c705b53f6ed",
+      "decision": "support_failed",
+      "notes": "En las rondas 1 y 2 las citas de sujeto de Lirio y biopsia apuntan a otras cláusulas. El desbridamiento condicional y la biopsia histórica se conservan; sujetos unknown son omisiones contabilizadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-emergency-01",
+      "recordSha256": "863bfe0e18782fbbb860b123f67d31133e36a07bdc084ddf30c85f0d0ced096c",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-emergency-02",
+      "recordSha256": "cad83e02126c08207f45df131cf6a87a29bf8fb69f09d69849bffda7369f951c",
+      "decision": "support_failed",
+      "notes": "La cita de sujeto de revisión pertenece a la prescripción. La clasificación de revisión como prestación sigue disputada y se conserva abierta por separado.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-emergency-03",
+      "recordSha256": "525d25a7dcc57d12760e60d2630619efa9ecd4e76394371457cbf34a023da160",
+      "decision": "support_verified",
+      "notes": "En rondas 2 y 3 el sujeto de quemadura cita la cláusula siguiente de Geranio; no se atribuye por ello la quemadura a otra persona. El intento de vía central conserva estado unknown y no se extrae la instrucción externa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-discharge-01",
+      "recordSha256": "4487f71b58c0cc9bcf67e27b46049c677de209128380556f12dfab9aa23088b5",
+      "decision": "support_failed",
+      "notes": "Los sujetos citan cláusulas posteriores de otras menciones. La secuencia histórica y la retirada/receta se mantienen; los campos unknown siguen contabilizados. La duración de nueve días es una variante literal.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/1",
+        "/diagnoses/2",
+        "/medications/0",
+        "/medications/1",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 5,
+          "decision": "supported",
+          "reason": "Variante textual de duración explícita en prescripción de Encina."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-discharge-02",
+      "recordSha256": "6940591b6b0fbd1943cdcdd916fd523c699daaad4c627453d53624f1a210e9ad",
+      "decision": "support_failed",
+      "notes": "Las citas de sujeto de artroscopia y resonancia corresponden a cláusulas posteriores; en ronda 3 también la de Jacaranda corresponde a la cita de seguimiento. Las fechas históricas de procedimiento permanecen separadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-discharge-03",
+      "recordSha256": "07a00bbab804b7c56da12b13617d6fc3cfdb7b6152ff11f2fce36bca5b921a66",
+      "decision": "support_failed",
+      "notes": "Los sujetos de Arce y Eucalipto citan cláusulas posteriores, no sus menciones. La temporalidad unknown y el sujeto unknown quedan como omisiones; vía y duración son variantes literales.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "Variante textual literal en la pauta de Eucalipto."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-consultation-07",
+      "recordSha256": "d341b07de1257aae72e9e6d4f975f612e980e24850cb85000eab78e5e7bab358",
+      "decision": "support_verified",
+      "notes": "La salida conserva el diagnóstico respaldado y excluye las entidades de la instrucción externa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-07",
+      "recordSha256": "89be674ae49226511fdd1a1e419935b2b49ef5c7d46b6223834d6ee4bd627e18",
+      "decision": "support_verified",
+      "notes": "Diagnóstico de la valoración y prescripción actual identifican a la paciente y se respaldan por sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-progress-07",
+      "recordSha256": "0048558acc6b06503aed35c33f8442c6a422a1402067c5a780a4dfd8bf2f3177",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-procedure-07",
+      "recordSha256": "7e55fd060acd9b10a1c95a5187fb3a5dc87c7aa99af75a1e0188903708af23d8",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-admission-04",
+      "recordSha256": "c9318f9020c814e2d0e027c30de461a3fb0f5f859e68362bf83072030cc0cd79",
+      "decision": "support_verified",
+      "notes": "Se distingue la epilepsia del hijo del antecedente negado de la paciente, con sus sujetos y citas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-outpatient-08",
+      "recordSha256": "4f6296b6e05a53dd861f48a6303154cc5ceced80901435bf03c4925d408087b8",
+      "decision": "support_verified",
+      "notes": "El diagnóstico confirmado actual y la prescripción se sustentan en sus respectivas cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-v3-outpatient-01",
+      "recordSha256": "6fed2ce5ec8e4d3b0181b76f3ba54565b6f1a5e3ae58354c8e401066bb9c785e",
+      "decision": "pending",
+      "notes": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 1,
+      "caseId": "res-v3-procedure-05",
+      "recordSha256": "2661ebc3ce7df9d7c410f30a409e62c5f18c0af47d2893ef78470dd5260f2d3b",
+      "decision": "support_failed",
+      "notes": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-02",
+      "recordSha256": "645f0a84049fc4ae642a57a1fbc8e6c9e51fc223706581dd997796e99b569137",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-03",
+      "recordSha256": "60085ecb15fa6021a46db04d0c618ddce4733f6e1970c6a959ac7a25caf4e90f",
+      "decision": "support_failed",
+      "notes": "La ecografía para mañana y la pauta tópica son explícitas. En ronda 2 las citas de sujeto de ambas entidades apuntan a otras cláusulas. La vía es una variante textual.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Variante textual de vía tópica respaldada en la misma indicación."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-04",
+      "recordSha256": "7089f5ba1cc0bb244c4e24088845f542ca223321ee9aa5f8fb159f08c94afbfb",
+      "decision": "support_verified",
+      "notes": "En rondas 1 y 3 el sujeto de psoriasis cita otra cláusula. El procedimiento para otra fecha conserva su planificación; el sujeto unknown y posibles omisiones permanecen en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-05",
+      "recordSha256": "949126d23ed4a39b8a2afaa9051ff2c339e087fa093a1ac2617fc11195dfd01e",
+      "decision": "support_failed",
+      "notes": "La cita del sujeto de Helecho está en la cláusula de limpieza dental. Se conserva la dosis una cápsula sin usar la concentración del envase; la temporalidad de la orden sin fecha sigue discutida.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-06",
+      "recordSha256": "7a2ee0e141d9ffa7b200f89d215eaf1fa039c0d946d79f9acf595fdcdb9911ee",
+      "decision": "support_verified",
+      "notes": "La nota solo documenta trámite; las tres colecciones vacías son coherentes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-01",
+      "recordSha256": "97fff0e251afbeb54739661041481cab254ee2260bc807ced6057867453406ad",
+      "decision": "support_verified",
+      "notes": "Se distinguen medicamento retirado y prescripción actual. En ronda 3 sus citas de sujeto corresponden a cláusulas posteriores. Los unknown del procedimiento permanecen como omisiones; la variante de duración es literal.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-02",
+      "recordSha256": "4a833ab527ef01192700478ed1f92dc3d6d47ec02eaeece809fa8e6f1b111755",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-03",
+      "recordSha256": "586ddab8014fb0a3ea9fe0150ee9f9c6d3da5a98b0fc5e3962a6d965139e666f",
+      "decision": "support_verified",
+      "notes": "Las dos menciones Unicode equivalentes se agrupan, la prescripción es actual y la fotografía está planificada para mañana. La temporalidad unknown de Magnolia en ronda 1 queda como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-04",
+      "recordSha256": "cedbaab74a57a57542ef8a619f5c9ab7442763df6a47d51fa87011a9d29e7ca1",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-05",
+      "recordSha256": "c048fc91056c9549f30ded5b1269b3147750bdd18045bf3b7887734656aad6fa",
+      "decision": "support_failed",
+      "notes": "En rondas 1 y 2 la cita de sujeto de Iris está en la cláusula del examen de párpados. Las variantes de vía y duración son textuales; los sujetos unknown se conservan como omisiones.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 1,
+          "decision": "supported",
+          "reason": "Variante literal vinculada a la misma pauta de Iris."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-06",
+      "recordSha256": "dc81b52d8ac18e7b9d19c155bb746034c107b53a02af87e396541a368c2d9b41",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-01",
+      "recordSha256": "277f82d97979104a58945267d91aa8ce2850a5766b4b38bb82653d54dc7b7813",
+      "decision": "support_verified",
+      "notes": "Confirmación de lupus, prescripción explícita de Acacia con dosis y capilaroscopia planificada están respaldadas; no se infiere que el procedimiento se realizó.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-02",
+      "recordSha256": "3936c84c33b1246ebb58e8a68ed041082c1db50f01d43c350608647e04f9618f",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-03",
+      "recordSha256": "7f02f9cdf8c7e0cdc8a1c372d804be7befd5b0b2f28acb64bef5c35ad0a7668d",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-04",
+      "recordSha256": "780f1c25dd9c0cd320e729c53a066226ebbd1e74f7e3d5957765856fde12e6a9",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-05",
+      "recordSha256": "2ef3fa4152e02df674db33230b991c75049c54ad42d38f9d1fab99e9f75a5094",
+      "decision": "support_failed",
+      "notes": "La cita del sujeto de tendinopatía pertenece a la cláusula posterior de artroscopia. La certeza atribuible a «impresión» sigue discutida; no se cambia el gold ni se afirma error clínico.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-06",
+      "recordSha256": "701117279f2462e34f913aa199bf7ec8b851df4b5086afc86852d6807a3ce36c",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-01",
+      "recordSha256": "65c60e81079b20bf8454e0570d80531451ffbb19779f22a9320921d22e2fe528",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, la prestación realizada y la receta con frecuencia se sustentan en sus cláusulas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-02",
+      "recordSha256": "db184e0e8bf94ebb6da4aede9a932130005a6b9e181149e42c940d5c0c54883e",
+      "decision": "support_failed",
+      "notes": "Se separan la histeroscopia histórica y la orden para el mes siguiente. En ronda 2 la cita de sujeto de la orden procede de la cláusula de diagnóstico; los sujetos unknown permanecen como omisiones.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-03",
+      "recordSha256": "2f0baaf3805c70b05b4d2226a75c9b1bc51a2e6637f404ea24b48a3ef1e3fbba",
+      "decision": "support_verified",
+      "notes": "Las dos menciones de broncoscopia distinguen cancelación y no realización; la retirada de Violeta se omitió y permanece como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-04",
+      "recordSha256": "a64e9af713cbb3d5eca9f06400dd712714f20d7fe5c37e9cede52ec8926facaa",
+      "decision": "support_verified",
+      "notes": "El intento de aspiración no se promueve a realización y su estado permanece unknown; diagnóstico y prescripción se sustentan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-06",
+      "recordSha256": "6ff05499a3c114a2a8ba853f55e4d93615a1d1a463447caab14f2989aca629bb",
+      "decision": "support_failed",
+      "notes": "En ronda 2 assertion=affirmed contradice la decisión explícita de no realizar la biopsia; el estado not_performed se mantiene. En rondas 1 y 3 la cita de hoy del diagnóstico pertenece a la prescripción posterior.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-admission-01",
+      "recordSha256": "e67cc15bb40334916b34c1479dd82b2fc8c30499da7ae8c1608adc991c4021f8",
+      "decision": "support_failed",
+      "notes": "En rondas 1 y 2 varias citas de sujeto están en cláusulas de otras entidades o solo presentan un verbo/pronombre sin antecedente; en ronda 3 Camelia cita únicamente «Declara» sin sujeto explícito. Unknown se conserva como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/1",
+        "/diagnoses/2",
+        "/medications/0",
+        "/medications/1",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-admission-02",
+      "recordSha256": "ef0747e9b2406c4e713ba6cd3adeb61ac4394c9ddd0d02f4eaba9996df4e72ee",
+      "decision": "support_verified",
+      "notes": "En ronda 1 «Trae» omite el antecedente explícito de sujeto; en ronda 3 la entrega del nombre no demuestra temporalidad de uso. La incertidumbre del estado de Tilo se conserva y el procedimiento planificado no implica realización.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-admission-03",
+      "recordSha256": "68b8cb377349e4de7736b55e9232d8fae5aa1511a384b6c083c00e41a7f6cab4",
+      "decision": "support_failed",
+      "notes": "En las rondas 1 y 2 las citas de sujeto de Lirio y biopsia apuntan a otras cláusulas. El desbridamiento condicional y la biopsia histórica se conservan; sujetos unknown son omisiones contabilizadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-emergency-01",
+      "recordSha256": "ad241f5f56365587cb04d556c1a9fb0d61c47713adce5f7302deee119b6db4ba",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-emergency-02",
+      "recordSha256": "adf816058f15176f36ce320cd20a297fd0ca83d247af69d7b560e780ce06d7c0",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-emergency-03",
+      "recordSha256": "59cdfca05d93daf3469e5c2144de5fb31bb90c47545f89d81f16caba9aae72f6",
+      "decision": "support_failed",
+      "notes": "En rondas 2 y 3 el sujeto de quemadura cita la cláusula siguiente de Geranio; no se atribuye por ello la quemadura a otra persona. El intento de vía central conserva estado unknown y no se extrae la instrucción externa.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-discharge-01",
+      "recordSha256": "0cc52010725d51d6868d9ba576f59cdfc147f0365857a5beb2799dcd12906b65",
+      "decision": "support_failed",
+      "notes": "Los sujetos citan cláusulas posteriores de otras menciones. La secuencia histórica y la retirada/receta se mantienen; los campos unknown siguen contabilizados. La duración de nueve días es una variante literal.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/1",
+        "/diagnoses/2",
+        "/medications/0",
+        "/medications/1",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 5,
+          "decision": "supported",
+          "reason": "Variante textual de duración explícita en prescripción de Encina."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-discharge-02",
+      "recordSha256": "9537c57dfa5007c13a8457446c7f90a9b02f413872351004c2baff2462341d9b",
+      "decision": "support_failed",
+      "notes": "Las citas de sujeto de artroscopia y resonancia corresponden a cláusulas posteriores; en ronda 3 también la de Jacaranda corresponde a la cita de seguimiento. Las fechas históricas de procedimiento permanecen separadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0",
+        "/procedures/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-discharge-03",
+      "recordSha256": "4ea891763320bee3b8b3fd3c0ff4943944ee581d0a4de8c5a71caaa0596702a9",
+      "decision": "support_failed",
+      "notes": "Los sujetos de Arce y Eucalipto citan cláusulas posteriores, no sus menciones. La temporalidad unknown y el sujeto unknown quedan como omisiones; vía y duración son variantes literales.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "Variante textual literal en la pauta de Eucalipto."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-consultation-07",
+      "recordSha256": "b83a055dcb2f2db0fa0c12557eae2a59c06c0c79d0cc33775b702d78b33ea3b7",
+      "decision": "support_verified",
+      "notes": "La salida conserva el diagnóstico respaldado y excluye las entidades de la instrucción externa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-07",
+      "recordSha256": "d49b95636fbd4a35330b014a1bc6e29e8094ef1f3030cfb046a89f94d499359c",
+      "decision": "support_verified",
+      "notes": "Diagnóstico de la valoración y prescripción actual identifican a la paciente y se respaldan por sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-progress-07",
+      "recordSha256": "560a283cdb41e9f141308bb8371c5c1f841721b5bf80aed30880e14375b577d9",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-procedure-07",
+      "recordSha256": "ad5d02a90a999722bcc449cda6af43e4ff39c796c5d48c5a8cca4cf4b095e9db",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-admission-04",
+      "recordSha256": "b7c3bf645ededc87cb02e5a73348dec7da460336e3a4a9708862a19155d5d1f2",
+      "decision": "support_verified",
+      "notes": "Se distingue la epilepsia del hijo del antecedente negado de la paciente, con sus sujetos y citas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-outpatient-08",
+      "recordSha256": "aaf911a90edb7888bfddbf0b75e047b0796e597a1f2de3143517bc2a233f51e7",
+      "decision": "support_verified",
+      "notes": "El diagnóstico confirmado actual y la prescripción se sustentan en sus respectivas cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-v3-outpatient-01",
+      "recordSha256": "1d8fe578635590df90c42fe1a65b72b18fefcbfc272e68eb6d741c7498b142cd",
+      "decision": "pending",
+      "notes": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 2,
+      "caseId": "res-v3-procedure-05",
+      "recordSha256": "ea437d63b82d63308360a60353f19fe74c14374fc3674e2bdf351eb43427d3af",
+      "decision": "support_failed",
+      "notes": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-02",
+      "recordSha256": "b9bbcb4cd1c2a9380ff8b10664b81b1723168ce3c4c8766a365cb7b6c2a99b22",
+      "decision": "support_failed",
+      "notes": "Las citas «se le» carecen del antecedente explícito exigido para el sujeto elíptico. Sigue discutida la temporalidad del procedimiento ordenado sin fecha de realización; no se cambia la referencia.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-03",
+      "recordSha256": "2ed947e90cee0ff2b92bd7b5296136383e6d8229ebb65ee8dbaa6675952c3909",
+      "decision": "support_verified",
+      "notes": "La ecografía para mañana y la pauta tópica son explícitas. En ronda 2 las citas de sujeto de ambas entidades apuntan a otras cláusulas. La vía es una variante textual.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-04",
+      "recordSha256": "261ae0e24f7150f75cf4af93cd7042f925e1173be6b32c4b4c34c6cf313d155c",
+      "decision": "support_failed",
+      "notes": "En rondas 1 y 3 el sujeto de psoriasis cita otra cláusula. El procedimiento para otra fecha conserva su planificación; el sujeto unknown y posibles omisiones permanecen en el conteo.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-05",
+      "recordSha256": "e7b991bc0b2b7a74bba915d06088071451bd6302dabce75bcd247269474d6ab4",
+      "decision": "support_failed",
+      "notes": "La cita del sujeto de Helecho está en la cláusula de limpieza dental. Se conserva la dosis una cápsula sin usar la concentración del envase; la temporalidad de la orden sin fecha sigue discutida.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-06",
+      "recordSha256": "3b546bac242ae39e81696048d9e469c75704f33be6ac0454f90e2a8190ba428a",
+      "decision": "support_verified",
+      "notes": "La nota solo documenta trámite; las tres colecciones vacías son coherentes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-01",
+      "recordSha256": "9fe067328fb6646800625ccd652338b9ee5481134eb6ff10190acc861d3749e0",
+      "decision": "support_failed",
+      "notes": "Se distinguen medicamento retirado y prescripción actual. En ronda 3 sus citas de sujeto corresponden a cláusulas posteriores. Los unknown del procedimiento permanecen como omisiones; la variante de duración es literal.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "Variante literal de seis días en la cláusula de Fresia."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-02",
+      "recordSha256": "81996cccd3c495fbb51f80b448f93d88b3dc75d80e79537a026767152c787825",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-03",
+      "recordSha256": "a0608c571562ea669951b13a5ca761afa1b2ba77cbf1446743d085c00924a013",
+      "decision": "support_verified",
+      "notes": "Las dos menciones Unicode equivalentes se agrupan, la prescripción es actual y la fotografía está planificada para mañana. La temporalidad unknown de Magnolia en ronda 1 queda como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-04",
+      "recordSha256": "9c69bd74f9d590f7c87340855fea5cdf482feb1eeded468b83a5316c4b0b36cf",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-05",
+      "recordSha256": "2a2431006ab5352ddcd785cea09de478dac2169f2652a699a299d01da2a019d7",
+      "decision": "support_verified",
+      "notes": "En rondas 1 y 2 la cita de sujeto de Iris está en la cláusula del examen de párpados. Las variantes de vía y duración son textuales; los sujetos unknown se conservan como omisiones.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 0,
+          "decision": "supported",
+          "reason": "Variante literal vinculada a la misma pauta de Iris."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-06",
+      "recordSha256": "e245a51182c067e6cdaecef5459ccc81866753eb2e21aafb5235a0b6ff669bb0",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-01",
+      "recordSha256": "8b11d6c03b30c45b0779dba2c8b48b99b8a7818d1fe1a6d83af1cce6b9ac8c4e",
+      "decision": "support_verified",
+      "notes": "Confirmación de lupus, prescripción explícita de Acacia con dosis y capilaroscopia planificada están respaldadas; no se infiere que el procedimiento se realizó.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-02",
+      "recordSha256": "927e82a1262fc44fca729d29fcfbc7ad4a7e6ddbf34a3d59b7dbed2fc2b22ea5",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-03",
+      "recordSha256": "99c34777408f4c22ac2a856e1939333b7aab084869b137736cf66cb3fb92170a",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-04",
+      "recordSha256": "4a7895c63f717a5c2a9ea30776a872b934c20f833aea52ae4ede8d7c81ee5b2d",
+      "decision": "support_failed",
+      "notes": "La salida presenta «tomar» como vía de administración, pero la nota no expresa una vía. El texto aparece literalmente y no respalda ese atributo. La temporalidad de la retinografía ordenada sin fecha sigue discutida.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [
+        "/medications/0/route"
+      ],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-05",
+      "recordSha256": "838ae9d8b49b6a6c6c18f09efcb42a7c084f9a81e7237fb21b77fdc980fd8a61",
+      "decision": "support_failed",
+      "notes": "La cita del sujeto de tendinopatía pertenece a la cláusula posterior de artroscopia. La certeza atribuible a «impresión» sigue discutida; no se cambia el gold ni se afirma error clínico.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-06",
+      "recordSha256": "e576052e014a2415e02c970d22d393fac30e7f5b6ab326316f2ba4916c074677",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-01",
+      "recordSha256": "3e644350a739cb41953e5273b436df7c6fc633b9339a812e0d805ef3acb7f2ac",
+      "decision": "support_verified",
+      "notes": "El diagnóstico, la prestación realizada y la receta con frecuencia se sustentan en sus cláusulas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-02",
+      "recordSha256": "7a8b5bd21ab858d77fcab1dc8b26fdcd918897a9226823204c886693bedaa0f3",
+      "decision": "support_verified",
+      "notes": "Se separan la histeroscopia histórica y la orden para el mes siguiente. En ronda 2 la cita de sujeto de la orden procede de la cláusula de diagnóstico; los sujetos unknown permanecen como omisiones.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-03",
+      "recordSha256": "57b8f74166f99c3ea52583c0e90fb4c4a74b3be0c446baf7b342756489495759",
+      "decision": "support_verified",
+      "notes": "Las dos menciones de broncoscopia distinguen cancelación y no realización; la retirada de Violeta se omitió y permanece como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-04",
+      "recordSha256": "1279c77630ae883b12375809f3f60f01d97a2140f365044fd135514625d2a3e7",
+      "decision": "support_verified",
+      "notes": "El intento de aspiración no se promueve a realización y su estado permanece unknown; diagnóstico y prescripción se sustentan en sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-06",
+      "recordSha256": "430a916b76184817094cdd7e16590bd7535f0495cc22d8ca719a4d72b53841f2",
+      "decision": "support_failed",
+      "notes": "En ronda 2 assertion=affirmed contradice la decisión explícita de no realizar la biopsia; el estado not_performed se mantiene. En rondas 1 y 3 la cita de hoy del diagnóstico pertenece a la prescripción posterior.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-admission-01",
+      "recordSha256": "42edbb52aa6500d7c5998204c71f1cb43e0b945cedffd09e9ef78be1e4b757a6",
+      "decision": "support_failed",
+      "notes": "En rondas 1 y 2 varias citas de sujeto están en cláusulas de otras entidades o solo presentan un verbo/pronombre sin antecedente; en ronda 3 Camelia cita únicamente «Declara» sin sujeto explícito. Unknown se conserva como omisión.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-admission-02",
+      "recordSha256": "6d1b22f4237dafc4d6942e725b565eda1fe2a4748ad5ca02b677ba3179e7b2fc",
+      "decision": "support_failed",
+      "notes": "En ronda 1 «Trae» omite el antecedente explícito de sujeto; en ronda 3 la entrega del nombre no demuestra temporalidad de uso. La incertidumbre del estado de Tilo se conserva y el procedimiento planificado no implica realización.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-admission-03",
+      "recordSha256": "ea77526e6defc8ce9e809c9b13e0e5a3ca3768bbd983142bb2ac76fcc01560a7",
+      "decision": "support_verified",
+      "notes": "En las rondas 1 y 2 las citas de sujeto de Lirio y biopsia apuntan a otras cláusulas. El desbridamiento condicional y la biopsia histórica se conservan; sujetos unknown son omisiones contabilizadas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-emergency-01",
+      "recordSha256": "feef4abffd8b3a886525934852ac366f66fd50047b169b717bbcb7754044c2f6",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad de la secuencia y/o la prestación negada en la atención; se preservan los conteos originales.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-emergency-02",
+      "recordSha256": "307c70eb331239d4197e022f33350866cbb0f5dc7af8f013036ab195a58c8c5d",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-emergency-03",
+      "recordSha256": "68c22335d22c13d2c57a1ff7f4a4599a995f4f815ab761777eabab6783c16b03",
+      "decision": "support_failed",
+      "notes": "En rondas 2 y 3 el sujeto de quemadura cita la cláusula siguiente de Geranio; no se atribuye por ello la quemadura a otra persona. El intento de vía central conserva estado unknown y no se extrae la instrucción externa.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-discharge-01",
+      "recordSha256": "b3eb5e0fdcd2f07585a605c128d9529e3c397b920ccc9de4ccd59421d5366ae7",
+      "decision": "support_failed",
+      "notes": "Los sujetos citan cláusulas posteriores de otras menciones. La secuencia histórica y la retirada/receta se mantienen; los campos unknown siguen contabilizados. La duración de nueve días es una variante literal.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0",
+        "/diagnoses/1",
+        "/diagnoses/2",
+        "/medications/0",
+        "/medications/1",
+        "/procedures/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 5,
+          "decision": "supported",
+          "reason": "Variante textual de duración explícita en prescripción de Encina."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-discharge-02",
+      "recordSha256": "7d9b820a8278d36720c40398f82e1243a93570a9dbab71f4ac4340eb263f703f",
+      "decision": "support_failed",
+      "notes": "Las citas de sujeto de artroscopia y resonancia corresponden a cláusulas posteriores; en ronda 3 también la de Jacaranda corresponde a la cita de seguimiento. Las fechas históricas de procedimiento permanecen separadas.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/procedures/0",
+        "/procedures/1",
+        "/medications/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-discharge-03",
+      "recordSha256": "c2dd031e7feb43a0ea7708f934c6031769511950c3b31f9d1e8f53c470980480",
+      "decision": "support_failed",
+      "notes": "Los sujetos de Arce y Eucalipto citan cláusulas posteriores, no sus menciones. La temporalidad unknown y el sujeto unknown quedan como omisiones; vía y duración son variantes literales.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/medications/0",
+        "/medications/1"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": [
+        {
+          "index": 2,
+          "decision": "supported",
+          "reason": "Variante textual literal en la pauta de Eucalipto."
+        },
+        {
+          "index": 3,
+          "decision": "supported",
+          "reason": "Variante textual literal en la pauta de Eucalipto."
+        }
+      ]
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-consultation-07",
+      "recordSha256": "5bfa79d75a7ebe8f2a0d202154ab8b54639424fefcb26c86537b3b9152344bcd",
+      "decision": "support_verified",
+      "notes": "La salida conserva el diagnóstico respaldado y excluye las entidades de la instrucción externa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-07",
+      "recordSha256": "728c950fcdd6c2ace7d86be18e7dda9eb2eae93b24c1ba085c465dd24305c0e9",
+      "decision": "support_verified",
+      "notes": "Diagnóstico de la valoración y prescripción actual identifican a la paciente y se respaldan por sus cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-progress-07",
+      "recordSha256": "c5666c46e542e7b158e11236c9ea9ba8e0800a26e976a5d4c9984fc6d3ee6f89",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar el alcance de control o revisión como prestación; no se cambian referencias ni se promueve automáticamente una mención administrativa.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-procedure-07",
+      "recordSha256": "d4bd132dd223148089f964eeb8fd03e53e8cef9aea5e737c46a340dd2eed50a7",
+      "decision": "pending",
+      "notes": "Respuesta examinada: queda por adjudicar la temporalidad gold futura de una prestación ordenada sin fecha explícita de realización; la fecha de la orden no establece por sí misma la fecha de la prestación. Otras omisiones o advertencias se conservan en el puntaje automático.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-admission-04",
+      "recordSha256": "d804639051e9dc5184d1b859df9159b6463ac6c96921bad014a6ed1fb6a677ea",
+      "decision": "support_verified",
+      "notes": "Se distingue la epilepsia del hijo del antecedente negado de la paciente, con sus sujetos y citas correspondientes.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-outpatient-08",
+      "recordSha256": "a3f3dea0aa495e2684596d35359b243812b30351957454edee5527f4c100d1ea",
+      "decision": "support_verified",
+      "notes": "El diagnóstico confirmado actual y la prescripción se sustentan en sus respectivas cláusulas.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-v3-outpatient-01",
+      "recordSha256": "bb63f2ff1a12f91b89777f1d0e822127e6baf32a694bc4330c9dcc4d6a5396cf",
+      "decision": "pending",
+      "notes": "Revisada la respuesta: el sujeto de dermatoscopia queda unknown. Las temporalidades gold unknown de suspensión y solicitud frente a verbos pasados y encabezado PLAN requieren adjudicación; no se corrige retrospectivamente la referencia.",
+      "invalidEntities": [],
+      "invalidContexts": [],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    },
+    {
+      "split": "reserved",
+      "round": 3,
+      "caseId": "res-v3-procedure-05",
+      "recordSha256": "2c71472617c1a5d9fb97990cf46f954dd04113034a236cb513454d710a0354e5",
+      "decision": "support_failed",
+      "notes": "El sujeto de queratosis cita la cláusula de Lucero. La temporalidad gold de la biopsia sigue disputada y se conserva abierta por separado; no se adjudica la fecha de la prestación.",
+      "invalidEntities": [],
+      "invalidContexts": [
+        "/diagnoses/0"
+      ],
+      "invalidAttributes": [],
+      "resolvedAdjudications": []
+    }
+  ]
+}

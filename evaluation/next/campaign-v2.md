@@ -1,0 +1,7 @@
+# Preparación de evaluación v2
+
+Objetivo: medir `extraction-gemini-v2` y `evidence-2` con el comparador 1.0.1. Tres rondas por cada split, 39 notas por split, sin reintentos ni selección de rondas; presupuesto operativo máximo USD 10, estimado de forma conservadora con la tarifa estándar publicada por Google. Los umbrales y cero tolerancias no cambian. Solo notas sintéticas; sin datos de pacientes.
+
+Las referencias expuestas de H5 están en `exposed-regressions.json`, como archivo histórico de desarrollo y no como gold adjudicado para todos los fines. Se sustituyeron dos notas reservadas; las notas nuevas se escribieron desde cero por el mismo agente que revisó H5, sin revisión independiente ni cegamiento, y no se atribuye independencia humana a su autoría. El validador comprueba IDs, grupos y textos diferentes, no independencia semántica. Los dos reemplazos son breves y explícitos; los 37 restantes son los mismos de H5. Por estas limitaciones no presentar esta evaluación como ciega, independiente en sentido estadístico ni evidencia clínica generalizable.
+
+La versión v1 queda intacta. Los archivos v2, las referencias exactas y el JAR se congelan con hashes; el snapshot de código excluye los archivos de notas y gold, que siguen cubiertos por hashes. La decisión agregada se calcula con `release_v2.py` después de la auditoría textual de todos los intentos y exige condiciones en ambos splits. Sin auditoría o si no se completan todas las rondas, no hay aprobación. Nunca enviar referencias ni catálogos al modelo.

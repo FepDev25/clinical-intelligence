@@ -1,0 +1,10 @@
+{
+  "scope": "synthetic run files; no clinical patients or credentials",
+  "sha256": {
+    "evaluation/runs/2026-10-28-gemini38-v2/freeze.json": "917acad2c9d148f8da80180bb4a9e43fbf687af369718c4702f4961527c6fdba",
+    "evaluation/runs/2026-10-28-gemini38-v2/responses.jsonl": "b02b7853090635f42e44cf2976e458a955f8dde7fc6b2ef6f918d203fca67e12",
+    "evaluation/runs/2026-10-28-gemini38-v2/scores.json": "811b34c2500f417db2dca70ec76fe82215edc245d7ecefa5a15fa8251214ac34",
+    "evaluation/runs/2026-10-28-gemini38-v2/source-snapshot.zip": "d046668b3d7f25ae372ca05e32948d4f425732d9ebf6f02ed510260bb66fc2b1",
+    "evaluation/runs/2026-10-28-gemini38-v2/summary.json": "95cda4c1db87cc62f514afed40fc0847c90be4b08308008c71323cc5842e0a6c"
+  }
+}

@@ -1,0 +1,14 @@
+# Revisión posterior de las seis decisiones pendientes de H5
+
+Revisión textual del autor, 28-10-2026, frente a las reglas de anotación 1.0.0. No es revisión clínica independiente ni modifica `semantic-audit.json`, sus puntuaciones o la decisión negativa histórica. Los hashes de cada registro proceden de aquella auditoría; las conclusiones se aplican solo a los aspectos discutidos, no son una nueva auditoría completa de cada respuesta.
+
+| Split / intento | SHA-256 del registro | Decisión sobre la disputa | Motivo y consecuencia |
+| --- | --- | --- | --- |
+| development / dev-consultation-07 / 2 | `a94b36c86ad55b0abfc8f16e8e2f9256f522b82a0b9514abaf1aff556e4105b2` | Respaldo insuficiente para procedimiento realizado | «La interconsulta de hoy confirma» también puede referirse al documento o resultado. La cita no afirma inequívocamente la realización de una prestación al paciente. Mantener el procedimiento fuera de esta referencia de desarrollo; no declarar que se produjo una alucinación clínica. |
+| development / dev-consultation-07 / 3 | `3dbce146bef26b6dd6a03b8eb501c34e3e726cf4a53cd5fece7a8a7aed885065` | Respaldo insuficiente para procedimiento realizado | Misma formulación y mismo fundamento que ronda 2. |
+| reserved / res-outpatient-01 / 1 | `9414f35413c573d50aff4c014fd1770cd2e8dbf8455cd4e777bb7b7205e85254` | Referencia ambigua; sin adjudicar certeza | «Impresión diagnóstica» no especifica por sí sola la certeza necesaria para elegir inequívocamente entre afirmado y sospechado bajo las reglas existentes. No atribuir un error semántico confirmado ni cambiar retrospectivamente el gold. Sustituir el escenario reservado antes de una evaluación independiente y tratar esta ambigüedad en desarrollo. |
+| reserved / res-procedure-05 / 1 | `8c2096d23af46f9bdbe01e8d090cb122d5e2ee7eb2daee3511404d3e68cc415a` | Respaldo de sujeto insuficiente | La cita del medicamento solo contiene la cláusula elíptica; falta la referencia explícita al sujeto en la evidencia del campo. Las reglas exigen ambas cuando la cláusula aislada no identifica el sujeto. No se afirma que el sujeto real sea otra persona. |
+| reserved / res-procedure-05 / 2 | `e51356320865c16def2175e7dc44d837f819f1a7ba9a86dab877cfa9dee87aae` | Respaldo de sujeto insuficiente | Misma cita y regla que ronda 1. |
+| reserved / res-procedure-05 / 3 | `8a2c9fe26335e5bf029d20ecf83714a1ac616d06f5b782db8dc67b5faaa83def` | Respaldo de sujeto insuficiente | Misma cita y regla que ronda 1. |
+
+Las dos controversias reservadas fueron examinadas para esta revisión. Por tanto sus escenarios quedan expuestos: antes de la próxima evaluación deben pasar a desarrollo/regresión y reemplazarse en el reservado por escenarios de origen independiente, con validación de separación. Esta revisión no cambia ninguna cifra H5 y no transforma la referencia ambigua en una verdad clínica.

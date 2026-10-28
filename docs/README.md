@@ -1,8 +1,14 @@
 # Documentación de Clinical Intelligence
 
-Estado al cierre del 27-10-2026 (America/Guayaquil): **prototipo de Clinical Extraction implementado y evaluado; MVP no aprobado por calidad**. H1–H4 están verificados; H5 completó 234 operaciones sintéticas y dejó correcciones pendientes. Clinical Coding, History Intelligence y Charge Reconciliation no están implementadas.
+Estado al cierre del 28-10-2026 (America/Guayaquil): **prototipo de Clinical Extraction implementado y evaluado; MVP no aprobado por calidad**. La nueva campaña completó 234 operaciones sintéticas; 57 intentos siguen pendientes de adjudicación. Clinical Coding, History Intelligence y Charge Reconciliation no están implementadas.
 
-Para retomar, leer primero el [cierre de sesión](sesion-27-10-2026/README.md), [AGENTS.md](../AGENTS.md) y el [informe H5](h5-validation.md). Para consumir la API, usar la [guía H5](h5-integration.md).
+Para retomar, leer primero el [resumen de la sesión del 28-10](sesion-28-10-2026/README.md), [AGENTS.md](../AGENTS.md) y el [análisis de la evaluación](sesion-28-10-2026-evaluacion.md). La [sesión del 27-10](sesion-27-10-2026/README.md) y el [informe H5](h5-validation.md) conservan la línea base. Para consumir la API, usar la [guía H5](h5-integration.md), considerando que describe la configuración histórica.
+
+Actualización posterior: las correcciones de desarrollo del evaluador y la revisión de las seis decisiones H5 están en [evaluación 1.0.1](../evaluation/next/README.md). La evaluación histórica y su decisión negativa no cambian; la próxima campaña requiere integrar estos activos y sustituir los dos escenarios reservados examinados.
+
+La [nueva medición de extracción v2](evaluacion-28-10-2026-v2.md) completó 234 operaciones sintéticas y no aprueba automáticamente el MVP; la auditoría semántica y la revisión de dos nuevas referencias siguen pendientes.
+
+La [revisión de resultados del 28-10](sesion-28-10-2026-evaluacion.md) documenta el contraste con H5, fallos reproducidos en código, límites del modelo y próximos pasos. Se examinaron los 234 intentos; 57 siguen pendientes de adjudicación, por lo que la auditoría formal no está cerrada.
 
 ## Diseño, contratos y decisiones
 

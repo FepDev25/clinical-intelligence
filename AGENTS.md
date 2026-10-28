@@ -2,7 +2,7 @@
 
 > Instrucciones de trabajo para agentes de desarrollo. Leer este archivo antes de planificar o modificar código.
 >
-> Estado al cierre de la sesión del 27-10-2026: H1–H4 implementados/verificados; H5 medido con 234 operaciones sintéticas. **Prototipo evaluado; MVP no aprobado por calidad.** Antes de continuar, leer [estado y próximos pasos](docs/sesion-27-10-2026/README.md), [índice documental](docs/README.md) e [informe H5](docs/h5-validation.md). Las capacidades futuras no están implementadas.
+> Estado al cierre del 28-10-2026: **prototipo evaluado; MVP no aprobado por calidad**. La iteración v2 se midió con 234 operaciones sintéticas y su auditoría formal mantiene 57 intentos pendientes. Antes de continuar, leer [resumen de la sesión](docs/sesion-28-10-2026/README.md), [índice documental](docs/README.md) y [análisis detallado](docs/sesion-28-10-2026-evaluacion.md). Las capacidades futuras no están implementadas.
 
 ## 1. Contexto y ubicación
 
@@ -180,14 +180,15 @@ No anunciar funcionalidades completas si solo existe un prototipo, contrato o st
 - Estrategia de aislamiento y persistencia para futuras funciones stateful.
 - SDKs, portal de desarrolladores, rate limiting y facturación por consumo.
 - Compatibilidad normativa por país y requisitos para uso con datos reales.
-- Resolver incidencias de referencia/evaluación y seis intentos con revisión pendiente; mejorar exclusión no clínica, evidencia y contexto usando desarrollo; repetir evaluación sin rebajar criterios.
+- Adjudicar las 57 disputas de la evaluación v3; revisar referencias, asociación de evidencia, negaciones y estados con desarrollo; repetir evaluación independiente sin rebajar criterios. Las seis decisiones disputadas de H5 tienen revisión posterior documentada, sin alterar aquella auditoría histórica.
 - Clinical Coding, History Intelligence y Charge Reconciliation siguen fuera de la implementación actual.
 
 ## 10. Continuidad y documentación
 
 - El usuario autorizó cerrar esta sesión actualizando documentación y creando commits locales por bloques grandes. Esa autorización sustituye las decisiones históricas de los ledgers de no hacer commits; no implica push, publicación ni despliegue.
 - Consultar [la sesión del 27-10-2026](docs/sesion-27-10-2026/README.md) para retomar sin reconstruir toda la conversación. Los ledgers H2–H5 son historia cronológica, no instrucciones vigentes de Git.
-- La decisión final de entrega está en `release-decision.json` (control 1.0.1); el `summary.pass` del runner congelado solo tiene alcance reservado. Ver [reproducción y límites](evaluation/RUNNING.md).
+- Para el estado más reciente consultar primero [la sesión del 28-10-2026](docs/sesion-28-10-2026/README.md). La evaluación v3 y sus auditorías se preservan por separado; 57 decisiones siguen pendientes y no hay aprobación del MVP.
+- La decisión de entrega de H5 está en su `release-decision.json` (control 1.0.1); el `summary.pass` del runner congelado solo tiene alcance reservado. La evaluación v3 tiene su propia decisión y auditorías. Ver [reproducción y límites de H5](evaluation/RUNNING.md).
 - No repetir inferencia remota como parte del cierre documental o de pruebas ordinarias. Si un reservado orienta mejoras, trasladar sus escenarios a regresión y sustituirlos antes de otra evaluación independiente.
 
 **Regla final:** priorizar un producto integrable, evaluable y seguro antes que una plataforma extensa. Cada capacidad debe justificar su existencia con un problema concreto del consumidor.
