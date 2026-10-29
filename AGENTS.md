@@ -2,6 +2,8 @@
 
 > Instrucciones de trabajo para agentes de desarrollo. Leer este archivo antes de planificar o modificar código.
 >
+> Continuidad más reciente: [cierre de T1–T8 y punto de reanudación](docs/sesion-28-10-2026-cierre-t8.md). T8 está preparada y verificada offline; la campaña remota y el presupuesto propuesto de USD 20 **no están autorizados**. El usuario dejó esa decisión para otra sesión. Leer esta continuidad antes de ejecutar o reconstruir el estudio.
+>
 > Estado al cierre del 28-10-2026: **prototipo evaluado; MVP no aprobado por calidad**. La iteración v2 se midió con 234 operaciones sintéticas y su auditoría formal mantiene 57 intentos pendientes. Antes de continuar, leer [resumen de la sesión](docs/sesion-28-10-2026/README.md), [índice documental](docs/README.md) y [análisis detallado](docs/sesion-28-10-2026-evaluacion.md). Las capacidades futuras no están implementadas.
 
 ## 1. Contexto y ubicación
@@ -187,8 +189,9 @@ No anunciar funcionalidades completas si solo existe un prototipo, contrato o st
 
 - El usuario autorizó cerrar esta sesión actualizando documentación y creando commits locales por bloques grandes. Esa autorización sustituye las decisiones históricas de los ledgers de no hacer commits; no implica push, publicación ni despliegue.
 - Consultar [la sesión del 27-10-2026](docs/sesion-27-10-2026/README.md) para retomar sin reconstruir toda la conversación. Los ledgers H2–H5 son historia cronológica, no instrucciones vigentes de Git.
-- Para el estado más reciente consultar primero [la sesión del 28-10-2026](docs/sesion-28-10-2026/README.md). La evaluación v3 y sus auditorías se preservan por separado; 57 decisiones siguen pendientes y no hay aprobación del MVP.
+- Para el estado más reciente consultar primero [el cierre posterior T1–T8](docs/sesion-28-10-2026-cierre-t8.md), y después [la sesión histórica del 28-10-2026](docs/sesion-28-10-2026/README.md). La evaluación v3 y sus auditorías se preservan por separado; 57 decisiones siguen pendientes y no hay aprobación del MVP.
 - La decisión de entrega de H5 está en su `release-decision.json` (control 1.0.1); el `summary.pass` del runner congelado solo tiene alcance reservado. La evaluación v3 tiene su propia decisión y auditorías. Ver [reproducción y límites de H5](evaluation/RUNNING.md).
+- T8: preparación en commit `f038a1e`; no hay autorización de campaña ni de USD 20. No crear una autorización concedida, ejecutar conteos/generaciones ni reclamar el manifiesto hasta una decisión explícita posterior. Conservar `target/t8-frozen/` y los JAR históricos; están ignorados por Git y `mvn clean` los elimina.
 - No repetir inferencia remota como parte del cierre documental o de pruebas ordinarias. Si un reservado orienta mejoras, trasladar sus escenarios a regresión y sustituirlos antes de otra evaluación independiente.
 
 **Regla final:** priorizar un producto integrable, evaluable y seguro antes que una plataforma extensa. Cada capacidad debe justificar su existencia con un problema concreto del consumidor.
