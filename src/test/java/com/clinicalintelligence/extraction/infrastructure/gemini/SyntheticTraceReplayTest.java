@@ -89,14 +89,14 @@ class SyntheticTraceReplayTest {
         assertEquals(Set.of(new ExtractionTrace.Rejection("mentionedCode",ExtractionTrace.Reason.TEXT_LITERAL_REJECTED),
                 new ExtractionTrace.Rejection("duration",ExtractionTrace.Reason.MEDICATION_ASSOCIATION_REJECTED)), Set.copyOf(trace.decisions.getFirst().rejections()));
     }
-    @Test void tracingDoesNotRepairTheKnownOtherEntityCodeLimitation() {
+    @Test void tracingRecordsTheOtherEntityCodeAssociationRejection() {
         var trace = new RecordingTrace();
         String note = NOTE + " Código de otro medicamento Beta: J02.";
         var m = medication(note);
         var modified = new Medication(m.name(), text(note,"J02"), m.context(), m.prescriptionStatus(), m.dosage(),null,null,null);
         new ExtractionService(ignored -> completed(new Proposal(List.of(modified),List.of()))).extract(Command.note(note),trace);
-        assertEquals("J02", trace.result.medications().getFirst().mention().mentionedCode().value());
-        assertTrue(trace.decisions.getFirst().rejections().isEmpty());
+        assertNull(trace.result.medications().getFirst().mention().mentionedCode());
+        assertEquals(List.of(new ExtractionTrace.Rejection("mentionedCode",ExtractionTrace.Reason.TEXT_ASSOCIATION_REJECTED)),trace.decisions.getFirst().rejections());
     }
     @Test void callbackFailureCannotChangeOutcomeOrLeakItsMessage() throws Exception {
         ExtractionTrace throwing = new ExtractionTrace() {

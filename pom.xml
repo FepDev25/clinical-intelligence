@@ -56,6 +56,11 @@
         <includes><include>development.json</include></includes>
         <targetPath>corpus</targetPath>
       </testResource>
+      <testResource>
+        <directory>evaluation/next</directory>
+        <includes><include>development.json</include></includes>
+        <targetPath>corpus-v1.0.1</targetPath>
+      </testResource>
     </testResources>
     <plugins>
       <plugin>

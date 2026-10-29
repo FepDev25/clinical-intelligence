@@ -12,6 +12,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public final class ExtractionService {
+    public static final String VALIDATION_VERSION = "evidence-3";
     private final ExtractionProvider provider;
     private final InputPolicy input;
     private final EvidencePolicy evidence = new EvidencePolicy();
@@ -48,6 +49,7 @@ public final class ExtractionService {
         ExtractionTrace.emit(trace, sink -> sink.decodedProposal(response.proposal()));
         validateNotices(response.proposal());
         var resolver = new CatalogResolver(command.catalogs());
+        var association = new MentionAssociationPolicy(command.clinicalNote(), response.proposal().mentions());
         var findings = new ArrayList<Accepted>();
         var warnings = new ArrayList<Warning>();
         var counts = new EnumMap<Kind, Integer>(Kind.class);
@@ -68,7 +70,7 @@ public final class ExtractionService {
             }
             int index = counts.getOrDefault(proposed.kind(), 0);
             String path = "/" + collection(proposed.kind()) + "/" + index;
-            Mention accepted = sanitize(command.clinicalNote(), proposed, path, warnings, rejections);
+            Mention accepted = sanitize(command.clinicalNote(), proposed, path, warnings, rejections, association);
             String id = switch (accepted.kind()) { case DIAGNOSIS -> "d"; case MEDICATION -> "m"; case PROCEDURE -> "p"; } + (index + 1);
             findings.add(new Accepted(id, accepted, resolver.resolve(accepted.kind(), accepted.name().value())));
             paths.put(i, path);
@@ -83,7 +85,7 @@ public final class ExtractionService {
         }
         var metadata = response.metadata();
         var result = new Result(UUID.randomUUID(), locale, findings, warnings,
-                new Processing("extraction-core-0.1.0", metadata.promptVersion(), "evidence-2",
+                new Processing("extraction-core-0.1.0", metadata.promptVersion(), VALIDATION_VERSION,
                         metadata.executionMode(), metadata.provider(), metadata.model()));
         ExtractionTrace.emit(trace, sink -> sink.completed(result));
         return result;
@@ -117,54 +119,45 @@ public final class ExtractionService {
                 || !EvidencePolicy.nonblankScalar(metadata.model()) || metadata.executionMode() == null) invalidResponse();
     }
 
-    private Mention sanitize(String note, Mention proposed, String path, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections) {
+    private Mention sanitize(String note, Mention proposed, String path, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections, MentionAssociationPolicy association) {
         Context raw = proposed.context();
         Context context = new Context(
                 grounded(note, raw == null ? null : raw.assertion(), Assertion.UNKNOWN, path + suffix(Field.ASSERTION), warnings, rejections),
                 grounded(note, raw == null ? null : raw.temporality(), Temporality.UNKNOWN, path + suffix(Field.TEMPORALITY), warnings, rejections),
                 grounded(note, raw == null ? null : raw.subject(), Subject.UNKNOWN, path + suffix(Field.SUBJECT), warnings, rejections));
         Text code = text(note, proposed.mentionedCode(), path + suffix(Field.MENTIONED_CODE), warnings, rejections);
+        if (code != null && !association.supports(proposed, code, true)) {
+            discardedAttribute(path + suffix(Field.MENTIONED_CODE), warnings, rejections, ExtractionTrace.Reason.TEXT_ASSOCIATION_REJECTED);
+            code = null;
+        }
         return switch (proposed) {
             case Diagnosis d -> new Diagnosis(d.name(), code, context);
-            case Medication m -> medication(note, m, code, context, path, warnings, rejections);
+            case Medication m -> medication(note, m, code, context, path, warnings, rejections, association);
             case Procedure p -> new Procedure(p.name(), code, context,
                     grounded(note, p.performanceStatus(), PerformanceStatus.UNKNOWN, path + suffix(Field.PERFORMANCE_STATUS), warnings, rejections));
         };
     }
 
-    private Medication medication(String note, Medication proposed, Text code, Context context, String path, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections) {
+    private Medication medication(String note, Medication proposed, Text code, Context context, String path, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections, MentionAssociationPolicy association) {
         var status = grounded(note, proposed.prescriptionStatus(), PrescriptionStatus.UNKNOWN, path + suffix(Field.PRESCRIPTION_STATUS), warnings, rejections);
         var scopes = new ArrayList<Evidence>(context.assertion().evidence());
         scopes.addAll(status.evidence());
         return new Medication(proposed.name(), code, context, status,
-                medicationText(note, proposed.name(), scopes, proposed.dosage(), path + suffix(Field.DOSAGE), warnings, rejections),
-                medicationText(note, proposed.name(), scopes, proposed.frequency(), path + suffix(Field.FREQUENCY), warnings, rejections),
-                medicationText(note, proposed.name(), scopes, proposed.route(), path + suffix(Field.ROUTE), warnings, rejections),
-                medicationText(note, proposed.name(), scopes, proposed.duration(), path + suffix(Field.DURATION), warnings, rejections));
+                medicationText(note, proposed.name(), scopes, proposed.dosage(), path + suffix(Field.DOSAGE), warnings, rejections, proposed, association),
+                medicationText(note, proposed.name(), scopes, proposed.frequency(), path + suffix(Field.FREQUENCY), warnings, rejections, proposed, association),
+                medicationText(note, proposed.name(), scopes, proposed.route(), path + suffix(Field.ROUTE), warnings, rejections, proposed, association),
+                medicationText(note, proposed.name(), scopes, proposed.duration(), path + suffix(Field.DURATION), warnings, rejections, proposed, association));
     }
 
-    private Text medicationText(String note, Text name, List<Evidence> scopes, Text proposed, String target, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections) {
+    private Text medicationText(String note, Text name, List<Evidence> scopes, Text proposed, String target, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections, Mention owner, MentionAssociationPolicy association) {
         if (proposed == null) return null;
         boolean literal = evidence.validText(note, proposed);
         boolean associated = literal && proposed.evidence().stream().allMatch(span ->
-                scopes.stream().anyMatch(scope -> containsNameOccurrence(scope, name)
+                scopes.stream().anyMatch(scope -> association.scopeContainsName(name, scope)
                         && scope.start() <= span.start() && span.end() <= scope.end()));
-        if (associated) return proposed;
+        if (associated && association.supports(owner, proposed, false)) return proposed;
         discardedAttribute(target, warnings, rejections, literal ? ExtractionTrace.Reason.MEDICATION_ASSOCIATION_REJECTED : ExtractionTrace.Reason.TEXT_LITERAL_REJECTED);
         return null;
-    }
-
-    private boolean containsNameOccurrence(Evidence scope, Text name) {
-        for (Evidence anchor : name.evidence()) {
-            int position = anchor.quote().indexOf(name.value());
-            while (position >= 0) {
-                int start = anchor.start() + anchor.quote().codePointCount(0, position);
-                int end = start + name.value().codePointCount(0, name.value().length());
-                if (scope.start() <= start && end <= scope.end()) return true;
-                position = anchor.quote().indexOf(name.value(), position + 1);
-            }
-        }
-        return false;
     }
 
     private Text text(String note, Text proposed, String target, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections) {

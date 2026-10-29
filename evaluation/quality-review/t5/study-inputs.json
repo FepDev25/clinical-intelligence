@@ -1,0 +1,7 @@
+{
+  "scope": "fixed scripted proposals and field references, before T5 policy implementation",
+  "sha256": {
+    "src/test/java/com/clinicalintelligence/extraction/testing/AssociationCases.java": "d057dba3e1d8e92c7d042aad9c66d570add437105072a68c7929ee10b1a54526",
+    "src/test/java/com/clinicalintelligence/extraction/testing/AssociationStudy.java": "f0b0e0cce107dfb8dec448514f9b3e8c8cb1064bf67d2a42b1ab91cdbc009c7d"
+  }
+}

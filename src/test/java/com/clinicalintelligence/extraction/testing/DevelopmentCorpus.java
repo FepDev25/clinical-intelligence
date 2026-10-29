@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/** Test-only fixture decoder. Runtime code neither loads gold nor reads corpus IDs. */
+/** Test-only decoder of the existing development revision 1.0.1 (Brisa anchor corrected).
+ * Historical v1 remains untouched. Runtime never loads gold or corpus IDs. */
 public final class DevelopmentCorpus {
     private DevelopmentCorpus() {}
     public record Case(String id, Command command, Proposal proposal, List<CatalogMatch> matches, List<Warning> requiredWarnings) {}
 
     public static List<Case> load() throws IOException {
-        try (var stream = DevelopmentCorpus.class.getResourceAsStream("/corpus/development.json")) {
+        try (var stream = DevelopmentCorpus.class.getResourceAsStream("/corpus-v1.0.1/development.json")) {
             if (stream == null) throw new IOException("Development fixture resource missing");
             JsonNode root = new ObjectMapper().readTree(stream);
             var cases = new ArrayList<Case>();

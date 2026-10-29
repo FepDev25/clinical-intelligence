@@ -1,0 +1,118 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24280 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] -----------< com.clinicalintelligence:clinical-intelligence >-----------
+[INFO] Building Clinical Intelligence 0.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ clinical-intelligence ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ clinical-intelligence ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ clinical-intelligence ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] Copying 1 resource from evaluation/corpus/v1 to target/test-classes/corpus
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ clinical-intelligence ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ clinical-intelligence ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.clinicalintelligence.testing.NetworkIsolationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in com.clinicalintelligence.testing.NetworkIsolationTest
+[INFO] Running com.clinicalintelligence.extraction.domain.ClinicalModelTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.clinicalintelligence.extraction.domain.ClinicalModelTest
+[INFO] Running com.clinicalintelligence.extraction.application.CatalogResolverTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s -- in com.clinicalintelligence.extraction.application.CatalogResolverTest
+[INFO] Running com.clinicalintelligence.extraction.application.AssociationUnicodeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in com.clinicalintelligence.extraction.application.AssociationUnicodeTest
+[INFO] Running com.clinicalintelligence.extraction.application.DevelopmentCorpusTest
+[ERROR] Tests run: 40, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.197 s <<< FAILURE! -- in com.clinicalintelligence.extraction.application.DevelopmentCorpusTest
+[ERROR] com.clinicalintelligence.extraction.application.DevelopmentCorpusTest.preservesSupportedDevelopmentProposalsAndResolvesCatalogs()[5] -- Time elapsed: 0.013 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Supported attributes/context must survive ==> expected: <Medication[name=Text[redacted], mentionedCode=null, context=Context[assertion=Grounded[value=AFFIRMED, evidence=[Evidence[redacted]]], temporality=Grounded[value=CURRENT, evidence=[Evidence[redacted]]], subject=Grounded[value=PATIENT, evidence=[Evidence[redacted]]]], prescriptionStatus=Grounded[value=PRESCRIBED, evidence=[Evidence[redacted]]], dosage=Text[redacted], frequency=null, route=null, duration=null]> but was: <Medication[name=Text[redacted], mentionedCode=null, context=Context[assertion=Grounded[value=AFFIRMED, evidence=[Evidence[redacted]]], temporality=Grounded[value=CURRENT, evidence=[Evidence[redacted]]], subject=Grounded[value=PATIENT, evidence=[Evidence[redacted]]]], prescriptionStatus=Grounded[value=PRESCRIBED, evidence=[Evidence[redacted]]], dosage=null, frequency=null, route=null, duration=null]>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+	at com.clinicalintelligence.extraction.application.DevelopmentCorpusTest.lambda$preservesSupportedDevelopmentProposalsAndResolvesCatalogs$1(DevelopmentCorpusTest.java:26)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.clinicalintelligence.extraction.application.InputPolicyTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.clinicalintelligence.extraction.application.InputPolicyTest
+[INFO] Running com.clinicalintelligence.extraction.application.EvidencePolicyTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.clinicalintelligence.extraction.application.EvidencePolicyTest
+[INFO] Running com.clinicalintelligence.extraction.application.AssociationReviewTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.clinicalintelligence.extraction.application.AssociationReviewTest
+[INFO] Running com.clinicalintelligence.extraction.application.ExtractionServiceTest
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in com.clinicalintelligence.extraction.application.ExtractionServiceTest
+[INFO] Running com.clinicalintelligence.extraction.application.AssociationPolicyTest
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s -- in com.clinicalintelligence.extraction.application.AssociationPolicyTest
+[INFO] Running com.clinicalintelligence.extraction.infrastructure.gemini.ProviderFailureMappingTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.clinicalintelligence.extraction.infrastructure.gemini.ProviderFailureMappingTest
+[INFO] Running com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocolTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 s -- in com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocolTest
+[INFO] Running com.clinicalintelligence.extraction.infrastructure.gemini.SyntheticTraceReplayTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 s -- in com.clinicalintelligence.extraction.infrastructure.gemini.SyntheticTraceReplayTest
+[INFO] Running com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProviderTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.294 s -- in com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProviderTest
+[INFO] Running com.clinicalintelligence.http.StartupTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.111 s -- in com.clinicalintelligence.http.StartupTest
+[INFO] Running com.clinicalintelligence.http.CredentialStoreTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.clinicalintelligence.http.CredentialStoreTest
+[INFO] Running com.clinicalintelligence.http.WireContractTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.clinicalintelligence.http.WireContractTest
+[INFO] Running com.clinicalintelligence.http.RegisteredLocaleTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.clinicalintelligence.http.RegisteredLocaleTest
+[INFO] Running com.clinicalintelligence.http.ApiIntegrationTest
+2026-10-28T20:10:28.125-05:00  INFO 227854 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.4 using Java 21.0.13.0.2 with PID 227854 (started by felipep in /home/felipep/Software/medical-solutions/clinical-intelligence)
+2026-10-28T20:10:28.127-05:00  INFO 227854 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : No active profile set, falling back to 1 default profile: "default"
+2026-10-28T20:10:28.393-05:00  INFO 227854 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-10-28T20:10:28.403-05:00  INFO 227854 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-28T20:10:28.403-05:00  INFO 227854 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-28T20:10:28.425-05:00  INFO 227854 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-28T20:10:28.425-05:00  INFO 227854 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 296 ms
+2026-10-28T20:10:28.628-05:00  INFO 227854 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 45267 (http) with context path '/'
+2026-10-28T20:10:28.635-05:00  INFO 227854 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.527 seconds (process running for 6.176)
+2026-10-28T20:10:28.684-05:00  INFO 227854 --- [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28T20:10:28.684-05:00  INFO 227854 --- [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-28T20:10:28.685-05:00  INFO 227854 --- [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-28T20:10:28.980-05:00  INFO 227854 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-28T20:10:28.982-05:00  INFO 227854 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.890 s -- in com.clinicalintelligence.http.ApiIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   DevelopmentCorpusTest.lambda$preservesSupportedDevelopmentProposalsAndResolvesCatalogs$1:26 Supported attributes/context must survive ==> expected: <Medication[name=Text[redacted], mentionedCode=null, context=Context[assertion=Grounded[value=AFFIRMED, evidence=[Evidence[redacted]]], temporality=Grounded[value=CURRENT, evidence=[Evidence[redacted]]], subject=Grounded[value=PATIENT, evidence=[Evidence[redacted]]]], prescriptionStatus=Grounded[value=PRESCRIBED, evidence=[Evidence[redacted]]], dosage=Text[redacted], frequency=null, route=null, duration=null]> but was: <Medication[name=Text[redacted], mentionedCode=null, context=Context[assertion=Grounded[value=AFFIRMED, evidence=[Evidence[redacted]]], temporality=Grounded[value=CURRENT, evidence=[Evidence[redacted]]], subject=Grounded[value=PATIENT, evidence=[Evidence[redacted]]]], prescriptionStatus=Grounded[value=PRESCRIBED, evidence=[Evidence[redacted]]], dosage=null, frequency=null, route=null, duration=null]>
+[INFO] 
+[ERROR] Tests run: 193, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.867 s
+[INFO] Finished at: 2026-10-28T20:10:29-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.4:test (default-test) on project clinical-intelligence: There are test failures.
+[ERROR] 
+[ERROR] See /home/felipep/Software/medical-solutions/clinical-intelligence/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

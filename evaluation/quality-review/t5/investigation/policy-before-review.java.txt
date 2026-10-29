@@ -1,0 +1,141 @@
+package com.clinicalintelligence.extraction.application;
+
+import static com.clinicalintelligence.extraction.domain.ClinicalModel.*;
+import java.util.*;
+import java.util.regex.Pattern;
+
+/** Request-local structural guard. Passing it is not semantic or clinical validation. */
+public final class MentionAssociationPolicy {
+    private record Span(int start,int end) {}
+    private record Unit(int start,int end,int group) {}
+    private record Head(Kind kind,String name,Span span) {}
+    private static final Pattern COORD = Pattern.compile("(?iu)[ \\t]+(?:y|e|pero)[ \\t]+");
+    private static final Pattern LABEL = Pattern.compile("(?iu)^(?:dosis|frecuencia|v[ií]a|duraci[oó]n|c[oó]digo(?: externo| textual)?|posolog[ií]a)\\b");
+    private static final Pattern ANAPHORA = Pattern.compile("(?iu)^(?:su\\s+(?:dosis|frecuencia|v[ií]a|duraci[oó]n|c[oó]digo)|para\\s+este\\s+medicamento)\\b");
+    private static final Pattern SHARED = Pattern.compile("(?iu)^(?:(?:para\\s+)?ambos|cada\\s+uno|para\\s+los\\s+dos)\\b");
+    private static final Pattern ABBREVIATION = Pattern.compile("(?u)(?:\\p{L}\\.){2,}$");
+    private final String note;
+    private final int[] charOffsets;
+    private final List<Unit> units;
+    private final List<Head> heads;
+    private final EvidencePolicy evidence = new EvidencePolicy();
+
+    public MentionAssociationPolicy(String note,List<Mention> proposed) {
+        this.note=note;
+        charOffsets=new int[note.codePointCount(0,note.length())+1];
+        int cp=0;
+        for(int c=0;c<note.length();) {charOffsets[cp++]=c;c+=Character.charCount(note.codePointAt(c));}
+        charOffsets[cp]=note.length();
+        units=split();
+        var found=new LinkedHashSet<Head>();
+        for(var mention:proposed) if(evidence.validText(note,mention.name()))
+            for(var span:anchors(mention.name()))found.add(new Head(mention.kind(),mention.name().value(),span));
+        heads=List.copyOf(found);
+    }
+    public boolean supports(Mention owner,Text attribute,boolean code) {
+        if(!evidence.validText(note,owner.name()) || !evidence.validText(note,attribute))return false;
+        Set<Span> selected=anchors(owner.name());
+        for(Span value:anchors(attribute)) {
+            int index=unitOf(value);
+            if(index<0 || value.start()<units.get(index).start() || value.end()>units.get(index).end())return false;
+            if(localOwner(owner,selected,index,value.start(),code) || code && prefixOwner(owner,selected,index,value))continue;
+            if(!code && sharedOwner(owner,selected,index,value))continue;
+            boolean linked=false;
+            int current=index;
+            while(current>0 && continuation(owner,current)) {
+                Unit here=units.get(current),previous=units.get(current-1);
+                if(hasHead(owner,code,current))break;
+                if(previous.group()!=here.group()) {
+                    if(!ANAPHORA.matcher(body(here)).find() || note.substring(previous.end(),here.start()).matches("(?s).*\\R\\s*\\R.*"))break;
+                    long owners=heads.stream().filter(h -> relevant(h,owner,code) && unitOf(h.span())>=0 && units.get(unitOf(h.span())).group()==previous.group()).count();
+                    if(owners!=1)break;
+                }
+                current--;
+                if(localOwner(owner,selected,current,units.get(current).end(),code)) {linked=true;break;}
+                if(hasHead(owner,code,current))break;
+            }
+            if(!linked)return false;
+        }
+        return !anchors(attribute).isEmpty();
+    }
+    private boolean hasHead(Mention owner,boolean code,int unit) {return heads.stream().anyMatch(h -> relevant(h,owner,code) && unitOf(h.span())==unit);}
+    private boolean relevant(Head head,Mention owner,boolean code) {return code || head.kind()==owner.kind();}
+    private boolean localOwner(Mention owner,Set<Span> selected,int unit,int before,boolean code) {
+        var eligible=heads.stream().filter(h -> relevant(h,owner,code) && unitOf(h.span())==unit && h.span().end()<=before).toList();
+        int latest=eligible.stream().mapToInt(h -> h.span().end()).max().orElse(-1);
+        return latest>=0 && eligible.stream().filter(h -> h.span().end()==latest).allMatch(h -> h.kind()==owner.kind() && selected.contains(h.span()));
+    }
+    private boolean prefixOwner(Mention owner,Set<Span> selected,int index,Span value) {
+        Unit unit=units.get(index);
+        if(heads.stream().anyMatch(h -> unitOf(h.span())==index && h.span().end()<=value.start()))return false;
+        var following=heads.stream().filter(h -> unitOf(h.span())==index && h.span().start()>=value.end()).toList();
+        int first=following.stream().mapToInt(h -> h.span().start()).min().orElse(-1);
+        if(first<0 || !following.stream().filter(h -> h.span().start()==first).allMatch(h -> h.kind()==owner.kind() && selected.contains(h.span())))return false;
+        String prefix=note.substring(unit.start(),value.start()).strip();
+        String link=note.substring(value.end(),first).strip();
+        return (prefix.isEmpty() || prefix.matches("(?iu)c[oó]digo(?: externo| textual)?[ :]*"))
+                && link.matches("(?iu)[ :—–-]*(?:(?:de|para|diagn[oó]stico|procedimiento)[ :—–-]*)?");
+    }
+    private boolean continuation(Mention owner,int index) {
+        String text=body(units.get(index));
+        if(LABEL.matcher(text).find() || ANAPHORA.matcher(text).find())return true;
+        for(Text attribute:attributes(owner))if(attribute!=null && text.equals(attribute.value()))return true;
+        return false;
+    }
+    private static List<Text> attributes(Mention mention) {
+        var result=new ArrayList<Text>();result.add(mention.mentionedCode());
+        if(mention instanceof Medication m) {result.add(m.dosage());result.add(m.frequency());result.add(m.route());result.add(m.duration());}
+        return result;
+    }
+    private boolean sharedOwner(Mention owner,Set<Span> selected,int index,Span value) {
+        Unit unit=units.get(index);var marker=SHARED.matcher(body(unit));
+        if(!marker.find())return false;
+        var candidates=heads.stream().filter(h -> h.kind()==owner.kind() && unitOf(h.span())>=0 && units.get(unitOf(h.span())).group()==unit.group() && h.span().end()<=unit.start())
+                .sorted(Comparator.comparingInt(h -> h.span().start())).toList();
+        if(candidates.size()<2)return false;
+        Head a=candidates.get(candidates.size()-2),b=candidates.get(candidates.size()-1);
+        if(a.name().equals(b.name()) || a.span().end()>b.span().start())return false;
+        return (selected.contains(a.span()) || selected.contains(b.span()))
+                && note.substring(a.span().end(),b.span().start()).strip().matches("(?iu)(?:y|e|,)")
+                && note.substring(b.span().end(),unit.start()).matches("[\\s,;]*")
+                && value.start()>=unit.start()+marker.end();
+    }
+    private Set<Span> anchors(Text text) {
+        var result=new LinkedHashSet<Span>();
+        for(Evidence span:text.evidence()) {
+            int from=0,at;
+            while((at=span.quote().indexOf(text.value(),from))>=0) {
+                int start=charOffsets[span.start()]+at;
+                result.add(new Span(start,start+text.value().length()));from=at+1;
+            }
+        }
+        return result;
+    }
+    private int unitOf(Span span) {
+        int first=unitAt(span.start()),last=unitAt(span.end()-1);
+        return first<0 || last<0 || units.get(first).group()!=units.get(last).group() ? -1 : last;
+    }
+    private int unitAt(int position) {
+        int low=0,high=units.size()-1;
+        while(low<=high) {int mid=(low+high)>>>1;Unit u=units.get(mid);if(position<u.start())high=mid-1;else if(position>=u.end())low=mid+1;else return mid;}
+        return -1;
+    }
+    private String body(Unit unit) {return note.substring(unit.start(),unit.end()).strip();}
+    private List<Unit> split() {
+        var result=new ArrayList<Unit>();int start=0,group=0;
+        for(int i=0;i<note.length();) {
+            char c=note.charAt(i);int length=0;boolean hard=false;
+            if(c=='\r'||c=='\n') {length=c=='\r'&&i+1<note.length()&&note.charAt(i+1)=='\n'?2:1;hard=note.substring(start,i).isBlank();}
+            else if(c==';'||c==',') {if(c!=',' || i==0 || i+1==note.length() || !Character.isDigit(note.charAt(i-1)) || !Character.isDigit(note.charAt(i+1)))length=1;}
+            else if((c=='.'||c=='!'||c=='?') && (i+1==note.length()||Character.isWhitespace(note.charAt(i+1)))) {
+                if(c!='.' || !ABBREVIATION.matcher(note.substring(Math.max(start,i-10),i+1)).find()) {length=1;hard=true;}
+            } else if(c==' '||c=='\t') {var m=COORD.matcher(note);m.region(i,note.length());if(m.lookingAt())length=m.end()-i;}
+            if(length==0) {i++;continue;}
+            if(!note.substring(start,i).isBlank())result.add(new Unit(start,i,group));
+            if(hard)group++;
+            i+=length;start=i;
+        }
+        if(start<note.length()&&!note.substring(start).isBlank())result.add(new Unit(start,note.length(),group));
+        return List.copyOf(result);
+    }
+}

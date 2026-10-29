@@ -1,0 +1,11 @@
+{
+  "baselineCommit": "02841c9932940e7b91df66320ef80c0de1eec63b",
+  "jarPath": "target/t5-baseline/application.jar",
+  "jarSha256": "75de6b1bc95386c09d2794962c85bf2604e6fca8c71e1e05a674b5f7253bea7c",
+  "scope": "Actual T4 compiled application copied before T5 changes; no network or inference",
+  "sourceSha256": {
+    "src/main/java/com/clinicalintelligence/extraction/application/ExtractionService.java": "36efd86fdfa432e606cde7099b2c61502686e56afe62665609967311764ab0af",
+    "src/main/java/com/clinicalintelligence/extraction/application/ExtractionTrace.java": "18df26a4e923ac65ea1328ef475570ae8c0a1e7f4bb253dbdfeefd9fa622cff6",
+    "src/main/java/com/clinicalintelligence/extraction/application/EvidencePolicy.java": "004717bfa5d3848cfb9e7f47e588e81952573413bb2416eafa63bac26c2423f2"
+  }
+}

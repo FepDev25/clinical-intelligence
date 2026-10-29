@@ -1,0 +1,526 @@
+{
+  "version": "association-study-summary-1",
+  "original": {
+    "scope": "synthetic field references; not extraction precision, clinical quality or model improvement",
+    "cases": 30,
+    "before": {
+      "positive": {
+        "total": 24,
+        "retained": 24,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 14,
+        "blocked": 0,
+        "leaked": 14
+      },
+      "residual": {
+        "total": 1,
+        "blocked": 0,
+        "leaked": 1
+      }
+    },
+    "after": {
+      "positive": {
+        "total": 24,
+        "retained": 24,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 14,
+        "blocked": 14,
+        "leaked": 0
+      },
+      "residual": {
+        "total": 1,
+        "blocked": 0,
+        "leaked": 1
+      }
+    },
+    "fields": [
+      {
+        "caseId": "positive-simple",
+        "path": "/medications/0/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "positive-multiline-label",
+        "path": "/medications/0/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "positive-multiline-values",
+        "path": "/medications/0/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "positive-multiline-values",
+        "path": "/medications/0/frequency",
+        "value": "cada 8 horas",
+        "role": "positive",
+        "before": "cada 8 horas",
+        "after": "cada 8 horas"
+      },
+      {
+        "caseId": "positive-multiline-values",
+        "path": "/medications/0/route",
+        "value": "oral",
+        "role": "positive",
+        "before": "oral",
+        "after": "oral"
+      },
+      {
+        "caseId": "positive-multiline-values",
+        "path": "/medications/0/duration",
+        "value": "durante 3 días",
+        "role": "positive",
+        "before": "durante 3 días",
+        "after": "durante 3 días"
+      },
+      {
+        "caseId": "positive-pronoun",
+        "path": "/medications/0/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "positive-equal-doses",
+        "path": "/medications/0/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "positive-equal-doses",
+        "path": "/medications/1/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "positive-shared-frequency",
+        "path": "/medications/0/frequency",
+        "value": "cada 8 horas",
+        "role": "positive",
+        "before": "cada 8 horas",
+        "after": "cada 8 horas"
+      },
+      {
+        "caseId": "positive-shared-frequency",
+        "path": "/medications/1/frequency",
+        "value": "cada 8 horas",
+        "role": "positive",
+        "before": "cada 8 horas",
+        "after": "cada 8 horas"
+      },
+      {
+        "caseId": "positive-second-occurrence",
+        "path": "/medications/0/dosage",
+        "value": "9 mg",
+        "role": "positive",
+        "before": "9 mg",
+        "after": "9 mg"
+      },
+      {
+        "caseId": "positive-decimals-abbreviation",
+        "path": "/medications/0/dosage",
+        "value": "1,5 mg",
+        "role": "positive",
+        "before": "1,5 mg",
+        "after": "1,5 mg"
+      },
+      {
+        "caseId": "positive-decimals-abbreviation",
+        "path": "/medications/0/frequency",
+        "value": "cada 8 horas",
+        "role": "positive",
+        "before": "cada 8 horas",
+        "after": "cada 8 horas"
+      },
+      {
+        "caseId": "positive-diagnosis-code",
+        "path": "/diagnoses/0/mentionedCode",
+        "value": "J45.9",
+        "role": "positive",
+        "before": "J45.9",
+        "after": "J45.9"
+      },
+      {
+        "caseId": "positive-prefix-code",
+        "path": "/diagnoses/0/mentionedCode",
+        "value": "J45.9",
+        "role": "positive",
+        "before": "J45.9",
+        "after": "J45.9"
+      },
+      {
+        "caseId": "positive-procedure-code",
+        "path": "/procedures/0/mentionedCode",
+        "value": "93000",
+        "role": "positive",
+        "before": "93000",
+        "after": "93000"
+      },
+      {
+        "caseId": "positive-catalog-independent",
+        "path": "/diagnoses/0/mentionedCode",
+        "value": "X1",
+        "role": "positive",
+        "before": "X1",
+        "after": "X1"
+      },
+      {
+        "caseId": "positive-package-vs-dose",
+        "path": "/medications/0/dosage",
+        "value": "media tableta",
+        "role": "positive",
+        "before": "media tableta",
+        "after": "media tableta"
+      },
+      {
+        "caseId": "positive-own-dose-wide-scope",
+        "path": "/medications/0/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "positive-unicode-crlf",
+        "path": "/medications/0/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "positive-compound-name",
+        "path": "/diagnoses/0/mentionedCode",
+        "value": "X2",
+        "role": "positive",
+        "before": "X2",
+        "after": "X2"
+      },
+      {
+        "caseId": "negative-other-dose",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-other-code",
+        "path": "/medications/0/mentionedCode",
+        "value": null,
+        "role": "negative",
+        "before": "J02",
+        "after": null
+      },
+      {
+        "caseId": "negative-dose-semicolon",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-dose-comma",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-dose-coordination",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-dose-newline",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-package-as-dose",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "10 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-control-duration",
+        "path": "/medications/0/duration",
+        "value": null,
+        "role": "negative",
+        "before": "7 días",
+        "after": null
+      },
+      {
+        "caseId": "negative-wide-repeated-value",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "5 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-repeated-owner",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-known-other-head",
+        "path": "/diagnoses/0/mentionedCode",
+        "value": null,
+        "role": "negative",
+        "before": "E11",
+        "after": null
+      },
+      {
+        "caseId": "negative-known-other-head",
+        "path": "/diagnoses/1/mentionedCode",
+        "value": "E11",
+        "role": "positive",
+        "before": "E11",
+        "after": "E11"
+      },
+      {
+        "caseId": "negative-borrowed-prefix",
+        "path": "/diagnoses/0/mentionedCode",
+        "value": "J45",
+        "role": "positive",
+        "before": "J45",
+        "after": "J45"
+      },
+      {
+        "caseId": "negative-borrowed-prefix",
+        "path": "/diagnoses/1/mentionedCode",
+        "value": null,
+        "role": "negative",
+        "before": "J45",
+        "after": null
+      },
+      {
+        "caseId": "negative-ambiguous-pronoun",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "5 mg",
+        "after": null
+      },
+      {
+        "caseId": "negative-ambiguous-pronoun",
+        "path": "/medications/1/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "5 mg",
+        "after": null
+      },
+      {
+        "caseId": "residual-unlisted-no-separator",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "residual",
+        "before": "9 mg",
+        "after": "9 mg"
+      }
+    ]
+  },
+  "reviewRegressions": {
+    "scope": "synthetic field references; not extraction precision, clinical quality or model improvement",
+    "cases": 6,
+    "before": {
+      "positive": {
+        "total": 4,
+        "retained": 4,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 7,
+        "blocked": 0,
+        "leaked": 7
+      },
+      "residual": {
+        "total": 0,
+        "blocked": 0,
+        "leaked": 0
+      }
+    },
+    "after": {
+      "positive": {
+        "total": 4,
+        "retained": 4,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 7,
+        "blocked": 7,
+        "leaked": 0
+      },
+      "residual": {
+        "total": 0,
+        "blocked": 0,
+        "leaked": 0
+      }
+    },
+    "fields": [
+      {
+        "caseId": "review-rejected-code-bridge",
+        "path": "/medications/0/frequency",
+        "value": null,
+        "role": "negative",
+        "before": "cada 12 horas",
+        "after": null
+      },
+      {
+        "caseId": "review-unassociated-duration-bridge",
+        "path": "/medications/0/frequency",
+        "value": null,
+        "role": "negative",
+        "before": "cada 12 horas",
+        "after": null
+      },
+      {
+        "caseId": "review-shared-third-head",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "review-shared-third-head",
+        "path": "/medications/2/dosage",
+        "value": "9 mg",
+        "role": "positive",
+        "before": "9 mg",
+        "after": "9 mg"
+      },
+      {
+        "caseId": "review-three-coordinated-heads",
+        "path": "/medications/0/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "review-three-coordinated-heads",
+        "path": "/medications/1/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "review-three-coordinated-heads",
+        "path": "/medications/2/dosage",
+        "value": null,
+        "role": "negative",
+        "before": "9 mg",
+        "after": null
+      },
+      {
+        "caseId": "review-foreign-code-label",
+        "path": "/medications/0/mentionedCode",
+        "value": null,
+        "role": "negative",
+        "before": "X2",
+        "after": null
+      },
+      {
+        "caseId": "review-foreign-code-label",
+        "path": "/medications/0/dosage",
+        "value": "5 mg",
+        "role": "positive",
+        "before": "5 mg",
+        "after": "5 mg"
+      },
+      {
+        "caseId": "review-common-route-duration",
+        "path": "/medications/0/route",
+        "value": "oral",
+        "role": "positive",
+        "before": "oral",
+        "after": "oral"
+      },
+      {
+        "caseId": "review-common-route-duration",
+        "path": "/medications/0/duration",
+        "value": "3 días",
+        "role": "positive",
+        "before": "3 días",
+        "after": "3 días"
+      }
+    ]
+  },
+  "total": {
+    "before": {
+      "positive": {
+        "total": 28,
+        "retained": 28,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 21,
+        "blocked": 0,
+        "leaked": 21
+      },
+      "residual": {
+        "total": 1,
+        "blocked": 0,
+        "leaked": 1
+      }
+    },
+    "after": {
+      "positive": {
+        "total": 28,
+        "retained": 28,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 21,
+        "blocked": 21,
+        "leaked": 0
+      },
+      "residual": {
+        "total": 1,
+        "blocked": 0,
+        "leaked": 1
+      }
+    }
+  },
+  "caveat": "No new pass threshold; positive controls and disclosed residual are both retained in reporting."
+}

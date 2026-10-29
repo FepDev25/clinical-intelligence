@@ -1,0 +1,4652 @@
+{
+  "version" : "association-study-1",
+  "inferenceExecuted" : false,
+  "scope" : "local scripted field-regression study; not clinical or model validation",
+  "cases" : [ {
+    "id" : "positive-simple",
+    "note" : "Se prescribe Alfa 5 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 23,
+              "quote" : "Se prescribe Alfa 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 23,
+            "quote" : "Se prescribe Alfa 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 22,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "5 mg",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "8fc66854-c481-472d-8b69-f11fbb33eddf",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 23,
+              "quote" : "Se prescribe Alfa 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 23,
+            "quote" : "Se prescribe Alfa 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 22,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-multiline-label",
+    "note" : "Se prescribe Alfa:\ndosis: 5 mg\nfrecuencia: cada 8 horas.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 56,
+              "quote" : "Se prescribe Alfa:\ndosis: 5 mg\nfrecuencia: cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 56,
+            "quote" : "Se prescribe Alfa:\ndosis: 5 mg\nfrecuencia: cada 8 horas."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 26,
+            "end" : 30,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "5 mg",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "2684fc1f-2cb3-4bf6-97ba-cfb65c9618f5",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 56,
+              "quote" : "Se prescribe Alfa:\ndosis: 5 mg\nfrecuencia: cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 56,
+            "quote" : "Se prescribe Alfa:\ndosis: 5 mg\nfrecuencia: cada 8 horas."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 26,
+            "end" : 30,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-multiline-values",
+    "note" : "Se prescribe Alfa:\n5 mg\ncada 8 horas\noral\ndurante 3 días",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 56,
+              "quote" : "Se prescribe Alfa:\n5 mg\ncada 8 horas\noral\ndurante 3 días"
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 56,
+            "quote" : "Se prescribe Alfa:\n5 mg\ncada 8 horas\noral\ndurante 3 días"
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 19,
+            "end" : 23,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : {
+          "value" : "cada 8 horas",
+          "evidence" : [ {
+            "start" : 24,
+            "end" : 36,
+            "quote" : "cada 8 horas"
+          } ]
+        },
+        "route" : {
+          "value" : "oral",
+          "evidence" : [ {
+            "start" : 37,
+            "end" : 41,
+            "quote" : "oral"
+          } ]
+        },
+        "duration" : {
+          "value" : "durante 3 días",
+          "evidence" : [ {
+            "start" : 42,
+            "end" : 56,
+            "quote" : "durante 3 días"
+          } ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "5 mg",
+      "role" : "positive"
+    }, {
+      "path" : "/medications/0/frequency",
+      "value" : "cada 8 horas",
+      "role" : "positive"
+    }, {
+      "path" : "/medications/0/route",
+      "value" : "oral",
+      "role" : "positive"
+    }, {
+      "path" : "/medications/0/duration",
+      "value" : "durante 3 días",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "6023704f-4349-4b30-9398-f1e153661b79",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 56,
+              "quote" : "Se prescribe Alfa:\n5 mg\ncada 8 horas\noral\ndurante 3 días"
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 56,
+            "quote" : "Se prescribe Alfa:\n5 mg\ncada 8 horas\noral\ndurante 3 días"
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 19,
+            "end" : 23,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : {
+          "value" : "cada 8 horas",
+          "evidence" : [ {
+            "start" : 24,
+            "end" : 36,
+            "quote" : "cada 8 horas"
+          } ]
+        },
+        "route" : {
+          "value" : "oral",
+          "evidence" : [ {
+            "start" : 37,
+            "end" : 41,
+            "quote" : "oral"
+          } ]
+        },
+        "duration" : {
+          "value" : "durante 3 días",
+          "evidence" : [ {
+            "start" : 42,
+            "end" : 56,
+            "quote" : "durante 3 días"
+          } ]
+        }
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-pronoun",
+    "note" : "Se prescribe Alfa. Su dosis es 5 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 36,
+              "quote" : "Se prescribe Alfa. Su dosis es 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 36,
+            "quote" : "Se prescribe Alfa. Su dosis es 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 31,
+            "end" : 35,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "5 mg",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "ea3abfac-a7bf-40de-97fe-eb56d98b2907",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 36,
+              "quote" : "Se prescribe Alfa. Su dosis es 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 36,
+            "quote" : "Se prescribe Alfa. Su dosis es 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 31,
+            "end" : 35,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-equal-doses",
+    "note" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 22,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      }, {
+        "name" : {
+          "value" : "Beta",
+          "evidence" : [ {
+            "start" : 37,
+            "end" : 41,
+            "quote" : "Beta"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 42,
+            "end" : 46,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "5 mg",
+      "role" : "positive"
+    }, {
+      "path" : "/medications/1/dosage",
+      "value" : "5 mg",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "750c187e-bc11-47ca-9cfa-f3c1151ac560",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 22,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      }, {
+        "id" : "m2",
+        "name" : {
+          "value" : "Beta",
+          "evidence" : [ {
+            "start" : 37,
+            "end" : 41,
+            "quote" : "Beta"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 42,
+            "end" : 46,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    }, {
+      "source" : {
+        "proposalIndex" : 1,
+        "kind" : "MEDICATION",
+        "familyIndex" : 1
+      },
+      "outputPath" : "/medications/1",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-shared-frequency",
+    "note" : "Se prescribe Alfa y Beta, ambos cada 8 horas.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 45,
+              "quote" : "Se prescribe Alfa y Beta, ambos cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 45,
+            "quote" : "Se prescribe Alfa y Beta, ambos cada 8 horas."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : {
+          "value" : "cada 8 horas",
+          "evidence" : [ {
+            "start" : 32,
+            "end" : 44,
+            "quote" : "cada 8 horas"
+          } ]
+        },
+        "route" : null,
+        "duration" : null
+      }, {
+        "name" : {
+          "value" : "Beta",
+          "evidence" : [ {
+            "start" : 20,
+            "end" : 24,
+            "quote" : "Beta"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 45,
+              "quote" : "Se prescribe Alfa y Beta, ambos cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 45,
+            "quote" : "Se prescribe Alfa y Beta, ambos cada 8 horas."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : {
+          "value" : "cada 8 horas",
+          "evidence" : [ {
+            "start" : 32,
+            "end" : 44,
+            "quote" : "cada 8 horas"
+          } ]
+        },
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/frequency",
+      "value" : "cada 8 horas",
+      "role" : "positive"
+    }, {
+      "path" : "/medications/1/frequency",
+      "value" : "cada 8 horas",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "5ccf01bc-082e-4bc5-a827-9727e1b66e34",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 45,
+              "quote" : "Se prescribe Alfa y Beta, ambos cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 45,
+            "quote" : "Se prescribe Alfa y Beta, ambos cada 8 horas."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : {
+          "value" : "cada 8 horas",
+          "evidence" : [ {
+            "start" : 32,
+            "end" : 44,
+            "quote" : "cada 8 horas"
+          } ]
+        },
+        "route" : null,
+        "duration" : null
+      }, {
+        "id" : "m2",
+        "name" : {
+          "value" : "Beta",
+          "evidence" : [ {
+            "start" : 20,
+            "end" : 24,
+            "quote" : "Beta"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 45,
+              "quote" : "Se prescribe Alfa y Beta, ambos cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 45,
+            "quote" : "Se prescribe Alfa y Beta, ambos cada 8 horas."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : {
+          "value" : "cada 8 horas",
+          "evidence" : [ {
+            "start" : 32,
+            "end" : 44,
+            "quote" : "cada 8 horas"
+          } ]
+        },
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    }, {
+      "source" : {
+        "proposalIndex" : 1,
+        "kind" : "MEDICATION",
+        "familyIndex" : 1
+      },
+      "outputPath" : "/medications/1",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-second-occurrence",
+    "note" : "Alfa: se prescribe 5 mg. Alfa: se reporta 9 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 25,
+            "end" : 29,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Alfa: se prescribe 5 mg. Alfa: se reporta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Alfa: se prescribe 5 mg. Alfa: se reporta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 42,
+            "end" : 46,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "9 mg",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "1c4e3b1b-cf32-456d-8a0e-2f7270f0eac7",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 25,
+            "end" : 29,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Alfa: se prescribe 5 mg. Alfa: se reporta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Alfa: se prescribe 5 mg. Alfa: se reporta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 42,
+            "end" : 46,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-decimals-abbreviation",
+    "note" : "Se prescribe Alfa 1,5 mg por v.o. cada 8 horas.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 1,5 mg por v.o. cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 1,5 mg por v.o. cada 8 horas."
+          } ]
+        },
+        "dosage" : {
+          "value" : "1,5 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 24,
+            "quote" : "1,5 mg"
+          } ]
+        },
+        "frequency" : {
+          "value" : "cada 8 horas",
+          "evidence" : [ {
+            "start" : 34,
+            "end" : 46,
+            "quote" : "cada 8 horas"
+          } ]
+        },
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "1,5 mg",
+      "role" : "positive"
+    }, {
+      "path" : "/medications/0/frequency",
+      "value" : "cada 8 horas",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "ced0ee23-9979-4797-a8d8-f645f81db1ff",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 1,5 mg por v.o. cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 1,5 mg por v.o. cada 8 horas."
+          } ]
+        },
+        "dosage" : {
+          "value" : "1,5 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 24,
+            "quote" : "1,5 mg"
+          } ]
+        },
+        "frequency" : {
+          "value" : "cada 8 horas",
+          "evidence" : [ {
+            "start" : 34,
+            "end" : 46,
+            "quote" : "cada 8 horas"
+          } ]
+        },
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-diagnosis-code",
+    "note" : "Diagnóstico asma con código J45.9.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 12,
+            "end" : 16,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "J45.9",
+          "evidence" : [ {
+            "start" : 28,
+            "end" : 33,
+            "quote" : "J45.9"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 34,
+              "quote" : "Diagnóstico asma con código J45.9."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/diagnoses/0/mentionedCode",
+      "value" : "J45.9",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "41471f10-a23f-4dc7-8089-08b0410ae28a",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 12,
+            "end" : 16,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "J45.9",
+          "evidence" : [ {
+            "start" : 28,
+            "end" : 33,
+            "quote" : "J45.9"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 34,
+              "quote" : "Diagnóstico asma con código J45.9."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-prefix-code",
+    "note" : "J45.9 — asma.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 8,
+            "end" : 12,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "J45.9",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 5,
+            "quote" : "J45.9"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 13,
+              "quote" : "J45.9 — asma."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/diagnoses/0/mentionedCode",
+      "value" : "J45.9",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "8f03cb26-a60a-4425-8163-34a751bf9e05",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 8,
+            "end" : 12,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "J45.9",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 5,
+            "quote" : "J45.9"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 13,
+              "quote" : "J45.9 — asma."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-procedure-code",
+    "note" : "Se documenta electrocardiograma, código 93000.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "electrocardiograma",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 31,
+            "quote" : "electrocardiograma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "93000",
+          "evidence" : [ {
+            "start" : 40,
+            "end" : 45,
+            "quote" : "93000"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 46,
+              "quote" : "Se documenta electrocardiograma, código 93000."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "performanceStatus" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/procedures/0/mentionedCode",
+      "value" : "93000",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "940e6423-2ff3-4566-a56b-d3d9d63bd911",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ ],
+      "procedures" : [ {
+        "id" : "p1",
+        "name" : {
+          "value" : "electrocardiograma",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 31,
+            "quote" : "electrocardiograma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "93000",
+          "evidence" : [ {
+            "start" : 40,
+            "end" : 45,
+            "quote" : "93000"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 46,
+              "quote" : "Se documenta electrocardiograma, código 93000."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "performanceStatus" : {
+          "value" : "unknown",
+          "evidence" : [ ]
+        }
+      } ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "PROCEDURE",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/procedures/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-catalog-independent",
+    "note" : "Diagnóstico asma, código externo X1.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 12,
+            "end" : 16,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "X1",
+          "evidence" : [ {
+            "start" : 33,
+            "end" : 35,
+            "quote" : "X1"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 36,
+              "quote" : "Diagnóstico asma, código externo X1."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ {
+      "catalogId" : "local",
+      "version" : "v1",
+      "kind" : "DIAGNOSIS",
+      "entries" : [ {
+        "entryId" : "internal-entry",
+        "name" : "asma",
+        "aliases" : [ ]
+      } ]
+    } ],
+    "expected" : [ {
+      "path" : "/diagnoses/0/mentionedCode",
+      "value" : "X1",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "bf95b452-6299-4fe6-a366-123e5ef7a805",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 12,
+            "end" : 16,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "X1",
+          "evidence" : [ {
+            "start" : 33,
+            "end" : 35,
+            "quote" : "X1"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 36,
+              "quote" : "Diagnóstico asma, código externo X1."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "matched",
+          "candidates" : [ {
+            "catalogId" : "local",
+            "version" : "v1",
+            "entryId" : "internal-entry"
+          } ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-package-vs-dose",
+    "note" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 36,
+            "end" : 40,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 55,
+              "quote" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 55,
+            "quote" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta."
+          } ]
+        },
+        "dosage" : {
+          "value" : "media tableta",
+          "evidence" : [ {
+            "start" : 41,
+            "end" : 54,
+            "quote" : "media tableta"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "media tableta",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "f4f6a64a-c1f8-4543-b18e-3d5a84ee2343",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 36,
+            "end" : 40,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 55,
+              "quote" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 55,
+            "quote" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta."
+          } ]
+        },
+        "dosage" : {
+          "value" : "media tableta",
+          "evidence" : [ {
+            "start" : 41,
+            "end" : 54,
+            "quote" : "media tableta"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-own-dose-wide-scope",
+    "note" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 22,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "5 mg",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "6df6ad3e-b0ae-4c24-9334-13f289f2207b",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 22,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-unicode-crlf",
+    "note" : "🩺 Se prescribe Álfa:\r\ndosis: 5 mg\r\nfrecuencia: cada 8 horas.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Álfa",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 20,
+            "quote" : "Álfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 61,
+              "quote" : "🩺 Se prescribe Álfa:\r\ndosis: 5 mg\r\nfrecuencia: cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 61,
+            "quote" : "🩺 Se prescribe Álfa:\r\ndosis: 5 mg\r\nfrecuencia: cada 8 horas."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 30,
+            "end" : 34,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : "5 mg",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "402b452d-6b42-4cbc-8a01-85de31420c7e",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Álfa",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 20,
+            "quote" : "Álfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 61,
+              "quote" : "🩺 Se prescribe Álfa:\r\ndosis: 5 mg\r\nfrecuencia: cada 8 horas."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 61,
+            "quote" : "🩺 Se prescribe Álfa:\r\ndosis: 5 mg\r\nfrecuencia: cada 8 horas."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 30,
+            "end" : 34,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-compound-name",
+    "note" : "Diagnóstico dolor de cabeza y cuello, código X2.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "dolor de cabeza y cuello",
+          "evidence" : [ {
+            "start" : 12,
+            "end" : 36,
+            "quote" : "dolor de cabeza y cuello"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "X2",
+          "evidence" : [ {
+            "start" : 45,
+            "end" : 47,
+            "quote" : "X2"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Diagnóstico dolor de cabeza y cuello, código X2."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/diagnoses/0/mentionedCode",
+      "value" : "X2",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "7dc19616-ef1a-4215-b55e-a33e7f90a4ec",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "dolor de cabeza y cuello",
+          "evidence" : [ {
+            "start" : 12,
+            "end" : 36,
+            "quote" : "dolor de cabeza y cuello"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "X2",
+          "evidence" : [ {
+            "start" : 45,
+            "end" : 47,
+            "quote" : "X2"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Diagnóstico dolor de cabeza y cuello, código X2."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-other-dose",
+    "note" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 42,
+            "end" : 46,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "7ab8d76e-1b58-45ad-986c-a818139fe84d",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 9 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-other-code",
+    "note" : "Se prescribe Alfa. Código de otro medicamento Beta: J02.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "J02",
+          "evidence" : [ {
+            "start" : 52,
+            "end" : 55,
+            "quote" : "J02"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 56,
+              "quote" : "Se prescribe Alfa. Código de otro medicamento Beta: J02."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 56,
+            "quote" : "Se prescribe Alfa. Código de otro medicamento Beta: J02."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/mentionedCode",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "d9d32eeb-a695-4116-a6a3-7e177827a241",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 56,
+              "quote" : "Se prescribe Alfa. Código de otro medicamento Beta: J02."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 56,
+            "quote" : "Se prescribe Alfa. Código de otro medicamento Beta: J02."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/mentionedCode" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "mentionedCode",
+        "reason" : "TEXT_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-dose-semicolon",
+    "note" : "Se prescribe Alfa 5 mg; Beta 9 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 34,
+              "quote" : "Se prescribe Alfa 5 mg; Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 34,
+            "quote" : "Se prescribe Alfa 5 mg; Beta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 29,
+            "end" : 33,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "bd27938d-3401-440a-934d-d63004e11fa5",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 34,
+              "quote" : "Se prescribe Alfa 5 mg; Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 34,
+            "quote" : "Se prescribe Alfa 5 mg; Beta 9 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-dose-comma",
+    "note" : "Se prescribe Alfa 5 mg, Beta 9 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 34,
+              "quote" : "Se prescribe Alfa 5 mg, Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 34,
+            "quote" : "Se prescribe Alfa 5 mg, Beta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 29,
+            "end" : 33,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "84352d98-94fa-4e9e-b373-b980ae7c46ed",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 34,
+              "quote" : "Se prescribe Alfa 5 mg, Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 34,
+            "quote" : "Se prescribe Alfa 5 mg, Beta 9 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-dose-coordination",
+    "note" : "Se prescribe Alfa 5 mg y Beta 9 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 35,
+              "quote" : "Se prescribe Alfa 5 mg y Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 35,
+            "quote" : "Se prescribe Alfa 5 mg y Beta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 30,
+            "end" : 34,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "82a9302b-c867-45f7-ab7b-b80c1b0058a8",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 35,
+              "quote" : "Se prescribe Alfa 5 mg y Beta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 35,
+            "quote" : "Se prescribe Alfa 5 mg y Beta 9 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-dose-newline",
+    "note" : "Se prescribe Alfa 5 mg\nBeta 9 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 33,
+              "quote" : "Se prescribe Alfa 5 mg\nBeta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 33,
+            "quote" : "Se prescribe Alfa 5 mg\nBeta 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 28,
+            "end" : 32,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "01f2ffa4-06c9-40f3-b376-fea536b8003d",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 33,
+              "quote" : "Se prescribe Alfa 5 mg\nBeta 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 33,
+            "quote" : "Se prescribe Alfa 5 mg\nBeta 9 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-package-as-dose",
+    "note" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 36,
+            "end" : 40,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 55,
+              "quote" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 55,
+            "quote" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta."
+          } ]
+        },
+        "dosage" : {
+          "value" : "10 mg",
+          "evidence" : [ {
+            "start" : 12,
+            "end" : 17,
+            "quote" : "10 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "fe856f20-d525-4b5d-a639-399c307964d3",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 36,
+            "end" : 40,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 55,
+              "quote" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 55,
+            "quote" : "Envase Alfa 10 mg; hoy se prescribe Alfa media tableta."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-control-duration",
+    "note" : "Se prescribe Alfa 5 mg. Control en 7 días.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 42,
+              "quote" : "Se prescribe Alfa 5 mg. Control en 7 días."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 42,
+            "quote" : "Se prescribe Alfa 5 mg. Control en 7 días."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : {
+          "value" : "7 días",
+          "evidence" : [ {
+            "start" : 35,
+            "end" : 41,
+            "quote" : "7 días"
+          } ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/duration",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "3a959a66-a56d-48d8-b19c-4956705215eb",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 42,
+              "quote" : "Se prescribe Alfa 5 mg. Control en 7 días."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 42,
+            "quote" : "Se prescribe Alfa 5 mg. Control en 7 días."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/duration" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "duration",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-wide-repeated-value",
+    "note" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "fa1ddc59-fdc6-4600-9582-1c4508d94d8a",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 47,
+              "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 47,
+            "quote" : "Se prescribe Alfa 5 mg. Se prescribe Beta 5 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-repeated-owner",
+    "note" : "Alfa: 5 mg. Alfa: 9 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 4,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 23,
+              "quote" : "Alfa: 5 mg. Alfa: 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 23,
+            "quote" : "Alfa: 5 mg. Alfa: 9 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 22,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "e1efffee-446b-4dff-80b5-f6b2e39d9531",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 4,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 23,
+              "quote" : "Alfa: 5 mg. Alfa: 9 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 23,
+            "quote" : "Alfa: 5 mg. Alfa: 9 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-known-other-head",
+    "note" : "asma J45 diabetes E11",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 4,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "E11",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 21,
+            "quote" : "E11"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "asma J45 diabetes E11"
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      }, {
+        "name" : {
+          "value" : "diabetes",
+          "evidence" : [ {
+            "start" : 9,
+            "end" : 17,
+            "quote" : "diabetes"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "E11",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 21,
+            "quote" : "E11"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "asma J45 diabetes E11"
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/diagnoses/0/mentionedCode",
+      "value" : null,
+      "role" : "negative"
+    }, {
+      "path" : "/diagnoses/1/mentionedCode",
+      "value" : "E11",
+      "role" : "positive"
+    } ],
+    "response" : {
+      "requestId" : "1e99bb12-d43d-4d70-9786-71981635f5dc",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 4,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "asma J45 diabetes E11"
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      }, {
+        "id" : "d2",
+        "name" : {
+          "value" : "diabetes",
+          "evidence" : [ {
+            "start" : 9,
+            "end" : 17,
+            "quote" : "diabetes"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "E11",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 21,
+            "quote" : "E11"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "asma J45 diabetes E11"
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/diagnoses/0/mentionedCode" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ {
+        "field" : "mentionedCode",
+        "reason" : "TEXT_ASSOCIATION_REJECTED"
+      } ]
+    }, {
+      "source" : {
+        "proposalIndex" : 1,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 1
+      },
+      "outputPath" : "/diagnoses/1",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-borrowed-prefix",
+    "note" : "asma J45 diabetes E11",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 4,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "J45",
+          "evidence" : [ {
+            "start" : 5,
+            "end" : 8,
+            "quote" : "J45"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "asma J45 diabetes E11"
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      }, {
+        "name" : {
+          "value" : "diabetes",
+          "evidence" : [ {
+            "start" : 9,
+            "end" : 17,
+            "quote" : "diabetes"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "J45",
+          "evidence" : [ {
+            "start" : 5,
+            "end" : 8,
+            "quote" : "J45"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "asma J45 diabetes E11"
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/diagnoses/0/mentionedCode",
+      "value" : "J45",
+      "role" : "positive"
+    }, {
+      "path" : "/diagnoses/1/mentionedCode",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "bf72c954-03e3-4747-819f-57639e9775d0",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 4,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : {
+          "value" : "J45",
+          "evidence" : [ {
+            "start" : 5,
+            "end" : 8,
+            "quote" : "J45"
+          } ]
+        },
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "asma J45 diabetes E11"
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      }, {
+        "id" : "d2",
+        "name" : {
+          "value" : "diabetes",
+          "evidence" : [ {
+            "start" : 9,
+            "end" : 17,
+            "quote" : "diabetes"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "asma J45 diabetes E11"
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/diagnoses/1/mentionedCode" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    }, {
+      "source" : {
+        "proposalIndex" : 1,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 1
+      },
+      "outputPath" : "/diagnoses/1",
+      "rejections" : [ {
+        "field" : "mentionedCode",
+        "reason" : "TEXT_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "negative-ambiguous-pronoun",
+    "note" : "Se prescribe Alfa y Beta. Su dosis es 5 mg.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 43,
+              "quote" : "Se prescribe Alfa y Beta. Su dosis es 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 43,
+            "quote" : "Se prescribe Alfa y Beta. Su dosis es 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 38,
+            "end" : 42,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      }, {
+        "name" : {
+          "value" : "Beta",
+          "evidence" : [ {
+            "start" : 20,
+            "end" : 24,
+            "quote" : "Beta"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 43,
+              "quote" : "Se prescribe Alfa y Beta. Su dosis es 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 43,
+            "quote" : "Se prescribe Alfa y Beta. Su dosis es 5 mg."
+          } ]
+        },
+        "dosage" : {
+          "value" : "5 mg",
+          "evidence" : [ {
+            "start" : 38,
+            "end" : 42,
+            "quote" : "5 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "negative"
+    }, {
+      "path" : "/medications/1/dosage",
+      "value" : null,
+      "role" : "negative"
+    } ],
+    "response" : {
+      "requestId" : "c42fb1f0-22f2-44f3-a171-8f95a1d4b462",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed_with_warnings",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 43,
+              "quote" : "Se prescribe Alfa y Beta. Su dosis es 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 43,
+            "quote" : "Se prescribe Alfa y Beta. Su dosis es 5 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      }, {
+        "id" : "m2",
+        "name" : {
+          "value" : "Beta",
+          "evidence" : [ {
+            "start" : 20,
+            "end" : 24,
+            "quote" : "Beta"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 43,
+              "quote" : "Se prescribe Alfa y Beta. Su dosis es 5 mg."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 43,
+            "quote" : "Se prescribe Alfa y Beta. Su dosis es 5 mg."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/0/dosage" ],
+        "source" : "/clinicalNote"
+      }, {
+        "code" : "ATTRIBUTE_DISCARDED",
+        "message" : "Se descartó un atributo sin respaldo válido.",
+        "targets" : [ "/medications/1/dosage" ],
+        "source" : "/clinicalNote"
+      } ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    }, {
+      "source" : {
+        "proposalIndex" : 1,
+        "kind" : "MEDICATION",
+        "familyIndex" : 1
+      },
+      "outputPath" : "/medications/1",
+      "rejections" : [ {
+        "field" : "dosage",
+        "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+      } ]
+    } ]
+  }, {
+    "id" : "residual-unlisted-no-separator",
+    "note" : "Se prescribe Alfa 5 mg Beta 9 mg",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 32,
+              "quote" : "Se prescribe Alfa 5 mg Beta 9 mg"
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 32,
+            "quote" : "Se prescribe Alfa 5 mg Beta 9 mg"
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 28,
+            "end" : 32,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "catalogs" : [ ],
+    "expected" : [ {
+      "path" : "/medications/0/dosage",
+      "value" : null,
+      "role" : "residual"
+    } ],
+    "response" : {
+      "requestId" : "8a5784aa-ab2b-4243-bb6a-24dd41789338",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 13,
+            "end" : 17,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 32,
+              "quote" : "Se prescribe Alfa 5 mg Beta 9 mg"
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 32,
+            "quote" : "Se prescribe Alfa 5 mg Beta 9 mg"
+          } ]
+        },
+        "dosage" : {
+          "value" : "9 mg",
+          "evidence" : [ {
+            "start" : 28,
+            "end" : 32,
+            "quote" : "9 mg"
+          } ]
+        },
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  } ]
+}

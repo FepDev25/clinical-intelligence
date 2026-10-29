@@ -1,0 +1,59 @@
+{
+  "historicalManifests": {
+    "evaluation/quality-review/baseline-manifest.json": {
+      "matched": 79,
+      "authorizedLiveSourceDeltas": [
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionService.java",
+          "expected": "e8438970dfa7311f31a47542aa8b99d920265eb29220073802425aadf0f7d1f5",
+          "current": "48ba8c7b931185d56049930857e3a9287e0f61946d76e18c93038d8719219f7d"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocol.java",
+          "expected": "6d0b10617adcacb4dc4198507a67e3334e48072b3cb1463fba8613d5c681524b",
+          "current": "2a2d7e483151d6153f34daef7e09625cf2108c4e6caeae40e5a1151ca9493107"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProvider.java",
+          "expected": "8e43b40e248ab3be230e6c0b0f97db4d5594b5f436d60ee20b5ccc620c2f5fd8",
+          "current": "0e140ebaf50667c6a2837661211abe7ee6ddd1a90aa0c16c9e88de66cd86ad0a"
+        }
+      ]
+    },
+    "evaluation/quality-review/artifact-checksums.json": {
+      "matched": 16,
+      "authorizedLiveSourceDeltas": []
+    },
+    "evaluation/quality-review/t3/artifact-checksums.json": {
+      "matched": 19,
+      "authorizedLiveSourceDeltas": []
+    },
+    "evaluation/quality-review/t4/artifact-checksums.json": {
+      "matched": 31,
+      "authorizedLiveSourceDeltas": [
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionService.java",
+          "expected": "36efd86fdfa432e606cde7099b2c61502686e56afe62665609967311764ab0af",
+          "current": "48ba8c7b931185d56049930857e3a9287e0f61946d76e18c93038d8719219f7d"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionTrace.java",
+          "expected": "18df26a4e923ac65ea1328ef475570ae8c0a1e7f4bb253dbdfeefd9fa622cff6",
+          "current": "726d02bcc64d632e16d7fad501ad99001922e0d2139438bf3e73b1352095fec8"
+        },
+        {
+          "path": "src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/SyntheticTraceReplayTest.java",
+          "expected": "e5b3814a372e1c03c762ab76b6f3950dddb1f1f83f86d646df3f3144648c3d7f",
+          "current": "02e876290da34e08fc29553605f969d6b9d2fd7a1357f7d7210b8629947b46d7"
+        }
+      ]
+    },
+    "evaluation/quality-review/t2/artifact-checksums.json": {
+      "matched": 16,
+      "authorizedLiveSourceDeltas": []
+    }
+  },
+  "fixedStudyInputsPreserved": true,
+  "frozenH5JarsPreserved": 2,
+  "actualT4JarPreserved": true
+}

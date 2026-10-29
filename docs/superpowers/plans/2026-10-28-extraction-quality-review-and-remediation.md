@@ -2,7 +2,7 @@
 
 > Para quien ejecute: utilizar `superpowers:executing-plans` y completar las tareas con sus verificaciones. Plan aprobado por el usuario; ejecutar las tareas que autorice y registrar su cierre. No autoriza por sí solo inferencia remota. No delegar sin autorización aplicable.
 
-**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4 implementada y verificada con captura sintética optativa. T5–T10 pendientes. Creado el 28-10-2026.
+**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4 implementada y verificada con captura sintética optativa. T5 implementada y verificada offline; T6–T10 pendientes. Creado el 28-10-2026.
 
 **Objetivo:** investigar y resolver de forma trazable todos los limitantes identificados en código, representación, proveedor y evaluación, y medir si las correcciones mejoran la calidad sin ocultar omisiones, descartes ni incertidumbre.
 
@@ -161,14 +161,16 @@ En tareas de código: primero prueba que falle por la causa investigada, despué
 
 **Depende de:** T4 y reglas aplicables de T2. **Archivos:** servicio/políticas y pruebas Java; corpus de regresiones nuevo.
 
-- [ ] Convertir la dosis cruzada en prueba roja y añadir controles: receta válida en varias líneas, dos medicamentos con igual dosis, pronombres, envase frente a dosis, frecuencia compartida explícita y duración de control.
-- [ ] Reproducir por separado código perteneciente a otra entidad; contrastar asociación textual con resolución local de catálogo, que cumple otra función.
-- [ ] Diseñar asociación por mención/cláusula/bloque con límites verificables; no usar proximidad como garantía semántica universal ni prohibir todo bloque multientidad.
-- [ ] Documentar qué asociaciones pueden rechazarse determinísticamente y cuáles solo pueden advertirse o permanecer bajo revisión. Si hace falta una representación interna nueva, especificarla y probarla antes de sustituirla.
-- [ ] Probar citas repetidas, ocurrencias superpuestas, emoji, Unicode descompuesto y CRLF; no perder corrección de índices al añadir asociación.
-- [ ] Implementar una intervención por vez y medir falsos descartes sobre casos positivos, además de errores bloqueados. No fijar un umbral nuevo después de observar resultados.
+- [x] Convertir la dosis cruzada en prueba roja y añadir controles: receta válida en varias líneas, dos medicamentos con igual dosis, pronombres, envase frente a dosis, frecuencia compartida explícita y duración de control.
+- [x] Reproducir por separado código perteneciente a otra entidad; contrastar asociación textual con resolución local de catálogo, que cumple otra función.
+- [x] Diseñar asociación por mención/cláusula/bloque con límites verificables; no usar proximidad como garantía semántica universal ni prohibir todo bloque multientidad.
+- [x] Documentar qué asociaciones pueden rechazarse determinísticamente y cuáles solo pueden advertirse o permanecer bajo revisión. Si hace falta una representación interna nueva, especificarla y probarla antes de sustituirla.
+- [x] Probar citas repetidas, ocurrencias superpuestas, emoji, Unicode descompuesto y CRLF; no perder corrección de índices al añadir asociación.
+- [x] Implementar una intervención por vez y medir falsos descartes sobre casos positivos, además de errores bloqueados. No fijar un umbral nuevo después de observar resultados.
 
 **Aceptación:** las reproducciones correspondientes dejan de pasar inadvertidas dentro del alcance definido y los controles positivos conservan los valores respaldados. Las limitaciones restantes quedan declaradas, no disfrazadas de validación semántica completa.
+
+**Cierre T5:** [informe, comparación real antes/después y límites](../../../evaluation/quality-review/t5/README.md). 195 pruebas Java y 158 Python aprobadas; 28 atributos positivos preservados, 21 asociaciones incorrectas bloqueadas y una fuga residual declarada. Sin inferencia ni aprobación del MVP.
 
 ### T6. Negación, sujeto, tiempo, duplicados y contradicciones
 
@@ -269,4 +271,4 @@ Bloques sugeridos para revisión/commits locales: diagnóstico y referencias (T1
 
 La revisión clínica humana independiente, las condiciones de privacidad/contratación del proveedor y la autorización para datos reales siguen siendo requisitos externos; no se dan por satisfechos por terminar ingeniería. Si falta revisor o presupuesto, continuar tareas offline independientes y dejar el tramo dependiente identificado, sin simular su ejecución.
 
-**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2, T3 y después T4. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4 está implementada y verificada; T5–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.
+**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2, T3 y después T4 y T5. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4 está implementada y verificada; T5 está implementada y verificada offline; T6–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.

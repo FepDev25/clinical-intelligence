@@ -105,7 +105,7 @@ class ExtractionServiceTest {
         var proposed = new Medication(text(note, "Alfa"), null, context,
                 grounded(PrescriptionStatus.REPORTED, note, second), text(note, "9 mg"), null, null, null);
         var result = service(new Proposal(List.of(proposed), List.of())).extract(Command.note(note));
-        assertEquals("evidence-2", result.processing().validationVersion());
+        assertEquals("evidence-3", result.processing().validationVersion());
         assertNull(((Medication) result.medications().getFirst().mention()).dosage());
         assertTrue(result.warnings().stream().anyMatch(w -> w.targets().contains("/medications/0/dosage")));
     }
