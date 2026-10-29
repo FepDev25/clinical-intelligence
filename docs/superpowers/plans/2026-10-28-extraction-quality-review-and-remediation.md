@@ -2,7 +2,7 @@
 
 > Para quien ejecute: utilizar `superpowers:executing-plans` y completar las tareas con sus verificaciones. Plan aprobado por el usuario; ejecutar las tareas que autorice y registrar su cierre. No autoriza por sí solo inferencia remota. No delegar sin autorización aplicable.
 
-**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4 implementada y verificada con captura sintética optativa. T5 implementada y verificada offline; T6–T10 pendientes. Creado el 28-10-2026.
+**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4 implementada y verificada con captura sintética optativa. T5 implementada y verificada offline; T6 implementada y verificada offline; T7–T10 pendientes. Creado el 28-10-2026.
 
 **Objetivo:** investigar y resolver de forma trazable todos los limitantes identificados en código, representación, proveedor y evaluación, y medir si las correcciones mejoran la calidad sin ocultar omisiones, descartes ni incertidumbre.
 
@@ -176,20 +176,22 @@ En tareas de código: primero prueba que falle por la causa investigada, despué
 
 **Depende de:** T2 y T4; coordinar representación con T5. **Archivos:** servicio/políticas, protocolo y pruebas, regresiones sintéticas.
 
-- [ ] Prueba roja de negación aceptada como afirmación y casos contrastantes: negación distante, alcance coordinado, doble negación y negación de otra entidad.
-- [ ] Pares con paciente/familiar/otro, antecedente explícito y sujeto elíptico. Una cita literal ajena no debe bastar para sostener el sujeto.
-- [ ] Pares de orden hoy/prestación mañana, procedimiento realizado ayer y fecha desconocida. Separar estado de prestación y tiempo conforme a T2.
-- [ ] Probar suspensión frente a prescripción vigente; secuencia resuelta frente a contradicción simultánea; entidad repetida equivalente frente a menciones incompatibles.
-- [ ] Evaluar controles de coherencia y asociación acotados. No convertir incoherencias aparentes en correcciones clínicas automáticas ni deduplicar solo por nombre.
-- [ ] Medir errores críticos expuestos, abstenciones, advertencias y falsos rechazos por campo, antes y después.
+- [x] Prueba roja de negación aceptada como afirmación y casos contrastantes: negación distante, alcance coordinado, doble negación y negación de otra entidad.
+- [x] Pares con paciente/familiar/otro, antecedente explícito y sujeto elíptico. Una cita literal ajena no debe bastar para sostener el sujeto.
+- [x] Pares de orden hoy/prestación mañana, procedimiento realizado ayer y fecha desconocida. Separar estado de prestación y tiempo conforme a T2.
+- [x] Probar suspensión frente a prescripción vigente; secuencia resuelta frente a contradicción simultánea; entidad repetida equivalente frente a menciones incompatibles.
+- [x] Evaluar controles de coherencia y asociación acotados. No convertir incoherencias aparentes en correcciones clínicas automáticas ni deduplicar solo por nombre.
+- [x] Medir errores críticos expuestos, abstenciones, advertencias y falsos rechazos por campo, antes y después.
 
 **Aceptación:** controles deterministas cubren los patrones declarados sin promover desconocidos a estados conocidos. Casos semánticos no resolubles localmente quedan como límite del sistema y objetivo experimental de T8.
+
+**Cierre T6:** [informe, comparación y límites](../../../evaluation/quality-review/t6/README.md). 269 pruebas Java y 165 Python aprobadas. 24 etiquetas incorrectas bloqueadas, 35 referencias positivas conservadas y una fuga indirecta declarada; 656/657 valores conocidos de desarrollo sin cambios, con la diferencia retrospectiva T2 R7 pendiente de adjudicación. No hay fusión automática de episodios ni certificación semántica.
 
 ### T7. Preparar variantes de prompt y configuración reproducibles
 
 **Depende de:** T2, T3 y T4. **Archivos:** versiones nuevas de prompt/esquema cuando proceda, protocolo/settings y pruebas del adaptador; plan experimental.
 
-- [ ] Alinear etiquetas de telemetría con las versiones efectivas: T4 detectó `validation=evidence-1` fijo en ApiConfiguration frente a `evidence-2` del resultado. No usar el log legado como autoridad ni reescribir métricas históricas.
+- [ ] Alinear etiquetas de telemetría con las versiones efectivas: T4 detectó `validation=evidence-1` fijo en ApiConfiguration frente a `evidence-2` del resultado en T4; T6 comunica ahora `evidence-4`. No usar el log legado como autoridad ni reescribir métricas históricas.
 - [ ] Verificar documentación oficial vigente del endpoint/modelo y compatibilidad de thinking, temperatura, número de candidatos, esquema y límites. Registrar fecha/fuentes; una recomendación actual no demuestra causalidad histórica.
 - [ ] Hacer configurables las condiciones del estudio de forma explícita, manteniendo sin fallback la configuración de producción. Pruebas del JSON enviado deben comprobar cada parámetro y rechazo de valores no soportados.
 - [ ] Preparar variante de prompt con reglas T2, citas vinculadas a mención y política de agrupación; conservar prompt v2 y registrar hashes.
@@ -271,4 +273,4 @@ Bloques sugeridos para revisión/commits locales: diagnóstico y referencias (T1
 
 La revisión clínica humana independiente, las condiciones de privacidad/contratación del proveedor y la autorización para datos reales siguen siendo requisitos externos; no se dan por satisfechos por terminar ingeniería. Si falta revisor o presupuesto, continuar tareas offline independientes y dejar el tramo dependiente identificado, sin simular su ejecución.
 
-**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2, T3 y después T4 y T5. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4 está implementada y verificada; T5 está implementada y verificada offline; T6–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.
+**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2, T3 y después T4, T5 y T6. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4 está implementada y verificada; T5 está implementada y verificada offline; T6 está implementada y verificada offline; T7–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.

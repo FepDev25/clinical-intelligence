@@ -1,0 +1,20 @@
+E
+======================================================================
+ERROR: test_summarize_context (unittest.loader._FailedTest.test_summarize_context)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_summarize_context
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.14/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/t6/test_summarize_context.py", line 5, in <module>
+    from summarize_context import compare
+ModuleNotFoundError: No module named 'summarize_context'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

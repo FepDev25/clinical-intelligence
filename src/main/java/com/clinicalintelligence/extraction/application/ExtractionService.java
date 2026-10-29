@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public final class ExtractionService {
-    public static final String VALIDATION_VERSION = "evidence-3";
+    public static final String VALIDATION_VERSION = "evidence-4";
     private final ExtractionProvider provider;
     private final InputPolicy input;
     private final EvidencePolicy evidence = new EvidencePolicy();
@@ -50,6 +50,7 @@ public final class ExtractionService {
         validateNotices(response.proposal());
         var resolver = new CatalogResolver(command.catalogs());
         var association = new MentionAssociationPolicy(command.clinicalNote(), response.proposal().mentions());
+        var contextPolicy = new ContextEvidencePolicy(command.clinicalNote(), response.proposal().mentions());
         var findings = new ArrayList<Accepted>();
         var warnings = new ArrayList<Warning>();
         var counts = new EnumMap<Kind, Integer>(Kind.class);
@@ -70,7 +71,7 @@ public final class ExtractionService {
             }
             int index = counts.getOrDefault(proposed.kind(), 0);
             String path = "/" + collection(proposed.kind()) + "/" + index;
-            Mention accepted = sanitize(command.clinicalNote(), proposed, path, warnings, rejections, association);
+            Mention accepted = sanitize(command.clinicalNote(), proposed, path, warnings, rejections, association, contextPolicy);
             String id = switch (accepted.kind()) { case DIAGNOSIS -> "d"; case MEDICATION -> "m"; case PROCEDURE -> "p"; } + (index + 1);
             findings.add(new Accepted(id, accepted, resolver.resolve(accepted.kind(), accepted.name().value())));
             paths.put(i, path);
@@ -82,6 +83,24 @@ public final class ExtractionService {
                     .map(t -> paths.get(t.mentionIndex()) + suffix(t.field())).distinct().toList();
             if (targets.isEmpty() || notice.code() == WarningCode.CONTRADICTORY_MENTIONS && targets.size() < 2) continue;
             warnings.add(new Warning(notice.code(), targets, "/clinicalNote"));
+        }
+        var simultaneous = new HashMap<String, List<String>>();
+        var assertions = new HashMap<String, java.util.Set<Assertion>>();
+        var familyIndex = new EnumMap<Kind, Integer>(Kind.class);
+        for (Accepted accepted : findings) {
+            var mention = accepted.mention();
+            int index = familyIndex.getOrDefault(mention.kind(), 0);
+            familyIndex.put(mention.kind(), index + 1);
+            String key = contextPolicy.simultaneousConflictKey(mention);
+            if (key == null) continue;
+            simultaneous.computeIfAbsent(key, ignored -> new ArrayList<>()).add("/" + collection(mention.kind()) + "/" + index);
+            assertions.computeIfAbsent(key, ignored -> new HashSet<>()).add(mention.context().assertion().value());
+        }
+        for (var group : simultaneous.entrySet()) {
+            if (assertions.get(group.getKey()).size() < 2) continue;
+            var targets = group.getValue();
+            if (warnings.stream().noneMatch(w -> w.code() == WarningCode.CONTRADICTORY_MENTIONS && w.targets().containsAll(targets)))
+                warnings.add(new Warning(WarningCode.CONTRADICTORY_MENTIONS, targets, "/clinicalNote"));
         }
         var metadata = response.metadata();
         var result = new Result(UUID.randomUUID(), locale, findings, warnings,
@@ -119,12 +138,12 @@ public final class ExtractionService {
                 || !EvidencePolicy.nonblankScalar(metadata.model()) || metadata.executionMode() == null) invalidResponse();
     }
 
-    private Mention sanitize(String note, Mention proposed, String path, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections, MentionAssociationPolicy association) {
+    private Mention sanitize(String note, Mention proposed, String path, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections, MentionAssociationPolicy association, ContextEvidencePolicy contextPolicy) {
         Context raw = proposed.context();
         Context context = new Context(
-                grounded(note, raw == null ? null : raw.assertion(), Assertion.UNKNOWN, path + suffix(Field.ASSERTION), warnings, rejections),
-                grounded(note, raw == null ? null : raw.temporality(), Temporality.UNKNOWN, path + suffix(Field.TEMPORALITY), warnings, rejections),
-                grounded(note, raw == null ? null : raw.subject(), Subject.UNKNOWN, path + suffix(Field.SUBJECT), warnings, rejections));
+                grounded(note, raw == null ? null : raw.assertion(), Assertion.UNKNOWN, path + suffix(Field.ASSERTION), warnings, rejections, proposed, Field.ASSERTION, contextPolicy),
+                grounded(note, raw == null ? null : raw.temporality(), Temporality.UNKNOWN, path + suffix(Field.TEMPORALITY), warnings, rejections, proposed, Field.TEMPORALITY, contextPolicy),
+                grounded(note, raw == null ? null : raw.subject(), Subject.UNKNOWN, path + suffix(Field.SUBJECT), warnings, rejections, proposed, Field.SUBJECT, contextPolicy));
         Text code = text(note, proposed.mentionedCode(), path + suffix(Field.MENTIONED_CODE), warnings, rejections);
         if (code != null && !association.supports(proposed, code, true)) {
             discardedAttribute(path + suffix(Field.MENTIONED_CODE), warnings, rejections, ExtractionTrace.Reason.TEXT_ASSOCIATION_REJECTED);
@@ -132,14 +151,14 @@ public final class ExtractionService {
         }
         return switch (proposed) {
             case Diagnosis d -> new Diagnosis(d.name(), code, context);
-            case Medication m -> medication(note, m, code, context, path, warnings, rejections, association);
+            case Medication m -> medication(note, m, code, context, path, warnings, rejections, association, contextPolicy);
             case Procedure p -> new Procedure(p.name(), code, context,
-                    grounded(note, p.performanceStatus(), PerformanceStatus.UNKNOWN, path + suffix(Field.PERFORMANCE_STATUS), warnings, rejections));
+                    grounded(note, p.performanceStatus(), PerformanceStatus.UNKNOWN, path + suffix(Field.PERFORMANCE_STATUS), warnings, rejections, proposed, Field.PERFORMANCE_STATUS, contextPolicy));
         };
     }
 
-    private Medication medication(String note, Medication proposed, Text code, Context context, String path, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections, MentionAssociationPolicy association) {
-        var status = grounded(note, proposed.prescriptionStatus(), PrescriptionStatus.UNKNOWN, path + suffix(Field.PRESCRIPTION_STATUS), warnings, rejections);
+    private Medication medication(String note, Medication proposed, Text code, Context context, String path, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections, MentionAssociationPolicy association, ContextEvidencePolicy contextPolicy) {
+        var status = grounded(note, proposed.prescriptionStatus(), PrescriptionStatus.UNKNOWN, path + suffix(Field.PRESCRIPTION_STATUS), warnings, rejections, proposed, Field.PRESCRIPTION_STATUS, contextPolicy);
         var scopes = new ArrayList<Evidence>(context.assertion().evidence());
         scopes.addAll(status.evidence());
         return new Medication(proposed.name(), code, context, status,
@@ -166,11 +185,17 @@ public final class ExtractionService {
         return null;
     }
 
-    private <T extends Enum<T>> Grounded<T> grounded(String note, Grounded<T> proposed, T unknown, String target, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections) {
+    private <T extends Enum<T>> Grounded<T> grounded(String note, Grounded<T> proposed, T unknown, String target, List<Warning> warnings, List<ExtractionTrace.Rejection> rejections, Mention owner, Field field, ContextEvidencePolicy contextPolicy) {
         boolean valid = proposed != null && proposed.value() != null && proposed.evidence() != null
                 && (proposed.value() == unknown ? proposed.evidence().isEmpty()
                 : !proposed.evidence().isEmpty() && proposed.evidence().stream().allMatch(e -> evidence.validEvidence(note, e)));
-        if (valid) return proposed;
+        if (valid) {
+            var decision = contextPolicy.check(owner, field, proposed);
+            if (decision == ContextEvidencePolicy.Decision.KEEP) return proposed;
+            discardedAttribute(target, warnings, rejections, decision == ContextEvidencePolicy.Decision.FOREIGN_EVIDENCE
+                    ? ExtractionTrace.Reason.CONTEXT_ASSOCIATION_REJECTED : ExtractionTrace.Reason.CONTEXT_CONFLICT_REJECTED);
+            return new Grounded<>(unknown, List.of());
+        }
         discardedAttribute(target, warnings, rejections, ExtractionTrace.Reason.CONTEXT_EVIDENCE_REJECTED);
         return new Grounded<>(unknown, List.of());
     }

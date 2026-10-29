@@ -1,0 +1,651 @@
+{
+  "scope": "scripted synthetic field references, no model or clinical quality claim",
+  "initial": {
+    "cases": 43,
+    "before": {
+      "positive": {
+        "total": 31,
+        "retained": 31,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 16,
+        "blocked": 0,
+        "leaked": 16
+      },
+      "residual": {
+        "total": 1,
+        "blocked": 0,
+        "leaked": 1
+      }
+    },
+    "after": {
+      "positive": {
+        "total": 31,
+        "retained": 31,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 16,
+        "blocked": 16,
+        "leaked": 0
+      },
+      "residual": {
+        "total": 1,
+        "blocked": 0,
+        "leaked": 1
+      }
+    },
+    "contradictions": {
+      "before": {
+        "expected": 1,
+        "detected": 0,
+        "missing": 1,
+        "falseWarnings": 0
+      },
+      "after": {
+        "expected": 1,
+        "detected": 1,
+        "missing": 0,
+        "falseWarnings": 0
+      }
+    },
+    "development": {
+      "cases": 39,
+      "baselineKnownValueFields": 657,
+      "unchangedKnownValueFields": 656,
+      "changes": [
+        {
+          "caseId": "dev-consultation-02",
+          "path": "/diagnoses/0/context/subject/value",
+          "before": "patient",
+          "after": "unknown",
+          "adjudication": "not resolved by this software study"
+        }
+      ]
+    },
+    "fields": [
+      {
+        "caseId": "negative-negation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "affirmed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-negation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "negated",
+        "role": "positive",
+        "before": "negated",
+        "after": "negated"
+      },
+      {
+        "caseId": "positive-affirmation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "affirmed",
+        "role": "positive",
+        "before": "affirmed",
+        "after": "affirmed"
+      },
+      {
+        "caseId": "positive-distant-negation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "affirmed",
+        "role": "positive",
+        "before": "affirmed",
+        "after": "affirmed"
+      },
+      {
+        "caseId": "negative-suspected",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "affirmed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-suspected",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "suspected",
+        "role": "positive",
+        "before": "suspected",
+        "after": "suspected"
+      },
+      {
+        "caseId": "negative-no-descartar",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "negated",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-no-descartar",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "suspected",
+        "role": "positive",
+        "before": "suspected",
+        "after": "suspected"
+      },
+      {
+        "caseId": "negative-double-negation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "affirmed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-double-abstention",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "positive",
+        "before": "unknown",
+        "after": "unknown"
+      },
+      {
+        "caseId": "negative-coordinated-negation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "affirmed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "negative-coordinated-negation",
+        "path": "/diagnoses/1/context/assertion/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "affirmed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-coordinated-negation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "negated",
+        "role": "positive",
+        "before": "negated",
+        "after": "negated"
+      },
+      {
+        "caseId": "positive-coordinated-negation",
+        "path": "/diagnoses/1/context/assertion/value",
+        "value": "negated",
+        "role": "positive",
+        "before": "negated",
+        "after": "negated"
+      },
+      {
+        "caseId": "positive-adversative",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "affirmed",
+        "role": "positive",
+        "before": "affirmed",
+        "after": "affirmed"
+      },
+      {
+        "caseId": "negative-family-as-patient",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "patient",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-family",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "family",
+        "role": "positive",
+        "before": "family",
+        "after": "family"
+      },
+      {
+        "caseId": "positive-patient",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "patient",
+        "role": "positive",
+        "before": "patient",
+        "after": "patient"
+      },
+      {
+        "caseId": "positive-other",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "other",
+        "role": "positive",
+        "before": "other",
+        "after": "other"
+      },
+      {
+        "caseId": "negative-foreign-subject-citation",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "patient",
+        "after": "unknown"
+      },
+      {
+        "caseId": "negative-foreign-time-citation",
+        "path": "/diagnoses/0/context/temporality/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "current",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-own-short-subject",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "patient",
+        "role": "positive",
+        "before": "patient",
+        "after": "patient"
+      },
+      {
+        "caseId": "positive-own-short-time",
+        "path": "/diagnoses/0/context/temporality/value",
+        "value": "current",
+        "role": "positive",
+        "before": "current",
+        "after": "current"
+      },
+      {
+        "caseId": "negative-historical-as-current",
+        "path": "/diagnoses/0/context/temporality/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "current",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-historical",
+        "path": "/diagnoses/0/context/temporality/value",
+        "value": "historical",
+        "role": "positive",
+        "before": "historical",
+        "after": "historical"
+      },
+      {
+        "caseId": "negative-order-today-act-tomorrow",
+        "path": "/procedures/0/context/temporality/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "current",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-order-today-act-tomorrow",
+        "path": "/procedures/0/context/temporality/value",
+        "value": "future",
+        "role": "positive",
+        "before": "future",
+        "after": "future"
+      },
+      {
+        "caseId": "positive-order-no-date",
+        "path": "/procedures/0/context/temporality/value",
+        "value": "unknown",
+        "role": "positive",
+        "before": "unknown",
+        "after": "unknown"
+      },
+      {
+        "caseId": "negative-not-performed-as-performed",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "performed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-not-performed",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "not_performed",
+        "role": "positive",
+        "before": "not_performed",
+        "after": "not_performed"
+      },
+      {
+        "caseId": "positive-performed-yesterday",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "performed",
+        "role": "positive",
+        "before": "performed",
+        "after": "performed"
+      },
+      {
+        "caseId": "positive-sequence-single-procedure",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "performed",
+        "role": "positive",
+        "before": "performed",
+        "after": "performed"
+      },
+      {
+        "caseId": "negative-plan-as-performed",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "performed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-cancelled",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "cancelled",
+        "role": "positive",
+        "before": "cancelled",
+        "after": "cancelled"
+      },
+      {
+        "caseId": "negative-suspended-as-prescribed",
+        "path": "/medications/0/prescriptionStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "prescribed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-suspended",
+        "path": "/medications/0/prescriptionStatus/value",
+        "value": "suspended",
+        "role": "positive",
+        "before": "suspended",
+        "after": "suspended"
+      },
+      {
+        "caseId": "positive-prescribed",
+        "path": "/medications/0/prescriptionStatus/value",
+        "value": "prescribed",
+        "role": "positive",
+        "before": "prescribed",
+        "after": "prescribed"
+      },
+      {
+        "caseId": "positive-reported",
+        "path": "/medications/0/prescriptionStatus/value",
+        "value": "reported",
+        "role": "positive",
+        "before": "reported",
+        "after": "reported"
+      },
+      {
+        "caseId": "negative-reported-as-prescribed",
+        "path": "/medications/0/prescriptionStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "prescribed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-repeat-equivalent",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "affirmed",
+        "role": "positive",
+        "before": "affirmed",
+        "after": "affirmed"
+      },
+      {
+        "caseId": "positive-repeat-equivalent",
+        "path": "/diagnoses/1/context/assertion/value",
+        "value": "affirmed",
+        "role": "positive",
+        "before": "affirmed",
+        "after": "affirmed"
+      },
+      {
+        "caseId": "positive-repeat-sequence",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "suspected",
+        "role": "positive",
+        "before": "suspected",
+        "after": "suspected"
+      },
+      {
+        "caseId": "positive-repeat-sequence",
+        "path": "/diagnoses/1/context/assertion/value",
+        "value": "negated",
+        "role": "positive",
+        "before": "negated",
+        "after": "negated"
+      },
+      {
+        "caseId": "positive-repeat-contradiction",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "affirmed",
+        "role": "positive",
+        "before": "affirmed",
+        "after": "affirmed"
+      },
+      {
+        "caseId": "positive-repeat-contradiction",
+        "path": "/diagnoses/1/context/assertion/value",
+        "value": "negated",
+        "role": "positive",
+        "before": "negated",
+        "after": "negated"
+      },
+      {
+        "caseId": "positive-explicit-ellipsis",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "patient",
+        "role": "positive",
+        "before": "patient",
+        "after": "patient"
+      },
+      {
+        "caseId": "negative-unicode-crlf",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "affirmed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "residual-opaque-negation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "residual",
+        "before": "affirmed",
+        "after": "affirmed"
+      }
+    ]
+  },
+  "supplemental": {
+    "cases": 12,
+    "before": {
+      "positive": {
+        "total": 4,
+        "retained": 4,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 8,
+        "blocked": 0,
+        "leaked": 8
+      },
+      "residual": {
+        "total": 0,
+        "blocked": 0,
+        "leaked": 0
+      }
+    },
+    "after": {
+      "positive": {
+        "total": 4,
+        "retained": 4,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 8,
+        "blocked": 8,
+        "leaked": 0
+      },
+      "residual": {
+        "total": 0,
+        "blocked": 0,
+        "leaked": 0
+      }
+    },
+    "contradictions": {
+      "before": {
+        "expected": 0,
+        "detected": 0,
+        "missing": 0,
+        "falseWarnings": 0
+      },
+      "after": {
+        "expected": 0,
+        "detected": 0,
+        "missing": 0,
+        "falseWarnings": 0
+      }
+    },
+    "development": {
+      "cases": 0,
+      "baselineKnownValueFields": 0,
+      "unchangedKnownValueFields": 0,
+      "changes": []
+    },
+    "fields": [
+      {
+        "caseId": "negative-no-prescription",
+        "path": "/medications/0/prescriptionStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "prescribed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "negative-no-order",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "ordered",
+        "after": "unknown"
+      },
+      {
+        "caseId": "negative-no-cancellation",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "cancelled",
+        "after": "unknown"
+      },
+      {
+        "caseId": "negative-no-confirmation",
+        "path": "/diagnoses/0/context/assertion/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "affirmed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "negative-interposed-time",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "performed",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-interposed-time",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "performed",
+        "role": "positive",
+        "before": "performed",
+        "after": "performed"
+      },
+      {
+        "caseId": "negative-postposed-status",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "ordered",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-postposed-status",
+        "path": "/procedures/0/performanceStatus/value",
+        "value": "performed",
+        "role": "positive",
+        "before": "performed",
+        "after": "performed"
+      },
+      {
+        "caseId": "negative-coordinated-subject",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "patient",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-coordinated-subject",
+        "path": "/diagnoses/0/context/subject/value",
+        "value": "family",
+        "role": "positive",
+        "before": "family",
+        "after": "family"
+      },
+      {
+        "caseId": "negative-coordinated-time",
+        "path": "/diagnoses/0/context/temporality/value",
+        "value": "unknown",
+        "role": "negative",
+        "before": "historical",
+        "after": "unknown"
+      },
+      {
+        "caseId": "positive-coordinated-time",
+        "path": "/diagnoses/0/context/temporality/value",
+        "value": "current",
+        "role": "positive",
+        "before": "current",
+        "after": "current"
+      }
+    ]
+  },
+  "total": {
+    "before": {
+      "positive": {
+        "total": 35,
+        "retained": 35,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 24,
+        "blocked": 0,
+        "leaked": 24
+      },
+      "residual": {
+        "total": 1,
+        "blocked": 0,
+        "leaked": 1
+      }
+    },
+    "after": {
+      "positive": {
+        "total": 35,
+        "retained": 35,
+        "falseDiscards": 0,
+        "mismatches": 0
+      },
+      "negative": {
+        "total": 24,
+        "blocked": 24,
+        "leaked": 0
+      },
+      "residual": {
+        "total": 1,
+        "blocked": 0,
+        "leaked": 1
+      }
+    }
+  }
+}

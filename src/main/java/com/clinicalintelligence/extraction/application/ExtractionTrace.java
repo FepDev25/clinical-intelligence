@@ -14,7 +14,7 @@ public interface ExtractionTrace {
 
     enum Reason {
         NAME_LITERAL_REJECTED, TEXT_LITERAL_REJECTED, TEXT_ASSOCIATION_REJECTED,
-        CONTEXT_EVIDENCE_REJECTED, MEDICATION_ASSOCIATION_REJECTED
+        CONTEXT_EVIDENCE_REJECTED, CONTEXT_ASSOCIATION_REJECTED, CONTEXT_CONFLICT_REJECTED, MEDICATION_ASSOCIATION_REJECTED
     }
     record Source(int proposalIndex, Kind kind, int familyIndex) {}
     record Rejection(String field, Reason reason) {}

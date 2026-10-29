@@ -1,0 +1,111 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24280 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] -----------< com.clinicalintelligence:clinical-intelligence >-----------
+[INFO] Building Clinical Intelligence 0.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ clinical-intelligence ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ clinical-intelligence ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 24 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ clinical-intelligence ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] Copying 1 resource from evaluation/corpus/v1 to target/test-classes/corpus
+[INFO] Copying 1 resource from evaluation/next to target/test-classes/corpus-v1.0.1
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ clinical-intelligence ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 37 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocolTest.java: /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocolTest.java uses or overrides a deprecated API.
+[INFO] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocolTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ clinical-intelligence ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.clinicalintelligence.testing.NetworkIsolationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in com.clinicalintelligence.testing.NetworkIsolationTest
+[INFO] Running com.clinicalintelligence.extraction.domain.ClinicalModelTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in com.clinicalintelligence.extraction.domain.ClinicalModelTest
+[INFO] Running com.clinicalintelligence.extraction.application.CatalogResolverTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s -- in com.clinicalintelligence.extraction.application.CatalogResolverTest
+[INFO] Running com.clinicalintelligence.extraction.application.AssociationUnicodeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 s -- in com.clinicalintelligence.extraction.application.AssociationUnicodeTest
+[INFO] Running com.clinicalintelligence.extraction.application.DevelopmentCorpusTest
+[INFO] Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 s -- in com.clinicalintelligence.extraction.application.DevelopmentCorpusTest
+[INFO] Running com.clinicalintelligence.extraction.application.InputPolicyTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in com.clinicalintelligence.extraction.application.InputPolicyTest
+[INFO] Running com.clinicalintelligence.extraction.application.ContextRelationsTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in com.clinicalintelligence.extraction.application.ContextRelationsTest
+[INFO] Running com.clinicalintelligence.extraction.application.EvidencePolicyTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.clinicalintelligence.extraction.application.EvidencePolicyTest
+[INFO] Running com.clinicalintelligence.extraction.application.AssociationReviewTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.clinicalintelligence.extraction.application.AssociationReviewTest
+[INFO] Running com.clinicalintelligence.extraction.application.ContextContinuationTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in com.clinicalintelligence.extraction.application.ContextContinuationTest
+[INFO] Running com.clinicalintelligence.extraction.application.ExtractionServiceTest
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s -- in com.clinicalintelligence.extraction.application.ExtractionServiceTest
+[INFO] Running com.clinicalintelligence.extraction.application.ContextPolicyTest
+[INFO] Tests run: 54, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.274 s -- in com.clinicalintelligence.extraction.application.ContextPolicyTest
+[INFO] Running com.clinicalintelligence.extraction.application.AssociationPolicyTest
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in com.clinicalintelligence.extraction.application.AssociationPolicyTest
+[INFO] Running com.clinicalintelligence.extraction.infrastructure.gemini.ProviderFailureMappingTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.clinicalintelligence.extraction.infrastructure.gemini.ProviderFailureMappingTest
+[INFO] Running com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocolTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.246 s -- in com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocolTest
+[INFO] Running com.clinicalintelligence.extraction.infrastructure.gemini.SyntheticTraceReplayTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 s -- in com.clinicalintelligence.extraction.infrastructure.gemini.SyntheticTraceReplayTest
+[INFO] Running com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProviderTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.687 s -- in com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProviderTest
+[INFO] Running com.clinicalintelligence.http.StartupTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.995 s -- in com.clinicalintelligence.http.StartupTest
+[INFO] Running com.clinicalintelligence.http.CredentialStoreTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.clinicalintelligence.http.CredentialStoreTest
+[INFO] Running com.clinicalintelligence.http.WireContractTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.clinicalintelligence.http.WireContractTest
+[INFO] Running com.clinicalintelligence.http.RegisteredLocaleTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.clinicalintelligence.http.RegisteredLocaleTest
+[INFO] Running com.clinicalintelligence.http.ApiIntegrationTest
+2026-10-28T21:20:16.508-05:00  INFO 266115 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.4 using Java 21.0.13.0.2 with PID 266115 (started by felipep in /home/felipep/Software/medical-solutions/clinical-intelligence)
+2026-10-28T21:20:16.512-05:00  INFO 266115 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : No active profile set, falling back to 1 default profile: "default"
+2026-10-28T21:20:17.018-05:00  INFO 266115 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-10-28T21:20:17.031-05:00  INFO 266115 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-28T21:20:17.031-05:00  INFO 266115 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-28T21:20:17.067-05:00  INFO 266115 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-28T21:20:17.067-05:00  INFO 266115 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 552 ms
+2026-10-28T21:20:17.440-05:00  INFO 266115 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 33069 (http) with context path '/'
+2026-10-28T21:20:17.448-05:00  INFO 266115 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.974 seconds (process running for 8.909)
+2026-10-28T21:20:17.532-05:00  INFO 266115 --- [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28T21:20:17.533-05:00  INFO 266115 --- [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-28T21:20:17.534-05:00  INFO 266115 --- [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-28T21:20:17.904-05:00  INFO 266115 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-28T21:20:17.907-05:00  INFO 266115 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.450 s -- in com.clinicalintelligence.http.ApiIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 269, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ clinical-intelligence ---
+[INFO] Building jar: /home/felipep/Software/medical-solutions/clinical-intelligence/target/clinical-intelligence-0.1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.16:repackage (repackage) @ clinical-intelligence ---
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] Replacing main artifact /home/felipep/Software/medical-solutions/clinical-intelligence/target/clinical-intelligence-0.1.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/felipep/Software/medical-solutions/clinical-intelligence/target/clinical-intelligence-0.1.0-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.083 s
+[INFO] Finished at: 2026-10-28T21:20:19-05:00
+[INFO] ------------------------------------------------------------------------

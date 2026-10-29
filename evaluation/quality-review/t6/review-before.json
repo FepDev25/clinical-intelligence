@@ -1,0 +1,1425 @@
+{
+  "version" : "context-study-1",
+  "inferenceExecuted" : false,
+  "cases" : [ {
+    "id" : "negative-no-prescription",
+    "note" : "No se prescribe Alfa.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 16,
+            "end" : 20,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "No se prescribe Alfa."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "prescriptionStatus" : {
+          "value" : "PRESCRIBED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 21,
+            "quote" : "No se prescribe Alfa."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/medications/0/prescriptionStatus/value",
+      "value" : "unknown",
+      "role" : "negative"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "2e81a004-f06a-40d4-ad22-a2999dfbeed6",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ {
+        "id" : "m1",
+        "name" : {
+          "value" : "Alfa",
+          "evidence" : [ {
+            "start" : 16,
+            "end" : 20,
+            "quote" : "Alfa"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 21,
+              "quote" : "No se prescribe Alfa."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "prescriptionStatus" : {
+          "value" : "prescribed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 21,
+            "quote" : "No se prescribe Alfa."
+          } ]
+        },
+        "dosage" : null,
+        "frequency" : null,
+        "route" : null,
+        "duration" : null
+      } ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "MEDICATION",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/medications/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-no-order",
+    "note" : "No se solicita ecografía.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 24,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "NEGATED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "No se solicita ecografía."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "performanceStatus" : {
+          "value" : "ORDERED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 25,
+            "quote" : "No se solicita ecografía."
+          } ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/procedures/0/performanceStatus/value",
+      "value" : "unknown",
+      "role" : "negative"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "005abd82-bd37-4b70-9e0e-c994b2a2fff1",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ ],
+      "procedures" : [ {
+        "id" : "p1",
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 24,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "negated",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "No se solicita ecografía."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "performanceStatus" : {
+          "value" : "ordered",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 25,
+            "quote" : "No se solicita ecografía."
+          } ]
+        }
+      } ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "PROCEDURE",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/procedures/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-no-cancellation",
+    "note" : "No se canceló ecografía.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 14,
+            "end" : 23,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "NEGATED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 24,
+              "quote" : "No se canceló ecografía."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "performanceStatus" : {
+          "value" : "CANCELLED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 24,
+            "quote" : "No se canceló ecografía."
+          } ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/procedures/0/performanceStatus/value",
+      "value" : "unknown",
+      "role" : "negative"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "1f9bb12c-c34b-4373-8a9f-248985494e8d",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ ],
+      "procedures" : [ {
+        "id" : "p1",
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 14,
+            "end" : 23,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "negated",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 24,
+              "quote" : "No se canceló ecografía."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "performanceStatus" : {
+          "value" : "cancelled",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 24,
+            "quote" : "No se canceló ecografía."
+          } ]
+        }
+      } ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "PROCEDURE",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/procedures/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-no-confirmation",
+    "note" : "No se confirma asma.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 19,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 20,
+              "quote" : "No se confirma asma."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/diagnoses/0/context/assertion/value",
+      "value" : "unknown",
+      "role" : "negative"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "b14c9e66-0dbb-4d4b-b409-0272aebaffc2",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 19,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 20,
+              "quote" : "No se confirma asma."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-interposed-time",
+    "note" : "No se realizó hoy ecografía.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 27,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "NEGATED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 28,
+              "quote" : "No se realizó hoy ecografía."
+            } ]
+          },
+          "temporality" : {
+            "value" : "CURRENT",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 28,
+              "quote" : "No se realizó hoy ecografía."
+            } ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "performanceStatus" : {
+          "value" : "PERFORMED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 28,
+            "quote" : "No se realizó hoy ecografía."
+          } ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/procedures/0/performanceStatus/value",
+      "value" : "unknown",
+      "role" : "negative"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "cd08a849-2e85-4af9-a156-9c20ed1be9f7",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ ],
+      "procedures" : [ {
+        "id" : "p1",
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 18,
+            "end" : 27,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "negated",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 28,
+              "quote" : "No se realizó hoy ecografía."
+            } ]
+          },
+          "temporality" : {
+            "value" : "current",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 28,
+              "quote" : "No se realizó hoy ecografía."
+            } ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "performanceStatus" : {
+          "value" : "performed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 28,
+            "quote" : "No se realizó hoy ecografía."
+          } ]
+        }
+      } ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "PROCEDURE",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/procedures/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-interposed-time",
+    "note" : "Se realizó hoy ecografía.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 24,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "Se realizó hoy ecografía."
+            } ]
+          },
+          "temporality" : {
+            "value" : "CURRENT",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "Se realizó hoy ecografía."
+            } ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "performanceStatus" : {
+          "value" : "PERFORMED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 25,
+            "quote" : "Se realizó hoy ecografía."
+          } ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/procedures/0/performanceStatus/value",
+      "value" : "performed",
+      "role" : "positive"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "b476e4c3-b4a8-49b5-8d45-def17751f29b",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ ],
+      "procedures" : [ {
+        "id" : "p1",
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 24,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "Se realizó hoy ecografía."
+            } ]
+          },
+          "temporality" : {
+            "value" : "current",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "Se realizó hoy ecografía."
+            } ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "performanceStatus" : {
+          "value" : "performed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 25,
+            "quote" : "Se realizó hoy ecografía."
+          } ]
+        }
+      } ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "PROCEDURE",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/procedures/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-postposed-status",
+    "note" : "ecografía: realizada hoy.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 9,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "ecografía: realizada hoy."
+            } ]
+          },
+          "temporality" : {
+            "value" : "CURRENT",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "ecografía: realizada hoy."
+            } ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "performanceStatus" : {
+          "value" : "ORDERED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 25,
+            "quote" : "ecografía: realizada hoy."
+          } ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/procedures/0/performanceStatus/value",
+      "value" : "unknown",
+      "role" : "negative"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "1634df86-650a-4678-a0da-2efe056dbb8a",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ ],
+      "procedures" : [ {
+        "id" : "p1",
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 9,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "ecografía: realizada hoy."
+            } ]
+          },
+          "temporality" : {
+            "value" : "current",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "ecografía: realizada hoy."
+            } ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "performanceStatus" : {
+          "value" : "ordered",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 25,
+            "quote" : "ecografía: realizada hoy."
+          } ]
+        }
+      } ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "PROCEDURE",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/procedures/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-postposed-status",
+    "note" : "ecografía: realizada hoy.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 9,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "ecografía: realizada hoy."
+            } ]
+          },
+          "temporality" : {
+            "value" : "CURRENT",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "ecografía: realizada hoy."
+            } ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        },
+        "performanceStatus" : {
+          "value" : "PERFORMED",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 25,
+            "quote" : "ecografía: realizada hoy."
+          } ]
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/procedures/0/performanceStatus/value",
+      "value" : "performed",
+      "role" : "positive"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "a6b35af0-e13b-4010-866c-2f07d7ba2c11",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ ],
+      "medications" : [ ],
+      "procedures" : [ {
+        "id" : "p1",
+        "name" : {
+          "value" : "ecografía",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 9,
+            "quote" : "ecografía"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "ecografía: realizada hoy."
+            } ]
+          },
+          "temporality" : {
+            "value" : "current",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 25,
+              "quote" : "ecografía: realizada hoy."
+            } ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        },
+        "performanceStatus" : {
+          "value" : "performed",
+          "evidence" : [ {
+            "start" : 0,
+            "end" : 25,
+            "quote" : "ecografía: realizada hoy."
+          } ]
+        }
+      } ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "PROCEDURE",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/procedures/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-coordinated-subject",
+    "note" : "La madre tiene asma y el paciente tiene rinitis.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 19,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "La madre tiene asma y el paciente tiene rinitis."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "PATIENT",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "La madre tiene asma y el paciente tiene rinitis."
+            } ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/diagnoses/0/context/subject/value",
+      "value" : "unknown",
+      "role" : "negative"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "e5f2f8b0-bdee-4260-9a18-022e4b886ce0",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 19,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "La madre tiene asma y el paciente tiene rinitis."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "patient",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "La madre tiene asma y el paciente tiene rinitis."
+            } ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-coordinated-subject",
+    "note" : "La madre tiene asma y el paciente tiene rinitis.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 19,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "La madre tiene asma y el paciente tiene rinitis."
+            } ]
+          },
+          "temporality" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "FAMILY",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "La madre tiene asma y el paciente tiene rinitis."
+            } ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/diagnoses/0/context/subject/value",
+      "value" : "family",
+      "role" : "positive"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "37040fd0-24a2-41c3-a0d9-7550c0dcaae4",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 15,
+            "end" : 19,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "La madre tiene asma y el paciente tiene rinitis."
+            } ]
+          },
+          "temporality" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          },
+          "subject" : {
+            "value" : "family",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "La madre tiene asma y el paciente tiene rinitis."
+            } ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "negative-coordinated-time",
+    "note" : "Hoy se confirma asma y ayer se confirmó rinitis.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 16,
+            "end" : 20,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Hoy se confirma asma y ayer se confirmó rinitis."
+            } ]
+          },
+          "temporality" : {
+            "value" : "HISTORICAL",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Hoy se confirma asma y ayer se confirmó rinitis."
+            } ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/diagnoses/0/context/temporality/value",
+      "value" : "unknown",
+      "role" : "negative"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "fcf48e99-f80e-4cbb-b717-ff0b9ebe73d4",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 16,
+            "end" : 20,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Hoy se confirma asma y ayer se confirmó rinitis."
+            } ]
+          },
+          "temporality" : {
+            "value" : "historical",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Hoy se confirma asma y ayer se confirmó rinitis."
+            } ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  }, {
+    "id" : "positive-coordinated-time",
+    "note" : "Hoy se confirma asma y ayer se confirmó rinitis.",
+    "proposal" : {
+      "mentions" : [ {
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 16,
+            "end" : 20,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "AFFIRMED",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Hoy se confirma asma y ayer se confirmó rinitis."
+            } ]
+          },
+          "temporality" : {
+            "value" : "CURRENT",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Hoy se confirma asma y ayer se confirmó rinitis."
+            } ]
+          },
+          "subject" : {
+            "value" : "UNKNOWN",
+            "evidence" : [ ]
+          }
+        }
+      } ],
+      "notices" : [ ]
+    },
+    "expected" : [ {
+      "path" : "/diagnoses/0/context/temporality/value",
+      "value" : "current",
+      "role" : "positive"
+    } ],
+    "expectedFindings" : 1,
+    "expectedContradiction" : false,
+    "response" : {
+      "requestId" : "a0ce7b88-cfe7-4ea1-bb22-798366989140",
+      "contractVersion" : "0.1.0",
+      "locale" : "es",
+      "processingStatus" : "completed",
+      "reviewRequired" : true,
+      "diagnoses" : [ {
+        "id" : "d1",
+        "name" : {
+          "value" : "asma",
+          "evidence" : [ {
+            "start" : 16,
+            "end" : 20,
+            "quote" : "asma"
+          } ]
+        },
+        "mentionedCode" : null,
+        "context" : {
+          "assertion" : {
+            "value" : "affirmed",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Hoy se confirma asma y ayer se confirmó rinitis."
+            } ]
+          },
+          "temporality" : {
+            "value" : "current",
+            "evidence" : [ {
+              "start" : 0,
+              "end" : 48,
+              "quote" : "Hoy se confirma asma y ayer se confirmó rinitis."
+            } ]
+          },
+          "subject" : {
+            "value" : "unknown",
+            "evidence" : [ ]
+          }
+        },
+        "catalogMatch" : {
+          "status" : "not_provided",
+          "candidates" : [ ]
+        }
+      } ],
+      "medications" : [ ],
+      "procedures" : [ ],
+      "warnings" : [ ],
+      "processing" : {
+        "version" : "extraction-core-0.1.0",
+        "promptVersion" : "test-prompt",
+        "validationVersion" : "evidence-3",
+        "executionMode" : "simulated",
+        "provider" : "test-script",
+        "model" : "none"
+      }
+    },
+    "decisions" : [ {
+      "source" : {
+        "proposalIndex" : 0,
+        "kind" : "DIAGNOSIS",
+        "familyIndex" : 0
+      },
+      "outputPath" : "/diagnoses/0",
+      "rejections" : [ ]
+    } ]
+  } ]
+}
