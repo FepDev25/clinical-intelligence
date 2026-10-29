@@ -1,0 +1,143 @@
+{
+  "schemaVersion" : "synthetic-trace-1.0.0",
+  "caseId" : "invalid-occurrence",
+  "operationId" : "4b71e4a9-6dc8-49ff-8121-a8e5b51c5e2f",
+  "captureValid" : true,
+  "operationClosed" : true,
+  "syntheticFixture" : true,
+  "inferenceExecuted" : false,
+  "request" : {
+    "clinicalNote" : "asma",
+    "locale" : "es"
+  },
+  "structuredProposalText" : "{\"diagnoses\":[{\"name\":{\"value\":\"asma\",\"evidence\":[{\"quote\":\"asma\",\"occurrence\":5}]},\"mentionedCode\":null,\"context\":{\"assertion\":{\"value\":\"unknown\",\"evidence\":[]},\"temporality\":{\"value\":\"unknown\",\"evidence\":[]},\"subject\":{\"value\":\"unknown\",\"evidence\":[]}}}],\"medications\":[],\"procedures\":[],\"notices\":[]}",
+  "structuredStageAvailable" : true,
+  "decodedProposal" : {
+    "mentions" : [ {
+      "name" : {
+        "value" : "asma",
+        "evidence" : [ {
+          "start" : -1,
+          "end" : -1,
+          "quote" : "asma"
+        } ]
+      },
+      "mentionedCode" : null,
+      "context" : {
+        "assertion" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        },
+        "temporality" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        },
+        "subject" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        }
+      },
+      "kind" : "DIAGNOSIS"
+    } ],
+    "notices" : [ ]
+  },
+  "finalResult" : {
+    "requestId" : "15c4bf29-44da-4a0f-a56b-968474ae964a",
+    "contractVersion" : "0.1.0",
+    "locale" : "es",
+    "processingStatus" : "completed_with_warnings",
+    "reviewRequired" : true,
+    "diagnoses" : [ ],
+    "medications" : [ ],
+    "procedures" : [ ],
+    "warnings" : [ {
+      "code" : "ENTITY_DISCARDED",
+      "message" : "Se descartó una entidad sin evidencia válida.",
+      "targets" : [ ],
+      "source" : "/clinicalNote"
+    } ],
+    "processing" : {
+      "version" : "extraction-core-0.1.0",
+      "promptVersion" : "test-prompt",
+      "validationVersion" : "evidence-2",
+      "executionMode" : "simulated",
+      "provider" : "test-script",
+      "model" : "none"
+    }
+  },
+  "failureCode" : null,
+  "mentionDecisions" : [ {
+    "source" : {
+      "proposalIndex" : 0,
+      "kind" : "DIAGNOSIS",
+      "familyIndex" : 0
+    },
+    "outputPath" : null,
+    "rejections" : [ {
+      "field" : "name",
+      "reason" : "NAME_LITERAL_REJECTED"
+    } ]
+  } ],
+  "fieldTransitions" : [ {
+    "proposalIndex" : 0,
+    "field" : "name",
+    "sourcePath" : "/diagnoses/0/name",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : "NAME_LITERAL_REJECTED",
+    "decodedBefore" : {
+      "value" : "asma",
+      "evidence" : [ {
+        "start" : -1,
+        "end" : -1,
+        "quote" : "asma"
+      } ]
+    },
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "mentionedCode",
+    "sourcePath" : "/diagnoses/0/mentionedCode",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : null,
+    "decodedBefore" : null,
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/assertion",
+    "sourcePath" : "/diagnoses/0/context/assertion",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/temporality",
+    "sourcePath" : "/diagnoses/0/context/temporality",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/subject",
+    "sourcePath" : "/diagnoses/0/context/subject",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : null
+  } ]
+}

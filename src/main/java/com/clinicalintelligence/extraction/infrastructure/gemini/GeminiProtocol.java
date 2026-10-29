@@ -2,6 +2,7 @@ package com.clinicalintelligence.extraction.infrastructure.gemini;
 
 import static com.clinicalintelligence.extraction.domain.ClinicalModel.*;
 import com.clinicalintelligence.extraction.application.EvidencePolicy;
+import com.clinicalintelligence.extraction.application.ExtractionTrace;
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.json.JsonMapper;
@@ -53,6 +54,11 @@ public final class GeminiProtocol {
     }
 
     public Decoded decode(String note,byte[] bytes) {
+        return decode(note, bytes, ExtractionTrace.NONE);
+    }
+
+    public Decoded decode(String note,byte[] bytes,ExtractionTrace trace) {
+        Objects.requireNonNull(trace);
         Usage usage=new Usage(null,null,null,null);
         String model=MODEL;
         try {
@@ -79,6 +85,10 @@ public final class GeminiProtocol {
             if(text.toString().codePoints().anyMatch(cp->cp>=0xD800 && cp<=0xDFFF)) return bad(Completion.MALFORMED,usage,model);
             JsonNode proposal=read(text.toString().getBytes(StandardCharsets.UTF_8));
             if(proposal==null || !validator.validate(proposal).isEmpty()) return bad(Completion.MALFORMED,usage,model);
+            if (trace != ExtractionTrace.NONE) {
+                String structured = text.toString();
+                ExtractionTrace.emit(trace, sink -> sink.structuredProposal(structured));
+            }
             return new Decoded(Completion.COMPLETE,proposal(note,proposal),usage,model);
         } catch(Exception invalid) { return bad(Completion.MALFORMED,usage,model); }
     }

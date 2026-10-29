@@ -4,7 +4,7 @@ Estado al cierre del 28-10-2026 (America/Guayaquil): **prototipo de Clinical Ext
 
 Para retomar, leer primero el [resumen de la sesión del 28-10](sesion-28-10-2026/README.md), [AGENTS.md](../AGENTS.md) y el [análisis de la evaluación](sesion-28-10-2026-evaluacion.md). La [sesión del 27-10](sesion-27-10-2026/README.md) y el [informe H5](h5-validation.md) conservan la línea base. Para consumir la API, usar la [guía H5](h5-integration.md), considerando que describe la configuración histórica.
 
-El [plan integral de revisión, corrección y evaluación](superpowers/plans/2026-10-28-extraction-quality-review-and-remediation.md) reúne los hallazgos posteriores y propone diez tareas con trazabilidad, pruebas y criterios de aceptación. Fue aprobado por el usuario; [T1 está completada y verificada](../evaluation/quality-review/README.md). [T2 tiene expediente de revisión preparado](../evaluation/quality-review/t2/README.md), con 18 cambios de referencia propuestos y adjudicación formal abierta. [T3 implementa un evaluador candidato y comparación offline](../evaluation/quality-review/t3/README.md), conservando los conteos estrictos y la decisión negativa. T4–T10 siguen pendientes y no se ha autorizado otra campaña remota.
+El [plan integral de revisión, corrección y evaluación](superpowers/plans/2026-10-28-extraction-quality-review-and-remediation.md) reúne los hallazgos posteriores y propone diez tareas con trazabilidad, pruebas y criterios de aceptación. Fue aprobado por el usuario; [T1 está completada y verificada](../evaluation/quality-review/README.md). [T2 tiene expediente de revisión preparado](../evaluation/quality-review/t2/README.md), con 18 cambios de referencia propuestos y adjudicación formal abierta. [T3 implementa un evaluador candidato y comparación offline](../evaluation/quality-review/t3/README.md), conservando los conteos estrictos y la decisión negativa. [T4 añade captura optativa por etapa y nueve replays sintéticos](../evaluation/quality-review/t4/README.md), sin captura en la ruta HTTP ordinaria. T5–T10 siguen pendientes y no se ha autorizado otra campaña remota.
 
 Actualización posterior: las correcciones de desarrollo del evaluador y la revisión de las seis decisiones H5 están en [evaluación 1.0.1](../evaluation/next/README.md). La evaluación histórica y su decisión negativa no cambian; la próxima campaña requiere integrar estos activos y sustituir los dos escenarios reservados examinados.
 
@@ -53,7 +53,7 @@ Stack implementado: Java 21, Spring Boot 3.5.16 y cliente HTTP del JDK para Gemi
 | H5: evaluación | [Resultados y límites](h5-validation.md) | [Registro](h5-progress.md). |
 | Cierre de sesión | [Estado y próximos pasos](sesion-27-10-2026/README.md) | [Verificación de cierre](sesion-27-10-2026/verificacion.md). |
 
-Los informes H1–H4 y ledgers describen el momento de cada hito. Sus cifras de pruebas no sustituyen el total actual: 134 Java y 71 Python. Las antiguas decisiones de no crear commits correspondían a un repositorio sin commit inicial; el usuario autorizó commits locales al cerrar la sesión.
+Los informes H1–H4 y ledgers describen el momento de cada hito. Sus cifras son históricas. La verificación de T4 ejecutó 156 pruebas Java y 152 Python, todas aprobadas; los conteos de software no sustituyen la evaluación de calidad de extracción. Las antiguas decisiones de no crear commits correspondían a un repositorio sin commit inicial; el usuario autorizó commits locales al cerrar la sesión.
 
 ## Artefactos congelados: cómo interpretar sus estados históricos
 

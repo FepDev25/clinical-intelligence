@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : "synthetic-trace-1.0.0",
+  "caseId" : "malformed-output",
+  "operationId" : "18528002-87c2-42aa-bacf-b90ad0135739",
+  "captureValid" : true,
+  "operationClosed" : true,
+  "syntheticFixture" : true,
+  "inferenceExecuted" : false,
+  "request" : {
+    "clinicalNote" : "asma",
+    "locale" : "es"
+  },
+  "structuredProposalText" : null,
+  "structuredStageAvailable" : false,
+  "decodedProposal" : null,
+  "finalResult" : null,
+  "failureCode" : "PROVIDER_INVALID_RESPONSE",
+  "mentionDecisions" : [ ],
+  "fieldTransitions" : [ ]
+}

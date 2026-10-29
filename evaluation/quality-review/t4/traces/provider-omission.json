@@ -1,0 +1,41 @@
+{
+  "schemaVersion" : "synthetic-trace-1.0.0",
+  "caseId" : "provider-omission",
+  "operationId" : "8bf1013c-15fa-4687-a026-9ae4fa8a2938",
+  "captureValid" : true,
+  "operationClosed" : true,
+  "syntheticFixture" : true,
+  "inferenceExecuted" : false,
+  "request" : {
+    "clinicalNote" : "Diagnóstico confirmado: asma.",
+    "locale" : "es"
+  },
+  "structuredProposalText" : "{\"diagnoses\":[],\"medications\":[],\"procedures\":[],\"notices\":[]}",
+  "structuredStageAvailable" : true,
+  "decodedProposal" : {
+    "mentions" : [ ],
+    "notices" : [ ]
+  },
+  "finalResult" : {
+    "requestId" : "d19ad3eb-3918-47b8-944f-7cab8e1f6aa4",
+    "contractVersion" : "0.1.0",
+    "locale" : "es",
+    "processingStatus" : "completed",
+    "reviewRequired" : true,
+    "diagnoses" : [ ],
+    "medications" : [ ],
+    "procedures" : [ ],
+    "warnings" : [ ],
+    "processing" : {
+      "version" : "extraction-core-0.1.0",
+      "promptVersion" : "test-prompt",
+      "validationVersion" : "evidence-2",
+      "executionMode" : "simulated",
+      "provider" : "test-script",
+      "model" : "none"
+    }
+  },
+  "failureCode" : null,
+  "mentionDecisions" : [ ],
+  "fieldTransitions" : [ ]
+}

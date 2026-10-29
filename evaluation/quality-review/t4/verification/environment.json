@@ -1,0 +1,11 @@
+{
+  "baseCommit": "ffba41e",
+  "scope": "T4 synthetic local replay and loopback unit tests; no remote inference",
+  "javaTests": 156,
+  "pythonTests": 152,
+  "exportedFixtures": 9,
+  "productionCollectorEnabled": false,
+  "defaultTrace": "ExtractionTrace.NONE",
+  "changedRules": false,
+  "publicContractChanged": false
+}

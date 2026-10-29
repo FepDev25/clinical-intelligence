@@ -1,0 +1,367 @@
+{
+  "schemaVersion" : "synthetic-trace-1.0.0",
+  "caseId" : "unknown-null-and-discards",
+  "operationId" : "6527b54b-17a7-4e90-b417-922f119e96ee",
+  "captureValid" : true,
+  "operationClosed" : true,
+  "syntheticFixture" : true,
+  "inferenceExecuted" : false,
+  "request" : {
+    "clinicalNote" : "Diagnóstico actual del paciente: asma. Prescripción actual del paciente: Alfa, dosis 5 mg. Se solicita radiografía al paciente para mañana. Control en 7 días.",
+    "locale" : "es"
+  },
+  "structuredProposalText" : "{\"diagnoses\":[],\"medications\":[{\"name\":{\"value\":\"Alfa\",\"evidence\":[{\"quote\":\"Alfa\",\"occurrence\":0}]},\"mentionedCode\":{\"value\":\"invented\",\"evidence\":[{\"quote\":\"asma\",\"occurrence\":0}]},\"context\":{\"assertion\":{\"value\":\"affirmed\",\"evidence\":[{\"quote\":\"Prescripción actual del paciente: Alfa, dosis 5 mg.\",\"occurrence\":0}]},\"temporality\":{\"value\":\"unknown\",\"evidence\":[]},\"subject\":{\"value\":\"patient\",\"evidence\":[{\"quote\":\"Prescripción actual del paciente: Alfa, dosis 5 mg.\",\"occurrence\":0}]}},\"prescriptionStatus\":{\"value\":\"prescribed\",\"evidence\":[{\"quote\":\"Prescripción actual del paciente: Alfa, dosis 5 mg.\",\"occurrence\":0}]},\"dosage\":{\"value\":\"5 mg\",\"evidence\":[{\"quote\":\"5 mg\",\"occurrence\":0}]},\"frequency\":null,\"route\":null,\"duration\":{\"value\":\"7 días\",\"evidence\":[{\"quote\":\"7 días\",\"occurrence\":0}]}}],\"procedures\":[],\"notices\":[]}",
+  "structuredStageAvailable" : true,
+  "decodedProposal" : {
+    "mentions" : [ {
+      "name" : {
+        "value" : "Alfa",
+        "evidence" : [ {
+          "start" : 73,
+          "end" : 77,
+          "quote" : "Alfa"
+        } ]
+      },
+      "mentionedCode" : {
+        "value" : "invented",
+        "evidence" : [ {
+          "start" : 33,
+          "end" : 37,
+          "quote" : "asma"
+        } ]
+      },
+      "context" : {
+        "assertion" : {
+          "value" : "AFFIRMED",
+          "evidence" : [ {
+            "start" : 39,
+            "end" : 90,
+            "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+          } ]
+        },
+        "temporality" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        },
+        "subject" : {
+          "value" : "PATIENT",
+          "evidence" : [ {
+            "start" : 39,
+            "end" : 90,
+            "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+          } ]
+        }
+      },
+      "prescriptionStatus" : {
+        "value" : "PRESCRIBED",
+        "evidence" : [ {
+          "start" : 39,
+          "end" : 90,
+          "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+        } ]
+      },
+      "dosage" : {
+        "value" : "5 mg",
+        "evidence" : [ {
+          "start" : 85,
+          "end" : 89,
+          "quote" : "5 mg"
+        } ]
+      },
+      "frequency" : null,
+      "route" : null,
+      "duration" : {
+        "value" : "7 días",
+        "evidence" : [ {
+          "start" : 151,
+          "end" : 157,
+          "quote" : "7 días"
+        } ]
+      },
+      "kind" : "MEDICATION"
+    } ],
+    "notices" : [ ]
+  },
+  "finalResult" : {
+    "requestId" : "99ccc1a1-2ebd-433d-b1d8-195171472731",
+    "contractVersion" : "0.1.0",
+    "locale" : "es",
+    "processingStatus" : "completed_with_warnings",
+    "reviewRequired" : true,
+    "diagnoses" : [ ],
+    "medications" : [ {
+      "id" : "m1",
+      "name" : {
+        "value" : "Alfa",
+        "evidence" : [ {
+          "start" : 73,
+          "end" : 77,
+          "quote" : "Alfa"
+        } ]
+      },
+      "mentionedCode" : null,
+      "context" : {
+        "assertion" : {
+          "value" : "affirmed",
+          "evidence" : [ {
+            "start" : 39,
+            "end" : 90,
+            "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+          } ]
+        },
+        "temporality" : {
+          "value" : "unknown",
+          "evidence" : [ ]
+        },
+        "subject" : {
+          "value" : "patient",
+          "evidence" : [ {
+            "start" : 39,
+            "end" : 90,
+            "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+          } ]
+        }
+      },
+      "catalogMatch" : {
+        "status" : "not_provided",
+        "candidates" : [ ]
+      },
+      "prescriptionStatus" : {
+        "value" : "prescribed",
+        "evidence" : [ {
+          "start" : 39,
+          "end" : 90,
+          "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+        } ]
+      },
+      "dosage" : {
+        "value" : "5 mg",
+        "evidence" : [ {
+          "start" : 85,
+          "end" : 89,
+          "quote" : "5 mg"
+        } ]
+      },
+      "frequency" : null,
+      "route" : null,
+      "duration" : null
+    } ],
+    "procedures" : [ ],
+    "warnings" : [ {
+      "code" : "ATTRIBUTE_DISCARDED",
+      "message" : "Se descartó un atributo sin respaldo válido.",
+      "targets" : [ "/medications/0/mentionedCode" ],
+      "source" : "/clinicalNote"
+    }, {
+      "code" : "ATTRIBUTE_DISCARDED",
+      "message" : "Se descartó un atributo sin respaldo válido.",
+      "targets" : [ "/medications/0/duration" ],
+      "source" : "/clinicalNote"
+    } ],
+    "processing" : {
+      "version" : "extraction-core-0.1.0",
+      "promptVersion" : "test-prompt",
+      "validationVersion" : "evidence-2",
+      "executionMode" : "simulated",
+      "provider" : "test-script",
+      "model" : "none"
+    }
+  },
+  "failureCode" : null,
+  "mentionDecisions" : [ {
+    "source" : {
+      "proposalIndex" : 0,
+      "kind" : "MEDICATION",
+      "familyIndex" : 0
+    },
+    "outputPath" : "/medications/0",
+    "rejections" : [ {
+      "field" : "mentionedCode",
+      "reason" : "TEXT_LITERAL_REJECTED"
+    }, {
+      "field" : "duration",
+      "reason" : "MEDICATION_ASSOCIATION_REJECTED"
+    } ]
+  } ],
+  "fieldTransitions" : [ {
+    "proposalIndex" : 0,
+    "field" : "name",
+    "sourcePath" : "/medications/0/name",
+    "outputPath" : "/medications/0/name",
+    "disposition" : "PRESERVED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "Alfa",
+      "evidence" : [ {
+        "start" : 73,
+        "end" : 77,
+        "quote" : "Alfa"
+      } ]
+    },
+    "sanitizedAfter" : {
+      "value" : "Alfa",
+      "evidence" : [ {
+        "start" : 73,
+        "end" : 77,
+        "quote" : "Alfa"
+      } ]
+    }
+  }, {
+    "proposalIndex" : 0,
+    "field" : "mentionedCode",
+    "sourcePath" : "/medications/0/mentionedCode",
+    "outputPath" : "/medications/0/mentionedCode",
+    "disposition" : "REMOVED_TO_NULL",
+    "rejectionReason" : "TEXT_LITERAL_REJECTED",
+    "decodedBefore" : {
+      "value" : "invented",
+      "evidence" : [ {
+        "start" : 33,
+        "end" : 37,
+        "quote" : "asma"
+      } ]
+    },
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/assertion",
+    "sourcePath" : "/medications/0/context/assertion",
+    "outputPath" : "/medications/0/context/assertion",
+    "disposition" : "PRESERVED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "AFFIRMED",
+      "evidence" : [ {
+        "start" : 39,
+        "end" : 90,
+        "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+      } ]
+    },
+    "sanitizedAfter" : {
+      "value" : "AFFIRMED",
+      "evidence" : [ {
+        "start" : 39,
+        "end" : 90,
+        "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+      } ]
+    }
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/temporality",
+    "sourcePath" : "/medications/0/context/temporality",
+    "outputPath" : "/medications/0/context/temporality",
+    "disposition" : "ORIGINAL_UNKNOWN",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    }
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/subject",
+    "sourcePath" : "/medications/0/context/subject",
+    "outputPath" : "/medications/0/context/subject",
+    "disposition" : "PRESERVED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "PATIENT",
+      "evidence" : [ {
+        "start" : 39,
+        "end" : 90,
+        "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+      } ]
+    },
+    "sanitizedAfter" : {
+      "value" : "PATIENT",
+      "evidence" : [ {
+        "start" : 39,
+        "end" : 90,
+        "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+      } ]
+    }
+  }, {
+    "proposalIndex" : 0,
+    "field" : "prescriptionStatus",
+    "sourcePath" : "/medications/0/prescriptionStatus",
+    "outputPath" : "/medications/0/prescriptionStatus",
+    "disposition" : "PRESERVED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "PRESCRIBED",
+      "evidence" : [ {
+        "start" : 39,
+        "end" : 90,
+        "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+      } ]
+    },
+    "sanitizedAfter" : {
+      "value" : "PRESCRIBED",
+      "evidence" : [ {
+        "start" : 39,
+        "end" : 90,
+        "quote" : "Prescripción actual del paciente: Alfa, dosis 5 mg."
+      } ]
+    }
+  }, {
+    "proposalIndex" : 0,
+    "field" : "dosage",
+    "sourcePath" : "/medications/0/dosage",
+    "outputPath" : "/medications/0/dosage",
+    "disposition" : "PRESERVED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "5 mg",
+      "evidence" : [ {
+        "start" : 85,
+        "end" : 89,
+        "quote" : "5 mg"
+      } ]
+    },
+    "sanitizedAfter" : {
+      "value" : "5 mg",
+      "evidence" : [ {
+        "start" : 85,
+        "end" : 89,
+        "quote" : "5 mg"
+      } ]
+    }
+  }, {
+    "proposalIndex" : 0,
+    "field" : "frequency",
+    "sourcePath" : "/medications/0/frequency",
+    "outputPath" : "/medications/0/frequency",
+    "disposition" : "ORIGINAL_NULL",
+    "rejectionReason" : null,
+    "decodedBefore" : null,
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "route",
+    "sourcePath" : "/medications/0/route",
+    "outputPath" : "/medications/0/route",
+    "disposition" : "ORIGINAL_NULL",
+    "rejectionReason" : null,
+    "decodedBefore" : null,
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "duration",
+    "sourcePath" : "/medications/0/duration",
+    "outputPath" : "/medications/0/duration",
+    "disposition" : "REMOVED_TO_NULL",
+    "rejectionReason" : "MEDICATION_ASSOCIATION_REJECTED",
+    "decodedBefore" : {
+      "value" : "7 días",
+      "evidence" : [ {
+        "start" : 151,
+        "end" : 157,
+        "quote" : "7 días"
+      } ]
+    },
+    "sanitizedAfter" : null
+  } ]
+}

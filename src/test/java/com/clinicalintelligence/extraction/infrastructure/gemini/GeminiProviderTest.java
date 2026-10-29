@@ -47,6 +47,54 @@ class GeminiProviderTest {
         return new GeminiProvider(key,settings,observations::add,URI.create("http://127.0.0.1:"+server.getAddress().getPort()+"/v1beta/"));
     }
     static ProviderRequest request() { return new ProviderRequest("asma","es"); }
+    @Test void explicitCaptureIsPerCallAndNeverRetainedOnSharedProvider() throws Exception {
+        var trace = new SyntheticTraceReplayTest.RecordingTrace();
+        try (var provider = provider(GeminiSettings.defaults())) {
+            var result = new com.clinicalintelligence.extraction.application.ExtractionService(
+                    request -> provider.extract(request, trace)).extract(Command.note("asma"), trace);
+            assertNotNull(trace.structured);
+            assertSame(result, trace.result);
+            assertEquals(1, trace.structuredCalls);
+            provider.extract(request());
+            assertEquals(1, trace.structuredCalls);
+            assertEquals(2, observations.size());
+            assertTrue(observations.stream().noneMatch(o -> o.toString().contains("asma") || o.toString().contains(key)));
+        }
+    }
+    @Test void concurrentCallsKeepSeparateTraceSinksAndOriginalOffsets() throws Exception {
+        var a = new SyntheticTraceReplayTest.RecordingTrace();
+        var b = new SyntheticTraceReplayTest.RecordingTrace();
+        try (var provider = provider(GeminiSettings.defaults()); var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+            var first = executor.submit(() -> new com.clinicalintelligence.extraction.application.ExtractionService(
+                    request -> provider.extract(request, a)).extract(Command.note("asma"), a));
+            var second = executor.submit(() -> new com.clinicalintelligence.extraction.application.ExtractionService(
+                    request -> provider.extract(request, b)).extract(Command.note("🩺 otro texto: asma"), b));
+            assertSame(first.get(), a.result); assertSame(second.get(), b.result);
+            assertEquals(0, a.decoded.mentions().getFirst().name().evidence().getFirst().start());
+            assertEquals(14, b.decoded.mentions().getFirst().name().evidence().getFirst().start());
+            assertEquals(1,a.structuredCalls); assertEquals(1,b.structuredCalls);
+        }
+    }
+    @Test void traceDeliveryDoesNotHoldGenerationCapacityOrChangeFixedOutcome() throws Exception {
+        var entered=new CountDownLatch(1);var release=new CountDownLatch(1);
+        var trace=new com.clinicalintelligence.extraction.application.ExtractionTrace() {
+            @Override public void structuredProposal(String value) {
+                entered.countDown();
+                try { assertTrue(release.await(3,TimeUnit.SECONDS)); }
+                catch(InterruptedException e) { Thread.currentThread().interrupt(); }
+            }
+        };
+        var settings=new GeminiSettings(Duration.ofSeconds(2),Duration.ofSeconds(1),100,1,10000);
+        try(var provider=provider(settings);var executor=Executors.newVirtualThreadPerTaskExecutor()) {
+            var first=executor.submit(() -> provider.extract(request(),trace));
+            try {
+                assertTrue(entered.await(2,TimeUnit.SECONDS));
+                assertEquals(Completion.COMPLETE,provider.extract(request()).completion());
+                assertTrue(observations.stream().allMatch(o -> o.status().equals("COMPLETE")));
+            } finally { release.countDown(); }
+            assertEquals(Completion.COMPLETE,first.get().completion());
+        }
+    }
     @Test void countsCompleteRequestBeforeGeneratingAndRecordsSafeUsage() throws Exception {
         try(var provider=provider(GeminiSettings.defaults())) {
             var response=provider.extract(request());

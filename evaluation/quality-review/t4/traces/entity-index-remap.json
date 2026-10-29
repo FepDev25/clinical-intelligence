@@ -1,0 +1,282 @@
+{
+  "schemaVersion" : "synthetic-trace-1.0.0",
+  "caseId" : "entity-index-remap",
+  "operationId" : "f8dcf660-638d-41e3-a78d-a02d069651e4",
+  "captureValid" : true,
+  "operationClosed" : true,
+  "syntheticFixture" : true,
+  "inferenceExecuted" : false,
+  "request" : {
+    "clinicalNote" : "asma",
+    "locale" : "es"
+  },
+  "structuredProposalText" : "{\"diagnoses\":[{\"name\":{\"value\":\"not-in-note\",\"evidence\":[{\"quote\":\"asma\",\"occurrence\":0}]},\"mentionedCode\":null,\"context\":{\"assertion\":{\"value\":\"unknown\",\"evidence\":[]},\"temporality\":{\"value\":\"unknown\",\"evidence\":[]},\"subject\":{\"value\":\"unknown\",\"evidence\":[]}}},{\"name\":{\"value\":\"asma\",\"evidence\":[{\"quote\":\"asma\",\"occurrence\":0}]},\"mentionedCode\":null,\"context\":{\"assertion\":{\"value\":\"unknown\",\"evidence\":[]},\"temporality\":{\"value\":\"unknown\",\"evidence\":[]},\"subject\":{\"value\":\"unknown\",\"evidence\":[]}}}],\"medications\":[],\"procedures\":[],\"notices\":[]}",
+  "structuredStageAvailable" : true,
+  "decodedProposal" : {
+    "mentions" : [ {
+      "name" : {
+        "value" : "not-in-note",
+        "evidence" : [ {
+          "start" : 0,
+          "end" : 4,
+          "quote" : "asma"
+        } ]
+      },
+      "mentionedCode" : null,
+      "context" : {
+        "assertion" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        },
+        "temporality" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        },
+        "subject" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        }
+      },
+      "kind" : "DIAGNOSIS"
+    }, {
+      "name" : {
+        "value" : "asma",
+        "evidence" : [ {
+          "start" : 0,
+          "end" : 4,
+          "quote" : "asma"
+        } ]
+      },
+      "mentionedCode" : null,
+      "context" : {
+        "assertion" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        },
+        "temporality" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        },
+        "subject" : {
+          "value" : "UNKNOWN",
+          "evidence" : [ ]
+        }
+      },
+      "kind" : "DIAGNOSIS"
+    } ],
+    "notices" : [ ]
+  },
+  "finalResult" : {
+    "requestId" : "5c324ef9-558f-4056-886d-f809bf130597",
+    "contractVersion" : "0.1.0",
+    "locale" : "es",
+    "processingStatus" : "completed_with_warnings",
+    "reviewRequired" : true,
+    "diagnoses" : [ {
+      "id" : "d1",
+      "name" : {
+        "value" : "asma",
+        "evidence" : [ {
+          "start" : 0,
+          "end" : 4,
+          "quote" : "asma"
+        } ]
+      },
+      "mentionedCode" : null,
+      "context" : {
+        "assertion" : {
+          "value" : "unknown",
+          "evidence" : [ ]
+        },
+        "temporality" : {
+          "value" : "unknown",
+          "evidence" : [ ]
+        },
+        "subject" : {
+          "value" : "unknown",
+          "evidence" : [ ]
+        }
+      },
+      "catalogMatch" : {
+        "status" : "not_provided",
+        "candidates" : [ ]
+      }
+    } ],
+    "medications" : [ ],
+    "procedures" : [ ],
+    "warnings" : [ {
+      "code" : "ENTITY_DISCARDED",
+      "message" : "Se descartó una entidad sin evidencia válida.",
+      "targets" : [ ],
+      "source" : "/clinicalNote"
+    } ],
+    "processing" : {
+      "version" : "extraction-core-0.1.0",
+      "promptVersion" : "test-prompt",
+      "validationVersion" : "evidence-2",
+      "executionMode" : "simulated",
+      "provider" : "test-script",
+      "model" : "none"
+    }
+  },
+  "failureCode" : null,
+  "mentionDecisions" : [ {
+    "source" : {
+      "proposalIndex" : 0,
+      "kind" : "DIAGNOSIS",
+      "familyIndex" : 0
+    },
+    "outputPath" : null,
+    "rejections" : [ {
+      "field" : "name",
+      "reason" : "NAME_LITERAL_REJECTED"
+    } ]
+  }, {
+    "source" : {
+      "proposalIndex" : 1,
+      "kind" : "DIAGNOSIS",
+      "familyIndex" : 1
+    },
+    "outputPath" : "/diagnoses/0",
+    "rejections" : [ ]
+  } ],
+  "fieldTransitions" : [ {
+    "proposalIndex" : 0,
+    "field" : "name",
+    "sourcePath" : "/diagnoses/0/name",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : "NAME_LITERAL_REJECTED",
+    "decodedBefore" : {
+      "value" : "not-in-note",
+      "evidence" : [ {
+        "start" : 0,
+        "end" : 4,
+        "quote" : "asma"
+      } ]
+    },
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "mentionedCode",
+    "sourcePath" : "/diagnoses/0/mentionedCode",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : null,
+    "decodedBefore" : null,
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/assertion",
+    "sourcePath" : "/diagnoses/0/context/assertion",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/temporality",
+    "sourcePath" : "/diagnoses/0/context/temporality",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 0,
+    "field" : "context/subject",
+    "sourcePath" : "/diagnoses/0/context/subject",
+    "outputPath" : null,
+    "disposition" : "ENTITY_DISCARDED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 1,
+    "field" : "name",
+    "sourcePath" : "/diagnoses/1/name",
+    "outputPath" : "/diagnoses/0/name",
+    "disposition" : "PRESERVED",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "asma",
+      "evidence" : [ {
+        "start" : 0,
+        "end" : 4,
+        "quote" : "asma"
+      } ]
+    },
+    "sanitizedAfter" : {
+      "value" : "asma",
+      "evidence" : [ {
+        "start" : 0,
+        "end" : 4,
+        "quote" : "asma"
+      } ]
+    }
+  }, {
+    "proposalIndex" : 1,
+    "field" : "mentionedCode",
+    "sourcePath" : "/diagnoses/1/mentionedCode",
+    "outputPath" : "/diagnoses/0/mentionedCode",
+    "disposition" : "ORIGINAL_NULL",
+    "rejectionReason" : null,
+    "decodedBefore" : null,
+    "sanitizedAfter" : null
+  }, {
+    "proposalIndex" : 1,
+    "field" : "context/assertion",
+    "sourcePath" : "/diagnoses/1/context/assertion",
+    "outputPath" : "/diagnoses/0/context/assertion",
+    "disposition" : "ORIGINAL_UNKNOWN",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    }
+  }, {
+    "proposalIndex" : 1,
+    "field" : "context/temporality",
+    "sourcePath" : "/diagnoses/1/context/temporality",
+    "outputPath" : "/diagnoses/0/context/temporality",
+    "disposition" : "ORIGINAL_UNKNOWN",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    }
+  }, {
+    "proposalIndex" : 1,
+    "field" : "context/subject",
+    "sourcePath" : "/diagnoses/1/context/subject",
+    "outputPath" : "/diagnoses/0/context/subject",
+    "disposition" : "ORIGINAL_UNKNOWN",
+    "rejectionReason" : null,
+    "decodedBefore" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    },
+    "sanitizedAfter" : {
+      "value" : "UNKNOWN",
+      "evidence" : [ ]
+    }
+  } ]
+}

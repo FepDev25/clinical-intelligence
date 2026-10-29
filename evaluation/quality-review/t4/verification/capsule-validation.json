@@ -1,0 +1,7 @@
+{
+  "uniqueClosedValidCaptures": 9,
+  "successfulResponsesValidatedWithContract": 8,
+  "resolvedFieldOutputPaths": 40,
+  "ordinaryVerifyLeftExportedCapsulesUnchanged": true,
+  "inferenceCalls": 0
+}

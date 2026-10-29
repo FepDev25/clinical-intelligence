@@ -2,7 +2,7 @@
 
 > Para quien ejecute: utilizar `superpowers:executing-plans` y completar las tareas con sus verificaciones. Plan aprobado por el usuario; ejecutar las tareas que autorice y registrar su cierre. No autoriza por sí solo inferencia remota. No delegar sin autorización aplicable.
 
-**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4–T10 pendientes. Creado el 28-10-2026.
+**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4 implementada y verificada con captura sintética optativa. T5–T10 pendientes. Creado el 28-10-2026.
 
 **Objetivo:** investigar y resolver de forma trazable todos los limitantes identificados en código, representación, proveedor y evaluación, y medir si las correcciones mejoran la calidad sin ocultar omisiones, descartes ni incertidumbre.
 
@@ -146,12 +146,14 @@ En tareas de código: primero prueba que falle por la causa investigada, despué
 
 **Depende de:** T1. **Archivos:** adaptador/protocolo, servicio y sus pruebas; herramienta de captura sintética bajo `evaluation/quality-review/`.
 
-- [ ] Diseñar captura explícita para pruebas con tres fronteras: respuesta estructurada del proveedor, propuesta tipada tras resolver ocurrencias y respuesta final saneada.
-- [ ] Usar un mecanismo de evaluación inyectado/deshabilitado por defecto; la aplicación ordinaria no debe persistir notas o respuestas crudas ni emitirlas en logs.
-- [ ] Asociar registros por operación y posición original de mención/campo, incluyendo descartes; no depender solo de IDs finales que cambian al eliminar entidades.
-- [ ] Distinguir `unknown` original de `unknown` por saneamiento y `null` original de atributo eliminado, sin cambiar por ello el contrato público.
-- [ ] Probar propuesta correcta conservada, cita incorrecta descartada, ocurrencia equivocada y código asociado a otra entidad. Probar ausencia de captura/log clínico en ejecución ordinaria y en errores.
-- [ ] Definir clasificación: omisión del proveedor, asociación/contexto del proveedor, decodificación, rechazo literal, rechazo de asociación, discrepancia de referencia o causa aún no determinada.
+- [x] Diseñar captura explícita para pruebas con tres fronteras: respuesta estructurada del proveedor, propuesta tipada tras resolver ocurrencias y respuesta final saneada.
+- [x] Usar un mecanismo de evaluación inyectado/deshabilitado por defecto; la aplicación ordinaria no debe persistir notas o respuestas crudas ni emitirlas en logs.
+- [x] Asociar registros por operación y posición original de mención/campo, incluyendo descartes; no depender solo de IDs finales que cambian al eliminar entidades.
+- [x] Distinguir `unknown` original de `unknown` por saneamiento y `null` original de atributo eliminado, sin cambiar por ello el contrato público.
+- [x] Probar propuesta correcta conservada, cita incorrecta descartada, ocurrencia equivocada y código asociado a otra entidad. Probar ausencia de captura/log clínico en ejecución ordinaria y en errores.
+- [x] Definir clasificación: omisión del proveedor, asociación/contexto del proveedor, decodificación, rechazo literal, rechazo de asociación, discrepancia de referencia o causa aún no determinada.
+
+**Seguimiento T4:** [captura optativa, cápsulas y verificación](../../../evaluation/quality-review/t4/README.md). Puerto por operación sin configuración HTTP, recorder/exportador solo de test, nueve replays sintéticos. Se preserva comportamiento del filtro; la entrega externa de la captura del proveedor queda fuera de su worker con deadline.
 
 **Aceptación:** un caso sintético permite atribuir pérdidas a una etapa; el mecanismo no introduce retención clínica en producción ni requiere revelar razonamiento interno del modelo.
 
@@ -185,6 +187,7 @@ En tareas de código: primero prueba que falle por la causa investigada, despué
 
 **Depende de:** T2, T3 y T4. **Archivos:** versiones nuevas de prompt/esquema cuando proceda, protocolo/settings y pruebas del adaptador; plan experimental.
 
+- [ ] Alinear etiquetas de telemetría con las versiones efectivas: T4 detectó `validation=evidence-1` fijo en ApiConfiguration frente a `evidence-2` del resultado. No usar el log legado como autoridad ni reescribir métricas históricas.
 - [ ] Verificar documentación oficial vigente del endpoint/modelo y compatibilidad de thinking, temperatura, número de candidatos, esquema y límites. Registrar fecha/fuentes; una recomendación actual no demuestra causalidad histórica.
 - [ ] Hacer configurables las condiciones del estudio de forma explícita, manteniendo sin fallback la configuración de producción. Pruebas del JSON enviado deben comprobar cada parámetro y rechazo de valores no soportados.
 - [ ] Preparar variante de prompt con reglas T2, citas vinculadas a mención y política de agrupación; conservar prompt v2 y registrar hashes.
@@ -266,4 +269,4 @@ Bloques sugeridos para revisión/commits locales: diagnóstico y referencias (T1
 
 La revisión clínica humana independiente, las condiciones de privacidad/contratación del proveedor y la autorización para datos reales siguen siendo requisitos externos; no se dan por satisfechos por terminar ingeniería. Si falta revisor o presupuesto, continuar tareas offline independientes y dejar el tramo dependiente identificado, sin simular su ejecución.
 
-**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2 y después T3. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.
+**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2, T3 y después T4. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4 está implementada y verificada; T5–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.

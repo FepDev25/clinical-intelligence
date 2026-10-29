@@ -1,6 +1,7 @@
 package com.clinicalintelligence.extraction.infrastructure.gemini;
 
 import com.clinicalintelligence.extraction.application.ExtractionProvider;
+import com.clinicalintelligence.extraction.application.ExtractionTrace;
 import static com.clinicalintelligence.extraction.domain.ClinicalModel.*;
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
@@ -53,9 +54,16 @@ public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
     }
 
     @Override public ProviderResponse extract(ProviderRequest request) {
+        return extract(request, ExtractionTrace.NONE);
+    }
+
+    /** Explicit per-operation evaluation observer; never retained on the provider. */
+    public ProviderResponse extract(ProviderRequest request, ExtractionTrace trace) {
+        Objects.requireNonNull(trace);
         long start=System.nanoTime(),deadline=start+settings.deadline().toNanos();
         var usage=new AtomicReference<>(new GeminiProtocol.Usage(null,null,null,null));
         var effectiveModel=new AtomicReference<String>();
+        AtomicReference<String> structured = trace == ExtractionTrace.NONE ? null : new AtomicReference<>();
         var state=new AtomicInteger(0); // 0 reserved, 1 running, 2 released
         Future<ProviderResponse> task=null;
         String status="UNAVAILABLE";
@@ -65,7 +73,7 @@ public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
             try {
                 task=workers.submit(()->{
                     if(!state.compareAndSet(0,1)) throw new ProviderFailure(Failure.TIMEOUT);
-                    try { return work(request,deadline,usage,effectiveModel); }
+                    try { return work(request,deadline,usage,effectiveModel,structured); }
                     finally { if(state.getAndSet(2)!=2) permits.release(); }
                 });
             } catch(RuntimeException scheduling) {
@@ -90,10 +98,14 @@ public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
             var current=usage.get();
             try { observer.accept(new Observation(status,elapsed,current,estimate(current,LocalDate.now(ZoneOffset.UTC)),"gemini-3.8-flash-standard-2026-12-31",effectiveModel.get())); }
             catch(RuntimeException ignored) { /* Observability cannot alter a clinical outcome or leak sink failures. */ }
+            // Deliver after generation has a fixed outcome and capacity is released.
+            // External diagnostic code must never execute inside the timed worker.
+            String payload = structured == null ? null : structured.get();
+            if (payload != null) ExtractionTrace.emit(trace, sink -> sink.structuredProposal(payload));
         }
     }
 
-    private ProviderResponse work(ProviderRequest input,long deadline,AtomicReference<GeminiProtocol.Usage> usage,AtomicReference<String> effectiveModel) {
+    private ProviderResponse work(ProviderRequest input,long deadline,AtomicReference<GeminiProtocol.Usage> usage,AtomicReference<String> effectiveModel,AtomicReference<String> structured) {
         try {
             var generate=protocol.request(input,settings.outputTokens());
             // Include model in the full protobuf request used by countTokens.
@@ -105,7 +117,10 @@ public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
             if(total==null || !total.isIntegralNumber() || !total.canConvertToLong() || total.longValue()<0)
                 throw new ProviderFailure(Failure.INVALID_RESPONSE);
             if(total.longValue()>1_048_576L-settings.outputTokens()) throw new ProviderFailure(Failure.CAPACITY_EXCEEDED);
-            var decoded=protocol.decode(input.clinicalNote(),post(":generateContent",json.writeValueAsBytes(generate),deadline));
+            ExtractionTrace buffer = structured == null ? ExtractionTrace.NONE : new ExtractionTrace() {
+                @Override public void structuredProposal(String value) { structured.set(value); }
+            };
+            var decoded=protocol.decode(input.clinicalNote(),post(":generateContent",json.writeValueAsBytes(generate),deadline),buffer);
             usage.set(decoded.usage());
             effectiveModel.set(decoded.modelVersion());
             remaining(deadline);

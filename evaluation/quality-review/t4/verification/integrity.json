@@ -1,0 +1,27 @@
+{
+  "unchangedT1Inputs": 79,
+  "authorizedSourceChanges": [
+    {
+      "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionService.java",
+      "baselineSha256": "e8438970dfa7311f31a47542aa8b99d920265eb29220073802425aadf0f7d1f5",
+      "currentSha256": "36efd86fdfa432e606cde7099b2c61502686e56afe62665609967311764ab0af",
+      "reason": "authorized T4 instrumentation; historical baseline left unchanged"
+    },
+    {
+      "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocol.java",
+      "baselineSha256": "6d0b10617adcacb4dc4198507a67e3334e48072b3cb1463fba8613d5c681524b",
+      "currentSha256": "2a2d7e483151d6153f34daef7e09625cf2108c4e6caeae40e5a1151ca9493107",
+      "reason": "authorized T4 instrumentation; historical baseline left unchanged"
+    },
+    {
+      "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProvider.java",
+      "baselineSha256": "8e43b40e248ab3be230e6c0b0f97db4d5594b5f436d60ee20b5ccc620c2f5fd8",
+      "currentSha256": "0e140ebaf50667c6a2837661211abe7ee6ddd1a90aa0c16c9e88de66cd86ad0a",
+      "reason": "authorized T4 instrumentation; historical baseline left unchanged"
+    }
+  ],
+  "verifiedHistoricalAndReviewChecksumEntries": 102,
+  "frozenJarsPreserved": 2,
+  "syntheticCapsulesPreservedAfterOrdinaryVerify": 9,
+  "testRecorderAndFixturesExcludedFromApplicationJar": true
+}
