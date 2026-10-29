@@ -1,0 +1,20 @@
+E
+======================================================================
+ERROR: test_experiment_plan (unittest.loader._FailedTest.test_experiment_plan)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_experiment_plan
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.14/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/t7/test_experiment_plan.py", line 3, in <module>
+    from experiment_plan import build,validate,ROOT
+ModuleNotFoundError: No module named 'experiment_plan'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

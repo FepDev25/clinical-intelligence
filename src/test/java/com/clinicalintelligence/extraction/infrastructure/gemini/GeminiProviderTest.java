@@ -47,6 +47,20 @@ class GeminiProviderTest {
         return new GeminiProvider(key,settings,observations::add,URI.create("http://127.0.0.1:"+server.getAddress().getPort()+"/v1beta/"));
     }
     static ProviderRequest request() { return new ProviderRequest("asma","es"); }
+    @Test void explicitCandidateConfigurationReachesCountGenerationMetadataAndTelemetry() {
+        var config=new GeminiGeneration(GeminiProtocol.MODEL,GeminiGeneration.ThinkingLevel.HIGH,GeminiGeneration.Prompt.V3);
+        try(var provider=new GeminiProvider(key,GeminiSettings.defaults(),config,observations::add,URI.create("http://127.0.0.1:"+server.getAddress().getPort()+"/v1beta/"))) {
+            var r=provider.extract(request());
+            assertEquals(config.prompt().version(),r.metadata().promptVersion());
+            assertEquals("HIGH",bodies.get(1).at("/generationConfig/thinkingConfig/thinkingLevel").asText());
+            assertEquals(bodies.get(1),bodies.get(0).path("generateContentRequest"));
+            assertEquals(config.prompt().version(),observations.getFirst().identity().promptVersion());
+        }
+    }
+    @Test void ordinaryProviderRejectsExperimentalStagePrompts() {
+        for(var prompt:List.of(GeminiGeneration.Prompt.DETECTION,GeminiGeneration.Prompt.CLASSIFICATION))
+            assertThrows(IllegalArgumentException.class,() -> new GeminiProvider(key,GeminiSettings.defaults(),new GeminiGeneration(GeminiProtocol.MODEL,GeminiGeneration.ThinkingLevel.LOW,prompt),observations::add));
+    }
     @Test void explicitCaptureIsPerCallAndNeverRetainedOnSharedProvider() throws Exception {
         var trace = new SyntheticTraceReplayTest.RecordingTrace();
         try (var provider = provider(GeminiSettings.defaults())) {

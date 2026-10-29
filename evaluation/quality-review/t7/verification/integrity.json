@@ -1,0 +1,141 @@
+{
+  "manifests": {
+    "evaluation/quality-review/baseline-manifest.json": {
+      "matched": 78,
+      "authorizedLiveDeltas": [
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionService.java",
+          "expected": "e8438970dfa7311f31a47542aa8b99d920265eb29220073802425aadf0f7d1f5",
+          "current": "ba80cf7782f8585f05100a6a1ce785968fda26db0e3eef340e8ad939b2d97170",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocol.java",
+          "expected": "6d0b10617adcacb4dc4198507a67e3334e48072b3cb1463fba8613d5c681524b",
+          "current": "bfa8902c75490ac4c3c21a1daaaeec36269324d35834dca28a41c79b48fd37d6",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProvider.java",
+          "expected": "8e43b40e248ab3be230e6c0b0f97db4d5594b5f436d60ee20b5ccc620c2f5fd8",
+          "current": "f3a528ca35fa49d76d0c81bd205cfd2294723ee43bdae64663ddffe6acbbbd3d",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/http/ApiConfiguration.java",
+          "expected": "53ea16204eba8b50728ce0596d886723c69e06c56a52134bb44e889eff91a500",
+          "current": "a8f6742616608801d46b39ebdcad598062863208869ab78c808dc2bc47b767ff",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        }
+      ]
+    },
+    "evaluation/quality-review/artifact-checksums.json": {
+      "matched": 16,
+      "authorizedLiveDeltas": []
+    },
+    "evaluation/quality-review/t2/artifact-checksums.json": {
+      "matched": 16,
+      "authorizedLiveDeltas": []
+    },
+    "evaluation/quality-review/t3/artifact-checksums.json": {
+      "matched": 19,
+      "authorizedLiveDeltas": []
+    },
+    "evaluation/quality-review/t4/artifact-checksums.json": {
+      "matched": 28,
+      "authorizedLiveDeltas": [
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionService.java",
+          "expected": "36efd86fdfa432e606cde7099b2c61502686e56afe62665609967311764ab0af",
+          "current": "ba80cf7782f8585f05100a6a1ce785968fda26db0e3eef340e8ad939b2d97170",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionTrace.java",
+          "expected": "18df26a4e923ac65ea1328ef475570ae8c0a1e7f4bb253dbdfeefd9fa622cff6",
+          "current": "a29e41bc3cc0e08a92d47689730510ff03b86262fccbfa1451a9325caf1202c3",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocol.java",
+          "expected": "2a2d7e483151d6153f34daef7e09625cf2108c4e6caeae40e5a1151ca9493107",
+          "current": "bfa8902c75490ac4c3c21a1daaaeec36269324d35834dca28a41c79b48fd37d6",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProvider.java",
+          "expected": "0e140ebaf50667c6a2837661211abe7ee6ddd1a90aa0c16c9e88de66cd86ad0a",
+          "current": "f3a528ca35fa49d76d0c81bd205cfd2294723ee43bdae64663ddffe6acbbbd3d",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProviderTest.java",
+          "expected": "f79281baffaf15a6a11688e0ebc6af763bc5d4e340e82a9f33517fa68965af0c",
+          "current": "6feedeec03b619f78f307441f72df2e989c24f4d0197867f1a25a5aa540bbc25",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/SyntheticTraceReplayTest.java",
+          "expected": "e5b3814a372e1c03c762ab76b6f3950dddb1f1f83f86d646df3f3144648c3d7f",
+          "current": "02e876290da34e08fc29553605f969d6b9d2fd7a1357f7d7210b8629947b46d7",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        }
+      ]
+    },
+    "evaluation/quality-review/t5/artifact-checksums.json": {
+      "matched": 56,
+      "authorizedLiveDeltas": [
+        {
+          "path": "docs/README.md",
+          "expected": "5816580941b54da7e9458a518d906d38f264b442b9a2a65eff2c639ff7a8d4c0",
+          "current": "a1c1a41d8920783821d61390aa6e7374a8f9ab304021c7f738c6ee8d83433a16",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "docs/superpowers/plans/2026-10-28-extraction-quality-review-and-remediation.md",
+          "expected": "fd211c8b1df694c1c8ec4e526d09fa95036553211f0df4ea6f3ed84a0bcb3456",
+          "current": "fa1c20c5442ff14c71d1cf69d89c20d81ed5aa2f4515f3a47fc72452d3dc1420",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionService.java",
+          "expected": "48ba8c7b931185d56049930857e3a9287e0f61946d76e18c93038d8719219f7d",
+          "current": "ba80cf7782f8585f05100a6a1ce785968fda26db0e3eef340e8ad939b2d97170",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/main/java/com/clinicalintelligence/extraction/application/ExtractionTrace.java",
+          "expected": "726d02bcc64d632e16d7fad501ad99001922e0d2139438bf3e73b1352095fec8",
+          "current": "a29e41bc3cc0e08a92d47689730510ff03b86262fccbfa1451a9325caf1202c3",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "src/test/java/com/clinicalintelligence/extraction/application/ExtractionServiceTest.java",
+          "expected": "6d8bd8eedd49a40a93325cd77d2acaf7a811716410d039a2e1b5bc91ae1c2a73",
+          "current": "f737bfe9f59bb5ef4c719c671d4539703fefed4298680c1056150b956bf52df2",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        }
+      ]
+    },
+    "evaluation/quality-review/t6/artifact-checksums.json": {
+      "matched": 52,
+      "authorizedLiveDeltas": [
+        {
+          "path": "docs/README.md",
+          "expected": "1b0d400f2aa0d5e7fd722f81cc52ed756ad22eb2fe0f62b03dd03ec05184ef72",
+          "current": "a1c1a41d8920783821d61390aa6e7374a8f9ab304021c7f738c6ee8d83433a16",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        },
+        {
+          "path": "docs/superpowers/plans/2026-10-28-extraction-quality-review-and-remediation.md",
+          "expected": "229251bf581dab986a5f729c0da7f3fceb3e1118362cff5e07bbaad76e8bb154",
+          "current": "fa1c20c5442ff14c71d1cf69d89c20d81ed5aa2f4515f3a47fc72452d3dc1420",
+          "reason": "approved live implementation/continuity evolution; historical manifest untouched"
+        }
+      ]
+    }
+  },
+  "priorStudyInputsPreserved": true,
+  "frozenH5JarsPreserved": 2,
+  "actualT4T5T6JarsPreserved": true
+}

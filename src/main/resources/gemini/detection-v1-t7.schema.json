@@ -1,0 +1,703 @@
+{
+  "type": "object",
+  "properties": {
+    "diagnoses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "occurrence": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "quote",
+                    "occurrence"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ],
+            "additionalProperties": false
+          },
+          "mentionedCode": {
+            "type": "null"
+          },
+          "context": {
+            "type": "object",
+            "properties": {
+              "assertion": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "temporality": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "subject": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "assertion",
+              "temporality",
+              "subject"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "mentionedCode",
+          "context"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "occurrence": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "quote",
+                    "occurrence"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ],
+            "additionalProperties": false
+          },
+          "mentionedCode": {
+            "type": "null"
+          },
+          "context": {
+            "type": "object",
+            "properties": {
+              "assertion": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "temporality": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "subject": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "assertion",
+              "temporality",
+              "subject"
+            ],
+            "additionalProperties": false
+          },
+          "prescriptionStatus": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "occurrence": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "quote",
+                    "occurrence"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 0
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ],
+            "additionalProperties": false
+          },
+          "dosage": {
+            "type": "null"
+          },
+          "frequency": {
+            "type": "null"
+          },
+          "route": {
+            "type": "null"
+          },
+          "duration": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "name",
+          "mentionedCode",
+          "context",
+          "prescriptionStatus",
+          "dosage",
+          "frequency",
+          "route",
+          "duration"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "procedures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "occurrence": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "quote",
+                    "occurrence"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ],
+            "additionalProperties": false
+          },
+          "mentionedCode": {
+            "type": "null"
+          },
+          "context": {
+            "type": "object",
+            "properties": {
+              "assertion": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "temporality": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "subject": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "enum": [
+                      "unknown"
+                    ]
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "quote",
+                        "occurrence"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 0
+                  }
+                },
+                "required": [
+                  "value",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "assertion",
+              "temporality",
+              "subject"
+            ],
+            "additionalProperties": false
+          },
+          "performanceStatus": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "occurrence": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "quote",
+                    "occurrence"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 0
+              }
+            },
+            "required": [
+              "value",
+              "evidence"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "mentionedCode",
+          "context",
+          "performanceStatus"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "notices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTORY_MENTIONS",
+              "AMBIGUOUS_CONTEXT"
+            ]
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "diagnosis",
+                    "medication",
+                    "procedure"
+                  ]
+                },
+                "index": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "entity",
+                    "assertion",
+                    "temporality",
+                    "subject",
+                    "prescription_status",
+                    "performance_status",
+                    "mentioned_code",
+                    "dosage",
+                    "frequency",
+                    "route",
+                    "duration"
+                  ]
+                }
+              },
+              "required": [
+                "kind",
+                "index",
+                "field"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "code",
+          "targets"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 0
+    }
+  },
+  "required": [
+    "diagnoses",
+    "medications",
+    "procedures",
+    "notices"
+  ],
+  "additionalProperties": false
+}

@@ -35,9 +35,12 @@ public class ApiConfiguration {
         String key=environment.getProperty("GOOGLE_API_KEY","");
         if(key.length()>=2 && (key.startsWith("\"") && key.endsWith("\"") || key.startsWith("'") && key.endsWith("'")))
             key=key.substring(1,key.length()-1);
+        return new GeminiProvider(key,settings,providerMetrics());
+    }
+    static java.util.function.Consumer<GeminiProvider.Observation> providerMetrics() {
         var log=org.slf4j.LoggerFactory.getLogger("clinical.provider.metrics");
-        return new GeminiProvider(key,settings,event->log.info("provider=google-gemini model={} prompt={} validation=evidence-1 processing=extraction-core-0.1.0 outcome={}",
-                GeminiProtocol.MODEL,GeminiProtocol.PROMPT_VERSION,event));
+        return event -> log.info("provider=google-gemini model={} prompt={} validation={} processing=extraction-core-0.1.0 outcome={}",
+                event.effectiveModel()==null?event.identity().model():event.effectiveModel(),event.identity().promptVersion(),ExtractionService.VALIDATION_VERSION,event);
     }
     @Bean InputLimits inputLimits(Environment env) {
         return new InputLimits(limit(env,"ci.note-code-points",1_000_000),limit(env,"ci.catalogs",1_000),

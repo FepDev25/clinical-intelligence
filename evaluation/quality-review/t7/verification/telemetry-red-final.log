@@ -1,0 +1,81 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24280 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] -----------< com.clinicalintelligence:clinical-intelligence >-----------
+[INFO] Building Clinical Intelligence 0.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ clinical-intelligence ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 9 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ clinical-intelligence ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 25 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ clinical-intelligence ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] Copying 1 resource from evaluation/corpus/v1 to target/test-classes/corpus
+[INFO] Copying 1 resource from evaluation/next to target/test-classes/corpus-v1.0.1
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ clinical-intelligence ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 40 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocolTest.java: /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocolTest.java uses or overrides a deprecated API.
+[INFO] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocolTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProviderTest.java:[52,26] no suitable constructor found for GeminiProvider(java.lang.String,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiSettings,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiGeneration,observations::add,java.net.URI)
+    constructor com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.GeminiProvider(java.lang.String,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiSettings,java.util.function.Consumer<com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation>) is not applicable
+      (actual and formal argument lists differ in length)
+    constructor com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.GeminiProvider(java.lang.String,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiSettings,java.util.function.Consumer<com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation>,java.net.URI) is not applicable
+      (actual and formal argument lists differ in length)
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProviderTest.java:[57,75] cannot find symbol
+  symbol:   method identity()
+  location: class com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProviderTest.java:[62,112] incompatible types: com.clinicalintelligence.extraction.infrastructure.gemini.GeminiGeneration cannot be converted to java.util.function.Consumer<com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation>
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/http/ProviderMetricsTest.java:[15,55] no suitable constructor found for Observation(java.lang.String,int,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocol.Usage,<nulltype>,java.lang.String,java.lang.String,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocol.Identity)
+    constructor com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation.Observation(java.lang.String,long,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocol.Usage,java.lang.String,java.lang.String) is not applicable
+      (actual and formal argument lists differ in length)
+    constructor com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation.Observation(java.lang.String,long,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocol.Usage,java.lang.String,java.lang.String,java.lang.String) is not applicable
+      (actual and formal argument lists differ in length)
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/http/ProviderMetricsTest.java:[15,29] cannot find symbol
+  symbol:   method providerMetrics()
+  location: class com.clinicalintelligence.http.ApiConfiguration
+[INFO] 5 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  32.289 s
+[INFO] Finished at: 2026-10-28T21:36:34-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project clinical-intelligence: Compilation failure: Compilation failure: 
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProviderTest.java:[52,26] no suitable constructor found for GeminiProvider(java.lang.String,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiSettings,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiGeneration,observations::add,java.net.URI)
+[ERROR]     constructor com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.GeminiProvider(java.lang.String,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiSettings,java.util.function.Consumer<com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation>) is not applicable
+[ERROR]       (actual and formal argument lists differ in length)
+[ERROR]     constructor com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.GeminiProvider(java.lang.String,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiSettings,java.util.function.Consumer<com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation>,java.net.URI) is not applicable
+[ERROR]       (actual and formal argument lists differ in length)
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProviderTest.java:[57,75] cannot find symbol
+[ERROR]   symbol:   method identity()
+[ERROR]   location: class com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProviderTest.java:[62,112] incompatible types: com.clinicalintelligence.extraction.infrastructure.gemini.GeminiGeneration cannot be converted to java.util.function.Consumer<com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation>
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/http/ProviderMetricsTest.java:[15,55] no suitable constructor found for Observation(java.lang.String,int,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocol.Usage,<nulltype>,java.lang.String,java.lang.String,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocol.Identity)
+[ERROR]     constructor com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation.Observation(java.lang.String,long,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocol.Usage,java.lang.String,java.lang.String) is not applicable
+[ERROR]       (actual and formal argument lists differ in length)
+[ERROR]     constructor com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProvider.Observation.Observation(java.lang.String,long,com.clinicalintelligence.extraction.infrastructure.gemini.GeminiProtocol.Usage,java.lang.String,java.lang.String,java.lang.String) is not applicable
+[ERROR]       (actual and formal argument lists differ in length)
+[ERROR] /home/felipep/Software/medical-solutions/clinical-intelligence/src/test/java/com/clinicalintelligence/http/ProviderMetricsTest.java:[15,29] cannot find symbol
+[ERROR]   symbol:   method providerMetrics()
+[ERROR]   location: class com.clinicalintelligence.http.ApiConfiguration
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

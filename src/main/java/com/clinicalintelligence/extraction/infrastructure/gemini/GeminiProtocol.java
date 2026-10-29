@@ -12,6 +12,7 @@ import java.io.*;
 import java.nio.*;
 import java.nio.charset.*;
 import java.util.*;
+import java.security.MessageDigest;
 
 public final class GeminiProtocol {
     public static final String MODEL="gemini-3.8-flash";
@@ -20,6 +21,10 @@ public final class GeminiProtocol {
     private final JsonNode schema;
     private final JsonSchema validator;
     private final String system;
+    private final GeminiGeneration generation;
+    private final Identity identity;
+    public record Identity(String model,String promptVersion,String promptSha256,String schemaSha256,String thinkingLevel,String requestVersion) {}
+    public Identity identity(){return identity;}
 
     public record Usage(Long inputTokens, Long outputTokens, Long thoughtTokens, Long cachedTokens, Long totalTokens) {
         public Usage(Long inputTokens,Long outputTokens,Long thoughtTokens,Long cachedTokens) {
@@ -28,27 +33,49 @@ public final class GeminiProtocol {
     }
     public record Decoded(Completion completion, Proposal proposal, Usage usage, String modelVersion) {}
 
-    public GeminiProtocol() {
+    public GeminiProtocol() { this(GeminiGeneration.production()); }
+    public GeminiProtocol(GeminiGeneration generation) {
+        this.generation=Objects.requireNonNull(generation);
         var factory=JsonFactory.builder().enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION)
                 .disable(StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION)
                 .streamReadConstraints(StreamReadConstraints.builder().maxNestingDepth(40).maxStringLength(16_777_216).build()).build();
         json=JsonMapper.builder(factory).enable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
                 .enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS).build();
         try {
-            schema=json.readTree(resource("/gemini/proposal-v1.schema.json"));
-            system=new String(resource("/gemini/extraction-v2.txt"),StandardCharsets.UTF_8);
+            byte[] schemaBytes=resource(generation.prompt().schema()),promptBytes=resource(generation.prompt().resource());
+            schema=json.readTree(schemaBytes);
+            system=new String(promptBytes,StandardCharsets.UTF_8);
+            identity=new Identity(generation.model(),generation.prompt().version(),sha(promptBytes),sha(schemaBytes),generation.thinkingLevel().name(),"gemini-generate-content-t7-1");
             validator=JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012).getSchema(schema);
         } catch(Exception invalid) { throw new IllegalStateException("Gemini protocol resources unavailable"); }
     }
 
     public ObjectNode request(ProviderRequest request,int outputTokens) {
+        if(generation.prompt()==GeminiGeneration.Prompt.CLASSIFICATION)throw new IllegalArgumentException("Classification requires detected mentions");
+        return requestBody(request,outputTokens);
+    }
+    public ObjectNode classificationRequest(ProviderRequest request,Proposal detection,int outputTokens) {
+        if(generation.prompt()!=GeminiGeneration.Prompt.CLASSIFICATION)throw new IllegalArgumentException("Classification prompt required");
+        GeminiStageBoundary.detection(request.clinicalNote(),detection);
+        var root=requestBody(request,outputTokens);
+        var data=json.createObjectNode().put("clinicalNote",request.clinicalNote()).put("locale",request.locale());
+        var locked=data.putArray("detectedMentions");int index=0;
+        for(var mention:detection.mentions()) {
+            var item=locked.addObject().put("id","mention-"+index++).put("kind",mention.kind().name().toLowerCase(Locale.ROOT));
+            item.set("name",json.valueToTree(mention.name()));
+        }
+        ((ObjectNode)root.at("/contents/0/parts/0")).put("text",data.toString());
+        return root;
+    }
+    private ObjectNode requestBody(ProviderRequest request,int outputTokens) {
+        if(outputTokens<1 || outputTokens>65_536)throw new IllegalArgumentException("Unsupported Gemini output token limit");
         var root=json.createObjectNode();
         root.putObject("systemInstruction").putArray("parts").addObject().put("text",system);
         var data=json.createObjectNode().put("clinicalNote",request.clinicalNote()).put("locale",request.locale());
         root.putArray("contents").addObject().put("role","user").putArray("parts").addObject().put("text",data.toString());
-        var generation=root.putObject("generationConfig").put("candidateCount",1).put("temperature",1.0)
+        var generation=root.putObject("generationConfig")
                 .put("maxOutputTokens",outputTokens).put("responseMimeType","application/json");
-        generation.putObject("thinkingConfig").put("thinkingLevel","LOW").put("includeThoughts",false);
+        generation.putObject("thinkingConfig").put("thinkingLevel",this.generation.thinkingLevel().name()).put("includeThoughts",false);
         generation.set("responseJsonSchema",schema.deepCopy());
         return root;
     }
@@ -166,6 +193,7 @@ public final class GeminiProtocol {
         return json.readTree(value);
     }
     private static Decoded bad(Completion completion,Usage usage,String model) { return new Decoded(completion,null,usage,model); }
+    private static String sha(byte[] bytes) throws Exception {return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes));}
     private static byte[] resource(String path) throws IOException {
         try(InputStream stream=GeminiProtocol.class.getResourceAsStream(path)) {
             if(stream==null) throw new IOException();

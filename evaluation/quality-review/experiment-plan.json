@@ -1,0 +1,6957 @@
+{
+  "version": "t7-causal-blueprint-1",
+  "status": "prepared-not-authorized",
+  "inferenceExecuted": false,
+  "authorization": {
+    "granted": false,
+    "maxUsd": null
+  },
+  "unresolved": [
+    "T2 reference adjudication and proposed rules",
+    "T8 runner freeze and spend guard",
+    "account tier and current tariff verification",
+    "separate comparator model capability/pricing profile",
+    "independent clinical review"
+  ],
+  "inputs": {
+    "development": {
+      "path": "evaluation/next/development.json",
+      "sha256": "e7de689df1d38b1db741e5339e0274c3d2fb4ab62e229763d83cc6ed1b6840af"
+    },
+    "caseIds": [
+      "dev-outpatient-01",
+      "dev-outpatient-02",
+      "dev-outpatient-03",
+      "dev-outpatient-04",
+      "dev-outpatient-05",
+      "dev-outpatient-06",
+      "dev-progress-01",
+      "dev-progress-02",
+      "dev-progress-03",
+      "dev-progress-04",
+      "dev-progress-05",
+      "dev-progress-06",
+      "dev-consultation-01",
+      "dev-consultation-02",
+      "dev-consultation-03",
+      "dev-consultation-04",
+      "dev-consultation-05",
+      "dev-consultation-06",
+      "dev-procedure-01",
+      "dev-procedure-02",
+      "dev-procedure-03",
+      "dev-procedure-04",
+      "dev-procedure-05",
+      "dev-procedure-06",
+      "dev-admission-01",
+      "dev-admission-02",
+      "dev-admission-03",
+      "dev-emergency-01",
+      "dev-emergency-02",
+      "dev-emergency-03",
+      "dev-discharge-01",
+      "dev-discharge-02",
+      "dev-discharge-03",
+      "dev-outpatient-07",
+      "dev-consultation-07",
+      "dev-progress-07",
+      "dev-procedure-07",
+      "dev-outpatient-08",
+      "dev-consultation-08"
+    ],
+    "sources": [
+      {
+        "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiGeneration.java",
+        "sha256": "d001d88836dd6a6faeb8a93d85a83f64fbbd4d0bd4af901658e5bd116b5293f7"
+      },
+      {
+        "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProtocol.java",
+        "sha256": "bfa8902c75490ac4c3c21a1daaaeec36269324d35834dca28a41c79b48fd37d6"
+      },
+      {
+        "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiProvider.java",
+        "sha256": "f3a528ca35fa49d76d0c81bd205cfd2294723ee43bdae64663ddffe6acbbbd3d"
+      },
+      {
+        "path": "src/main/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiStageBoundary.java",
+        "sha256": "36c656e338edc2c3bd712a875fd8e9a7035bbbd1f64ff7f0d872fdc0e7d4f28f"
+      },
+      {
+        "path": "src/main/java/com/clinicalintelligence/http/ApiConfiguration.java",
+        "sha256": "a8f6742616608801d46b39ebdcad598062863208869ab78c808dc2bc47b767ff"
+      },
+      {
+        "path": "src/test/java/com/clinicalintelligence/extraction/infrastructure/gemini/GeminiTwoStageExperiment.java",
+        "sha256": "b2b092b9caf9b7e69a98b7da36e0da3cfc309cd851e062b25d9501225e63d5d6"
+      },
+      {
+        "path": "src/main/resources/gemini/extraction-v2.txt",
+        "sha256": "3a6bc7652c2622d6070d242bd746c5feeace21557a58ad26987dfad32b8b55fb"
+      },
+      {
+        "path": "src/main/resources/gemini/extraction-v3-t7.txt",
+        "sha256": "e93466fb6b1062336e86db6c767eb2bfe7cf7bf89c5b72d2469c0f9c1e4b952f"
+      },
+      {
+        "path": "src/main/resources/gemini/detection-v1-t7.txt",
+        "sha256": "158279081fb5502fe87f2e7f277aec26a217f856153f6376e1b0a28e08688b68"
+      },
+      {
+        "path": "src/main/resources/gemini/classification-v1-t7.txt",
+        "sha256": "1f39924b964cf1c4191d6062debb1762593fda019411b1b5fe32931db045f52f"
+      },
+      {
+        "path": "src/main/resources/gemini/proposal-v1.schema.json",
+        "sha256": "84a05bbe45d92d19deab1f5ac17d8906c083eb2a26799e3d542a10735284cb67"
+      },
+      {
+        "path": "src/main/resources/gemini/detection-v1-t7.schema.json",
+        "sha256": "af48f5145ab57c944de8c88879a9a0233d4ec6457e638de1eb77950fb083e414"
+      },
+      {
+        "path": "evaluation/quality-review/score_extractions_v3.py",
+        "sha256": "e74822f381a06e832955094b80bc3d32b5274e5828d69e89a1e65faf42d357dd"
+      },
+      {
+        "path": "evaluation/tools/validate_corpus.py",
+        "sha256": "1d23efea941c713770186dd614957b30543d65f2f73361af482b7fdeef35abbd"
+      },
+      {
+        "path": "openapi/openapi.json",
+        "sha256": "506b15f0bafddfce44c12b7e57aa93caf4088075ce1268920506360074fdcc5b"
+      },
+      {
+        "path": "evaluation/quality-review/annotation-decisions.md",
+        "sha256": "90c6d69565a5d718d61b24c0fb48504731439f138f7d0f08d7a0fa165d25c4dd"
+      },
+      {
+        "path": "docs/adr/0007-annotation-scope-and-temporal-context.md",
+        "sha256": "2557dd2746ec8c9cd082c164a403bf548bfc49c0793467d951fdc5562bca8c6c"
+      }
+    ]
+  },
+  "filters": [
+    {
+      "version": "evidence-2",
+      "commit": "02841c9932940e7b91df66320ef80c0de1eec63b",
+      "jarPath": "target/t5-baseline/application.jar",
+      "jarSha256": "75de6b1bc95386c09d2794962c85bf2604e6fca8c71e1e05a674b5f7253bea7c"
+    },
+    {
+      "version": "evidence-4",
+      "commit": "67b0a784fc48aabbaa9e0aece9726493db3dcc1d",
+      "jarPath": "target/t7-baseline/application.jar",
+      "jarSha256": "18c910bba9023ac7fb0f4a65bb97523507f5d28a347ea7294922abec134fd6be"
+    }
+  ],
+  "transport": {
+    "endpoint": "https://generativelanguage.googleapis.com/v1beta/",
+    "requestVersion": "gemini-generate-content-t7-1",
+    "samplingParameters": "omitted",
+    "includeThoughts": false,
+    "schemaFormat": "responseJsonSchema",
+    "stream": false,
+    "tools": false,
+    "remoteVerified": false
+  },
+  "configurations": [
+    {
+      "id": "v2-low",
+      "workflow": "single",
+      "model": "gemini-3.8-flash",
+      "promptVersion": "extraction-gemini-v2",
+      "thinkingLevel": "LOW"
+    },
+    {
+      "id": "v3-low",
+      "workflow": "single",
+      "model": "gemini-3.8-flash",
+      "promptVersion": "extraction-gemini-v3-t7",
+      "thinkingLevel": "LOW"
+    },
+    {
+      "id": "v3-medium",
+      "workflow": "single",
+      "model": "gemini-3.8-flash",
+      "promptVersion": "extraction-gemini-v3-t7",
+      "thinkingLevel": "MEDIUM"
+    },
+    {
+      "id": "v3-high",
+      "workflow": "single",
+      "model": "gemini-3.8-flash",
+      "promptVersion": "extraction-gemini-v3-t7",
+      "thinkingLevel": "HIGH"
+    },
+    {
+      "id": "two-stage-low",
+      "workflow": "two-stage",
+      "model": "gemini-3.8-flash",
+      "thinkingLevel": "LOW",
+      "prompts": [
+        "detection-gemini-v1-t7",
+        "classification-gemini-v1-t7"
+      ]
+    }
+  ],
+  "arms": [
+    {
+      "id": "base",
+      "configuration": "v2-low",
+      "filter": "evidence-2"
+    },
+    {
+      "id": "prompt-only",
+      "configuration": "v3-low",
+      "filter": "evidence-2"
+    },
+    {
+      "id": "filter-only",
+      "configuration": "v2-low",
+      "filter": "evidence-4"
+    },
+    {
+      "id": "combined",
+      "configuration": "v3-low",
+      "filter": "evidence-4"
+    },
+    {
+      "id": "thinking-medium",
+      "configuration": "v3-medium",
+      "filter": "evidence-4"
+    },
+    {
+      "id": "thinking-high",
+      "configuration": "v3-high",
+      "filter": "evidence-4"
+    },
+    {
+      "id": "two-stage",
+      "configuration": "two-stage-low",
+      "filter": "evidence-4"
+    }
+  ],
+  "limits": {
+    "rounds": 3,
+    "outputTokens": 65536,
+    "responseBytes": 16777216,
+    "deadlineMsPerGeneration": 120000,
+    "maxTwoStageDeadlineMs": 240000,
+    "concurrency": 1,
+    "retries": 0,
+    "maxGenerateCalls": 702,
+    "maxCountCalls": 702,
+    "maxHttpCalls": 1404
+  },
+  "ordering": {
+    "seed": 1729,
+    "notes": "SHA256(seed:round:caseId)",
+    "configurations": "rotate by block ordinal",
+    "concurrencyPurpose": "avoid interleaving paired comparisons"
+  },
+  "scoring": {
+    "candidate": "evaluation/quality-review/score_extractions_v3.py",
+    "strictThresholds": {
+      "precision": 0.95,
+      "recall": 0.9,
+      "perTypeAndRound": true,
+      "zeroTolerancesUnchanged": true
+    },
+    "rawAndSanitized": true,
+    "pairedFilterReplay": true,
+    "disputes": "retain denominators and separately disclose T2 sensitivity; no adjudication by score",
+    "metrics": [
+      "strict TP/FP/FN",
+      "mention alignment",
+      "context dimensions",
+      "attribute support and false discards",
+      "unknown transitions by stage",
+      "contradiction warnings",
+      "all operational failures",
+      "latency by stage and total",
+      "input/output/thought/cached tokens",
+      "cost including failed attempts",
+      "effective model and request identities"
+    ],
+    "uncertainty": "paired resampling by originGroup; no treating repeated rounds as independent notes",
+    "selection": "all rounds and predeclared criteria; no best-round selection, selective retries or automatic promotion"
+  },
+  "capture": {
+    "syntheticOnly": true,
+    "ordinaryHttpCapture": false,
+    "rawProposals": true,
+    "failedStages": true,
+    "retainThoughts": false
+  },
+  "schedule": [
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-outpatient-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-outpatient-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-outpatient-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-outpatient-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 1,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-outpatient-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-progress-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-progress-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-progress-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 1,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-progress-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-progress-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-outpatient-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-outpatient-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 1,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-outpatient-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-outpatient-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-outpatient-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-emergency-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 1,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-emergency-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-emergency-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-emergency-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-emergency-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 1,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-admission-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-admission-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-admission-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-admission-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-admission-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-procedure-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-procedure-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-procedure-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-procedure-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 1,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-procedure-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-discharge-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-discharge-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-discharge-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 1,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-discharge-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-discharge-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-progress-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-progress-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 1,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-progress-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-progress-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-progress-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-outpatient-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 1,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-outpatient-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-outpatient-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-outpatient-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-outpatient-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 1,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-progress-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-progress-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-progress-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-progress-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-progress-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-admission-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-admission-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-admission-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-admission-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 1,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-admission-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-outpatient-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-outpatient-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-outpatient-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 1,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-outpatient-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-outpatient-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-admission-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-admission-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 1,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-admission-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-admission-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-admission-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-procedure-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 1,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-procedure-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-procedure-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-procedure-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-procedure-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 1,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-progress-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-progress-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-progress-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-progress-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-progress-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-discharge-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-discharge-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-discharge-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-discharge-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 1,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-discharge-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-procedure-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-procedure-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-procedure-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 1,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-procedure-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-procedure-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-outpatient-08:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-outpatient-08:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 1,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-outpatient-08:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-outpatient-08:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-outpatient-08:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-consultation-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 1,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-consultation-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-consultation-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-consultation-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-consultation-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 1,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-procedure-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-procedure-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-procedure-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-procedure-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-procedure-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-emergency-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-emergency-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-emergency-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-emergency-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 1,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-emergency-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-outpatient-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-outpatient-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-outpatient-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 1,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-outpatient-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-outpatient-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-consultation-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-consultation-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 1,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-consultation-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-consultation-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-consultation-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-consultation-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 1,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-consultation-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-consultation-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-consultation-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-consultation-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 1,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-consultation-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-consultation-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-consultation-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-consultation-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-consultation-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-progress-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-progress-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-progress-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-progress-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 1,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-progress-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-discharge-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-discharge-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-discharge-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 1,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-discharge-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-discharge-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-outpatient-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-outpatient-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 1,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-outpatient-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-outpatient-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-outpatient-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-procedure-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 1,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-procedure-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-procedure-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-procedure-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-procedure-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 1,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-consultation-08:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-consultation-08:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-consultation-08:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-consultation-08:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-consultation-08:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-procedure-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-procedure-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-procedure-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-procedure-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 1,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-procedure-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-consultation-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-consultation-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-consultation-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 1,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-consultation-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-consultation-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-emergency-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-emergency-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 1,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-emergency-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-emergency-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-emergency-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-progress-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 1,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-progress-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-progress-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-progress-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-progress-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 1,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-procedure-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-procedure-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-procedure-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-procedure-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-procedure-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-consultation-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-consultation-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-consultation-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-consultation-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 1,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-consultation-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-outpatient-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-outpatient-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-outpatient-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 1,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-outpatient-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-outpatient-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-progress-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 1,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-progress-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 1,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-progress-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-progress-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-progress-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 1,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r1:dev-consultation-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 1,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r1:dev-consultation-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 1,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r1:dev-consultation-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 1,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r1:dev-consultation-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 1,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r1:dev-consultation-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 2,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-discharge-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-discharge-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-discharge-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-discharge-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-discharge-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-consultation-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-consultation-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-consultation-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-consultation-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 2,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-consultation-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-outpatient-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-outpatient-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-outpatient-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 2,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-outpatient-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-outpatient-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-progress-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-progress-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 2,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-progress-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-progress-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-progress-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-procedure-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 2,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-procedure-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-procedure-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-procedure-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-procedure-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 2,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-outpatient-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-outpatient-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-outpatient-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-outpatient-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-outpatient-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-outpatient-08:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-outpatient-08:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-outpatient-08:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-outpatient-08:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 2,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-outpatient-08:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-consultation-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-consultation-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-consultation-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 2,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-consultation-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-consultation-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-outpatient-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-outpatient-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 2,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-outpatient-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-outpatient-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-outpatient-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-outpatient-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 2,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-outpatient-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-outpatient-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-outpatient-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-outpatient-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 2,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-procedure-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-procedure-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-procedure-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-procedure-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-procedure-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-procedure-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-procedure-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-procedure-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-procedure-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 2,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-procedure-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-progress-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-progress-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-progress-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 2,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-progress-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-progress-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-consultation-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-consultation-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 2,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-consultation-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-consultation-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-consultation-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-discharge-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 2,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-discharge-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-discharge-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-discharge-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-discharge-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 2,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-emergency-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-emergency-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-emergency-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-emergency-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-emergency-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-outpatient-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-outpatient-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-outpatient-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-outpatient-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 2,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-outpatient-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-emergency-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-emergency-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-emergency-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 2,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-emergency-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-emergency-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-procedure-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-procedure-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 2,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-procedure-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-procedure-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-procedure-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-admission-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 2,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-admission-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-admission-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-admission-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-admission-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 2,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-consultation-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-consultation-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-consultation-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-consultation-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-consultation-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-discharge-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-discharge-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-discharge-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-discharge-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 2,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-discharge-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-admission-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-admission-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-admission-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 2,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-admission-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-admission-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-progress-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-progress-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 2,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-progress-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-progress-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-progress-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-procedure-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 2,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-procedure-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-procedure-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-procedure-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-procedure-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 2,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-consultation-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-consultation-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-consultation-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-consultation-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-consultation-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-outpatient-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-outpatient-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-outpatient-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-outpatient-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 2,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-outpatient-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-procedure-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-procedure-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-procedure-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 2,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-procedure-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-procedure-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-outpatient-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-outpatient-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 2,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-outpatient-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-outpatient-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-outpatient-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-progress-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 2,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-progress-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-progress-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-progress-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-progress-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 2,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-consultation-08:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-consultation-08:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-consultation-08:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-consultation-08:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-consultation-08:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-consultation-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-consultation-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-consultation-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-consultation-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 2,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-consultation-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-progress-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-progress-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-progress-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 2,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-progress-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-progress-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-procedure-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-procedure-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 2,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-procedure-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-procedure-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-procedure-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-progress-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 2,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-progress-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-progress-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-progress-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-progress-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 2,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-admission-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-admission-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-admission-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-admission-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-admission-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-progress-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-progress-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-progress-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-progress-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 2,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-progress-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-consultation-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-consultation-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 2,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-consultation-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 2,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-consultation-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-consultation-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 2,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r2:dev-emergency-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 2,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r2:dev-emergency-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 2,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r2:dev-emergency-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 2,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r2:dev-emergency-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 2,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r2:dev-emergency-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-outpatient-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 3,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-outpatient-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-outpatient-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-outpatient-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-05",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-outpatient-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 3,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-consultation-08:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-consultation-08:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-consultation-08:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-consultation-08:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-08",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-consultation-08:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-discharge-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-discharge-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-discharge-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-discharge-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-03",
+      "round": 3,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-discharge-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-progress-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-progress-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-progress-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 3,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-progress-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-06",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-progress-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-procedure-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-procedure-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 3,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-procedure-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-procedure-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-04",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-procedure-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-discharge-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 3,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-discharge-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-discharge-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-discharge-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-02",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-discharge-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 3,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-procedure-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-procedure-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-procedure-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-procedure-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-02",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-procedure-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-outpatient-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-outpatient-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-outpatient-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-outpatient-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-03",
+      "round": 3,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-outpatient-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-consultation-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-consultation-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-consultation-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 3,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-consultation-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-06",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-consultation-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-outpatient-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-outpatient-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 3,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-outpatient-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-outpatient-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-07",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-outpatient-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-emergency-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 3,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-emergency-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-emergency-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-emergency-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-01",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-emergency-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 3,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-progress-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-progress-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-progress-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-progress-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-05",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-progress-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-consultation-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-consultation-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-consultation-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-consultation-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-05",
+      "round": 3,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-consultation-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-procedure-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-procedure-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-procedure-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 3,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-procedure-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-03",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-procedure-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-admission-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-admission-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 3,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-admission-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-admission-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-03",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-admission-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-procedure-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 3,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-procedure-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-procedure-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-procedure-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-06",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-procedure-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 3,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-outpatient-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-outpatient-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-outpatient-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-outpatient-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-04",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-outpatient-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-procedure-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-procedure-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-procedure-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-procedure-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-01",
+      "round": 3,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-procedure-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-consultation-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-consultation-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-consultation-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 3,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-consultation-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-02",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-consultation-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-outpatient-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-outpatient-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 3,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-outpatient-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-outpatient-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-02",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-outpatient-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-admission-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 3,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-admission-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-admission-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-admission-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-admission-02",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-admission-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 3,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-emergency-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-emergency-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-emergency-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-emergency-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-02",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-emergency-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-outpatient-08:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-outpatient-08:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-outpatient-08:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-outpatient-08:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-08",
+      "round": 3,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-outpatient-08:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-progress-02:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-progress-02:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-progress-02:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 3,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-progress-02:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-02",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-progress-02:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-progress-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-progress-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 3,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-progress-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-progress-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-07",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-progress-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-consultation-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 3,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-consultation-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-consultation-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-consultation-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-01",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-consultation-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 3,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-progress-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-progress-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-progress-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-progress-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-03",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-progress-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-consultation-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-consultation-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-consultation-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-consultation-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-04",
+      "round": 3,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-consultation-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-consultation-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-consultation-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-consultation-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 3,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-consultation-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-07",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-consultation-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-outpatient-06:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-outpatient-06:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 3,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-outpatient-06:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-outpatient-06:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-06",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-outpatient-06:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-progress-04:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 3,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-progress-04:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-progress-04:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-progress-04:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-04",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-progress-04:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 3,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-progress-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-progress-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-progress-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-progress-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-progress-01",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-progress-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-outpatient-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-outpatient-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-outpatient-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-outpatient-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-outpatient-01",
+      "round": 3,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-outpatient-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-consultation-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-consultation-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-consultation-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 3,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-consultation-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-consultation-03",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-consultation-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-admission-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-admission-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 3,
+      "slot": 2,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-admission-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-admission-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-admission-01",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-admission-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-discharge-01:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 3,
+      "slot": 1,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-discharge-01:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-discharge-01:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-discharge-01:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-discharge-01",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-discharge-01:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 3,
+      "slot": 0,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-procedure-07:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-procedure-07:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-procedure-07:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-procedure-07:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-07",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-procedure-07:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-procedure-05:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-procedure-05:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-procedure-05:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 3,
+      "slot": 3,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-procedure-05:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-procedure-05",
+      "round": 3,
+      "slot": 4,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-procedure-05:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 3,
+      "slot": 0,
+      "configuration": "v3-low",
+      "generationId": "r3:dev-emergency-03:v3-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "prompt-only",
+        "combined"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 3,
+      "slot": 1,
+      "configuration": "v3-medium",
+      "generationId": "r3:dev-emergency-03:v3-medium",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-medium"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 3,
+      "slot": 2,
+      "configuration": "v3-high",
+      "generationId": "r3:dev-emergency-03:v3-high",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "thinking-high"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 3,
+      "slot": 3,
+      "configuration": "two-stage-low",
+      "generationId": "r3:dev-emergency-03:two-stage-low",
+      "maxGenerateCalls": 2,
+      "evaluatedArms": [
+        "two-stage"
+      ]
+    },
+    {
+      "caseId": "dev-emergency-03",
+      "round": 3,
+      "slot": 4,
+      "configuration": "v2-low",
+      "generationId": "r3:dev-emergency-03:v2-low",
+      "maxGenerateCalls": 1,
+      "evaluatedArms": [
+        "base",
+        "filter-only"
+      ]
+    }
+  ]
+}

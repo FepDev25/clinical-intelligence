@@ -31,6 +31,17 @@ class GeminiProtocolTest {
         assertEquals(injection,data.path("clinicalNote").asText()); assertEquals("es-EC",data.path("locale").asText());
         assertFalse(data.has("catalogs"));
     }
+    @Test void omitsUnsupportedSamplingAndKeepsExplicitLowWithoutThoughts() {
+        var request=protocol.request(new ProviderRequest("nota sintética","es"),65536);
+        var g=request.path("generationConfig");
+        assertFalse(g.has("candidateCount"));assertFalse(g.has("temperature"));
+        assertEquals("LOW",g.at("/thinkingConfig/thinkingLevel").asText());
+        assertFalse(g.at("/thinkingConfig/includeThoughts").asBoolean(true));
+    }
+    @Test void rejectsUnsupportedOutputTokenLimitsAtRequestBoundary() {
+        for(int value:new int[]{0,-1,65537,Integer.MAX_VALUE})
+            assertThrows(IllegalArgumentException.class,() -> protocol.request(new ProviderRequest("nota sintética","es"),value));
+    }
     @Test void requestUsesVersionedInstructionsForObservedDevelopmentFailures() {
         var request=protocol.request(new ProviderRequest("nota sintética", "es"), 65536);
         String instruction=request.at("/systemInstruction/parts/0/text").asText();

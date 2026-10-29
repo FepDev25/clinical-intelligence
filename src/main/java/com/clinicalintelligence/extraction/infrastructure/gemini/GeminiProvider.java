@@ -19,9 +19,12 @@ import java.util.function.Consumer;
 
 /** One operation owns counting, generation, cancellation and telemetry. No retries or SDK logging. */
 public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
-    public record Observation(String status,long latencyMillis,GeminiProtocol.Usage usage,String estimatedUsd,String tariff,String effectiveModel) {
+    public record Observation(String status,long latencyMillis,GeminiProtocol.Usage usage,String estimatedUsd,String tariff,String effectiveModel,GeminiProtocol.Identity identity) {
         public Observation(String status,long latencyMillis,GeminiProtocol.Usage usage,String estimatedUsd,String tariff) {
-            this(status,latencyMillis,usage,estimatedUsd,tariff,null);
+            this(status,latencyMillis,usage,estimatedUsd,tariff,null,null);
+        }
+        public Observation(String status,long latencyMillis,GeminiProtocol.Usage usage,String estimatedUsd,String tariff,String effectiveModel) {
+            this(status,latencyMillis,usage,estimatedUsd,tariff,effectiveModel,null);
         }
     }
     private final GeminiSettings settings;
@@ -32,16 +35,24 @@ public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
     private final ExecutorService workers=Executors.newVirtualThreadPerTaskExecutor();
     private final Semaphore permits;
     private final AtomicBoolean closed=new AtomicBoolean();
-    private final GeminiProtocol protocol=new GeminiProtocol();
+    private final GeminiProtocol protocol;
     private final ObjectMapper json=JsonMapper.builder()
             .enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION)
             .disable(StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION)
             .enable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS).build();
 
     public GeminiProvider(String key,GeminiSettings settings,Consumer<Observation> observer) {
-        this(key,settings,observer,URI.create("https://generativelanguage.googleapis.com/v1beta/"));
+        this(key,settings,GeminiGeneration.production(),observer,URI.create("https://generativelanguage.googleapis.com/v1beta/"));
+    }
+    public GeminiProvider(String key,GeminiSettings settings,GeminiGeneration generation,Consumer<Observation> observer) {
+        this(key,settings,generation,observer,URI.create("https://generativelanguage.googleapis.com/v1beta/"));
     }
     GeminiProvider(String key,GeminiSettings settings,Consumer<Observation> observer,URI base) {
+        this(key,settings,GeminiGeneration.production(),observer,base);
+    }
+    GeminiProvider(String key,GeminiSettings settings,GeminiGeneration generation,Consumer<Observation> observer,URI base) {
+        if(generation==null || !generation.prompt().singlePass())throw new IllegalArgumentException("Stage prompts require the experimental two-stage workflow");
+        this.protocol=new GeminiProtocol(generation);
         if(key==null || key.isBlank() || key.length()>4096 || key.chars().anyMatch(c->c<=32 || c>=127))
             throw new IllegalArgumentException("Missing or invalid GOOGLE_API_KEY");
         if(base==null || base.getRawUserInfo()!=null || base.getQuery()!=null || base.getFragment()!=null
@@ -96,7 +107,7 @@ public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
             if(task!=null && state.compareAndSet(0,2)) permits.release();
             long elapsed=TimeUnit.NANOSECONDS.toMillis(System.nanoTime()-start);
             var current=usage.get();
-            try { observer.accept(new Observation(status,elapsed,current,estimate(current,LocalDate.now(ZoneOffset.UTC)),"gemini-3.8-flash-standard-2026-12-31",effectiveModel.get())); }
+            try { observer.accept(new Observation(status,elapsed,current,estimate(current,LocalDate.now(ZoneOffset.UTC)),"gemini-3.8-flash-standard-2026-12-31",effectiveModel.get(),protocol.identity())); }
             catch(RuntimeException ignored) { /* Observability cannot alter a clinical outcome or leak sink failures. */ }
             // Deliver after generation has a fixed outcome and capacity is released.
             // External diagnostic code must never execute inside the timed worker.
@@ -125,7 +136,7 @@ public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
             effectiveModel.set(decoded.modelVersion());
             remaining(deadline);
             return new ProviderResponse(decoded.completion(),decoded.proposal(),
-                    new ProviderMetadata(GeminiProtocol.PROMPT_VERSION,ExecutionMode.PROVIDER,"google-gemini",decoded.modelVersion()));
+                    new ProviderMetadata(protocol.identity().promptVersion(),ExecutionMode.PROVIDER,"google-gemini",decoded.modelVersion()));
         } catch(ProviderFailure known) { throw known; }
         catch(TimeoutException timeout) { throw new ProviderFailure(Failure.TIMEOUT); }
         catch(Exception invalid) { throw new ProviderFailure(Failure.INVALID_RESPONSE); }
