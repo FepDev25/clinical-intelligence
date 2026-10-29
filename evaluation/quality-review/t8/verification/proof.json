@@ -1,0 +1,29 @@
+{
+  "manifestSha256": "97f6b35f6fd4d5cc084c71e204715d964a688431bc46f219abd91a160190c811",
+  "inferenceExecuted": false,
+  "networkCalls": 0,
+  "credentialsLoaded": false,
+  "realOldAndNewBinaries": true,
+  "rawAffirmedBoth": true,
+  "oldFinal": "affirmed",
+  "newFinal": "unknown",
+  "wrongClasspathRejected": true,
+  "artifacts": [
+    {
+      "path": "target/t8-frozen/final-offline-proof/evidence-2-input.json",
+      "sha256": "14c0978017713a3cc3bfa5bf1a01d5d6e227c72ef5bff1b91494bda4443a9ac3"
+    },
+    {
+      "path": "target/t8-frozen/final-offline-proof/evidence-2-output.json",
+      "sha256": "91216f9e4d655ca404e4a49c01a62e10b7e556b2e002b7d93e9c941152ec341a"
+    },
+    {
+      "path": "target/t8-frozen/final-offline-proof/evidence-4-input.json",
+      "sha256": "5a976ac166a66c6d11dbae0119c6032339c84f466d7ccc2fc5c6cfba0e416a61"
+    },
+    {
+      "path": "target/t8-frozen/final-offline-proof/evidence-4-output.json",
+      "sha256": "c84f979281febf09f3d8edd5ae8fafc34baed725bad3d9e50bf15d29aebdaa89"
+    }
+  ]
+}

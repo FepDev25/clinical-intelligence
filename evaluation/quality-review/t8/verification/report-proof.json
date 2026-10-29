@@ -1,0 +1,11 @@
+{
+  "simulationOnly": true,
+  "inferenceExecuted": false,
+  "networkCalls": 0,
+  "credentialsLoaded": false,
+  "plannedEvaluations": 936,
+  "actualUnitProposals": 1,
+  "missingEvaluationsPreserved": 934,
+  "noCandidate": true,
+  "reportSha256": "b6e97328fbb39f9af5d42f798fb71b970ab4b7d1909628b2659e6526ba14db3c"
+}

@@ -1,0 +1,23 @@
+{
+  "manifestSha256": "97f6b35f6fd4d5cc084c71e204715d964a688431bc46f219abd91a160190c811",
+  "inferenceExecuted": false,
+  "remoteHttpCalls": 0,
+  "credentialsLoaded": false,
+  "javaTests": 317,
+  "pythonTests": 191,
+  "contract": {
+    "schemas": 21,
+    "scenarios": 29,
+    "examples": 58,
+    "invalidMutations": 30
+  },
+  "developmentCases": 39,
+  "buildBeforeFreeze": {
+    "command": "mvn -B -ntp -o verify",
+    "log": "evaluation/quality-review/t8/verification/java-final.log",
+    "logSha256": "7aa8a6b816baf243499a22b7ed8de7562a82f6b031463fee1edd593f9aeb8b5c"
+  },
+  "frozenArtifactCount": 64,
+  "proposedMaxUsd": "20",
+  "authorized": false
+}

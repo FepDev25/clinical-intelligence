@@ -51,7 +51,7 @@ public final class GeminiProvider implements ExtractionProvider,AutoCloseable {
         this(key,settings,GeminiGeneration.production(),observer,base);
     }
     GeminiProvider(String key,GeminiSettings settings,GeminiGeneration generation,Consumer<Observation> observer,URI base) {
-        if(generation==null || !generation.prompt().singlePass())throw new IllegalArgumentException("Stage prompts require the experimental two-stage workflow");
+        if(generation==null || !GeminiProtocol.MODEL.equals(generation.model()) || !generation.prompt().singlePass())throw new IllegalArgumentException("Stage prompts require the experimental two-stage workflow");
         this.protocol=new GeminiProtocol(generation);
         if(key==null || key.isBlank() || key.length()>4096 || key.chars().anyMatch(c->c<=32 || c>=127))
             throw new IllegalArgumentException("Missing or invalid GOOGLE_API_KEY");

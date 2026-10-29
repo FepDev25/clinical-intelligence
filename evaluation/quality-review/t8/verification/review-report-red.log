@@ -1,0 +1,32 @@
+E..F..F..
+======================================================================
+ERROR: test_equal_wrong_scores_still_expose_assertion_instability (test_study_report.ReportTest.test_equal_wrong_scores_still_expose_assertion_instability)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/t8/test_study_report.py", line 51, in test_equal_wrong_scores_still_expose_assertion_instability
+    stable=result['references']['original']['arms']['base']['stabilityByScenario'][0]['final']['diagnoses'][0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'stabilityByScenario'
+
+======================================================================
+FAIL: test_invalid_raw_attribute_cannot_create_false_diagnosis_filter_gain (test_study_report.ReportTest.test_invalid_raw_attribute_cannot_create_false_diagnosis_filter_gain)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/t8/test_study_report.py", line 68, in test_invalid_raw_attribute_cannot_create_false_diagnosis_filter_gain
+    self.assertIsNone(diag['filterDeltas'][0]['entitiesFinalMinusRaw'])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'diagnoses': {'tp': 1, 'fp': 0, 'fn': -1}, 'medications': {'tp': 1, 'fp': 0, 'fn': -1}, 'procedures': {'tp': 1, 'fp': 0, 'fn': -1}} is not None
+
+======================================================================
+FAIL: test_present_receipt_with_unknown_usage_is_still_unreconciled (test_study_report.ReportTest.test_present_receipt_with_unknown_usage_is_still_unreconciled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/t8/test_study_report.py", line 57, in test_present_receipt_with_unknown_usage_is_still_unreconciled
+    self.assertEqual(1,result['unreconciledGenerations'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.188s
+
+FAILED (failures=2, errors=1)

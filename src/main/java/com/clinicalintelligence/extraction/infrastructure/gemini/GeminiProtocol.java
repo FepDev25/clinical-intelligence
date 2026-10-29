@@ -87,12 +87,12 @@ public final class GeminiProtocol {
     public Decoded decode(String note,byte[] bytes,ExtractionTrace trace) {
         Objects.requireNonNull(trace);
         Usage usage=new Usage(null,null,null,null);
-        String model=MODEL;
+        String model=generation.model();
         try {
             JsonNode root=read(bytes);
             usage=usage(root.path("usageMetadata"));
             String version=root.path("modelVersion").asText("");
-            if(version.startsWith(MODEL) && version.matches("[A-Za-z0-9._-]{1,128}")) model=version;
+            if((version.equals(generation.model()) || version.startsWith(generation.model()+"-")) && version.matches("[A-Za-z0-9._-]{1,128}")) model=version;
             if(root.path("promptFeedback").has("blockReason")) return bad(Completion.MALFORMED,usage,model);
             var candidates=root.path("candidates");
             if(!candidates.isArray() || candidates.size()!=1) return bad(Completion.MALFORMED,usage,model);

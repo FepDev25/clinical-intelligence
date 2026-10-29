@@ -1,0 +1,13 @@
+..E..
+======================================================================
+ERROR: test_replay_bundle_binds_hashes_inputs_and_failure_rows (test_study_runtime.RuntimeTest.test_replay_bundle_binds_hashes_inputs_and_failure_rows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/t8/test_study_runtime.py", line 40, in test_replay_bundle_binds_hashes_inputs_and_failure_rows
+    from study_runtime import validate_replay_bundle,write_new,sha
+ImportError: cannot import name 'validate_replay_bundle' from 'study_runtime' (/home/felipep/Software/medical-solutions/clinical-intelligence/evaluation/quality-review/t8/study_runtime.py)
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.006s
+
+FAILED (errors=1)

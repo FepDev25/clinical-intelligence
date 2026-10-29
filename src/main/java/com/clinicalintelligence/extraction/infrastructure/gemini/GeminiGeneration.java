@@ -17,7 +17,7 @@ public record GeminiGeneration(String model,ThinkingLevel thinkingLevel,Prompt p
         public boolean singlePass(){return this==V2 || this==V3;}
     }
     public GeminiGeneration {
-        if(!GeminiProtocol.MODEL.equals(model) || thinkingLevel==null || prompt==null)
+        if(!Set.of(GeminiProtocol.MODEL,"gemini-4-argon").contains(model == null ? "" : model) || thinkingLevel==null || prompt==null)
             throw new IllegalArgumentException("Unsupported Gemini experiment configuration");
     }
     public static GeminiGeneration production(){return new GeminiGeneration(GeminiProtocol.MODEL,ThinkingLevel.LOW,Prompt.V2);}

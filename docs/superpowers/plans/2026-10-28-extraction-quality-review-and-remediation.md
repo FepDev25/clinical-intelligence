@@ -2,7 +2,7 @@
 
 > Para quien ejecute: utilizar `superpowers:executing-plans` y completar las tareas con sus verificaciones. Plan aprobado por el usuario; ejecutar las tareas que autorice y registrar su cierre. No autoriza por sí solo inferencia remota. No delegar sin autorización aplicable.
 
-**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4 implementada y verificada con captura sintética optativa. T5 implementada y verificada offline; T6 implementada y verificada offline; T7 preparada y verificada offline; T8–T10 pendientes. Creado el 28-10-2026.
+**Estado:** aprobado por el usuario; T1 completada y verificada el 28-10-2026. T2 preparada documentalmente con revisión auxiliar; adjudicación formal abierta. T3 implementada y verificada como evaluador candidato offline. T4 implementada y verificada con captura sintética optativa. T5 implementada y verificada offline; T6 implementada y verificada offline; T7 preparada y verificada offline; T8 en preparación verificada, con inferencia pendiente de autorización específica; T9–T10 pendientes. Creado el 28-10-2026.
 
 **Objetivo:** investigar y resolver de forma trazable todos los limitantes identificados en código, representación, proveedor y evaluación, y medir si las correcciones mejoran la calidad sin ocultar omisiones, descartes ni incertidumbre.
 
@@ -215,6 +215,8 @@ En tareas de código: primero prueba que falle por la causa investigada, despué
 
 **Aceptación:** se puede distinguir qué intervención aporta y qué degrada. No se atribuye todo al modelo ni se adopta una variante solo por reducir FP mientras pierde cobertura.
 
+**Avance T8:** [ejecutor, análisis, presupuesto propuesto y evidencia offline](../../../evaluation/quality-review/t8/README.md). Ocho brazos, 39 notas × 3 rondas; hasta 819 generaciones + 819 conteos, 936 evaluaciones. Se mantienen 65 536 tokens, sin reintentos ni continuaciones; transporte SSE común por la limitación REST no transmitida de Argon. Tope propuesto USD 20, aún no autorizado: no garantiza terminar. No se han ejecutado llamadas remotas, no hay candidata seleccionada y las casillas de ejecución permanecen abiertas.
+
 ### T9. Robustez y límites de operación
 
 **Depende de:** T3–T7 para pruebas locales; inferencia condicionada al presupuesto de T8 o autorización específica. **Archivos:** nuevos generadores/casos y pruebas; reutilizar recetas de escala como referencia.
@@ -275,4 +277,4 @@ Bloques sugeridos para revisión/commits locales: diagnóstico y referencias (T1
 
 La revisión clínica humana independiente, las condiciones de privacidad/contratación del proveedor y la autorización para datos reales siguen siendo requisitos externos; no se dan por satisfechos por terminar ingeniería. Si falta revisor o presupuesto, continuar tareas offline independientes y dejar el tramo dependiente identificado, sin simular su ejecución.
 
-**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2, T3 y después T4, T5, T6 y T7. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4 está implementada y verificada; T5 está implementada y verificada offline; T6 está implementada y verificada offline; T7 está preparada y verificada offline; T8–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.
+**Seguimiento:** el usuario aprobó el plan y solicitó ejecutar T1, T2, T3 y después T4, T5, T6 y T7, y después avanzar con T8. Su [informe y evidencia](../../../evaluation/quality-review/README.md) registran el cierre. T2 tiene expediente preparado con adjudicación abierta; T3 está implementada y verificada offline; T4 está implementada y verificada; T5 está implementada y verificada offline; T6 está implementada y verificada offline; T7 está preparada y verificada offline; T8 tiene ejecutor/estudio preparado, con inferencia y selección pendientes de autorización específica; T9–T10 permanecen pendientes; la aprobación del plan no autoriza una campaña remota sin condiciones y presupuesto concretos.

@@ -1,0 +1,65 @@
+evaluation/tools
+.................................................................................
+----------------------------------------------------------------------
+Ran 81 tests in 3.595s
+
+OK
+evaluation/reports
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+evaluation/quality-review
+.........................................................
+----------------------------------------------------------------------
+Ran 57 tests in 0.341s
+
+OK
+evaluation/quality-review/t2
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.341s
+
+OK
+evaluation/quality-review/t5
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.474s
+
+OK
+evaluation/quality-review/t6
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 1.506s
+
+OK
+evaluation/quality-review/t7
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.236s
+
+OK
+evaluation/quality-review/t8
+...................
+----------------------------------------------------------------------
+Ran 19 tests in 1.356s
+
+OK
+PASS: OpenAPI 3.1.1, 21 schemas, 29 scenarios, 58 example files.
+PASS: evidence/Unicode/catalog/header invariants; 30 invalid mutations rejected; normalization boundaries preserved.
+Contract artifacts only: no backend, provider calls or clinical quality evaluation executed.
+PASS: development: 39 cases; entities={'diagnoses': 56, 'medications': 39, 'procedures': 44}; cohorts={'core': 24, 'exploratory': 9, 'adversarial': 6}.
+PASS: schema, literal evidence, catalog membership, coverage and SHA-256 assets.
+Development only: reserved annotations NOT loaded; run --include-reserved for a full split audit.
+No LLM quality measurement, clinical validation or backend execution performed.
+{
+  "notes": 39,
+  "rounds": 3,
+  "arms": 8,
+  "units": 702,
+  "maxGenerateCalls": 819,
+  "maxHttpCalls": 1638,
+  "evaluations": 936,
+  "authorized": false
+}

@@ -1,0 +1,31 @@
+{
+  "version": "t8-report-1",
+  "manifestSha256": "97f6b35f6fd4d5cc084c71e204715d964a688431bc46f219abd91a160190c811",
+  "inferenceExecuted": false,
+  "simulationOnly": true,
+  "expectedEvaluations": 936,
+  "notAttemptedEvaluations": 934,
+  "missingEvaluationRecords": 0,
+  "completeCampaign": false,
+  "releaseApproved": false,
+  "provisionalCandidate": null,
+  "candidateDecision": "No candidate: incomplete campaign or unchanged criteria not met",
+  "finance": {
+    "conservativeChargedUsd": "0",
+    "generationAttempts": 0,
+    "unreconciledGenerations": 0,
+    "httpIntentCounts": {
+      "COUNT_INTENT": 0,
+      "GENERATION_INTENT": 0
+    },
+    "attempts": [],
+    "warning": "Conservative tariff estimate, not account invoice; shared filter replays add no remote cost"
+  },
+  "limitations": [
+    "All development cases are exposed; no independent generalization claim",
+    "T2 adjudication and semantic audit remain open",
+    "Nominal thinking levels across models do not imply equal compute",
+    "No production switch; frozen aliases may lack immutable model version"
+  ],
+  "scope": "Explicitly simulated empty proposal for one scheduled unit. No actual model quality measurement. Full diagnostic report retained in target only (33MiB)."
+}

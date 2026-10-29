@@ -1,0 +1,10 @@
+{
+  "request": {
+    "clinicalNote": "El paciente niega asma."
+  },
+  "structuredProposalText": "{\"diagnoses\": [{\"name\": {\"value\": \"asma\", \"evidence\": [{\"quote\": \"asma\", \"occurrence\": 0}]}, \"mentionedCode\": null, \"context\": {\"assertion\": {\"value\": \"affirmed\", \"evidence\": [{\"quote\": \"El paciente niega asma.\", \"occurrence\": 0}]}, \"subject\": {\"value\": \"unknown\", \"evidence\": []}, \"temporality\": {\"value\": \"unknown\", \"evidence\": []}}}], \"medications\": [], \"procedures\": [], \"notices\": []}",
+  "model": "gemini-3.8-flash",
+  "promptVersion": "extraction-gemini-v2",
+  "filterVersion": "evidence-2",
+  "inferenceExecuted": false
+}

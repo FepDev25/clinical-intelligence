@@ -1,0 +1,6 @@
+{
+  "commit": "b19ee77b001d255d538f3413323209a3ce76f651",
+  "jarPath": "target/t8-baseline/application.jar",
+  "jarSha256": "50617f4e4695dd0324f66e1c56fe3e40a274219428f9ea08a175ca78ffe5c881",
+  "inferenceExecuted": false
+}

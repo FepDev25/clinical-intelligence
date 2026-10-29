@@ -32,4 +32,17 @@ class GeminiGenerationTest {
         assertEquals(old.identity().schemaSha256(),candidate.identity().schemaSha256());
         assertEquals("gemini-generate-content-t7-1",old.identity().requestVersion());
     }
+    @Test void explicitStudyComparatorHasItsOwnModelIdentityAndDecodeVersion() throws Exception {
+        var g=from(Map.of("model","gemini-4-argon","thinkingLevel","LOW","promptVersion",Prompt.V3.version()));
+        var protocol=new GeminiProtocol(g);assertEquals("gemini-4-argon",protocol.identity().model());
+        var raw=GeminiProtocolTest.JSON.readTree(GeminiProtocolTest.envelope(GeminiProtocolTest.proposal("asma",0),"STOP"));
+        ((com.fasterxml.jackson.databind.node.ObjectNode)raw).put("modelVersion","gemini-4-argon-202610");
+        assertEquals("gemini-4-argon-202610",protocol.decode("asma",GeminiProtocolTest.JSON.writeValueAsBytes(raw)).modelVersion());
+        raw=(com.fasterxml.jackson.databind.node.ObjectNode)raw;((com.fasterxml.jackson.databind.node.ObjectNode)raw).remove("modelVersion");
+        assertEquals("gemini-4-argon",protocol.decode("asma",GeminiProtocolTest.JSON.writeValueAsBytes(raw)).modelVersion());
+    }
+    @Test void comparatorCannotAccidentallyUseOrdinaryProviderOrFlashPricing() {
+        var g=new GeminiGeneration("gemini-4-argon",ThinkingLevel.LOW,Prompt.V3);
+        assertThrows(IllegalArgumentException.class,() -> new GeminiProvider("synthetic-key",GeminiSettings.defaults(),g,ignored -> {}));
+    }
 }
